@@ -39,6 +39,7 @@
 ****************************************************************************/
 
 import QtQuick 2.0
+import org.kde.plasma.components 2.0 as PlasmaComponents
 
 Popup {
     id: cameraListPopup
@@ -50,25 +51,30 @@ Popup {
     property int itemWidth : 200
     property int itemHeight : 50
 
-    width: itemWidth + view.anchors.margins*2
-    height: view.count * itemHeight + view.anchors.margins*2
+    width: itemWidth + view.anchors.leftMargin + view.anchors.rightMargin
+    height: view.count * itemHeight + view.anchors.topMargin + view.anchors.bottomMargin
 
     signal selected
 
     ListView {
         id: view
-        anchors.fill: parent
-        anchors.margins: 5
+        anchors {
+            fill: parent
+            leftMargin: popup.margins.left
+            rightMargin: popup.margins.right
+            topMargin: popup.margins.top
+            bottomMargin: popup.margins.bottom
+        }
         snapMode: ListView.SnapOneItem
         highlightFollowsCurrentItem: true
-        highlight: Rectangle { color: "gray"; radius: 5 }
+        highlight: PlasmaComponents.Highlight {}
         currentIndex: 0
 
         delegate: Item {
             width: cameraListPopup.itemWidth
             height: cameraListPopup.itemHeight
 
-            Text {
+            PlasmaComponents.Label {
                 text: modelData.displayName
 
                 anchors.fill: parent
@@ -76,11 +82,6 @@ Popup {
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
                 elide: Text.ElideRight
-                color: "white"
-                font.bold: true
-                style: Text.Raised
-                styleColor: "black"
-                font.pixelSize: 14
             }
             MouseArea {
                 anchors.fill: parent
