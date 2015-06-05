@@ -43,7 +43,7 @@ import QtMultimedia 5.0
 
 Item {
     property alias source : preview.source
-    signal closed
+    signal clicked
 
     Image {
         id: preview
@@ -55,7 +55,7 @@ Item {
     MouseArea {
         anchors.fill: parent
         onClicked: {
-            parent.closed();
+            parent.clicked();
         }
     }
 }

@@ -61,9 +61,19 @@ Rectangle {
                     camera.start()
                 }
             }
+            PropertyChanges {
+                target: photoPreview
+                width: cameraUI.width / 5
+                height: cameraUI.height / 5
+            }
         },
         State {
             name: "PhotoPreview"
+            PropertyChanges {
+                target: photoPreview
+                width: cameraUI.width
+                height: cameraUI.height
+            }
         },
         State {
             name: "VideoCapture"
@@ -84,6 +94,16 @@ Rectangle {
         }
     ]
 
+    transitions: [
+        Transition {
+            id: previewTransition
+            NumberAnimation {
+                properties: "width, height"
+                duration: units.longDuration
+            }
+        }
+    ]
+
     Camera {
         id: camera
         captureMode: Camera.CaptureStillImage
@@ -92,7 +112,9 @@ Rectangle {
             onImageCaptured: {
                 photoPreview.source = preview
                 stillControls.previewAvailable = true
+                previewTransition.enabled = false;
                 cameraUI.state = "PhotoPreview"
+                previewTransition.enabled = true;
             }
         }
 
@@ -104,9 +126,13 @@ Rectangle {
 
     PhotoPreview {
         id : photoPreview
-        anchors.fill : parent
-        onClosed: cameraUI.state = "PhotoCapture"
-        visible: cameraUI.state == "PhotoPreview"
+        anchors {
+            right : parent.right
+            bottom: parent.bottom
+        }
+        onClicked: cameraUI.state == "PhotoCapture" ? cameraUI.state = "PhotoPreview" : cameraUI.state = "PhotoCapture"
+        //visible: cameraUI.state == "PhotoPreview"
+
         focus: visible
     }
 
