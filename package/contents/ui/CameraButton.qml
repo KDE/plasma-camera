@@ -43,7 +43,7 @@ import org.kde.plasma.components 2.0 as PlasmaComponents
 import org.kde.plasma.core 2.0 as PlasmaCore
 
 PlasmaComponents.Button {
-    width : units.gridUnit * 9
-    height: units.gridUnit * 4
+    width : units.gridUnit * 5
+    height: units.gridUnit * 3
 }
 
