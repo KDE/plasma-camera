@@ -47,8 +47,8 @@ Item {
     property alias value : popup.currentValue
     property alias model : popup.model
 
-    width : units.gridUnit * 9
-    height: units.gridUnit * 4
+    width : units.gridUnit * 5
+    height: units.gridUnit * 3
 
     CameraButton {
         anchors.fill: parent
