@@ -154,8 +154,7 @@ Rectangle {
         anchors.fill: parent
 
         source: camera
-       // autoOrientation: true
-        orientation: 90
+        orientation: -90
     }
 
     PhotoCaptureControls {

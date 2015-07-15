@@ -173,10 +173,13 @@ FocusScope {
         onClicked: menuShown = !menuShown
     }
     ZoomControl {
-        x : 0
-        y : 0
-        width : 100
-        height: 200//parent.height
+        anchors {
+            top: parent.top
+            right: parent.right
+            margins: units.gridUnit
+        }
+        width : units.gridUnit
+        height: units.gridUnit * 20
 
         currentZoom: camera.digitalZoom
         maximumZoom: Math.min(4.0, camera.maximumDigitalZoom)
