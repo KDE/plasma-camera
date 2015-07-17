@@ -182,7 +182,7 @@ FocusScope {
         height: units.gridUnit * 20
 
         currentZoom: camera.digitalZoom
-        maximumZoom: Math.min(4.0, camera.maximumDigitalZoom)
+        maximumZoom: camera.maximumDigitalZoom
         onZoomTo: camera.setDigitalZoom(value)
     }
 }

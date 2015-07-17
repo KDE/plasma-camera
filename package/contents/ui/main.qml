@@ -168,6 +168,17 @@ Rectangle {
         source: camera
         orientation: -90
     }
+    PinchArea {
+        anchors.fill: parent
+        property real initialZoom
+        onPinchStarted: {
+            initialZoom = camera.digitalZoom;
+        }
+        onPinchUpdated: {
+            var scale = camera.maximumDigitalZoom/8 * pinch.scale - camera.maximumDigitalZoom/8;
+            camera.setDigitalZoom(Math.min(camera.maximumDigitalZoom, camera.digitalZoom + scale))
+        }
+    }
 
     PhotoCaptureControls {
         id: stillControls
