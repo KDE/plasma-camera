@@ -74,6 +74,10 @@ Rectangle {
                 width: cameraUI.width
                 height: cameraUI.height
             }
+            PropertyChanges {
+                target: photoPreviewTimer
+                running: true
+            }
         },
         State {
             name: "VideoCapture"
@@ -104,13 +108,17 @@ Rectangle {
         }
     ]
 
+    Timer {
+        id: photoPreviewTimer
+        interval: 2000
+        onTriggered: cameraUI.state = "PhotoCapture"
+    }
     Camera {
         id: camera
         captureMode: Camera.CaptureStillImage
 
         imageCapture {
             onImageCaptured: {
-                photoPreview.source = preview
                 stillControls.previewAvailable = true
                 previewTransition.enabled = false;
                 cameraUI.state = "PhotoPreview"
@@ -126,11 +134,15 @@ Rectangle {
 
     PhotoPreview {
         id : photoPreview
+        z: 999
         anchors {
             right : parent.right
             bottom: parent.bottom
         }
-        onClicked: cameraUI.state == "PhotoCapture" ? cameraUI.state = "PhotoPreview" : cameraUI.state = "PhotoCapture"
+        onClicked: {
+            cameraUI.state == "PhotoCapture" ? cameraUI.state = "PhotoPreview" : cameraUI.state = "PhotoCapture";
+            photoPreviewTimer.running = false;
+        }
         //visible: cameraUI.state == "PhotoPreview"
 
         focus: visible

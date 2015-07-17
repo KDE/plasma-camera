@@ -40,22 +40,43 @@
 
 import QtQuick 2.0
 import QtMultimedia 5.0
+import Qt.labs.folderlistmodel 2.1
 
 Item {
-    property alias source : preview.source
+    id: previewItem
     signal clicked
 
-    Image {
-        id: preview
-        anchors.fill : parent
-        fillMode: Image.PreserveAspectFit
-        smooth: true
-    }
 
-    MouseArea {
-        anchors.fill: parent
-        onClicked: {
-            parent.clicked();
+    ListView {
+        id: view
+        anchors.fill : parent
+        clip: true
+        orientation: Qt.Horizontal
+        snapMode: ListView.SnapOneItem
+        model: FolderListModel {
+            //FIXME: needs any kind of binding to QStandardPaths
+            folder: "file:///home/phablet/Pictures/org.kde.phone.camera"
+            nameFilters: [ "*.png", "*.jpg", "*.JPG" ]
+            sortField: FolderListModel.Time
+            showDirs: false
+        }
+        delegate: Image {
+            width: view.width
+            height: view.height
+            fillMode: Image.PreserveAspectFit
+            smooth: true
+            source: model.filePath
+            asynchronous: true
+            sourceSize {
+                width: view.width
+                height: view.height
+            }
+        }
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                previewItem.clicked();
+            }
         }
     }
 }
