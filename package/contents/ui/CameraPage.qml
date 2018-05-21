@@ -18,34 +18,34 @@ Kirigami.Page {
         id: captureAction
         text: {
             if (camera.captureMode == Camera.CaptureStillImage)
-                return "Capture photo"
+                return qsTr("Capture photo")
             else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
-                return "Stop recording video"
+                return qsTr("Stop recording video")
             else if (camera.captureMode == Camera.CaptureVideo)
-                return "Start recording video"
+                return qsTr("Start recording video")
         }
         iconName: {
             if (camera.captureMode == Camera.CaptureStillImage)
-                return "camera-photo"
+                return qsTr("camera-photo")
             else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
-                return "window-close"
+                return qsTr("window-close")
             else if (camera.captureMode == Camera.CaptureVideo)
-                return "video-mp4"
+                return qsTr("video-mp4")
         }
         onTriggered: {
             if (camera.captureMode == Camera.CaptureStillImage) {
                 camera.imageCapture.capture()
-                showPassiveNotification("Took a photo")
+                showPassiveNotification(qsTr("Took a photo"))
             }
             else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus) {
                 camera.videoRecorder.stop()
                 recordingFeedback.visible = false
-                showPassiveNotification("Stopped recording")
+                showPassiveNotification(qsTr("Stopped recording"))
             }
             else if (camera.captureMode == Camera.CaptureVideo) {
                 camera.videoRecorder.record()
                 recordingFeedback.visible = true
-                showPassiveNotification("Started recording")
+                showPassiveNotification(qsTr("Started recording"))
             }
         }
     }

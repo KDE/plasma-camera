@@ -6,9 +6,20 @@ import QtMultimedia 5.8
 Kirigami.GlobalDrawer {
     actions: [
         Kirigami.Action {
+            text: qsTr("Camera")
+            iconName: "camera-photo"
+            DelegateModel {
+                model: QtMultimedia.availableCameras
+                delegate: Kirigami.Action {
+                    text: model.displayName
+                    onTriggered: settings.cameraDeviceId = model.deviceId
+                }
+            }
+        },
+        Kirigami.Action {
             text: qsTr("Video resolution")
             iconName: "ratiocrop"
-            ListView {
+            DelegateModel {
                 model: applicationWindow().cameraPage.camera.videoRecorder.supportedResolutions
                 delegate: Kirigami.Action {
                     text: model
@@ -19,7 +30,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: qsTr("Photo resolution")
             iconName: "ratiocrop"
-            ListView {
+            DelegateModel {
                 model: applicationWindow().cameraPage.camera.imageCapture.supportedResolutions
                 delegate: Kirigami.Action {
                     text: model
@@ -30,7 +41,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: qsTr("White balance")
             iconName: "whitebalance"
-            ListView {
+            DelegateModel {
                 model: ListModel {
                     ListElement {
                         icon: "images/camera_auto_mode.png"
