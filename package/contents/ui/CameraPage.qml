@@ -2,6 +2,7 @@ import QtQuick 2.7
 import QtMultimedia 5.8
 import org.kde.kirigami 2.0 as Kirigami
 import QtQuick.Controls 2.0 as Controls
+import QtQuick.Controls.Material 2.0
 import QtQuick.Layouts 1.2
 import QtGraphicalEffects 1.0
 
@@ -175,10 +176,9 @@ Kirigami.Page {
         height: width
         layer.enabled: preview.enabled
         layer.effect: DropShadow {
-            verticalOffset: 1
             color: Material.dropShadowColor
-            samples: 20
-            spread: 0.3
+            samples: 30
+            spread: 0.5
         }
 
         MouseArea {
