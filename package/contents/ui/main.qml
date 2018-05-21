@@ -38,163 +38,24 @@
 **
 ****************************************************************************/
 
-import QtQuick 2.0
-import QtMultimedia 5.4
+import QtQuick 2.7
+import org.kde.kirigami 2.2 as Kirigami
+import Qt.labs.settings 1.0
 
-Rectangle {
-    id : cameraUI
-
-    width: 1080
-    height: 1920
-
-    color: "black"
-    state: "PhotoCapture"
-
-    property bool menuShown: false
-
-    states: [
-        State {
-            name: "PhotoCapture"
-            StateChangeScript {
-                script: {
-                    camera.captureMode = Camera.CaptureStillImage
-                    camera.start()
-                }
-            }
-            PropertyChanges {
-                target: photoPreview
-                width: cameraUI.width / 5
-                height: cameraUI.height / 5
-            }
-        },
-        State {
-            name: "PhotoPreview"
-            PropertyChanges {
-                target: photoPreview
-                width: cameraUI.width
-                height: cameraUI.height
-            }
-            PropertyChanges {
-                target: photoPreviewTimer
-                running: true
-            }
-        },
-        State {
-            name: "VideoCapture"
-            StateChangeScript {
-                script: {
-                    camera.captureMode = Camera.CaptureVideo
-                    camera.start()
-                }
-            }
-        },
-        State {
-            name: "VideoPreview"
-            StateChangeScript {
-                script: {
-                    camera.stop()
-                }
-            }
-        }
-    ]
-
-    transitions: [
-        Transition {
-            id: previewTransition
-            NumberAnimation {
-                properties: "width, height"
-                duration: units.longDuration
-            }
-        }
-    ]
-
-    Timer {
-        id: photoPreviewTimer
-        interval: 2000
-        onTriggered: cameraUI.state = "PhotoCapture"
-    }
-    Camera {
-        id: camera
-        captureMode: Camera.CaptureStillImage
-
-        imageCapture {
-            onImageCaptured: {
-                stillControls.previewAvailable = true
-                previewTransition.enabled = false;
-                cameraUI.state = "PhotoPreview"
-                previewTransition.enabled = true;
-            }
-        }
-
-        videoRecorder {
-             resolution: "640x480"
-             frameRate: 15
-        }
+Kirigami.ApplicationWindow {
+    Settings {
+        id: settings
+        
+        // Default settings
+        property string videoResolution: "640x480"
     }
 
-    PhotoPreview {
-        id : photoPreview
-        z: 999
-        anchors {
-            right : parent.right
-            bottom: parent.bottom
-        }
-        onClicked: {
-            cameraUI.state == "PhotoCapture" ? cameraUI.state = "PhotoPreview" : cameraUI.state = "PhotoCapture";
-            photoPreviewTimer.running = false;
-        }
-        //visible: cameraUI.state == "PhotoPreview"
+    id: root
+    title: "Camera"
+    globalDrawer: GlobalDrawer {}
 
-        focus: visible
-    }
+    Component {id: cameraPage; CameraPage {}}
 
-    VideoPreview {
-        id : videoPreview
-        anchors.fill : parent
-        onClosed: cameraUI.state = "VideoCapture"
-        visible: cameraUI.state == "VideoPreview"
-        focus: visible
-
-        //don't load recorded video if preview is invisible
-        source: visible ? camera.videoRecorder.actualLocation : ""
-    }
-
-    VideoOutput {
-        id: viewfinder
-        visible: cameraUI.state == "PhotoCapture" || cameraUI.state == "VideoCapture"
-
-        anchors.fill: parent
-
-        source: camera
-        orientation: -90
-    }
-    PinchArea {
-        anchors.fill: parent
-        property real initialZoom
-        onPinchStarted: {
-            initialZoom = camera.digitalZoom;
-        }
-        onPinchUpdated: {
-            var scale = camera.maximumDigitalZoom/8 * pinch.scale - camera.maximumDigitalZoom/8;
-            camera.setDigitalZoom(Math.min(camera.maximumDigitalZoom, camera.digitalZoom + scale))
-        }
-    }
-
-    PhotoCaptureControls {
-        id: stillControls
-        anchors.fill: parent
-        camera: camera
-        visible: cameraUI.state == "PhotoCapture"
-        onPreviewSelected: cameraUI.state = "PhotoPreview"
-        onVideoModeSelected: cameraUI.state = "VideoCapture"
-    }
-
-    VideoCaptureControls {
-        id: videoControls
-        anchors.fill: parent
-        camera: camera
-        visible: cameraUI.state == "VideoCapture"
-        onPreviewSelected: cameraUI.state = "VideoPreview"
-        onPhotoModeSelected: cameraUI.state = "PhotoCapture"
-    }
+    Component.onCompleted: pageStack.push(cameraPage)
+    
 }
