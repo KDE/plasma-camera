@@ -136,10 +136,26 @@ Kirigami.Page {
                 camera.setDigitalZoom(Math.min(camera.maximumDigitalZoom, camera.digitalZoom + scale))
             }
         }
+
+        MouseArea {
+            anchors.fill: parent
+
+            onClicked: {
+                if (camera.lockStatus == Camera.Unlocked) {
+                    camera.searchAndLock();
+                    console.log("searching focus...")
+                }
+                else {
+                    camera.unlock();
+                    console.log("unlocking focus...")
+                }
+            }
+        }
     }
 
     Controls.Slider {
         orientation: Qt.Vertical
+
         from: 1
         value: camera.digitalZoom
         to: Math.min(4.0, camera.maximumDigitalZoom)
@@ -161,6 +177,13 @@ Kirigami.Page {
         radius: Kirigami.Units.gridUnit
         height: Kirigami.Units.gridUnit * 2
         width: height
+
+        layer.enabled: recordingFeedback.enabled
+        layer.effect: DropShadow {
+            color: Material.dropShadowColor
+            samples: 30
+            spread: 0.5
+        }
 
         anchors {
             left: parent.left
