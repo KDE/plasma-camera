@@ -3,6 +3,7 @@ import QtMultimedia 5.8
 import org.kde.kirigami 2.0 as Kirigami
 import QtQuick.Controls 2.0 as Controls
 import QtQuick.Layouts 1.2
+import QtGraphicalEffects 1.0
 
 Kirigami.Page {
     id: cameraPage
@@ -142,7 +143,7 @@ Kirigami.Page {
         value: camera.digitalZoom
         to: Math.min(4.0, camera.maximumDigitalZoom)
 
-        height: Kirigami.Units.gridUnit * 30
+        height: Kirigami.Units.gridUnit * 20
 
         anchors {
             right: parent.right
@@ -164,6 +165,36 @@ Kirigami.Page {
             left: parent.left
             top: parent.top
             margins: Kirigami.Units.gridUnit * 2
+        }
+    }
+
+    Rectangle {
+        id: preview
+        visible: imageCapture.capturedImagePath
+        width: Kirigami.Units.gridUnit * 6
+        height: width
+        layer.enabled: preview.enabled
+        layer.effect: DropShadow {
+            verticalOffset: 1
+            color: Material.dropShadowColor
+            samples: 20
+            spread: 0.3
+        }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: Qt.openUrlExternally(imageCapture.capturedImagePath)
+        }
+
+        anchors {
+            right: parent.right
+            bottom: parent.bottom
+            margins: Kirigami.Units.gridUnit
+        }
+
+        Image {
+            anchors.fill: parent
+            source: imageCapture.capturedImagePath
         }
     }
 }
