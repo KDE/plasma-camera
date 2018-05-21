@@ -6,7 +6,7 @@ import QtQuick.Layouts 1.2
 
 Kirigami.Page {
     id: cameraPage
-    
+
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
@@ -14,14 +14,38 @@ Kirigami.Page {
 
     mainAction: Kirigami.Action {
         id: captureAction
-        text: qsTr("Capture")
+        text: {
+            if (camera.captureMode == Camera.CaptureStillImage)
+                return "Capture photo"
+            else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
+                return "Stop recording video"
+            else if (camera.captureMode == Camera.CaptureVideo)
+                return "Start recording video"
+        }
         iconName: {
             if (camera.captureMode == Camera.CaptureStillImage)
                 return "camera-photo"
+            else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
+                return "window-close"
             else if (camera.captureMode == Camera.CaptureVideo)
                 return "video-mp4"
         }
-        onTriggered: camera.imageCapture.capture()
+        onTriggered: {
+            if (camera.captureMode == Camera.CaptureStillImage) {
+                camera.imageCapture.capture()
+                showPassiveNotification("Took a photo")
+            }
+            else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus) {
+                camera.videoRecorder.stop()
+                recordingFeedback.visible = false
+                showPassiveNotification("Stopped recording")
+            }
+            else if (camera.captureMode == Camera.CaptureVideo) {
+                camera.videoRecorder.record()
+                recordingFeedback.visible = true
+                showPassiveNotification("Started recording")
+            }
+        }
     }
     
     leftAction: Kirigami.Action {
@@ -37,7 +61,7 @@ Kirigami.Page {
             console.log("Capture Mode switched")
         }
     }
-    
+
     Rectangle {
         id: cameraUI
         state: "PhotoCapture"
@@ -83,7 +107,7 @@ Kirigami.Page {
             videoRecorder {
                 id: videoRecorder
                 resolution: settings.videoResolution
-                frameRate: 15
+                frameRate: 30
             }
         }
 
@@ -137,5 +161,20 @@ Kirigami.Page {
         }
 
         onValueChanged: camera.setDigitalZoom(value)
+    }
+
+    Rectangle {
+        id: recordingFeedback
+        visible: false
+        color: "red"
+        radius: Kirigami.Units.gridUnit
+        height: Kirigami.Units.gridUnit * 2
+        width: height
+
+        anchors {
+            left: parent.left
+            top: parent.top
+            margins: Kirigami.Units.gridUnit * 2
+        }
     }
 }

@@ -50,11 +50,11 @@ Kirigami.ApplicationWindow {
         property string videoResolution: "640x480"
     }
 
+    Component {id: cameraPage; CameraPage {}}
+
     id: root
     title: "Camera"
     globalDrawer: GlobalDrawer {}
-
-    Component {id: cameraPage; CameraPage {}}
 
     Component.onCompleted: pageStack.push(cameraPage)
     
