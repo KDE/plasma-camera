@@ -45,7 +45,7 @@ import QtMultimedia 5.8
 Kirigami.GlobalDrawer {
     actions: [
         Kirigami.Action {
-            text: i18n("Camera")
+            text: qsTr("Camera")
             iconName: "camera-photo"
             DelegateModel {
                 model: QtMultimedia.availableCameras
@@ -56,7 +56,7 @@ Kirigami.GlobalDrawer {
             }
         },
         Kirigami.Action {
-            text: i18n("Video resolution")
+            text: qsTr("Video resolution")
             iconName: "ratiocrop"
             DelegateModel {
                 model: applicationWindow().cameraPage.camera.videoRecorder.supportedResolutions
@@ -67,7 +67,7 @@ Kirigami.GlobalDrawer {
             }
         },
         Kirigami.Action {
-            text: i18n("Photo resolution")
+            text: qsTr("Photo resolution")
             iconName: "ratiocrop"
             DelegateModel {
                 model: applicationWindow().cameraPage.camera.imageCapture.supportedResolutions
@@ -78,7 +78,7 @@ Kirigami.GlobalDrawer {
             }
         },
         Kirigami.Action {
-            text: i18n("White balance")
+            text: qsTr("White balance")
             iconName: "whitebalance"
             DelegateModel {
                 model: ListModel {

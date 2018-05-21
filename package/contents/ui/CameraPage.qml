@@ -57,41 +57,41 @@ Kirigami.Page {
         id: captureAction
         text: {
             if (camera.captureMode == Camera.CaptureStillImage)
-                return i18n("Capture photo")
+                return qsTr("Capture photo")
             else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
-                return i18n("Stop recording video")
+                return qsTr("Stop recording video")
             else if (camera.captureMode == Camera.CaptureVideo)
-                return i18n("Start recording video")
+                return qsTr("Start recording video")
         }
         iconName: {
             if (camera.captureMode == Camera.CaptureStillImage)
-                return i18n("camera-photo")
+                return qsTr("camera-photo")
             else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
-                return i18n("window-close")
+                return qsTr("window-close")
             else if (camera.captureMode == Camera.CaptureVideo)
-                return i18n("video-mp4")
+                return qsTr("video-mp4")
         }
         onTriggered: {
             if (camera.captureMode == Camera.CaptureStillImage) {
                 camera.imageCapture.capture()
-                showPassiveNotification(i18n("Took a photo"))
+                showPassiveNotification(qsTr("Took a photo"))
             }
             else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus) {
                 camera.videoRecorder.stop()
                 recordingFeedback.visible = false
-                showPassiveNotification(i18n("Stopped recording"))
+                showPassiveNotification(qsTr("Stopped recording"))
             }
             else if (camera.captureMode == Camera.CaptureVideo) {
                 camera.videoRecorder.record()
                 recordingFeedback.visible = true
-                showPassiveNotification(i18n("Started recording"))
+                showPassiveNotification(qsTr("Started recording"))
             }
         }
     }
     
     leftAction: Kirigami.Action {
         id: switchAction
-        text: i18n("Switch mode")
+        text: qsTr("Switch mode")
         iconName: "document-swap"
         onTriggered: {
             if (camera.captureMode == Camera.CaptureStillImage)
