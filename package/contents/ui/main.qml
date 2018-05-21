@@ -53,7 +53,7 @@ Kirigami.ApplicationWindow {
     Component {id: cameraPage; CameraPage {}}
 
     id: root
-    title: "Camera"
+    title: i18n("Camera")
     globalDrawer: GlobalDrawer {}
 
     Component.onCompleted: pageStack.push(cameraPage)

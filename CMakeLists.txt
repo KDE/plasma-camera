@@ -1,6 +1,6 @@
 project(plasma-camera)
 
-cmake_minimum_required(VERSION 2.8.10.1)
+cmake_minimum_required(VERSION 2.8.12)
 
 include(CPack)
 include(FeatureSummary)
@@ -19,11 +19,11 @@ include(KDECompilerSettings)
 
 # find_package(Qt5 REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui)
 
-
-set (QT_MIN_VERSION "5.4.0")
+set (QT_MIN_VERSION "5.9.0")
+find_package(KF5Kirigami2 REQUIRED)
 find_package(KF5 REQUIRED COMPONENTS
-                Package)
+             Package)
 
-kpackage_install_package(package org.kde.phone.camera genericqml)
+kpackage_install_bundled_package(package org.kde.phone.camera genericqml)
 install(FILES package/metadata.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} RENAME org.kde.phone.camera.desktop)
 
