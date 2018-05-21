@@ -255,6 +255,7 @@ Kirigami.Page {
         }
 
         Image {
+            fillMode: Image.PreserveAspectCrop
             anchors.fill: parent
             source: imageCapture.capturedImagePath
         }
