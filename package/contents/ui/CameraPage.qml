@@ -111,17 +111,6 @@ Kirigami.Page {
             }
         }
 
-        VideoPreview {
-            id : videoPreview
-            anchors.fill : parent
-            onClosed: cameraUI.state = "VideoCapture"
-            visible: cameraUI.state == "VideoPreview"
-            focus: visible
-
-            //don't load recorded video if preview is invisible
-            source: visible ? camera.videoRecorder.actualLocation : ""
-        }
-
         VideoOutput {
             id: viewfinder
             visible: cameraUI.state == "PhotoCapture" || cameraUI.state == "VideoCapture"

@@ -7,7 +7,8 @@ Kirigami.GlobalDrawer {
     actions: [
         Kirigami.Action {
             text: qsTr("Video resolution")
-            DelegateModel {
+            iconName: "ratiocrop"
+            ListView {
                 model: applicationWindow().cameraPage.camera.videoRecorder.supportedResolutions
                 delegate: Kirigami.Action {
                     text: model
@@ -17,7 +18,8 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             text: qsTr("Photo resolution")
-            DelegateModel {
+            iconName: "ratiocrop"
+            ListView {
                 model: applicationWindow().cameraPage.camera.imageCapture.supportedResolutions
                 delegate: Kirigami.Action {
                     text: model
@@ -27,7 +29,8 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             text: qsTr("White balance")
-            DelegateModel {
+            iconName: "whitebalance"
+            ListView {
                 model: ListModel {
                     ListElement {
                         icon: "images/camera_auto_mode.png"
