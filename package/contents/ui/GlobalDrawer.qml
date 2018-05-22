@@ -73,7 +73,7 @@ Kirigami.GlobalDrawer {
                 model: applicationWindow().cameraPage.camera.imageCapture.supportedResolutions
                 delegate: Kirigami.Action {
                     text: model
-                    onTriggered: settings.videoResolution = text;
+                    onTriggered: settings.photoResolution = text;
                 }
             }
         },

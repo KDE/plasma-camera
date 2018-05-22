@@ -47,6 +47,7 @@ Kirigami.ApplicationWindow {
         
         // Default settings
         property string videoResolution: "640x480"
+        property string photoResolution
         property string cameraDeviceId
     }
 

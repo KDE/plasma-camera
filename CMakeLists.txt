@@ -24,6 +24,6 @@ find_package(KF5Kirigami2 REQUIRED)
 find_package(KF5 REQUIRED COMPONENTS
              Package)
 
-kpackage_install_bundled_package(package org.kde.phone.camera genericqml)
+kpackage_install_package(package org.kde.phone.camera genericqml)
 install(FILES package/metadata.desktop DESTINATION ${XDG_APPS_INSTALL_DIR} RENAME org.kde.phone.camera.desktop)
 
