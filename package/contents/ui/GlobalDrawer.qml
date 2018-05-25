@@ -59,7 +59,8 @@ Kirigami.GlobalDrawer {
             text: qsTr("Video resolution")
             iconName: "ratiocrop"
             DelegateModel {
-                model: applicationWindow().cameraPage.camera.videoRecorder.supportedResolutions
+                model: CameraRecorder.supportedResolutions
+
                 delegate: Kirigami.Action {
                     text: model
                     onTriggered: settings.videoResolution = text;
@@ -70,7 +71,7 @@ Kirigami.GlobalDrawer {
             text: qsTr("Photo resolution")
             iconName: "ratiocrop"
             DelegateModel {
-                model: applicationWindow().cameraPage.camera.imageCapture.supportedResolutions
+                model: CameraCapture.supportedResolutions
                 delegate: Kirigami.Action {
                     text: model
                     onTriggered: settings.photoResolution = text;
@@ -80,41 +81,30 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: qsTr("White balance")
             iconName: "whitebalance"
-            DelegateModel {
-                model: ListModel {
-                    ListElement {
-                        icon: "images/camera_auto_mode.png"
-                        value: CameraImageProcessing.WhiteBalanceAuto
-                        text: "Auto"
-                    }
-                    ListElement {
-                        icon: "images/camera_white_balance_sunny.png"
-                        value: CameraImageProcessing.WhiteBalanceSunlight
-                        text: "Sunlight"
-                    }
-                    ListElement {
-                        icon: "images/camera_white_balance_cloudy.png"
-                        value: CameraImageProcessing.WhiteBalanceCloudy
-                        text: "Cloudy"
-                    }
-                    ListElement {
-                        icon: "images/camera_white_balance_incandescent.png"
-                        value: CameraImageProcessing.WhiteBalanceTungsten
-                        text: "Tungsten"
-                    }
-                    ListElement {
-                        icon: "images/camera_white_balance_flourescent.png"
-                        value: CameraImageProcessing.WhiteBalanceFluorescent
-                        text: "Fluorescent"
-                    }
-                }
-                delegate: Kirigami.Action {
-                    text: model.text
-                    iconName: model.icon
-                    onTriggered: {
-                        applicationWindow().cameraPage.camera.imageProcessing.whiteBalanceMode = value
-                    }
-                }
+            Kirigami.Action {
+            iconName: "images/camera_auto_mode.png"
+                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceAuto
+                text: "Auto"
+            }
+            Kirigami.Action {
+                iconName: "images/camera_white_balance_sunny.png"
+                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceSunlight
+                text: "Sunlight"
+            }
+            Kirigami.Action {
+                iconName: "images/camera_white_balance_cloudy.png"
+                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceCloudy
+                text: "Cloudy"
+            }
+            Kirigami.Action {
+                iconName: "images/camera_white_balance_incandescent.png"
+                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceTungsten
+                text: "Tungsten"
+            }
+            Kirigami.Action {
+                iconName: "images/camera_white_balance_flourescent.png"
+                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
+                text: "Fluorescent"
             }
         }
     ]

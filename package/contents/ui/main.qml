@@ -40,15 +40,17 @@
 import QtQuick 2.7
 import org.kde.kirigami 2.2 as Kirigami
 import Qt.labs.settings 1.0
+import QtMultimedia 5.8
 
 Kirigami.ApplicationWindow {
     Settings {
         id: settings
         
         // Default settings
-        property string videoResolution: "640x480"
-        property string photoResolution
-        property string cameraDeviceId
+        property size videoResolution: Qt.size(640, 480)
+        property size photoResolution
+        property int cameraDeviceId
+        property int whiteBalanceMode: CameraImageProcessing.WhiteBalanceAuto
     }
 
     Component {id: cameraPage; CameraPage {}}
@@ -57,6 +59,5 @@ Kirigami.ApplicationWindow {
     title: qsTr("Camera")
     globalDrawer: GlobalDrawer {}
 
-    Component.onCompleted: pageStack.push(cameraPage)
-    
+    pageStack.initialPage: cameraPage
 }
