@@ -84,27 +84,27 @@ Kirigami.GlobalDrawer {
             Kirigami.Action {
             iconName: "images/camera_auto_mode.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceAuto
-                text: "Auto"
+                text: qsTr("Auto")
             }
             Kirigami.Action {
                 iconName: "images/camera_white_balance_sunny.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceSunlight
-                text: "Sunlight"
+                text: qsTr("Sunlight")
             }
             Kirigami.Action {
                 iconName: "images/camera_white_balance_cloudy.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceCloudy
-                text: "Cloudy"
+                text: qsTr("Cloudy")
             }
             Kirigami.Action {
                 iconName: "images/camera_white_balance_incandescent.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceTungsten
-                text: "Tungsten"
+                text: qsTr("Tungsten")
             }
             Kirigami.Action {
                 iconName: "images/camera_white_balance_flourescent.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
-                text: "Fluorescent"
+                text: qsTr("Fluorescent")
             }
         }
     ]
