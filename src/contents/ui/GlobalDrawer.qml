@@ -1,3 +1,4 @@
+
 /****************************************************************************
 **
 ** Copyright (C) 2018 Jonah Brüchert
@@ -36,10 +37,9 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
-
 import org.kde.kirigami 2.0 as Kirigami
 import QtQuick 2.7
-import QtQml.Models 2.2
+import QtQml 2.2
 import QtMultimedia 5.8
 
 Kirigami.GlobalDrawer {
@@ -47,42 +47,43 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: qsTr("Camera")
             iconName: "camera-photo"
-            DelegateModel {
+            Instantiator {
                 model: QtMultimedia.availableCameras
+                onObjectAdded: console.log("object added: " + object.text)
                 delegate: Kirigami.Action {
-                    text: model.displayName
-                    onTriggered: settings.cameraDeviceId = model.deviceId
-                }
-            }
-        },
-        Kirigami.Action {
-            text: qsTr("Video resolution")
-            iconName: "ratiocrop"
-            DelegateModel {
-                model: CameraRecorder.supportedResolutions
-
-                delegate: Kirigami.Action {
-                    text: model
-                    onTriggered: settings.videoResolution = text;
+                    text: modelData.displayName
+                    onTriggered: settings.cameraDeviceId = modelData.deviceId
                 }
             }
         },
         Kirigami.Action {
             text: qsTr("Photo resolution")
             iconName: "ratiocrop"
-            DelegateModel {
+            Instantiator {
                 model: CameraCapture.supportedResolutions
                 delegate: Kirigami.Action {
-                    text: model
-                    onTriggered: settings.photoResolution = text;
+                    text: modelData
+                    onTriggered: settings.photoResolution = text
                 }
             }
         },
         Kirigami.Action {
+            text: qsTr("Video resolution")
+            iconName: "ratiocrop"
+            Instantiator {
+                model: CameraCapture.supportedResolutions
+                delegate: Kirigami.Action {
+                    text: modelData
+                    onTriggered: settings.videoResolution = text
+                }
+            }
+        },
+        Kirigami.Action {
+            id: wbaction
             text: qsTr("White balance")
             iconName: "whitebalance"
             Kirigami.Action {
-            iconName: "images/camera_auto_mode.png"
+                iconName: "images/camera_auto_mode.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceAuto
                 text: qsTr("Auto")
             }
@@ -103,7 +104,8 @@ Kirigami.GlobalDrawer {
             }
             Kirigami.Action {
                 iconName: "images/camera_white_balance_flourescent.png"
-                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
+                onTriggered: settings.whiteBalanceMode
+                             = CameraImageProcessing.WhiteBalanceFluorescent
                 text: qsTr("Fluorescent")
             }
         }

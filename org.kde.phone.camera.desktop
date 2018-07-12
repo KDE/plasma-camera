@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Camera
+Comment=Take photos and record videos
+Version=1.0
+Exec=plasma-camera
+Icon=camera-photo
+Type=Application
+Terminal=false
+Categories=Qt;KDE;

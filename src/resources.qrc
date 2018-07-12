@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="main.qml">contents/ui/main.qml</file>
+        <file alias="CameraPage.qml">contents/ui/CameraPage.qml</file>
+        <file alias="GlobalDrawer.qml">contents/ui/GlobalDrawer.qml</file>
+
+        <file alias="images/camera_auto_mode.png">contents/ui/images/camera_auto_mode.png</file>
+        <file alias="images/camera_camera_setting.png">contents/ui/images/camera_camera_setting.png</file>
+        <file alias="images/camera_flash_auto.png">contents/ui/images/camera_flash_auto.png</file>
+        <file alias="images/camera_white_balance_cloudy.png">contents/ui/images/camera_white_balance_cloudy.png</file>
+        <file alias="images/camera_white_balance_flourescent.png">contents/ui/images/camera_white_balance_flourescent.png</file>
+        <file alias="images/camera_white_balance_incandescent.png">contents/ui/images/camera_white_balance_incandescent.png</file>
+        <file alias="images/camera_flash_fill.png">contents/ui/images/camera_flash_fill.png</file>
+        <file alias="images/camera_flash_off.png">contents/ui/images/camera_flash_off.png</file>
+        <file alias="images/camera_flash_redeye.png">contents/ui/images/camera_flash_redeye.png</file>
+        <file alias="images/camera_white_balance_sunny.png">contents/ui/images/camera_white_balance_sunny.png</file>
+    </qresource>
+</RCC>

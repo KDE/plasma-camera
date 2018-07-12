@@ -1,3 +1,4 @@
+
 /****************************************************************************
 **
 ** Copyright (C) 2018 Jonah Brüchert
@@ -36,7 +37,6 @@
 ** $QT_END_LICENSE$
 **
 ****************************************************************************/
-
 import QtQuick 2.7
 import QtMultimedia 5.8
 import org.kde.kirigami 2.0 as Kirigami
@@ -75,20 +75,18 @@ Kirigami.Page {
             if (camera.captureMode == Camera.CaptureStillImage) {
                 camera.imageCapture.capture()
                 showPassiveNotification(qsTr("Took a photo"))
-            }
-            else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus) {
+            } else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus) {
                 camera.videoRecorder.stop()
                 recordingFeedback.visible = false
                 showPassiveNotification(qsTr("Stopped recording"))
-            }
-            else if (camera.captureMode == Camera.CaptureVideo) {
+            } else if (camera.captureMode == Camera.CaptureVideo) {
                 camera.videoRecorder.record()
                 recordingFeedback.visible = true
                 showPassiveNotification(qsTr("Started recording"))
             }
         }
     }
-    
+
     leftAction: Kirigami.Action {
         id: switchAction
         text: qsTr("Switch mode")
@@ -98,7 +96,7 @@ Kirigami.Page {
                 camera.captureMode = Camera.CaptureVideo
             else
                 camera.captureMode = Camera.CaptureStillImage
-                
+
             console.log("Capture Mode switched")
         }
     }
@@ -132,7 +130,6 @@ Kirigami.Page {
                         camera.start()
                     }
                 }
-                
             }
         ]
 
@@ -155,8 +152,9 @@ Kirigami.Page {
 
         VideoOutput {
             id: viewfinder
-            visible: cameraUI.state == "PhotoCapture" || cameraUI.state == "VideoCapture"
-        
+            visible: cameraUI.state == "PhotoCapture"
+                     || cameraUI.state == "VideoCapture"
+
             // Workaround
             orientation: Kirigami.Settings.isMobile ? -90 : 0
 
@@ -169,11 +167,13 @@ Kirigami.Page {
             anchors.fill: parent
             property real initialZoom
             onPinchStarted: {
-                initialZoom = camera.digitalZoom;
+                initialZoom = camera.digitalZoom
             }
             onPinchUpdated: {
-                var scale = camera.maximumDigitalZoom / 8 * pinch.scale - camera.maximumDigitalZoom / 8;
-                camera.setDigitalZoom(Math.min(camera.maximumDigitalZoom, camera.digitalZoom + scale))
+                var scale = camera.maximumDigitalZoom / 8 * pinch.scale
+                        - camera.maximumDigitalZoom / 8
+                camera.setDigitalZoom(Math.min(camera.maximumDigitalZoom,
+                                               camera.digitalZoom + scale))
             }
         }
 
@@ -182,11 +182,10 @@ Kirigami.Page {
 
             onClicked: {
                 if (camera.lockStatus == Camera.Unlocked) {
-                    camera.searchAndLock();
+                    camera.searchAndLock()
                     console.log("searching focus...")
-                }
-                else {
-                    camera.unlock();
+                } else {
+                    camera.unlock()
                     console.log("unlocking focus...")
                 }
             }
