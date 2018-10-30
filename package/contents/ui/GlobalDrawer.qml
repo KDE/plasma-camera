@@ -93,9 +93,12 @@ Kirigami.GlobalDrawer {
                 var childrenList = []
 
                 for (var i in resolutions) {
+                    var pixels = resolutions[i].width * resolutions[i].height
+                    var megapixels = Math.round(pixels / 10000) / 100
+
                     childrenList[i] = resolutionSubAction.createObject(resolutionAction, {
                         value: resolutions[i],
-                        text: "%1 x %2".arg(resolutions[i].width).arg(resolutions[i].height)
+                        text: "%1 x %2 (%3 MP)".arg(resolutions[i].width).arg(resolutions[i].height).arg(megapixels)
                     })
                     resolutionAction.children = childrenList
 
