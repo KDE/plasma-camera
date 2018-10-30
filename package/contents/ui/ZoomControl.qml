@@ -96,7 +96,7 @@ Item {
             width: parent.width
             height: parent.height - y
             smooth: true
-            radius: 8
+            radius: Kirigami.Units.gridUnit * 0.5
             color: "white"
             opacity: 0.5
         }
@@ -104,7 +104,8 @@ Item {
         Text {
             id: zoomText
             anchors {
-                right: bar.left; rightMargin: Kirigami.Units.gridUnit * 1
+                right: bar.left
+                rightMargin: Kirigami.Units.gridUnit * 1
             }
             y: Math.min(parent.height - height, Math.max(0, groove.y - height / 2))
             text: "x" + Math.round(zoomControl.currentZoom * 100) / 100
@@ -112,7 +113,7 @@ Item {
             color: "white"
             style: Text.Raised; styleColor: "black"
             opacity: 0.85
-            font.pixelSize: 18
+            font.pixelSize: Kirigami.Units.gridUnit
         }
     }
 }
