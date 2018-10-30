@@ -43,19 +43,18 @@ import Qt.labs.settings 1.0
 import QtMultimedia 5.8
 
 Kirigami.ApplicationWindow {
+    id: root
     Settings {
         id: settings
         
         // Default settings
-        property size videoResolution: Qt.size(640, 480)
-        property size photoResolution
-        property int cameraDeviceId
+        property size resolution
+        property string cameraDeviceId
         property int whiteBalanceMode: CameraImageProcessing.WhiteBalanceAuto
     }
 
     Component {id: cameraPage; CameraPage {}}
 
-    id: root
     title: qsTr("Camera")
     globalDrawer: GlobalDrawer {}
 

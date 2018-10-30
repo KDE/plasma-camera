@@ -139,16 +139,17 @@ Kirigami.Page {
         Camera {
             id: camera
             captureMode: Camera.CaptureStillImage
+            deviceId: settings.cameraDeviceId
             imageProcessing.whiteBalanceMode: settings.whiteBalanceMode
 
             imageCapture {
                 id: imageCapture
-                resolution: settings.photoResolution
+                resolution: settings.resolution
             }
 
             videoRecorder {
                 id: videoRecorder
-                resolution: settings.videoResolution
+                resolution: settings.resolution
                 frameRate: 30
             }
         }

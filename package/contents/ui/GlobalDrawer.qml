@@ -43,13 +43,25 @@ import QtMultimedia 5.8
 
 Kirigami.GlobalDrawer {
     Component {
-        id: subAction
+        id: devicesSubAction
+
+        Kirigami.Action {
+            property string value
+
+            onTriggered: {
+                settings.cameraDeviceId = value
+            }
+        }
+    }
+
+    Component {
+        id: resolutionSubAction
 
         Kirigami.Action {
             property size value
 
             onTriggered: {
-                settings.videoResolution = value
+                settings.resolution = value
             }
         }
     }
@@ -64,7 +76,7 @@ Kirigami.GlobalDrawer {
                 var childrenList = []
 
                 for (var i in cameras) {
-                    childrenList[i] = subAction.createObject(devicesAction, {
+                    childrenList[i] = devicesSubAction.createObject(devicesAction, {
                         value: cameras[i].deviceId,
                         text: "%1".arg(cameras[i].displayName)
                     })
@@ -81,7 +93,7 @@ Kirigami.GlobalDrawer {
                 var childrenList = []
 
                 for (var i in resolutions) {
-                    childrenList[i] = subAction.createObject(resolutionAction, {
+                    childrenList[i] = resolutionSubAction.createObject(resolutionAction, {
                         value: resolutions[i],
                         text: "%1 x %2".arg(resolutions[i].width).arg(resolutions[i].height)
                     })
@@ -124,5 +136,6 @@ Kirigami.GlobalDrawer {
 
     Camera {
         id: camera
+        deviceId: settings.cameraDeviceId
     }
 }
