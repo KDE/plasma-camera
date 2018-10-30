@@ -39,46 +39,59 @@
 
 import org.kde.kirigami 2.0 as Kirigami
 import QtQuick 2.7
-import QtQml.Models 2.2
 import QtMultimedia 5.8
 
 Kirigami.GlobalDrawer {
+    Component {
+        id: subAction
+
+        Kirigami.Action {
+            property size value
+
+            onTriggered: {
+                settings.videoResolution = value
+            }
+        }
+    }
+
     actions: [
         Kirigami.Action {
+            id: devicesAction
             text: qsTr("Camera")
             iconName: "camera-photo"
-            DelegateModel {
-                model: QtMultimedia.availableCameras
-                delegate: Kirigami.Action {
-                    text: model.displayName
-                    onTriggered: settings.cameraDeviceId = model.deviceId
-                }
-            }
-        },
-        Kirigami.Action {
-            text: qsTr("Video resolution")
-            iconName: "ratiocrop"
-            DelegateModel {
-                model: CameraRecorder.supportedResolutions
+            Component.onCompleted: {
+                var cameras = QtMultimedia.availableCameras
+                var childrenList = []
 
-                delegate: Kirigami.Action {
-                    text: model
-                    onTriggered: settings.videoResolution = text;
+                for (var i in cameras) {
+                    childrenList[i] = subAction.createObject(devicesAction, {
+                        value: cameras[i].deviceId,
+                        text: "%1".arg(cameras[i].displayName)
+                    })
+                    devicesAction.children = childrenList
                 }
             }
         },
         Kirigami.Action {
-            text: qsTr("Photo resolution")
+            id: resolutionAction
+            text: qsTr("Resolution")
             iconName: "ratiocrop"
-            DelegateModel {
-                model: CameraCapture.supportedResolutions
-                delegate: Kirigami.Action {
-                    text: model
-                    onTriggered: settings.photoResolution = text;
+            Component.onCompleted: {
+                var resolutions = camera.imageCapture.supportedResolutions
+                var childrenList = []
+
+                for (var i in resolutions) {
+                    childrenList[i] = subAction.createObject(resolutionAction, {
+                        value: resolutions[i],
+                        text: "%1 x %2".arg(resolutions[i].width).arg(resolutions[i].height)
+                    })
+                    resolutionAction.children = childrenList
+
                 }
             }
         },
         Kirigami.Action {
+	    id: wbaction
             text: qsTr("White balance")
             iconName: "whitebalance"
             Kirigami.Action {
@@ -108,4 +121,8 @@ Kirigami.GlobalDrawer {
             }
         }
     ]
+
+    Camera {
+        id: camera
+    }
 }
