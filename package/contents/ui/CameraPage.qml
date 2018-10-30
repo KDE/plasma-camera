@@ -194,21 +194,17 @@ Kirigami.Page {
         }
     }
 
-    Controls.Slider {
-        orientation: Qt.Vertical
-
-        from: 1
-        value: camera.digitalZoom
-        to: Math.min(4.0, camera.maximumDigitalZoom)
-
-        height: Kirigami.Units.gridUnit * 20
-
+    ZoomControl {
         anchors {
             right: parent.right
-            verticalCenter: parent.verticalCenter
+            margins: Kirigami.Units.gridUnit * 2
         }
+        width : Kirigami.Units.gridUnit * 2
+        height: parent.height
 
-        onValueChanged: camera.setDigitalZoom(value)
+        currentZoom: camera.digitalZoom
+        maximumZoom: Math.min(4.0, camera.maximumDigitalZoom)
+        onZoomTo: camera.setDigitalZoom(value)
     }
 
     Rectangle {
