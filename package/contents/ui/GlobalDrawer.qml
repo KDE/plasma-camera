@@ -134,6 +134,13 @@ Kirigami.GlobalDrawer {
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
                 text: qsTr("Fluorescent")
             }
+    },
+    Kirigami.Action {
+        text: qsTr("About")
+            iconName: "help-about"
+            onTriggered: {
+                    aboutDialog.open();
+            }
         }
     ]
 

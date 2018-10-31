@@ -55,6 +55,14 @@ Kirigami.ApplicationWindow {
 
     Component {id: cameraPage; CameraPage {}}
 
+    // About Dialog
+    AboutDialog {
+        id: aboutDialog
+        focus: true
+        x: (parent.width - width) / 2
+        y: (parent.height - height) / 2
+    }
+
     title: qsTr("Camera")
     globalDrawer: GlobalDrawer {}
 
