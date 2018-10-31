@@ -65,11 +65,11 @@ Kirigami.Page {
         }
         iconName: {
             if (camera.captureMode == Camera.CaptureStillImage)
-                return qsTr("camera-photo")
+                return camera-photo
             else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
-                return qsTr("window-close")
+                return window-close
             else if (camera.captureMode == Camera.CaptureVideo)
-                return qsTr("video-mp4")
+                return video-mp4
         }
         onTriggered: {
             if (camera.captureMode == Camera.CaptureStillImage) {
