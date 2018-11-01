@@ -50,6 +50,7 @@ Kirigami.ApplicationWindow {
         // Default settings
         property size resolution
         property string cameraDeviceId
+        property int cameraPosition
         property int whiteBalanceMode
     }
 

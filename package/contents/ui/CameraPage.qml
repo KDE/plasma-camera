@@ -53,6 +53,24 @@ Kirigami.Page {
     bottomPadding: 0
     topPadding: 0
 
+    leftAction: Kirigami.Action {
+        id: switchModeAction
+        text: qsTr("Switch mode")
+        iconName: {
+            if (camera.captureMode == Camera.CaptureStillImage)
+                return "video-mp4"
+            else if (camera.captureMode == Camera.CaptureVideo)
+                return "camera-photo"
+        }
+        onTriggered: {
+            if (camera.captureMode == Camera.CaptureStillImage)
+                camera.captureMode = Camera.CaptureVideo
+            else
+                camera.captureMode = Camera.CaptureStillImage
+
+            console.log("Capture Mode switched")
+        }
+    }
     mainAction: Kirigami.Action {
         id: captureAction
         text: {
@@ -65,11 +83,11 @@ Kirigami.Page {
         }
         iconName: {
             if (camera.captureMode == Camera.CaptureStillImage)
-                return camera-photo
+                return "camera-photo"
             else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
-                return window-close
+                return "window-close"
             else if (camera.captureMode == Camera.CaptureVideo)
-                return video-mp4
+                return "video-mp4"
         }
         onTriggered: {
             if (camera.captureMode == Camera.CaptureStillImage) {
@@ -88,18 +106,16 @@ Kirigami.Page {
             }
         }
     }
-    
-    leftAction: Kirigami.Action {
-        id: switchAction
-        text: qsTr("Switch mode")
-        iconName: "document-swap"
+    rightAction: Kirigami.Action {
+        id: switchCameaAction
+        text: qsTr("Switch Camera")
+        iconName: "camera-photo"
+        enabled: (camera.position != "")
         onTriggered: {
-            if (camera.captureMode == Camera.CaptureStillImage)
-                camera.captureMode = Camera.CaptureVideo
-            else
-                camera.captureMode = Camera.CaptureStillImage
-                
-            console.log("Capture Mode switched")
+            if (settings.cameraPosition == Camera.BackFace)
+                settings.cameraPosition = Camera.FrontFace
+            else if (settings.cameraPosition == Camera.FrontFace)
+                settings.cameraPosition = Camera.BackFace
         }
     }
 
