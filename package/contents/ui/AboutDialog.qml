@@ -41,7 +41,7 @@ Controls.Dialog {
 
     GridLayout {
         anchors.fill: parent
-        flow: mainWindow.width > mainWindow.height ? GridLayout.LeftToRight : GridLayout.TopToBottom
+        flow: root.width > root.height ? GridLayout.LeftToRight : GridLayout.TopToBottom
         columnSpacing: 20
         rowSpacing: 20
 
