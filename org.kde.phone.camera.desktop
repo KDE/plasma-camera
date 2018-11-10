@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Encoding=UTF-8
+Keywords=
+Name=Camera
+Type=Application
+Icon=camera-photo
+Exec=plasma-camera
+X-KDE-PluginInfo-Author=Marco Martin
+X-KDE-PluginInfo-Category=Miscellaneous
+X-KDE-PluginInfo-Email=mart@kde.org
+X-KDE-PluginInfo-License=GPL
