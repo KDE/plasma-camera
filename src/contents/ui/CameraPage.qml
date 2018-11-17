@@ -55,7 +55,7 @@ Kirigami.Page {
 
     leftAction: Kirigami.Action {
         id: switchModeAction
-        text: qsTr("Switch mode")
+        text: i18n("Switch mode")
         iconName: {
             if (camera.captureMode == Camera.CaptureStillImage)
                 return "video-mp4"
@@ -75,11 +75,11 @@ Kirigami.Page {
         id: captureAction
         text: {
             if (camera.captureMode == Camera.CaptureStillImage)
-                return qsTr("Capture photo")
+                return i18n("Capture photo")
             else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
-                return qsTr("Stop recording video")
+                return i18n("Stop recording video")
             else if (camera.captureMode == Camera.CaptureVideo)
-                return qsTr("Start recording video")
+                return i18n("Start recording video")
         }
         iconName: {
             if (camera.captureMode == Camera.CaptureStillImage)
@@ -92,23 +92,23 @@ Kirigami.Page {
         onTriggered: {
             if (camera.captureMode == Camera.CaptureStillImage) {
                 camera.imageCapture.capture()
-                showPassiveNotification(qsTr("Took a photo"))
+                showPassiveNotification(i18n("Took a photo"))
             }
             else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus) {
                 camera.videoRecorder.stop()
                 recordingFeedback.visible = false
-                showPassiveNotification(qsTr("Stopped recording"))
+                showPassiveNotification(i18n("Stopped recording"))
             }
             else if (camera.captureMode == Camera.CaptureVideo) {
                 camera.videoRecorder.record()
                 recordingFeedback.visible = true
-                showPassiveNotification(qsTr("Started recording"))
+                showPassiveNotification(i18n("Started recording"))
             }
         }
     }
     rightAction: Kirigami.Action {
         id: switchCameaAction
-        text: qsTr("Switch Camera")
+        text: i18n("Switch Camera")
         iconName: "camera-photo"
         enabled: (camera.position != "")
         onTriggered: {

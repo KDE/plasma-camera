@@ -69,7 +69,7 @@ Kirigami.GlobalDrawer {
     actions: [
         Kirigami.Action {
             id: devicesAction
-            text: qsTr("Camera")
+            text: i18n("Camera")
             iconName: "camera-photo"
             Component.onCompleted: {
                 var cameras = QtMultimedia.availableCameras
@@ -86,7 +86,7 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
             id: resolutionAction
-            text: qsTr("Resolution")
+            text: i18n("Resolution")
             iconName: "ratiocrop"
             Component.onCompleted: {
                 var resolutions = camera.imageCapture.supportedResolutions
@@ -107,36 +107,36 @@ Kirigami.GlobalDrawer {
         },
         Kirigami.Action {
 	    id: wbaction
-            text: qsTr("White balance")
+            text: i18n("White balance")
             iconName: "whitebalance"
             Kirigami.Action {
                 iconName: "qrc:///camera_auto_mode.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceAuto
-                text: qsTr("Auto")
+                text: i18n("Auto")
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_sunny.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceSunlight
-                text: qsTr("Sunlight")
+                text: i18n("Sunlight")
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_cloudy.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceCloudy
-                text: qsTr("Cloudy")
+                text: i18n("Cloudy")
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_incandescent.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceTungsten
-                text: qsTr("Tungsten")
+                text: i18n("Tungsten")
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_flourescent.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
-                text: qsTr("Fluorescent")
+                text: i18n("Fluorescent")
             }
     },
     Kirigami.Action {
-        text: qsTr("About")
+        text: i18n("About")
             iconName: "help-about"
             onTriggered: {
                     aboutDialog.open();

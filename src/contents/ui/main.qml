@@ -64,7 +64,7 @@ Kirigami.ApplicationWindow {
         y: (parent.height - height) / 2
     }
 
-    title: qsTr("Camera")
+    title: i18n("Camera")
     globalDrawer: GlobalDrawer {}
 
     pageStack.initialPage: cameraPage

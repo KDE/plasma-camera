@@ -69,7 +69,7 @@ Controls.Dialog {
             }
 
             Controls.Label {
-                text: "<i>" + qsTr("Simple camera application") + "</i>"
+                text: "<i>" + i18n("Simple camera application") + "</i>"
                 textFormat: Text.StyledText
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
@@ -77,7 +77,7 @@ Controls.Dialog {
             }
 
             Controls.Label {
-                text: "<b>" + qsTr("License:") + "</b> GPLv2+"
+                text: "<b>" + i18n("License:") + "</b> GPLv2+"
                 textFormat: Text.StyledText
                 wrapMode: Text.WordWrap
                 Layout.fillWidth: true
@@ -99,7 +99,7 @@ Controls.Dialog {
             }
 
             Controls.ToolButton {
-                text: qsTr("View source code online")
+                text: i18n("View source code online")
                 onClicked: Qt.openUrlExternally("https://phabricator.kde.org/source/plasma-camera/")
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignHCenter

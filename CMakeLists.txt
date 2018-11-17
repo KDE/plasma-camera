@@ -33,7 +33,7 @@ set(KF5_VERSION "5.22.0")
 
 find_package(Qt5 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2)
 
-find_package(KF5Kirigami2 ${KF5_DEP_VERSION} "5.22.0")
+find_package(KF5 COMPONENTS I18n Kirigami2 ${KF5_DEP_VERSION} "5.22.0")
 
 ################# Enable C++11 features for clang and gcc #################
 
