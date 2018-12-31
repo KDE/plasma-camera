@@ -50,7 +50,7 @@ find_package(PkgConfig)
 
 add_subdirectory(src)
 
-install(PROGRAMS org.kde.phone.camera.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(PROGRAMS org.kde.mobile.camera.desktop DESTINATION ${KDE_INSTALL_APPDIR})
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
