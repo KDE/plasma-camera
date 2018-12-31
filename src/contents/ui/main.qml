@@ -68,5 +68,10 @@ Kirigami.ApplicationWindow {
     globalDrawer: GlobalDrawer {}
 
     pageStack.initialPage: cameraPage
-    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.None
+    pageStack.globalToolBar.style: {
+        if (Kirigami.Settings.isMobile)
+            return Kirigami.ApplicationHeaderStyle.None
+        else
+            return Kirigami.ApplicationHeaderStyle.ToolBar
+    }
 }
