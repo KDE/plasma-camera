@@ -128,7 +128,7 @@ Kirigami.Page {
             centerIn: parent
         }
 
-        color: "darkgrey"
+        color: "black"
 
         states: [
             State {
