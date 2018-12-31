@@ -51,6 +51,6 @@ find_package(PkgConfig)
 add_subdirectory(src)
 
 install(PROGRAMS org.kde.mobile.camera.desktop DESTINATION ${KDE_INSTALL_APPDIR})
+install(FILES org.kde.mobile.camera.appdata.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
