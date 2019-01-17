@@ -1,11 +1,11 @@
 {
     "id": "org.kde.mobile.camera",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.11",
+    "runtime-version": "5.12",
     "sdk": "org.kde.Sdk",
     "command": "plasma-camera",
     "tags": ["nightly"],
-    "desktop-file-name-prefix": "(Nightly) ",
+    "desktop-file-name-suffix": " (Nightly)",
     "finish-args": [
         "--share=ipc",
         "--share=network",
@@ -17,6 +17,70 @@
     "separate-locales": false,
 
     "modules": [
+        {
+            "name": "gstreamer",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
+                "-Ddisable_gtkdoc=true"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "branch": "1.14.4",
+                    "url": "git://anongit.freedesktop.org/gstreamer/gstreamer",
+                    "commit": "3c586dec930c5c253da0cf49e3f3846243f0ecf5"
+                }
+            ]
+        },
+        {
+            "name": "gst-plugins-base",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
+                "-Ddisable_gtkdoc=true"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "branch": "1.14.4",
+                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-base",
+                    "commit": "384ff7d0268c71e76f7328a9ca6dfe96e4a3ab23"
+                }
+            ]
+        },
+        {
+            "name": "gst-plugins-good",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
+                "-Ddisable_gtkdoc=true"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "branch": "1.14.4",
+                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-good",
+                    "commit": "d88d1b0e43b140587f35c7c9bf390fae051e427d"
+                }
+            ]
+        },
+        {
+            "name": "gst-plugins-bad",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
+                "-Ddisable_gtkdoc=true"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "branch": "1.14.4",
+                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-bad",
+                    "commit": "566e4ecc223b18fce8bd932f5e4885f41f746dd4"
+                }
+            ]
+        },
         {
             "name": "plasma-camera",
             "buildsystem": "cmake-ninja",
