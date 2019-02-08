@@ -260,7 +260,7 @@ Kirigami.Page {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: Qt.openUrlExternally(imageCapture.capturedImagePath)
+            onClicked: Qt.openUrlExternally("file://" + imageCapture.capturedImagePath)
         }
 
         anchors {
@@ -272,7 +272,7 @@ Kirigami.Page {
         Image {
             fillMode: Image.PreserveAspectCrop
             anchors.fill: parent
-            source: imageCapture.capturedImagePath
+            source: "file://" + imageCapture.capturedImagePath
         }
     }
 }
