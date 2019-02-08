@@ -56,11 +56,12 @@ Kirigami.Page {
     leftAction: Kirigami.Action {
         id: switchModeAction
         text: i18n("Switch mode")
-        iconName: {
+        icon.color: transparent
+        icon.name: {
             if (camera.captureMode == Camera.CaptureStillImage)
                 return "video-mp4"
             else if (camera.captureMode == Camera.CaptureVideo)
-                return "camera-photo"
+                return "camera-photo-symbolic"
         }
         onTriggered: {
             if (camera.captureMode == Camera.CaptureStillImage)
