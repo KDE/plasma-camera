@@ -2,35 +2,45 @@
 <component type="desktop-application">
   <id>org.kde.mobile.camera</id>
   <name>Plasma Camera</name>
+  <name xml:lang="ca">Càmera del Plasma</name>
   <name xml:lang="gl">Cámara de Plasma</name>
   <name xml:lang="nl">Plasma Camera</name>
+  <name xml:lang="sk">Plasma Camera</name>
   <name xml:lang="sv">Plasma kamera</name>
   <name xml:lang="uk">Фотоапарат Плазми</name>
   <name xml:lang="x-test">xxPlasma Cameraxx</name>
   <summary>Take photos and videos</summary>
+  <summary xml:lang="ca">Pren fotos i vídeos</summary>
   <summary xml:lang="gl">Sacar fotos e gravar vídeos</summary>
   <summary xml:lang="nl">Neemt foto's en video's</summary>
+  <summary xml:lang="sk">Tvorba fotiek a videa</summary>
   <summary xml:lang="sv">Ta foton och spela in videor</summary>
   <summary xml:lang="uk">Програма для створення фотографій і відео</summary>
   <summary xml:lang="x-test">xxTake photos and videosxx</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <developer_name>KDE Community</developer_name>
+  <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="gl">Comunidade KDE</developer_name>
   <developer_name xml:lang="nl">KDE gemeenschap</developer_name>
+  <developer_name xml:lang="sk">KDE komunita</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
   <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
   <description>
     <p>Camera Application for Plasma Mobile.</p>
+    <p xml:lang="ca">Aplicació de càmera per al Plasma Mobile.</p>
     <p xml:lang="gl">Aplicativo de cámara para Plasma Mobile.</p>
     <p xml:lang="nl">Camera-Toepassing voor Plasma Mobile.</p>
+    <p xml:lang="sk">Aplikácia Camera pre Plasma Mobile</p>
     <p xml:lang="sv">Kameraprogram för Plasma Mobil</p>
     <p xml:lang="uk">Програма-фотоапарат для мобільної Плазми.</p>
     <p xml:lang="x-test">xxCamera Application for Plasma Mobile.xx</p>
     <p>It supports different resolutions, different white balance modes and switching between different camera devices.</p>
+    <p xml:lang="ca">Permet resolucions diferents, modes diferents de balanç de blancs i commutar entre dispositius de càmera diferents.</p>
     <p xml:lang="gl">Permite varias resolucións, distintos modos de equilibrio de blancos e cambiar entre distintos dispositivos de cámara.</p>
     <p xml:lang="nl">Het ondersteunt verschillende resoluties, verschillende modi witbalans en omschakelen tussen verschillende camera-apparaten.</p>
+    <p xml:lang="sk">Podporuje rôzne rozlíšenia, vyváženie bielej a prepínanie medzi rôznymi zariadeniami fotoaparátu.</p>
     <p xml:lang="sv">Det stöder olika upplösningar, olika vitbalanslägen och byte mellan olika kameraenheter.</p>
     <p xml:lang="uk">Передбачено підтримку різних роздільних здатностей, різних режимів балансу білого і перемикання між різними пристроями для створення зображень.</p>
     <p xml:lang="x-test">xxIt supports different resolutions, different white balance modes and switching between different camera devices.xx</p>
