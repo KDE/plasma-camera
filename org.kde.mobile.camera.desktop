@@ -11,6 +11,7 @@ Name[sk]=Fotoaparát
 Name[sv]=Kamera
 Name[uk]=Фотоапарат
 Name[x-test]=xxCameraxx
+Name[zh_TW]=相機
 Type=Application
 Icon=camera-photo
 Exec=plasma-camera
