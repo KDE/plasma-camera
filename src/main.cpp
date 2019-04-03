@@ -9,7 +9,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QApplication app(argc, argv);
     QCoreApplication::setOrganizationName("KDE");
     QCoreApplication::setOrganizationDomain("kde.org");
-    QCoreApplication::setApplicationName("phone.camera");
+    QCoreApplication::setApplicationName("plasma-camera");
 
     QQmlApplicationEngine engine;
 
