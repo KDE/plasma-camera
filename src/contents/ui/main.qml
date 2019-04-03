@@ -54,7 +54,13 @@ Kirigami.ApplicationWindow {
         property int whiteBalanceMode
     }
 
-    Component {id: cameraPage; CameraPage {}}
+    Component {
+        id: cameraPage
+
+        CameraPage {
+            camera: mainCamera
+        }
+    }
 
     // About Dialog
     AboutDialog {
@@ -64,8 +70,28 @@ Kirigami.ApplicationWindow {
         y: (parent.height - height) / 2
     }
 
+    Camera {
+        id: mainCamera
+        captureMode: Camera.CaptureStillImage
+        deviceId: settings.cameraDeviceId
+        imageProcessing.whiteBalanceMode: settings.whiteBalanceMode
+
+        imageCapture {
+            id: imageCapture
+            resolution: settings.resolution
+        }
+
+        videoRecorder {
+            id: videoRecorder
+            resolution: settings.resolution
+            frameRate: 30
+        }
+    }
+
     title: i18n("Camera")
-    globalDrawer: GlobalDrawer {}
+    globalDrawer: GlobalDrawer {
+        camera: mainCamera
+    }
 
     pageStack.initialPage: cameraPage
     pageStack.globalToolBar.style: {

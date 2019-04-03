@@ -42,6 +42,9 @@ import QtQuick 2.7
 import QtMultimedia 5.8
 
 Kirigami.GlobalDrawer {
+    id: drawer
+    property var camera
+
     Component {
         id: devicesSubAction
 
@@ -89,7 +92,7 @@ Kirigami.GlobalDrawer {
             text: i18n("Resolution")
             iconName: "ratiocrop"
             Component.onCompleted: {
-                var resolutions = camera.imageCapture.supportedResolutions
+                var resolutions = drawer.camera.imageCapture.supportedResolutions
                 var childrenList = []
 
                 for (var i in resolutions) {
@@ -143,9 +146,4 @@ Kirigami.GlobalDrawer {
             }
         }
     ]
-
-    Camera {
-        id: camera
-        deviceId: settings.cameraDeviceId
-    }
 }

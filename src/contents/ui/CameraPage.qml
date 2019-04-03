@@ -48,6 +48,8 @@ import QtGraphicalEffects 1.0
 Kirigami.Page {
     id: cameraPage
 
+    property var camera
+
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0
@@ -56,15 +58,15 @@ Kirigami.Page {
     leftAction: Kirigami.Action {
         id: switchModeAction
         text: i18n("Switch mode")
-        icon.color: transparent
+        icon.color: "transparent"
         icon.name: {
-            if (camera.captureMode == Camera.CaptureStillImage)
+            if (camera.captureMode === Camera.CaptureStillImage)
                 return "video-mp4"
-            else if (camera.captureMode == Camera.CaptureVideo)
+            else if (camera.captureMode === Camera.CaptureVideo)
                 return "camera-photo-symbolic"
         }
         onTriggered: {
-            if (camera.captureMode == Camera.CaptureStillImage)
+            if (camera.captureMode === Camera.CaptureStillImage)
                 camera.captureMode = Camera.CaptureVideo
             else
                 camera.captureMode = Camera.CaptureStillImage
@@ -75,32 +77,33 @@ Kirigami.Page {
     mainAction: Kirigami.Action {
         id: captureAction
         text: {
-            if (camera.captureMode == Camera.CaptureStillImage)
+            if (camera.captureMode === Camera.CaptureStillImage)
                 return i18n("Capture photo")
-            else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
+            else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus)
                 return i18n("Stop recording video")
-            else if (camera.captureMode == Camera.CaptureVideo)
+            else if (camera.captureMode === Camera.CaptureVideo)
                 return i18n("Start recording video")
         }
-        iconName: {
-            if (camera.captureMode == Camera.CaptureStillImage)
+        icon.color: "transparent"
+        icon.name: {
+            if (camera.captureMode === Camera.CaptureStillImage)
                 return "camera-photo"
-            else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus)
+            else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus)
                 return "window-close"
-            else if (camera.captureMode == Camera.CaptureVideo)
+            else if (camera.captureMode === Camera.CaptureVideo)
                 return "video-mp4"
         }
         onTriggered: {
-            if (camera.captureMode == Camera.CaptureStillImage) {
+            if (camera.captureMode === Camera.CaptureStillImage) {
                 camera.imageCapture.capture()
                 showPassiveNotification(i18n("Took a photo"))
             }
-            else if (camera.videoRecorder.recorderStatus == CameraRecorder.RecordingStatus) {
+            else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus) {
                 camera.videoRecorder.stop()
                 recordingFeedback.visible = false
                 showPassiveNotification(i18n("Stopped recording"))
             }
-            else if (camera.captureMode == Camera.CaptureVideo) {
+            else if (camera.captureMode === Camera.CaptureVideo) {
                 camera.videoRecorder.record()
                 recordingFeedback.visible = true
                 showPassiveNotification(i18n("Started recording"))
@@ -110,8 +113,9 @@ Kirigami.Page {
     rightAction: Kirigami.Action {
         id: switchCameaAction
         text: i18n("Switch Camera")
-        iconName: "camera-photo"
-        enabled: (camera.position != "")
+        icon.color: "transparent"
+        icon.name: "camera-photo"
+        enabled: (camera.position !== Camera.UnspecifiedPosition)
         onTriggered: {
             if (settings.cameraPosition == Camera.BackFace)
                 settings.cameraPosition = Camera.FrontFace
@@ -136,8 +140,8 @@ Kirigami.Page {
                 name: "PhotoCapture"
                 StateChangeScript {
                     script: {
-                        camera.captureMode = Camera.CaptureStillImage
-                        camera.start()
+                        cameraPage.camera.captureMode = Camera.CaptureStillImage
+                        cameraPage.camera.start()
                     }
                 }
             },
@@ -145,31 +149,13 @@ Kirigami.Page {
                 name: "VideoCapture"
                 StateChangeScript {
                     script: {
-                        camera.captureMode = Camera.CaptureVideo
-                        camera.start()
+                        cameraPage.camera.captureMode = Camera.CaptureVideo
+                        cameraPage.camera.start()
                     }
                 }
                 
             }
         ]
-
-        Camera {
-            id: camera
-            captureMode: Camera.CaptureStillImage
-            deviceId: settings.cameraDeviceId
-            imageProcessing.whiteBalanceMode: settings.whiteBalanceMode
-
-            imageCapture {
-                id: imageCapture
-                resolution: settings.resolution
-            }
-
-            videoRecorder {
-                id: videoRecorder
-                resolution: settings.resolution
-                frameRate: 30
-            }
-        }
 
         VideoOutput {
             id: viewfinder
@@ -180,18 +166,18 @@ Kirigami.Page {
 
             anchors.fill: parent
 
-            source: camera
+            source: cameraPage.camera
         }
 
         PinchArea {
             anchors.fill: parent
             property real initialZoom
             onPinchStarted: {
-                initialZoom = camera.digitalZoom;
+                initialZoom = cameraPage.camera.digitalZoom;
             }
             onPinchUpdated: {
-                var scale = camera.maximumDigitalZoom / 8 * pinch.scale - camera.maximumDigitalZoom / 8;
-                camera.setDigitalZoom(Math.min(camera.maximumDigitalZoom, camera.digitalZoom + scale))
+                var scale = cameraPage.camera.maximumDigitalZoom / 8 * pinch.scale - cameraPage.camera.maximumDigitalZoom / 8;
+                cameraPage.camera.setDigitalZoom(Math.min(cameraPage.camera.maximumDigitalZoom, cameraPage.camera.digitalZoom + scale))
             }
         }
 
@@ -199,12 +185,12 @@ Kirigami.Page {
             anchors.fill: parent
 
             onClicked: {
-                if (camera.lockStatus == Camera.Unlocked) {
-                    camera.searchAndLock();
+                if (cameraPage.camera.lockStatus === cameraPage.camera.Unlocked) {
+                    cameraPage.camera.searchAndLock();
                     console.log("searching focus...")
                 }
                 else {
-                    camera.unlock();
+                    cameraPage.camera.unlock();
                     console.log("unlocking focus...")
                 }
             }
@@ -219,9 +205,9 @@ Kirigami.Page {
         width : Kirigami.Units.gridUnit * 2
         height: parent.height
 
-        currentZoom: camera.digitalZoom
-        maximumZoom: Math.min(4.0, camera.maximumDigitalZoom)
-        onZoomTo: camera.setDigitalZoom(value)
+        currentZoom: cameraPage.camera.digitalZoom
+        maximumZoom: Math.min(4.0, cameraPage.camera.maximumDigitalZoom)
+        onZoomTo: cameraPage.camera.setDigitalZoom(value)
     }
 
     Rectangle {
