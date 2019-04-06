@@ -7,6 +7,7 @@
   <name xml:lang="en-GB">Plasma Camera</name>
   <name xml:lang="es">Cámara de Plasma</name>
   <name xml:lang="gl">Cámara de Plasma</name>
+  <name xml:lang="it">Plasma Camera</name>
   <name xml:lang="nl">Plasma Camera</name>
   <name xml:lang="nn">Plasma-kamera</name>
   <name xml:lang="pt">Câmara do Plasma</name>
@@ -21,6 +22,7 @@
   <summary xml:lang="en-GB">Take photos and videos</summary>
   <summary xml:lang="es">Realizar fotos y vídeos</summary>
   <summary xml:lang="gl">Sacar fotos e gravar vídeos</summary>
+  <summary xml:lang="it">Acquisisce foto e video</summary>
   <summary xml:lang="nl">Neemt foto's en video's</summary>
   <summary xml:lang="nn">Ta bilete og videoar</summary>
   <summary xml:lang="pt">Tire fotografias e grave vídeos</summary>
@@ -37,6 +39,7 @@
   <developer_name xml:lang="en-GB">KDE Community</developer_name>
   <developer_name xml:lang="es">Comunidad KDE</developer_name>
   <developer_name xml:lang="gl">Comunidade KDE</developer_name>
+  <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="nl">KDE gemeenschap</developer_name>
   <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
@@ -52,6 +55,7 @@
     <p xml:lang="en-GB">Camera Application for Plasma Mobile.</p>
     <p xml:lang="es">Aplicación de cámara para Plasma Mobile.</p>
     <p xml:lang="gl">Aplicativo de cámara para Plasma Mobile.</p>
+    <p xml:lang="it">Applicazione per la fotocamera per Plasma Mobile.</p>
     <p xml:lang="nl">Camera-Toepassing voor Plasma Mobile.</p>
     <p xml:lang="nn">Kameraprogram for Plasma Mobile.</p>
     <p xml:lang="pt">Aplicação de Câmara para o Plasma Mobile.</p>
@@ -66,6 +70,7 @@
     <p xml:lang="en-GB">It supports different resolutions, different white balance modes and switching between different camera devices.</p>
     <p xml:lang="es">Permite diferentes resoluciones, distintos modos de balance de blancos y cambiar entre distintos dispositivos de cámara.</p>
     <p xml:lang="gl">Permite varias resolucións, distintos modos de equilibrio de blancos e cambiar entre distintos dispositivos de cámara.</p>
+    <p xml:lang="it">Supporta varie risoluzioni, varie modalità di bilanciamento del bianco e il passaggio alle diverse fotocamere dei dispositivi.</p>
     <p xml:lang="nl">Het ondersteunt verschillende resoluties, verschillende modi witbalans en omschakelen tussen verschillende camera-apparaten.</p>
     <p xml:lang="nn">Støttar ulike oppløysingar, kvitbalansemetodar og byte mellom ulike kameraeiningar.</p>
     <p xml:lang="pt">Suporta diferentes resoluções, diferentes modos de balanceamento de branco e mudança entre diferentes dispositivos de câmaras.</p>
