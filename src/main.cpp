@@ -18,6 +18,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty()) {
         return -1;
     }
-    int ret = app.exec();
-    return ret;
+
+    return app.exec();
 }
