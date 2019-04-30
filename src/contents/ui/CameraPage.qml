@@ -109,6 +109,12 @@ Kirigami.Page {
                 showPassiveNotification(i18n("Started recording"))
             }
         }
+        enabled: {
+            if (camera.captureMode === camera.CaptureStillImage)
+                return camera.imageCapture.ready
+            else
+                return true
+        }
     }
     rightAction: Kirigami.Action {
         id: switchCameaAction
@@ -156,6 +162,17 @@ Kirigami.Page {
                 
             }
         ]
+
+        Kirigami.Heading {
+            anchors.centerIn: parent
+            wrapMode: Text.WordWrap
+            text: {
+                if (cameraPage.camera.availability === Camera.Unavailable)
+                    return i18n("Camera not available")
+                else if (cameraPage.camera.availability === Camera.Busy)
+                    return i18n("Camera is busy. Is another application using it?")
+            }
+        }
 
         VideoOutput {
             id: viewfinder
