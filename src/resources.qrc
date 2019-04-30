@@ -5,7 +5,6 @@
         <file alias="CameraPage.qml">contents/ui/CameraPage.qml</file>
         <file alias="AboutDialog.qml">contents/ui/AboutDialog.qml</file>
         <file alias="ZoomControl.qml">contents/ui/ZoomControl.qml</file>
-
         <file alias="camera_flash_off.png">contents/ui/images/camera_flash_off.png</file>
         <file alias="camera_camera_setting.png">contents/ui/images/camera_camera_setting.png</file>
         <file alias="camera_auto_mode.png">contents/ui/images/camera_auto_mode.png</file>
@@ -16,5 +15,6 @@
         <file alias="camera_white_balance_cloudy.png">contents/ui/images/camera_white_balance_cloudy.png</file>
         <file alias="camera_white_balance_flourescent.png">contents/ui/images/camera_white_balance_flourescent.png</file>
         <file alias="camera_flash_fill.png">contents/ui/images/camera_flash_fill.png</file>
+        <file alias="PreviewArea.qml">contents/ui/PreviewArea.qml</file>
     </qresource>
 </RCC>

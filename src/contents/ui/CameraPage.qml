@@ -45,6 +45,7 @@ import QtQuick.Controls.Material 2.0
 import QtQuick.Layouts 1.2
 import QtGraphicalEffects 1.0
 
+
 Kirigami.Page {
     id: cameraPage
 
@@ -249,33 +250,13 @@ Kirigami.Page {
         }
     }
 
-    Rectangle {
-        id: preview
-        visible: imageCapture.capturedImagePath
-        width: Kirigami.Units.gridUnit * 6
-        height: width
-        layer.enabled: preview.enabled
-        layer.effect: DropShadow {
-            color: Material.dropShadowColor
-            samples: 30
-            spread: 0.5
-        }
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: Qt.openUrlExternally("file://" + imageCapture.capturedImagePath)
-        }
+    PreviewArea {
+        imageCapture: camera.imageCapture
 
         anchors {
             right: parent.right
             bottom: parent.bottom
             margins: Kirigami.Units.gridUnit
-        }
-
-        Image {
-            fillMode: Image.PreserveAspectCrop
-            anchors.fill: parent
-            source: "file://" + imageCapture.capturedImagePath
         }
     }
 }
