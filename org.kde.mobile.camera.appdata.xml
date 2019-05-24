@@ -96,4 +96,9 @@
     <p xml:lang="x-test">xxIt supports different resolutions, different white balance modes and switching between different camera devices.xx</p>
     <p xml:lang="zh-TW">此相機支援不同的解析度、白平衡模式，且允許切換成不同的相機裝置。</p>
   </description>
+  <screenshots>
+    <screenshot>
+      <image>https://cdn.kde.org/screenshots/plasma-camera/plasma-camera.png</image>
+    </screenshot>
+  </screenshots>
 </component>
