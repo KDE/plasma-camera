@@ -62,7 +62,7 @@ Kirigami.Page {
         icon.color: "transparent"
         icon.name: {
             if (camera.captureMode === Camera.CaptureStillImage)
-                return "video-mp4"
+                return "emblem-videos-symbolic"
             else if (camera.captureMode === Camera.CaptureVideo)
                 return "camera-photo-symbolic"
         }
@@ -88,11 +88,11 @@ Kirigami.Page {
         icon.color: "transparent"
         icon.name: {
             if (camera.captureMode === Camera.CaptureStillImage)
-                return "camera-photo"
+                return "camera-photo-symbolic"
             else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus)
-                return "window-close"
+                return "window-close-symbolic"
             else if (camera.captureMode === Camera.CaptureVideo)
-                return "video-mp4"
+                return "emblem-videos-symbolic"
         }
         onTriggered: {
             if (camera.captureMode === Camera.CaptureStillImage) {
@@ -121,7 +121,7 @@ Kirigami.Page {
         id: switchCameaAction
         text: i18n("Switch Camera")
         icon.color: "transparent"
-        icon.name: "camera-photo"
+        icon.name: "camera-photo-symbolic"
         enabled: (camera.position !== Camera.UnspecifiedPosition)
         onTriggered: {
             if (settings.cameraPosition == Camera.BackFace)
