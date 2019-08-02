@@ -8,6 +8,7 @@
 // KDE includes
 #include <KAboutData>
 #include <KLocalizedString>
+#include <KLocalizedContext>
 
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
@@ -36,6 +37,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     engine.rootContext()->setContextProperty(QStringLiteral("cameraAboutData"),
                                              QVariant::fromValue(KAboutData::applicationData()));
+    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
 
