@@ -27,6 +27,6 @@ Rectangle {
     Image {
         fillMode: Image.PreserveAspectCrop
         anchors.fill: parent
-        source: "file://" + imageCapture.capturedImagePath
+        source: imageCapture.capturedImagePath ? "file://" + imageCapture.capturedImagePath : ""
     }
 }
