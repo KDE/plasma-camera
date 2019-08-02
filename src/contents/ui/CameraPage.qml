@@ -51,6 +51,8 @@ Kirigami.Page {
 
     property var camera
 
+    title: i18n("Camera")
+
     leftPadding: 0
     rightPadding: 0
     bottomPadding: 0

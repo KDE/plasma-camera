@@ -44,6 +44,9 @@ import QtMultimedia 5.8
 
 Kirigami.ApplicationWindow {
     id: root
+
+    readonly property int headerStyle: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.None : Kirigami.ApplicationHeaderStyle.ToolBar
+
     Settings {
         id: settings
         
@@ -62,12 +65,10 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    // About Dialog
-    AboutDialog {
-        id: aboutDialog
-        focus: true
-        x: (parent.width - width) / 2
-        y: (parent.height - height) / 2
+    Component {
+        id: aboutPage
+
+        AboutPage {}
     }
 
     Camera {
@@ -94,10 +95,5 @@ Kirigami.ApplicationWindow {
     }
 
     pageStack.initialPage: cameraPage
-    pageStack.globalToolBar.style: {
-        if (Kirigami.Settings.isMobile)
-            return Kirigami.ApplicationHeaderStyle.None
-        else
-            return Kirigami.ApplicationHeaderStyle.ToolBar
-    }
+    pageStack.globalToolBar.style: applicationWindow().headerStyle
 }

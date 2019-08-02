@@ -3,7 +3,7 @@
         <file alias="main.qml">contents/ui/main.qml</file>
         <file alias="GlobalDrawer.qml">contents/ui/GlobalDrawer.qml</file>
         <file alias="CameraPage.qml">contents/ui/CameraPage.qml</file>
-        <file alias="AboutDialog.qml">contents/ui/AboutDialog.qml</file>
+        <file alias="AboutPage.qml">contents/ui/AboutPage.qml</file>
         <file alias="ZoomControl.qml">contents/ui/ZoomControl.qml</file>
         <file alias="camera_flash_off.png">contents/ui/images/camera_flash_off.png</file>
         <file alias="camera_camera_setting.png">contents/ui/images/camera_camera_setting.png</file>
