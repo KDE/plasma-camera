@@ -142,7 +142,10 @@ Kirigami.GlobalDrawer {
         text: i18n("About")
             iconName: "help-about"
             onTriggered: {
-                    aboutDialog.open();
+                while (pageStack.depth > 1)
+                    pageStack.pop()
+
+                pageStack.push(aboutPage)
             }
         }
     ]
