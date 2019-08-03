@@ -26,6 +26,7 @@
   <summary>Take photos and videos</summary>
   <summary xml:lang="ca">Pren fotos i vídeos</summary>
   <summary xml:lang="ca-valencia">Pren fotos i vídeos</summary>
+  <summary xml:lang="de">Fotos und Videos aufnehmen</summary>
   <summary xml:lang="el">Παίρνει φωτογραφίες και βίντεο</summary>
   <summary xml:lang="en-GB">Take photos and videos</summary>
   <summary xml:lang="es">Realizar fotos y vídeos</summary>
@@ -51,6 +52,7 @@
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
   <developer_name xml:lang="cs">Komunita KDE</developer_name>
+  <developer_name xml:lang="de">KDE-Gemeinschaft</developer_name>
   <developer_name xml:lang="el">Κοινότητα του KDE</developer_name>
   <developer_name xml:lang="en-GB">KDE Community</developer_name>
   <developer_name xml:lang="es">Comunidad KDE</developer_name>
@@ -74,6 +76,7 @@
     <p>Camera Application for Plasma Mobile.</p>
     <p xml:lang="ca">Aplicació de càmera per al Plasma Mobile.</p>
     <p xml:lang="ca-valencia">Aplicació de càmera per al Plasma Mobile.</p>
+    <p xml:lang="de">Kamera-Anwendung für Plasma Mobile.</p>
     <p xml:lang="el">Εφαρμογή κάμερας για το Plasma Mobile.</p>
     <p xml:lang="en-GB">Camera Application for Plasma Mobile.</p>
     <p xml:lang="es">Aplicación de cámara para Plasma Mobile.</p>
