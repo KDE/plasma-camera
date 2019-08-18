@@ -77,6 +77,9 @@ Kirigami.ApplicationWindow {
         deviceId: settings.cameraDeviceId
         imageProcessing.whiteBalanceMode: settings.whiteBalanceMode
 
+        property int selfTimerDuration: 0 // in seconds
+        property bool selfTimerRunning: false
+
         imageCapture {
             id: imageCapture
             resolution: settings.resolution

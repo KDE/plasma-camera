@@ -80,7 +80,9 @@ Kirigami.Page {
     mainAction: Kirigami.Action {
         id: captureAction
         text: {
-            if (camera.captureMode === Camera.CaptureStillImage)
+            if (selfTimer.running)
+                return i18n("Cancel self-timer")
+            else if (camera.captureMode === Camera.CaptureStillImage)
                 return i18n("Capture photo")
             else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus)
                 return i18n("Stop recording video")
@@ -89,7 +91,9 @@ Kirigami.Page {
         }
         icon.color: "transparent"
         icon.name: {
-            if (camera.captureMode === Camera.CaptureStillImage)
+            if (selfTimer.running)
+                return "dialog-error-symbolic"
+            else if (camera.captureMode === Camera.CaptureStillImage)
                 return "camera-photo-symbolic"
             else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus)
                 return "window-close-symbolic"
@@ -97,23 +101,20 @@ Kirigami.Page {
                 return "emblem-videos-symbolic"
         }
         onTriggered: {
-            if (camera.captureMode === Camera.CaptureStillImage) {
-                camera.imageCapture.capture()
-                showPassiveNotification(i18n("Took a photo"))
+            if (selfTimer.running) {
+                selfTimer.stop()
             }
-            else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus) {
-                camera.videoRecorder.stop()
-                recordingFeedback.visible = false
-                showPassiveNotification(i18n("Stopped recording"))
+            else if ((camera.selfTimerDuration === 0) || (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus)) {
+                selfTimer.onTriggered()
             }
-            else if (camera.captureMode === Camera.CaptureVideo) {
-                camera.videoRecorder.record()
-                recordingFeedback.visible = true
-                showPassiveNotification(i18n("Started recording"))
+            else {
+                countdownTimer.remainingSeconds = camera.selfTimerDuration
+                countdownTimer.start()
+                selfTimer.start()
             }
         }
         enabled: {
-            if (camera.captureMode === camera.CaptureStillImage)
+            if ((camera.captureMode === camera.CaptureStillImage) && !selfTimer.running)
                 return camera.imageCapture.ready
             else
                 return true
@@ -249,6 +250,156 @@ Kirigami.Page {
             left: parent.left
             top: parent.top
             margins: Kirigami.Units.gridUnit * 2
+        }
+    }
+
+    Timer {
+        id: selfTimer
+        interval: camera.selfTimerDuration * 1000
+        running: false
+        repeat: false
+
+        onTriggered: {
+            running = false
+
+            if (camera.captureMode === Camera.CaptureStillImage) {
+                camera.imageCapture.capture()
+                showPassiveNotification(i18n("Took a photo"))
+            }
+            else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus) {
+                camera.videoRecorder.stop()
+                recordingFeedback.visible = false
+                showPassiveNotification(i18n("Stopped recording"))
+            }
+            else if (camera.captureMode === Camera.CaptureVideo) {
+                camera.videoRecorder.record()
+                recordingFeedback.visible = true
+                showPassiveNotification(i18n("Started recording"))
+            }
+        }
+
+        onRunningChanged: {
+            if (!running) {
+                camera.selfTimerRunning = false
+                selfTimerAnimation.stop()
+                countdownTimer.stop()
+                countdownTimer.remainingSeconds = camera.selfTimerDuration
+                selfTimerIcon.opacity = 1
+            }
+            else {
+                camera.selfTimerRunning = true
+            }
+        }
+    }
+
+    Timer { // counts the remaining seconds until the selfTimer invokes the capture action
+        id: countdownTimer
+        interval: 1000
+        running: false
+        repeat: true
+        property int remainingSeconds: 0
+
+        onTriggered: {
+            remainingSeconds--
+        }
+    }
+
+    RowLayout {
+        id: selfTimerInfo
+        visible: !(camera.selfTimerDuration === 0) && !((camera.captureMode === Camera.CaptureVideo) && (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus))
+
+        anchors {
+            top: parent.top
+            horizontalCenter: parent.horizontalCenter
+            margins: Kirigami.Units.gridUnit * 1
+        }
+
+        Kirigami.Icon {
+            id: selfTimerIcon
+            source: "alarm-symbolic"
+            color: selfTimer.running ? "red" : "white"
+            Layout.preferredWidth: Kirigami.Units.gridUnit
+            Layout.preferredHeight: Kirigami.Units.gridUnit
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            Layout.alignment: Qt.AlignCenter
+        }
+
+        Text {
+            text: {
+                if (selfTimer.running) {
+                    "%1 s".arg(countdownTimer.remainingSeconds)
+                }
+                else {
+                    "%1 s".arg(camera.selfTimerDuration)
+                }
+            }
+            font.pixelSize: Kirigami.Units.gridUnit
+            color: {
+                if (selfTimer.running) {
+                    "red"
+                }
+                else {
+                    "white"
+                }
+            }
+        }
+
+        layer.enabled: selfTimerInfo.enabled
+        layer.effect: DropShadow {
+            color: Material.dropShadowColor
+            samples: 30
+            spread: 0.5
+        }
+    }
+
+    Rectangle {
+        id: selfTimerRectangle
+        visible: selfTimer.running
+        color: "transparent"
+        border.color: "red"
+        border.width: Kirigami.Units.gridUnit / 6
+        opacity: 0
+
+        anchors {
+            fill: parent
+            centerIn: parent
+        }
+    }
+
+    SequentialAnimation {
+        id: selfTimerAnimation
+        running: selfTimer.running
+        loops: Animation.Infinite
+
+        ParallelAnimation {
+            OpacityAnimator {
+                target: selfTimerIcon
+                from: 0
+                to: 1
+                duration: 500
+            }
+            OpacityAnimator {
+                target: selfTimerRectangle
+                from: 0
+                to: 1
+                duration: 500
+            }
+        }
+
+        ParallelAnimation{
+            OpacityAnimator {
+                target: selfTimerIcon
+                from: 1
+                to: 0
+                duration: 500
+            }
+            OpacityAnimator {
+                target: selfTimerRectangle
+                from: 1
+                to: 0
+                duration: 500
+            }
         }
     }
 

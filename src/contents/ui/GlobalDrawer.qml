@@ -137,9 +137,35 @@ Kirigami.GlobalDrawer {
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
                 text: i18n("Fluorescent")
             }
-    },
-    Kirigami.Action {
-        text: i18n("About")
+        },
+        Kirigami.Action {
+            text: i18n("Self-timer")
+            iconName: "clock"
+            enabled: !camera.selfTimerRunning
+
+            Kirigami.Action {
+                text: i18n("Off")
+                onTriggered: camera.selfTimerDuration = 0
+            }
+            Kirigami.Action {
+                text: i18n("2 s")
+                onTriggered: camera.selfTimerDuration = 2
+            }
+            Kirigami.Action {
+                text: i18n("5 s")
+                onTriggered: camera.selfTimerDuration = 5
+            }
+            Kirigami.Action {
+                text: i18n("10 s")
+                onTriggered: camera.selfTimerDuration = 10
+            }
+            Kirigami.Action {
+                text: i18n("20 s")
+                onTriggered: camera.selfTimerDuration = 20
+            }
+        },
+        Kirigami.Action {
+            text: i18n("About")
             iconName: "help-about"
             onTriggered: {
                 while (pageStack.depth > 1)
