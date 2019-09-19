@@ -10,6 +10,10 @@
 #include <KLocalizedString>
 #include <KLocalizedContext>
 
+#ifdef Q_OS_ANDROID
+#include <QtAndroid>
+#endif
+
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
@@ -30,6 +34,10 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     about.setProgramLogo(app.windowIcon());
 
     KAboutData::setApplicationData(about);
+
+#ifdef Q_OS_ANDROID
+    QtAndroid::requestPermissionsSync({"android.permission.CAMERA"});
+#endif
 
 
     // QML Engine
