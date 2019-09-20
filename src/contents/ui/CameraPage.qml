@@ -127,9 +127,9 @@ Kirigami.Page {
         icon.name: "camera-photo-symbolic"
         enabled: (camera.position !== Camera.UnspecifiedPosition)
         onTriggered: {
-            if (settings.cameraPosition == Camera.BackFace)
+            if (settings.cameraPosition === Camera.BackFace)
                 settings.cameraPosition = Camera.FrontFace
-            else if (settings.cameraPosition == Camera.FrontFace)
+            else if (settings.cameraPosition === Camera.FrontFace)
                 settings.cameraPosition = Camera.BackFace
         }
     }
@@ -175,6 +175,10 @@ Kirigami.Page {
                     return i18n("Camera not available")
                 else if (cameraPage.camera.availability === Camera.Busy)
                     return i18n("Camera is busy. Is another application using it?")
+                else if (cameraPage.camera.availability === Camera.ResourceMissing)
+                    return i18n("Missing camera resource.")
+                else if (cameraPage.camera.availability === Camera.Available)
+                    return ""
             }
         }
 
