@@ -68,6 +68,7 @@ Kirigami.Page {
             else if (camera.captureMode === Camera.CaptureVideo)
                 return "camera-photo-symbolic"
         }
+        enabled: (camera.videoRecorder.recorderStatus !== CameraRecorder.RecordingStatus)
         onTriggered: {
             if (camera.captureMode === Camera.CaptureStillImage)
                 camera.captureMode = Camera.CaptureVideo
