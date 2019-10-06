@@ -88,7 +88,7 @@ Kirigami.ApplicationWindow {
         videoRecorder {
             id: videoRecorder
             resolution: settings.resolution
-            frameRate: 30
+            // frameRate: 30 // a fixed frame rate is not set for now as it does not always get enforced anyway and can cause errors
         }
     }
 
