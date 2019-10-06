@@ -96,7 +96,7 @@ Kirigami.Page {
             else if (camera.captureMode === Camera.CaptureStillImage)
                 return "camera-photo-symbolic"
             else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus)
-                return "window-close-symbolic"
+                return "media-playback-stop"
             else if (camera.captureMode === Camera.CaptureVideo)
                 return "emblem-videos-symbolic"
         }
