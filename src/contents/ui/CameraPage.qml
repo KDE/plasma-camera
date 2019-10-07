@@ -236,25 +236,67 @@ Kirigami.Page {
         onZoomTo: cameraPage.camera.setDigitalZoom(value)
     }
 
-    Rectangle {
+    Timer { // counts the seconds from the beginning of the current video recording
+        id: recordingDurationTimer
+        interval: 1000
+        running: camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus
+        repeat: true
+        property int recordingDurationSeconds: 0
+
+        onTriggered: {
+            recordingDurationSeconds++
+        }
+
+        onRunningChanged: {
+            if (!running) {
+                recordingDurationSeconds = 0
+            }
+        }
+    }
+
+    RowLayout {
         id: recordingFeedback
         visible: false
-        color: "red"
-        radius: Kirigami.Units.gridUnit
-        height: Kirigami.Units.gridUnit * 2
-        width: height
+        spacing: Kirigami.Units.gridUnit
+
+        anchors {
+            left: parent.left
+            top: parent.top
+            margins: Kirigami.Units.gridUnit * 2
+        }
+
+        Rectangle {
+            color: "red"
+            radius: Kirigami.Units.gridUnit
+            height: Kirigami.Units.gridUnit * 2
+            width: height
+        }
+
+        Text {
+            text: {
+                "%1%2:%3".arg(
+                    (Math.trunc(recordingDurationTimer.recordingDurationSeconds / 60) > 59) ? // display hour count only on demand
+                    (Math.trunc(Math.trunc(recordingDurationTimer.recordingDurationSeconds / 60) / 60) + ":") :
+                    ""
+                )
+                .arg(
+                    (((Math.trunc(recordingDurationTimer.recordingDurationSeconds / 60) % 60) < 10) ? "0" : "") + // zero padding
+                    (Math.trunc(recordingDurationTimer.recordingDurationSeconds / 60) % 60)
+                )
+                .arg(
+                    (((recordingDurationTimer.recordingDurationSeconds % 60) < 10) ? "0" : "") + // zero padding
+                    (recordingDurationTimer.recordingDurationSeconds % 60)
+                )
+            }
+            font.pixelSize: Kirigami.Units.gridUnit
+            color: "white"
+        }
 
         layer.enabled: recordingFeedback.enabled
         layer.effect: DropShadow {
             color: Material.dropShadowColor
             samples: 30
             spread: 0.5
-        }
-
-        anchors {
-            left: parent.left
-            top: parent.top
-            margins: Kirigami.Units.gridUnit * 2
         }
     }
 
