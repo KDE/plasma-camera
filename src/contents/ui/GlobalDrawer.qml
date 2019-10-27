@@ -73,7 +73,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             id: devicesAction
             text: i18n("Camera")
-            iconName: "camera-photo"
+            iconName: "camera-photo-symbolic"
             Component.onCompleted: {
                 var cameras = QtMultimedia.availableCameras
                 var childrenList = []
