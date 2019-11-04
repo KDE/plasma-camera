@@ -256,7 +256,7 @@ Kirigami.Page {
 
     RowLayout {
         id: recordingFeedback
-        visible: false
+        visible: (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus)
         spacing: Kirigami.Units.gridUnit
 
         anchors {
@@ -315,13 +315,17 @@ Kirigami.Page {
             }
             else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus) {
                 camera.videoRecorder.stop()
-                recordingFeedback.visible = false
                 showPassiveNotification(i18n("Stopped recording"))
             }
             else if (camera.captureMode === Camera.CaptureVideo) {
                 camera.videoRecorder.record()
-                recordingFeedback.visible = true
-                showPassiveNotification(i18n("Started recording"))
+
+                if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus) {
+                    showPassiveNotification(i18n("Started recording"))
+                }
+                else {
+                    showPassiveNotification(i18n("Failed to start recording"))
+                }
             }
         }
 

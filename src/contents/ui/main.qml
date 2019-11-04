@@ -90,6 +90,10 @@ Kirigami.ApplicationWindow {
             resolution: settings.resolution
             // frameRate: 30 // a fixed frame rate is not set for now as it does not always get enforced anyway and can cause errors
         }
+
+        onError: {
+            showPassiveNotification(i18n("An error occurred: \"") + errorString + i18n("\". Please consider restarting the application if it stopped working."))
+        }
     }
 
     title: i18n("Camera")
