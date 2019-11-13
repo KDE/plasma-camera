@@ -20,6 +20,7 @@
   <name xml:lang="ru">Камера для Plasma</name>
   <name xml:lang="sk">Plasma Camera</name>
   <name xml:lang="sv">Plasma kamera</name>
+  <name xml:lang="tg">Камераи Плазма</name>
   <name xml:lang="uk">Фотоапарат Плазми</name>
   <name xml:lang="x-test">xxPlasma Cameraxx</name>
   <name xml:lang="zh-TW">Plasma 相機</name>
@@ -43,6 +44,7 @@
   <summary xml:lang="ru">Создание фотографий и запись видео</summary>
   <summary xml:lang="sk">Tvorba fotiek a videa</summary>
   <summary xml:lang="sv">Ta foton och spela in videor</summary>
+  <summary xml:lang="tg">Суратҳо ва видеоҳоро ба навор гиред</summary>
   <summary xml:lang="uk">Програма для створення фотографій і відео</summary>
   <summary xml:lang="x-test">xxTake photos and videosxx</summary>
   <summary xml:lang="zh-TW">拍照或錄影</summary>
@@ -69,6 +71,7 @@
   <developer_name xml:lang="ru">Сообщество KDE</developer_name>
   <developer_name xml:lang="sk">KDE komunita</developer_name>
   <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
+  <developer_name xml:lang="tg">Ҷамъияти KDE</developer_name>
   <developer_name xml:lang="uk">Спільнота KDE</developer_name>
   <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
   <developer_name xml:lang="zh-TW">KDE 社群</developer_name>
@@ -93,6 +96,7 @@
     <p xml:lang="ru">Приложение для работы с камерой для Plasma.</p>
     <p xml:lang="sk">Aplikácia Camera pre Plasma Mobile</p>
     <p xml:lang="sv">Kameraprogram för Plasma Mobil</p>
+    <p xml:lang="tg">Барномаи камера барои Плазмаи мобилӣ.</p>
     <p xml:lang="uk">Програма-фотоапарат для мобільної Плазми.</p>
     <p xml:lang="x-test">xxCamera Application for Plasma Mobile.xx</p>
     <p xml:lang="zh-TW">適用於 Plasma Mobile 的相機應用程式。</p>
@@ -115,6 +119,7 @@
     <p xml:lang="ru">Приложение поддерживает различные разрешения, выбор режима баланса белого и переключение между камерами.</p>
     <p xml:lang="sk">Podporuje rôzne rozlíšenia, vyváženie bielej a prepínanie medzi rôznymi zariadeniami fotoaparátu.</p>
     <p xml:lang="sv">Det stöder olika upplösningar, olika vitbalanslägen och byte mellan olika kameraenheter.</p>
+    <p xml:lang="tg">Барномаи ҷорӣ возеҳии экрани гуногун, реҷаҳои тавозуни сафеди гуногун ва мубодилаи камераҳоро байни дастгоҳҳои камераи гуногун дастгирӣ менамояд.</p>
     <p xml:lang="uk">Передбачено підтримку різних роздільних здатностей, різних режимів балансу білого і перемикання між різними пристроями для створення зображень.</p>
     <p xml:lang="x-test">xxIt supports different resolutions, different white balance modes and switching between different camera devices.xx</p>
     <p xml:lang="zh-TW">此相機支援不同的解析度、白平衡模式，且允許切換成不同的相機裝置。</p>
