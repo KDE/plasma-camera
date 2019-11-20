@@ -7,6 +7,7 @@
   <name xml:lang="el">Plasma Camera</name>
   <name xml:lang="en-GB">Plasma Camera</name>
   <name xml:lang="es">Cámara de Plasma</name>
+  <name xml:lang="et">Plasma kaamera</name>
   <name xml:lang="fi">Plasma Camera</name>
   <name xml:lang="gl">Cámara de Plasma</name>
   <name xml:lang="id">Plasma Camera</name>
@@ -31,6 +32,7 @@
   <summary xml:lang="el">Παίρνει φωτογραφίες και βίντεο</summary>
   <summary xml:lang="en-GB">Take photos and videos</summary>
   <summary xml:lang="es">Realizar fotos y vídeos</summary>
+  <summary xml:lang="et">Fotode ja videode tegemine</summary>
   <summary xml:lang="fi">Kuvaa valokuvia ja videoita</summary>
   <summary xml:lang="gl">Sacar fotos e gravar vídeos</summary>
   <summary xml:lang="id">Ambil foto dan video</summary>
@@ -58,6 +60,7 @@
   <developer_name xml:lang="el">Κοινότητα του KDE</developer_name>
   <developer_name xml:lang="en-GB">KDE Community</developer_name>
   <developer_name xml:lang="es">Comunidad KDE</developer_name>
+  <developer_name xml:lang="et">KDE kogukond</developer_name>
   <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
   <developer_name xml:lang="gl">Comunidade KDE</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
@@ -83,6 +86,7 @@
     <p xml:lang="el">Εφαρμογή κάμερας για το Plasma Mobile.</p>
     <p xml:lang="en-GB">Camera Application for Plasma Mobile.</p>
     <p xml:lang="es">Aplicación de cámara para Plasma Mobile.</p>
+    <p xml:lang="et">Plasma Mobile kaamerarakendus</p>
     <p xml:lang="fi">Kamerasovellus Plasma Mobileen.</p>
     <p xml:lang="gl">Aplicación de cámara para Plasma Mobile.</p>
     <p xml:lang="id">Aplikasi Kamera untuk Plasma Mobile.</p>
@@ -106,6 +110,7 @@
     <p xml:lang="el">Υποστηρίζει διαφορετικές αναλύσεις, διαφορετικές λειτουργίες ισορροπιας λευκού και εναλλαγή μεταξύ διαφορετικών συσκευών φωτογραφικής μηχανής.</p>
     <p xml:lang="en-GB">It supports different resolutions, different white balance modes and switching between different camera devices.</p>
     <p xml:lang="es">Permite diferentes resoluciones, distintos modos de balance de blancos y cambiar entre distintos dispositivos de cámara.</p>
+    <p xml:lang="et">See toetab erinevaid eraldusvõimeid, erinevaid värvustasakaalu režiime ja lülitumist eri kaameraseadmete vahel.</p>
     <p xml:lang="fi">Tukee eri tarkkuuksia, valkotasapainotiloja ja vaihtamista eri kameralaitteiden välillä.</p>
     <p xml:lang="gl">Permite varias resolucións, distintos modos de equilibrio de blancos e cambiar entre distintos dispositivos de cámara.</p>
     <p xml:lang="id">Ini mendukung resolusi yang berbeda, mode keseimbangan putih yang berbeda dan peralihan antara perangkat kamera yang berbeda.</p>
