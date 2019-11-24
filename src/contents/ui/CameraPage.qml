@@ -310,8 +310,13 @@ Kirigami.Page {
             running = false
 
             if (camera.captureMode === Camera.CaptureStillImage) {
-                camera.imageCapture.capture()
-                showPassiveNotification(i18n("Took a photo"))
+                if (camera.imageCapture.ready) {
+                    camera.imageCapture.capture()
+                    showPassiveNotification(i18n("Took a photo"))
+                }
+                else {
+                    showPassiveNotification(i18n("Failed to take a photo"))
+                }
             }
             else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus) {
                 camera.videoRecorder.stop()
