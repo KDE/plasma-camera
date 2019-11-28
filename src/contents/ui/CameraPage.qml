@@ -461,6 +461,7 @@ Kirigami.Page {
 
     PreviewArea {
         imageCapture: camera.imageCapture
+        videoRecorder: camera.videoRecorder
 
         anchors {
             right: parent.right
