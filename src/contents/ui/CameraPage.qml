@@ -312,6 +312,7 @@ Kirigami.Page {
             if (camera.captureMode === Camera.CaptureStillImage) {
                 if (camera.imageCapture.ready) {
                     camera.imageCapture.capture()
+                    previewArea.setPhotoPreview()
                     showPassiveNotification(i18n("Took a photo"))
                 }
                 else {
@@ -320,6 +321,7 @@ Kirigami.Page {
             }
             else if (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus) {
                 camera.videoRecorder.stop()
+                previewArea.setVideoPreview()
                 showPassiveNotification(i18n("Stopped recording"))
             }
             else if (camera.captureMode === Camera.CaptureVideo) {
@@ -460,6 +462,7 @@ Kirigami.Page {
     }
 
     PreviewArea {
+        id: previewArea
         imageCapture: camera.imageCapture
         videoRecorder: camera.videoRecorder
 

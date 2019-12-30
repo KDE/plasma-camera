@@ -13,6 +13,7 @@ if(ANDROID)
         emblem-videos-symbolic
         camera-photo-symbolic
         dialog-error-symbolic
+        media-playback-start
         media-playback-stop
         alarm-symbolic
         camera-photo
