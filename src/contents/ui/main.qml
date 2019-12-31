@@ -92,7 +92,7 @@ Kirigami.ApplicationWindow {
         }
 
         onError: {
-            showPassiveNotification(i18n("An error occurred: \"") + errorString + i18n("\". Please consider restarting the application if it stopped working."))
+            showPassiveNotification(i18n("An error occurred: \"%1\". Please consider restarting the application if it stopped working.", errorString))
         }
     }
 
