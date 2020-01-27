@@ -50,6 +50,7 @@ Kirigami.GlobalDrawer {
 
         Kirigami.Action {
             property string value
+            checked: value === settings.cameraDeviceId
 
             onTriggered: {
                 settings.cameraDeviceId = value
@@ -62,6 +63,7 @@ Kirigami.GlobalDrawer {
 
         Kirigami.Action {
             property size value
+            checked: value === settings.resolution
 
             onTriggered: {
                 settings.resolution = value
