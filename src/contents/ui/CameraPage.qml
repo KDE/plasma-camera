@@ -122,7 +122,6 @@ Kirigami.Page {
         }
     }
     rightAction: Kirigami.Action {
-        id: switchCameaAction
         text: i18n("Switch Camera")
         icon.color: "transparent"
         icon.name: "camera-photo-symbolic"

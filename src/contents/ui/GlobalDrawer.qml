@@ -118,26 +118,31 @@ Kirigami.GlobalDrawer {
                 iconName: "qrc:///camera_auto_mode.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceAuto
                 text: i18n("Auto")
+                checked: settings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceAuto
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_sunny.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceSunlight
                 text: i18n("Sunlight")
+                checked: settings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceSunlight
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_cloudy.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceCloudy
                 text: i18n("Cloudy")
+                checked: settings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceCloudy
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_incandescent.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceTungsten
                 text: i18n("Tungsten")
+                checked: settings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceTungsten
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_flourescent.png"
                 onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
                 text: i18n("Fluorescent")
+                checked: settings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceFluorescent
             }
         },
         Kirigami.Action {
@@ -148,22 +153,27 @@ Kirigami.GlobalDrawer {
             Kirigami.Action {
                 text: i18n("Off")
                 onTriggered: camera.selfTimerDuration = 0
+                checked: camera.selfTimerDuration === 0
             }
             Kirigami.Action {
                 text: i18n("2 s")
                 onTriggered: camera.selfTimerDuration = 2
+                checked: camera.selfTimerDuration === 2
             }
             Kirigami.Action {
                 text: i18n("5 s")
                 onTriggered: camera.selfTimerDuration = 5
+                checked: camera.selfTimerDuration === 5
             }
             Kirigami.Action {
                 text: i18n("10 s")
                 onTriggered: camera.selfTimerDuration = 10
+                checked: camera.selfTimerDuration === 10
             }
             Kirigami.Action {
                 text: i18n("20 s")
                 onTriggered: camera.selfTimerDuration = 20
+                checked: camera.selfTimerDuration === 20
             }
         },
         Kirigami.Action {
