@@ -1,7 +1,7 @@
 {
     "id": "org.kde.mobile.camera",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.13",
+    "runtime-version": "5.14",
     "sdk": "org.kde.Sdk",
     "command": "plasma-camera",
     "tags": ["nightly"],
@@ -18,54 +18,6 @@
 
     "modules": [
         {
-            "name": "gstreamer",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
-                "-Ddisable_gtkdoc=true"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "branch": "1.16.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gstreamer",
-                    "commit": "89c221a6972513f629c969f5485f37e77ccfa6e1"
-                }
-            ]
-        },
-        {
-            "name": "gst-plugins-base",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
-                "-Ddisable_gtkdoc=true"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "branch": "1.16.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-base",
-                    "commit": "e0f8f635a96a3639be4d519fcf234b619bb74ca6"
-                }
-            ]
-        },
-        {
-            "name": "gst-plugins-good",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
-                "-Ddisable_gtkdoc=true"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "branch": "1.16.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-good",
-                    "commit": "646dc1ef9b92841e235d10a8262882b6e7d97422"
-                }
-            ]
-        },
-        {
             "name": "gst-plugins-bad",
             "buildsystem": "meson",
             "builddir": true,
@@ -74,11 +26,18 @@
             ],
             "sources": [
                 {
-                    "type": "git",
-                    "branch": "1.16.0",
-                    "url": "git://anongit.freedesktop.org/gstreamer/gst-plugins-bad",
-                    "commit": "5fde70bb63a1cbf6f734fb2429e74ffb53126217"
+                    "type": "archive",
+                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.16.1.tar.xz",
+                    "sha256": "56481c95339b8985af13bac19b18bc8da7118c2a7d9440ed70e7dcd799c2adb5"
                 }
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/*.la",
+                "/lib/gstreamer-1.0/*.la",
+                "/lib/gstreamer-1.0/include",
+                "/lib/pkgconfig",
+                "/share/gtk-doc"
             ]
         },
         {
