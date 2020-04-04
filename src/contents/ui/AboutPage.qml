@@ -38,7 +38,7 @@ Kirigami.AboutPage {
 
     onIsCurrentPageChanged: {
         if (isCurrentPage)
-            applicationWindow().pageStack.globalToolBar.style = Kirigami.ApplicationHeaderStyle.ToolBar
+            applicationWindow().pageStack.globalToolBar.style = Kirigami.ApplicationHeaderStyle.Auto
         else
             applicationWindow().pageStack.globalToolBar.style = applicationWindow().headerStyle
     }
