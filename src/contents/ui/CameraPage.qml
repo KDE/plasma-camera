@@ -58,6 +58,9 @@ Kirigami.Page {
     bottomPadding: 0
     topPadding: 0
 
+    globalToolBarStyle: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.None : Kirigami.ApplicationHeaderStyle.ToolBar
+    onIsCurrentPageChanged: isCurrentPage && pageStack.depth > 1 && pageStack.pop()
+
     leftAction: Kirigami.Action {
         id: switchModeAction
         text: i18n("Switch mode")

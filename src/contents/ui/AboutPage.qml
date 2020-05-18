@@ -35,13 +35,7 @@ import org.kde.kirigami 2.6 as Kirigami
 
 Kirigami.AboutPage {
     aboutData: cameraAboutData
-
-    onIsCurrentPageChanged: {
-        if (isCurrentPage)
-            applicationWindow().pageStack.globalToolBar.style = Kirigami.ApplicationHeaderStyle.Auto
-        else
-            applicationWindow().pageStack.globalToolBar.style = applicationWindow().headerStyle
-    }
+    globalToolBarStyle: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.Breadcrumb : Kirigami.ApplicationHeaderStyle.ToolBar
 
     contextualActions: [
         Kirigami.Action {

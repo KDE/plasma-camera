@@ -45,8 +45,6 @@ import QtMultimedia 5.8
 Kirigami.ApplicationWindow {
     id: root
 
-    readonly property int headerStyle: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.None : Kirigami.ApplicationHeaderStyle.ToolBar
-
     Settings {
         id: settings
         
