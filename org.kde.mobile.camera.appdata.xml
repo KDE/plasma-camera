@@ -89,8 +89,8 @@
   <developer_name xml:lang="zh-TW">KDE 社群</developer_name>
   <description>
     <p>Camera Application for Plasma Mobile.</p>
-    <p xml:lang="ca">Aplicació de càmera per al Plasma Mobile.</p>
-    <p xml:lang="ca-valencia">Aplicació de càmera per al Plasma Mobile.</p>
+    <p xml:lang="ca">Aplicació de càmera per al Plasma mòbil.</p>
+    <p xml:lang="ca-valencia">Aplicació de càmera per al Plasma mòbil.</p>
     <p xml:lang="de">Kamera-Anwendung für Plasma Mobile.</p>
     <p xml:lang="el">Εφαρμογή κάμερας για το Plasma Mobile.</p>
     <p xml:lang="en-GB">Camera Application for Plasma Mobile.</p>
@@ -117,8 +117,8 @@
     <p xml:lang="x-test">xxCamera Application for Plasma Mobile.xx</p>
     <p xml:lang="zh-TW">適用於 Plasma Mobile 的相機應用程式。</p>
     <p>It supports different resolutions, different white balance modes and switching between different camera devices.</p>
-    <p xml:lang="ca">Permet resolucions diferents, modes diferents de balanç de blancs i commutar entre dispositius de càmera diferents.</p>
-    <p xml:lang="ca-valencia">Permet resolucions diferents, modes diferents de balanç de blancs i commutar entre dispositius de càmera diferents.</p>
+    <p xml:lang="ca">Permet resolucions diferents, modes diferents per al balanç de blancs i commutar entre dispositius de càmera diferents.</p>
+    <p xml:lang="ca-valencia">Permet resolucions diferents, modes diferents per al balanç de blancs i commutar entre dispositius de càmera diferents.</p>
     <p xml:lang="el">Υποστηρίζει διαφορετικές αναλύσεις, διαφορετικές λειτουργίες ισορροπιας λευκού και εναλλαγή μεταξύ διαφορετικών συσκευών φωτογραφικής μηχανής.</p>
     <p xml:lang="en-GB">It supports different resolutions, different white balance modes and switching between different camera devices.</p>
     <p xml:lang="es">Permite diferentes resoluciones, distintos modos de balance de blancos y cambiar entre distintos dispositivos de cámara.</p>
