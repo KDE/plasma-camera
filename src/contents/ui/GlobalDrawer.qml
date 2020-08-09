@@ -85,8 +85,8 @@ Kirigami.GlobalDrawer {
                         value: cameras[i].deviceId,
                         text: "%1".arg(cameras[i].displayName)
                     })
-                    devicesAction.children = childrenList
                 }
+                devicesAction.children = childrenList
             }
         },
         Kirigami.Action {
@@ -105,9 +105,8 @@ Kirigami.GlobalDrawer {
                         value: resolutions[i],
                         text: "%1 x %2 (%3 MP)".arg(resolutions[i].width).arg(resolutions[i].height).arg(megapixels)
                     })
-                    resolutionAction.children = childrenList
-
                 }
+                resolutionAction.children = childrenList
             }
         },
         Kirigami.Action {
