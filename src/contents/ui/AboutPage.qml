@@ -33,8 +33,10 @@ import QtQuick.Layouts 1.2
 import QtQuick.Controls 2.1 as Controls
 import org.kde.kirigami 2.6 as Kirigami
 
+import org.kde.plasmacamera 1.0
+
 Kirigami.AboutPage {
-    aboutData: cameraAboutData
+    aboutData: PlasmaCamera.aboutData
     globalToolBarStyle: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.Breadcrumb : Kirigami.ApplicationHeaderStyle.ToolBar
 
     contextualActions: [
@@ -42,6 +44,5 @@ Kirigami.AboutPage {
             text: "Close"
             onTriggered: pageStack.pop()
         }
-
     ]
 }

@@ -1,6 +1,7 @@
 set(plasma-camera_SRCS
     main.cpp
-    )
+    plasmacamera.cpp
+)
 
 qt5_add_resources(RESOURCES resources.qrc)
 add_executable(plasma-camera ${plasma-camera_SRCS} ${RESOURCES})

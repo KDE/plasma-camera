@@ -10,6 +10,8 @@
 #include <KLocalizedString>
 #include <KLocalizedContext>
 
+#include "plasmacamera.h"
+
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
 #endif
@@ -43,8 +45,10 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     // QML Engine
     QQmlApplicationEngine engine;
 
-    engine.rootContext()->setContextProperty(QStringLiteral("cameraAboutData"),
-                                             QVariant::fromValue(KAboutData::applicationData()));
+    PlasmaCamera plasmaCamera;
+    plasmaCamera.setAboutData(about);
+    qmlRegisterSingletonInstance<PlasmaCamera>("org.kde.plasmacamera", 1, 0, "PlasmaCamera", &plasmaCamera);
+
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
