@@ -11,11 +11,13 @@
 #include <KLocalizedContext>
 
 #include "plasmacamera.h"
+#include "camerasettings.h"
 
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
 #endif
 
+constexpr auto URI = "org.kde.plasmacamera";
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
@@ -47,7 +49,12 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     PlasmaCamera plasmaCamera;
     plasmaCamera.setAboutData(about);
-    qmlRegisterSingletonInstance<PlasmaCamera>("org.kde.plasmacamera", 1, 0, "PlasmaCamera", &plasmaCamera);
+    qmlRegisterSingletonInstance<PlasmaCamera>(URI, 1, 0, "PlasmaCamera", &plasmaCamera);
+    qmlRegisterSingletonInstance<CameraSettings>(URI, 1, 0, "CameraSettings", CameraSettings::self());
+
+    QObject::connect(QApplication::instance(), &QCoreApplication::aboutToQuit, QApplication::instance(), [] {
+        CameraSettings::self()->save();
+    });
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
 

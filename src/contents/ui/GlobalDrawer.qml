@@ -41,6 +41,8 @@ import org.kde.kirigami 2.0 as Kirigami
 import QtQuick 2.7
 import QtMultimedia 5.8
 
+import org.kde.plasmacamera 1.0
+
 Kirigami.GlobalDrawer {
     id: drawer
     property var camera
@@ -50,10 +52,10 @@ Kirigami.GlobalDrawer {
 
         Kirigami.Action {
             property string value
-            checked: value === settings.cameraDeviceId
+            checked: value === CameraSettings.cameraDeviceId
 
             onTriggered: {
-                settings.cameraDeviceId = value
+                CameraSettings.cameraDeviceId = value
             }
         }
     }
@@ -63,10 +65,10 @@ Kirigami.GlobalDrawer {
 
         Kirigami.Action {
             property size value
-            checked: value === settings.resolution
+            checked: value === CameraSettings.resolution
 
             onTriggered: {
-                settings.resolution = value
+                CameraSettings.resolution = value
             }
         }
     }
@@ -110,38 +112,38 @@ Kirigami.GlobalDrawer {
             }
         },
         Kirigami.Action {
-	    id: wbaction
+            id: wbaction
             text: i18n("White balance")
             iconName: "whitebalance"
             Kirigami.Action {
                 iconName: "qrc:///camera_auto_mode.png"
-                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceAuto
+                onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceAuto
                 text: i18n("Auto")
-                checked: settings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceAuto
+                checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceAuto
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_sunny.png"
-                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceSunlight
+                onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceSunlight
                 text: i18n("Sunlight")
-                checked: settings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceSunlight
+                checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceSunlight
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_cloudy.png"
-                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceCloudy
+                onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceCloudy
                 text: i18n("Cloudy")
-                checked: settings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceCloudy
+                checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceCloudy
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_incandescent.png"
-                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceTungsten
+                onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceTungsten
                 text: i18n("Tungsten")
-                checked: settings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceTungsten
+                checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceTungsten
             }
             Kirigami.Action {
                 iconName: "qrc:///camera_white_balance_flourescent.png"
-                onTriggered: settings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
+                onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
                 text: i18n("Fluorescent")
-                checked: settings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceFluorescent
+                checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceFluorescent
             }
         },
         Kirigami.Action {

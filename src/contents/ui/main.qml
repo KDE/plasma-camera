@@ -39,21 +39,12 @@
 
 import QtQuick 2.7
 import org.kde.kirigami 2.2 as Kirigami
-import Qt.labs.settings 1.0
 import QtMultimedia 5.8
+
+import org.kde.plasmacamera 1.0
 
 Kirigami.ApplicationWindow {
     id: root
-
-    Settings {
-        id: settings
-        
-        // Default settings
-        property size resolution
-        property string cameraDeviceId
-        property int cameraPosition
-        property int whiteBalanceMode
-    }
 
     Component {
         id: cameraPage
@@ -72,20 +63,20 @@ Kirigami.ApplicationWindow {
     Camera {
         id: mainCamera
         captureMode: Camera.CaptureStillImage
-        deviceId: settings.cameraDeviceId
-        imageProcessing.whiteBalanceMode: settings.whiteBalanceMode
+        deviceId: CameraSettings.cameraDeviceId
+        imageProcessing.whiteBalanceMode: CameraSettings.whiteBalanceMode
 
         property int selfTimerDuration: 0 // in seconds
         property bool selfTimerRunning: false
 
         imageCapture {
             id: imageCapture
-            resolution: settings.resolution
+            resolution: CameraSettings.resolution
         }
 
         videoRecorder {
             id: videoRecorder
-            resolution: settings.resolution
+            resolution: CameraSettings.resolution
             // frameRate: 30 // a fixed frame rate is not set for now as it does not always get enforced anyway and can cause errors
         }
 

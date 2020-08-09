@@ -130,10 +130,10 @@ Kirigami.Page {
         icon.name: "camera-photo-symbolic"
         enabled: (camera.position !== Camera.UnspecifiedPosition)
         onTriggered: {
-            if (settings.cameraPosition === Camera.BackFace)
-                settings.cameraPosition = Camera.FrontFace
-            else if (settings.cameraPosition === Camera.FrontFace)
-                settings.cameraPosition = Camera.BackFace
+            if (CameraSettings.cameraPosition === Camera.BackFace)
+                CameraSettings.cameraPosition = Camera.FrontFace
+            else if (CameraSettings.cameraPosition === Camera.FrontFace)
+                CameraSettings.cameraPosition = Camera.BackFace
         }
     }
 

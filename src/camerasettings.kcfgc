@@ -1,0 +1,8 @@
+File=camerasettings.kcfg
+ClassName=CameraSettings
+Mutators=true
+DefaultValueGetters=true
+GenerateProperties=true
+ParentInConstructor=true
+Singleton=true
+Notifiers=true

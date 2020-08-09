@@ -2,7 +2,7 @@ project(plasma-camera)
 
 cmake_minimum_required(VERSION 2.8.12)
 set(KF5_MIN_VERSION "5.18.0")
-set(QT_MIN_VERSION "5.5.0")
+set(QT_MIN_VERSION "5.14.0")
 
 ################# Disallow in-source build #################
 
@@ -37,7 +37,7 @@ if(ANDROID)
     find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS AndroidExtras)
 endif()
 
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 CoreAddons I18n)
+find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 CoreAddons I18n Config)
 
 ################# Enable C++11 features for clang and gcc #################
 
