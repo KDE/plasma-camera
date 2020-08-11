@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component type="desktop-application">
-  <id>org.kde.mobile.camera</id>
+  <id>org.kde.plasma.camera</id>
   <name>Plasma Camera</name>
   <name xml:lang="ca">Càmera del Plasma</name>
   <name xml:lang="ca-valencia">Càmera del Plasma</name>
