@@ -4,7 +4,7 @@ set(plasma-camera_SRCS
     resources.qrc
 )
 
-add_executable(plasma-camera ${plasma-camera_SRCS} ${RESOURCES})
+add_executable(plasma-camera ${plasma-camera_SRCS})
 target_link_libraries(plasma-camera Qt5::Core Qt5::Qml Qt5::Quick Qt5::Svg
                                     KF5::CoreAddons KF5::I18n KF5::ConfigGui)
 
