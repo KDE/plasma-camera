@@ -1,3 +1,8 @@
+// SPDX-FileCopyrightText: 2020 Jonah Brüchert <jbb@kaidan.im>
+// SPDX-FileCopyrightText: 2020 Sebastian Pettke <sebpe@mailbox.org>
+//
+// SPDX-License-Identifier: GPL-3.0-or-later
+
 import QtQuick 2.7
 import QtMultimedia 5.8
 import QtQuick.Controls.Material 2.0
