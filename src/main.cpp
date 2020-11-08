@@ -2,14 +2,12 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-// Qt includes
 #include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QtQml>
 #include <QUrl>
 #include <QIcon>
 
-// KDE includes
 #include <KAboutData>
 #include <KLocalizedString>
 #include <KLocalizedContext>
@@ -33,7 +31,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QGuiApplication::setApplicationDisplayName("Plasma Camera");
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("camera-photo")));
 
-    // About Data
     KAboutData about(app.applicationName(), app.applicationDisplayName(), app.applicationVersion(), QString(),
                      KAboutLicense::GPL, i18n("© Plasma Mobile Developers"), QString());
 
@@ -47,8 +44,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QtAndroid::requestPermissionsSync({"android.permission.CAMERA"});
 #endif
 
-
-    // QML Engine
     QQmlApplicationEngine engine;
 
     PlasmaCamera plasmaCamera;
