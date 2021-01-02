@@ -19,6 +19,7 @@
   <name xml:lang="ko">Plasma 카메라</name>
   <name xml:lang="nl">Plasma Camera</name>
   <name xml:lang="nn">Plasma-kamera</name>
+  <name xml:lang="pa">ਪਲਾਜ਼ਮਾ ਕੈਮਰਾ</name>
   <name xml:lang="pl">Kamera Plazmy</name>
   <name xml:lang="pt">Câmara do Plasma</name>
   <name xml:lang="pt-BR">Câmera do Plasma</name>
@@ -50,6 +51,7 @@
   <summary xml:lang="ko">사진 및 동영상 촬영</summary>
   <summary xml:lang="nl">Neemt foto's en video's</summary>
   <summary xml:lang="nn">Ta bilete og videoar</summary>
+  <summary xml:lang="pa">ਫੋਟੋ ਖਿੱਚੋ ਤੇ ਵੀਡੀਓ ਬਣਾਓ</summary>
   <summary xml:lang="pl">Rób zdjęcia i filmy</summary>
   <summary xml:lang="pt">Tire fotografias e grave vídeos</summary>
   <summary xml:lang="pt-BR">Tire fotos e grave vídeos</summary>
@@ -84,6 +86,7 @@
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
   <developer_name xml:lang="nl">KDE gemeenschap</developer_name>
   <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
+  <developer_name xml:lang="pa">ਕੇਡੀਈ ਕਮਿਊਨਟੀ</developer_name>
   <developer_name xml:lang="pl">Społeczność KDE</developer_name>
   <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
   <developer_name xml:lang="pt-BR">KDE Community</developer_name>
@@ -116,6 +119,7 @@
     <p xml:lang="ko">Plasma 모바일용 카메라 애플리케이션.</p>
     <p xml:lang="nl">Camera-Toepassing voor Plasma Mobile.</p>
     <p xml:lang="nn">Kameraprogram for Plasma Mobile.</p>
+    <p xml:lang="pa">ਪਲਾਜ਼ਮਾ ਮੋਬਾਈਲ ਲਈ ਕੈਮਰਾ ਐਪਲੀਕੇਸ਼ਨ ਹੈ।</p>
     <p xml:lang="pl">Aplikacja kamery dla Plazma Mobile.</p>
     <p xml:lang="pt">Aplicação de Câmara para o Plasma Mobile.</p>
     <p xml:lang="pt-BR">Aplicativo de câmera para o Plasma Mobile.</p>
@@ -146,6 +150,7 @@
     <p xml:lang="ko">다양한 해상도, 다양한 화이트 밸런스 모드 및 서로 다른 카메라 장치 간의 전환을 지원합니다.</p>
     <p xml:lang="nl">Het ondersteunt verschillende resoluties, verschillende modi witbalans en omschakelen tussen verschillende camera-apparaten.</p>
     <p xml:lang="nn">Støttar ulike oppløysingar, kvitbalansemetodar og byte mellom ulike kameraeiningar.</p>
+    <p xml:lang="pa">ਇਹ ਵੱਖੋ-ਵੱਖ ਰੋਜ਼ੂਲੇਸ਼ਨ, ਵੱਖੋ-ਵੱਖ ਵਾਈਟ ਬੈਲਨਸ ਢੰਗ ਤੇ ਵੱਖੋ-ਵੱਖ ਕੈਮਰਾ ਡਿਵਾਈਸਾਂ ਵਿਚਾਲੇ ਬਦਲਣ ਲਈ ਸਹਾਇਕ ਹੈ।</p>
     <p xml:lang="pl">Obsługuje wiele rozdzielczości, różne tryby równowagi bieli i przełączanie pomiędzy urządzeniami kamery.</p>
     <p xml:lang="pt">Suporta diferentes resoluções, diferentes modos de balanceamento de branco e mudança entre diferentes dispositivos de câmaras.</p>
     <p xml:lang="pt-BR">Tem suporte a diferentes resoluções, diferentes modos de balanceamento de branco e alternância entre diferentes dispositivos de câmeras.</p>
