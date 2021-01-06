@@ -2,6 +2,7 @@
 <component type="desktop-application">
   <id>org.kde.plasma.camera</id>
   <name>Plasma Camera</name>
+  <name xml:lang="az">Plasma Kamera</name>
   <name xml:lang="ca">Càmera del Plasma</name>
   <name xml:lang="ca-valencia">Càmera del Plasma</name>
   <name xml:lang="da">Plasma Kamera</name>
@@ -33,6 +34,7 @@
   <name xml:lang="x-test">xxPlasma Cameraxx</name>
   <name xml:lang="zh-TW">Plasma 相機</name>
   <summary>Take photos and videos</summary>
+  <summary xml:lang="az">Şəkil və Video çəkmək</summary>
   <summary xml:lang="ca">Pren fotos i vídeos</summary>
   <summary xml:lang="ca-valencia">Pren fotos i vídeos</summary>
   <summary xml:lang="da">Tag billeder og optag videoer</summary>
@@ -67,6 +69,7 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <developer_name>KDE Community</developer_name>
+  <developer_name xml:lang="az">KDE Cəımiyyəti</developer_name>
   <developer_name xml:lang="ca">La comunitat KDE</developer_name>
   <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
   <developer_name xml:lang="cs">Komunita KDE</developer_name>
@@ -101,6 +104,7 @@
   <developer_name xml:lang="zh-TW">KDE 社群</developer_name>
   <description>
     <p>Camera Application for Plasma Mobile.</p>
+    <p xml:lang="az">Plasma Mobile üçün kamera tətbiqi.</p>
     <p xml:lang="ca">Aplicació de càmera per al Plasma mòbil.</p>
     <p xml:lang="ca-valencia">Aplicació de càmera per al Plasma mòbil.</p>
     <p xml:lang="da">Kameraprogram til Plasma Mobile.</p>
@@ -133,6 +137,7 @@
     <p xml:lang="x-test">xxCamera Application for Plasma Mobile.xx</p>
     <p xml:lang="zh-TW">適用於 Plasma Mobile 的相機應用程式。</p>
     <p>It supports different resolutions, different white balance modes and switching between different camera devices.</p>
+    <p xml:lang="az">O, müxtəlif təsvir imkanları, müxtəlif bəyazlıq balansı və müxtəlif kameralar arası keçidi dəstəkləyir.</p>
     <p xml:lang="ca">Permet resolucions diferents, modes diferents per al balanç de blancs i commutar entre dispositius de càmera diferents.</p>
     <p xml:lang="ca-valencia">Permet resolucions diferents, modes diferents per al balanç de blancs i commutar entre dispositius de càmera diferents.</p>
     <p xml:lang="da">Det understøtter forskellige opløsninger, forskellige hvidbalancetilstande og skift mellem forskellige kameraenheder.</p>
