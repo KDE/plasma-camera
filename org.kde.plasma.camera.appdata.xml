@@ -15,6 +15,7 @@
   <name xml:lang="fr">Caméra Plasma</name>
   <name xml:lang="gl">Cámara de Plasma</name>
   <name xml:lang="hu">Plasma Kamera</name>
+  <name xml:lang="ia">Plasma Camera</name>
   <name xml:lang="id">Plasma Camera</name>
   <name xml:lang="it">Plasma Camera</name>
   <name xml:lang="ko">Plasma 카메라</name>
@@ -84,6 +85,7 @@
   <developer_name xml:lang="fr">La communauté KDE</developer_name>
   <developer_name xml:lang="gl">Comunidade KDE</developer_name>
   <developer_name xml:lang="hu">A KDE Közösség</developer_name>
+  <developer_name xml:lang="ia">Communitate de KDE</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
