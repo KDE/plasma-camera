@@ -1,0 +1,5 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+
+Files: src/contents/ui/images/*
+Copyright: None
+License: CC0-1.0
