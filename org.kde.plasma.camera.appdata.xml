@@ -8,7 +8,7 @@
   <name>Plasma Camera</name>
   <name xml:lang="az">Plasma Kamera</name>
   <name xml:lang="ca">Càmera del Plasma</name>
-  <name xml:lang="ca-valencia">Càmera del Plasma</name>
+  <name xml:lang="ca-valencia">Càmera de Plasma</name>
   <name xml:lang="cs">Fotoaparát Plasma</name>
   <name xml:lang="da">Plasma Kamera</name>
   <name xml:lang="de">Plasma Camera</name>
@@ -125,7 +125,7 @@
     <p>Camera Application for Plasma Mobile.</p>
     <p xml:lang="az">Plasma Mobile üçün kamera tətbiqi.</p>
     <p xml:lang="ca">Aplicació de càmera per al Plasma mòbil.</p>
-    <p xml:lang="ca-valencia">Aplicació de càmera per al Plasma mòbil.</p>
+    <p xml:lang="ca-valencia">Aplicació de càmera per a Plasma mòbil.</p>
     <p xml:lang="cs">Aplikace fotoaparátu pro Plasma Mobile.</p>
     <p xml:lang="da">Kameraprogram til Plasma Mobile.</p>
     <p xml:lang="de">Kamera-Anwendung für Plasma Mobile.</p>
