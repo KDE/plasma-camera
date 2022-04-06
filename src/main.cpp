@@ -2,7 +2,6 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include <QApplication>
 #include <QQmlApplicationEngine>
 #include <QtQml>
 #include <QUrl>
@@ -17,6 +16,9 @@
 
 #ifdef Q_OS_ANDROID
 #include <QtAndroid>
+#include <QGuiApplication>
+#else
+#include <QApplication>
 #endif
 
 constexpr auto URI = "org.kde.plasmacamera";
@@ -24,7 +26,12 @@ constexpr auto URI = "org.kde.plasmacamera";
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+#ifdef Q_OS_ANDROID
+    QGuiApplication app(argc, argv);
+#else
     QApplication app(argc, argv);
+#endif
+
     QCoreApplication::setOrganizationName("KDE");
     QCoreApplication::setOrganizationDomain("kde.org");
     QCoreApplication::setApplicationName("plasma-camera");
@@ -51,7 +58,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     qmlRegisterSingletonInstance<PlasmaCamera>(URI, 1, 0, "PlasmaCamera", &plasmaCamera);
     qmlRegisterSingletonInstance<CameraSettings>(URI, 1, 0, "CameraSettings", CameraSettings::self());
 
-    QObject::connect(QApplication::instance(), &QCoreApplication::aboutToQuit, QApplication::instance(), [] {
+    QObject::connect(QCoreApplication::instance(), &QCoreApplication::aboutToQuit, QCoreApplication::instance(), [] {
         CameraSettings::self()->save();
     });
 
