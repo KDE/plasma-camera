@@ -1,4 +1,6 @@
 # SPDX-FileCopyrightText: 2022 Devin Lin <devin@kde.org>
 # SPDX-License-Identifier: GPL-3.0-or-later
 include:
-  - https://invent.kde.org/sysadmin/ci-tooling/raw/master/invent/ci-reuse.yml
+  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/reuse-lint.yml
+  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/linux.yml
+  - https://invent.kde.org/sysadmin/ci-utilities/raw/master/gitlab-templates/android.yml
