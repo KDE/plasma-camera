@@ -24,6 +24,7 @@
   <name xml:lang="hu">Plasma Kamera</name>
   <name xml:lang="ia">Plasma Camera</name>
   <name xml:lang="id">Plasma Camera</name>
+  <name xml:lang="is">Plasma myndavél</name>
   <name xml:lang="it">Plasma Camera</name>
   <name xml:lang="ka">Plasma-ის კამერა</name>
   <name xml:lang="ko">Plasma 카메라</name>
@@ -64,6 +65,7 @@
   <summary xml:lang="hu">Fényképek és videók készítése</summary>
   <summary xml:lang="ia">Prende photos e videos</summary>
   <summary xml:lang="id">Ambil foto dan video</summary>
+  <summary xml:lang="is">Taktu myndir og myndskeið</summary>
   <summary xml:lang="it">Acquisisce foto e video</summary>
   <summary xml:lang="ka">გადაიღეთ ფოტოები და ვიდეოები</summary>
   <summary xml:lang="ko">사진 및 동영상 촬영</summary>
@@ -106,6 +108,7 @@
   <developer_name xml:lang="hu">A KDE Közösség</developer_name>
   <developer_name xml:lang="ia">Communitate de KDE</developer_name>
   <developer_name xml:lang="id">Komunitas KDE</developer_name>
+  <developer_name xml:lang="is">KDE-samfélagið</developer_name>
   <developer_name xml:lang="it">Comunità KDE</developer_name>
   <developer_name xml:lang="ka">KDE-ის საზოგადოება</developer_name>
   <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
@@ -147,6 +150,7 @@
     <p xml:lang="hu">Kameraalkalmazás a Plasma Mobile-hoz.</p>
     <p xml:lang="ia">Application de Camera per Plasma Mobile.</p>
     <p xml:lang="id">Aplikasi Kamera untuk Plasma Mobile.</p>
+    <p xml:lang="is">Myndavélarforrit fyrir Plasma Mobile.</p>
     <p xml:lang="it">Applicazione per la fotocamera per Plasma Mobile.</p>
     <p xml:lang="ka">Plasma Mobile-ის კამერის აპლიკაცია.</p>
     <p xml:lang="ko">Plasma 모바일용 카메라 애플리케이션.</p>
@@ -186,6 +190,7 @@
     <p xml:lang="hu">Támogat különböző felbontásokat, fehéregyensúly módokat és kameraeszközök közötti váltást.</p>
     <p xml:lang="ia">Il supporta resolutiones differente, modos differente de balancia blanc e commutar inter differente dispoitivos de camera.</p>
     <p xml:lang="id">Ini mendukung resolusi yang berbeda, mode keseimbangan putih yang berbeda dan peralihan antara perangkat kamera yang berbeda.</p>
+    <p xml:lang="is">Það styður mismunandi upplausnir, ýmsa hvítvægishami og að hægt er að skipta á milli myndavéla/tökutækja.</p>
     <p xml:lang="it">Supporta varie risoluzioni, varie modalità di bilanciamento del bianco e il passaggio alle diverse fotocamere dei dispositivi.</p>
     <p xml:lang="ka">აქვს სხვადასხვა გაფართოებების, თეთრის ბალანსის რეჟიმების და კამერის სხვადასხვა მოწყობილობებზე გადართვის მხარდაჭერა.</p>
     <p xml:lang="ko">다양한 해상도, 다양한 화이트 밸런스 모드 및 서로 다른 카메라 장치 간의 전환을 지원합니다.</p>
