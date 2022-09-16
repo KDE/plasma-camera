@@ -32,4 +32,4 @@ if(ANDROID)
 
 endif()
 
-install(TARGETS plasma-camera ${KF5_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasma-camera ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
