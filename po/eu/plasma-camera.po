@@ -1,0 +1,201 @@
+# Translation of plasma-camera.po to Euskara/Basque (eu).
+# Copyright (C) 2020, This file is copyright:
+# This file is distributed under the same license as the plasma-camera package.
+# KDE euskaratzeko proiektuko arduraduna <xalba@euskalnet.net>.
+#
+# Translators:
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-camera\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-04-07 00:45+0000\n"
+"PO-Revision-Date: 2020-04-08 19:25+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 19.12.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Iñigo Salvador Azurmendi"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "xalba@euskalnet.net"
+
+#: src/contents/ui/CameraPage.qml:19 src/contents/ui/GlobalDrawer.qml:44
+#: src/contents/ui/main.qml:53
+#, kde-format
+msgid "Camera"
+msgstr "Kamera"
+
+#: src/contents/ui/CameraPage.qml:31
+#, kde-format
+msgid "Switch mode"
+msgstr "Aldatu modua"
+
+#: src/contents/ui/CameraPage.qml:53
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "Indargabetu kliskatze automatikoa"
+
+#: src/contents/ui/CameraPage.qml:55
+#, kde-format
+msgid "Capture photo"
+msgstr "Argazkia egin"
+
+#: src/contents/ui/CameraPage.qml:57
+#, kde-format
+msgid "Stop recording video"
+msgstr "Gelditu bideoa grabatzea"
+
+#: src/contents/ui/CameraPage.qml:59
+#, kde-format
+msgid "Start recording video"
+msgstr "Hasi bideoa grabatzen"
+
+#: src/contents/ui/CameraPage.qml:93
+#, kde-format
+msgid "Switch Camera"
+msgstr "Aldatu kamera"
+
+#: src/contents/ui/CameraPage.qml:143
+#, kde-format
+msgid "Camera not available"
+msgstr "Kamera ez dago erabilgarri"
+
+#: src/contents/ui/CameraPage.qml:145
+#, kde-format
+msgid "Camera is busy. Is another application using it?"
+msgstr "Kamera lanpetuta dago. Beste aplikazio bat hura erabiltzen ari da?"
+
+#: src/contents/ui/CameraPage.qml:147
+#, kde-format
+msgid "Missing camera resource."
+msgstr "Kamerako baliabidea falta da."
+
+#: src/contents/ui/CameraPage.qml:283
+#, kde-format
+msgid "Took a photo"
+msgstr "Argazkia atera da"
+
+#: src/contents/ui/CameraPage.qml:286
+#, kde-format
+msgid "Failed to take a photo"
+msgstr "Huts egin du argazkia ateratzea"
+
+#: src/contents/ui/CameraPage.qml:292
+#, kde-format
+msgid "Stopped recording"
+msgstr "Gelditu da grabatzea"
+
+#: src/contents/ui/CameraPage.qml:298
+#, kde-format
+msgid "Started recording"
+msgstr "Hasi da grabatzen"
+
+#: src/contents/ui/CameraPage.qml:301
+#, kde-format
+msgid "Failed to start recording"
+msgstr "Huts egin du grabatzen hastea"
+
+#: src/contents/ui/GlobalDrawer.qml:61
+#, kde-format
+msgid "Resolution"
+msgstr "Bereizmena"
+
+#: src/contents/ui/GlobalDrawer.qml:81
+#, kde-format
+msgid "White balance"
+msgstr "Zuri-balantzea"
+
+#: src/contents/ui/GlobalDrawer.qml:86
+#, kde-format
+msgid "Auto"
+msgstr "Automatikoa"
+
+#: src/contents/ui/GlobalDrawer.qml:92
+#, kde-format
+msgid "Sunlight"
+msgstr "Eguzki argia"
+
+#: src/contents/ui/GlobalDrawer.qml:98
+#, kde-format
+msgid "Cloudy"
+msgstr "Hodeitsu"
+
+#: src/contents/ui/GlobalDrawer.qml:104
+#, kde-format
+msgid "Tungsten"
+msgstr "tungstenoa"
+
+#: src/contents/ui/GlobalDrawer.qml:110
+#, kde-format
+msgid "Fluorescent"
+msgstr "Fluoreszentea"
+
+#: src/contents/ui/GlobalDrawer.qml:115
+#, kde-format
+msgid "Self-timer"
+msgstr "Kliskatze automatikoa"
+
+#: src/contents/ui/GlobalDrawer.qml:120
+#, kde-format
+msgid "Off"
+msgstr "Itzalita"
+
+#: src/contents/ui/GlobalDrawer.qml:125
+#, kde-format
+msgid "2 s"
+msgstr "2 s"
+
+#: src/contents/ui/GlobalDrawer.qml:130
+#, kde-format
+msgid "5 s"
+msgstr "5 s"
+
+#: src/contents/ui/GlobalDrawer.qml:135
+#, kde-format
+msgid "10 s"
+msgstr "10 s"
+
+#: src/contents/ui/GlobalDrawer.qml:140
+#, kde-format
+msgid "20 s"
+msgstr "20 s"
+
+#: src/contents/ui/GlobalDrawer.qml:146
+#, kde-format
+msgid "About"
+msgstr "Honi buruz"
+
+#: src/contents/ui/main.qml:49
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr ""
+"Errore bat gertatu da: \"%1\". Aplikazioa eten bada gogoan eduki hura "
+"berrabiatzeko aukera."
+
+#: src/main.cpp:42
+#, kde-format
+msgid "© Plasma Mobile Developers"
+msgstr "© Plasma Mobile garatzaileak"
+
+#: src/main.cpp:44
+#, kde-format
+msgid "Marco Martin"
+msgstr "Marco Martin"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Jonah Brüchert"
+msgstr "Jonah Brüchert"

@@ -1,0 +1,200 @@
+# Lithuanian translations for plasma-camera package.
+# Copyright (C) 2019 This file is copyright:
+# This file is distributed under the same license as the plasma-camera package.
+# Automatically generated, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-camera\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-04-07 00:45+0000\n"
+"PO-Revision-Date: 2021-09-10 13:57+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: lt\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
+"%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 2.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Moo"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "<>"
+
+#: src/contents/ui/CameraPage.qml:19 src/contents/ui/GlobalDrawer.qml:44
+#: src/contents/ui/main.qml:53
+#, kde-format
+msgid "Camera"
+msgstr "Kamera"
+
+#: src/contents/ui/CameraPage.qml:31
+#, kde-format
+msgid "Switch mode"
+msgstr "Perjungti veikseną"
+
+#: src/contents/ui/CameraPage.qml:53
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "Atsisakyti savaiminio laikmačio"
+
+#: src/contents/ui/CameraPage.qml:55
+#, kde-format
+msgid "Capture photo"
+msgstr "Fotografuoti"
+
+#: src/contents/ui/CameraPage.qml:57
+#, kde-format
+msgid "Stop recording video"
+msgstr "Stabdyti vaizdo įrašą"
+
+#: src/contents/ui/CameraPage.qml:59
+#, kde-format
+msgid "Start recording video"
+msgstr "Pradėti vaizdo įrašą"
+
+#: src/contents/ui/CameraPage.qml:93
+#, kde-format
+msgid "Switch Camera"
+msgstr "Perjungti kamerą"
+
+#: src/contents/ui/CameraPage.qml:143
+#, kde-format
+msgid "Camera not available"
+msgstr "Kamera neprieinama"
+
+#: src/contents/ui/CameraPage.qml:145
+#, kde-format
+msgid "Camera is busy. Is another application using it?"
+msgstr "Kamera užimta. Ar ją naudoja kita programa?"
+
+#: src/contents/ui/CameraPage.qml:147
+#, kde-format
+msgid "Missing camera resource."
+msgstr "Trūksta kameros ištekliaus."
+
+#: src/contents/ui/CameraPage.qml:283
+#, kde-format
+msgid "Took a photo"
+msgstr "Fotografuoti"
+
+#: src/contents/ui/CameraPage.qml:286
+#, kde-format
+msgid "Failed to take a photo"
+msgstr "Nepavyko fotografuoti"
+
+#: src/contents/ui/CameraPage.qml:292
+#, kde-format
+msgid "Stopped recording"
+msgstr "Įrašas sustabdytas"
+
+#: src/contents/ui/CameraPage.qml:298
+#, kde-format
+msgid "Started recording"
+msgstr "Įrašas pradėtas"
+
+#: src/contents/ui/CameraPage.qml:301
+#, kde-format
+msgid "Failed to start recording"
+msgstr "Nepavyko pradėti įrašo"
+
+#: src/contents/ui/GlobalDrawer.qml:61
+#, kde-format
+msgid "Resolution"
+msgstr "Raiška"
+
+#: src/contents/ui/GlobalDrawer.qml:81
+#, kde-format
+msgid "White balance"
+msgstr "Baltos spalvos balansas"
+
+#: src/contents/ui/GlobalDrawer.qml:86
+#, kde-format
+msgid "Auto"
+msgstr "Automatiškai"
+
+#: src/contents/ui/GlobalDrawer.qml:92
+#, kde-format
+msgid "Sunlight"
+msgstr "Saulės šviesa"
+
+#: src/contents/ui/GlobalDrawer.qml:98
+#, kde-format
+msgid "Cloudy"
+msgstr "Debesuota"
+
+#: src/contents/ui/GlobalDrawer.qml:104
+#, kde-format
+msgid "Tungsten"
+msgstr "Volframas"
+
+#: src/contents/ui/GlobalDrawer.qml:110
+#, kde-format
+msgid "Fluorescent"
+msgstr "Fluorescencinis"
+
+#: src/contents/ui/GlobalDrawer.qml:115
+#, kde-format
+msgid "Self-timer"
+msgstr "Savaiminis laikmatis"
+
+#: src/contents/ui/GlobalDrawer.qml:120
+#, kde-format
+msgid "Off"
+msgstr "Išjungtas"
+
+#: src/contents/ui/GlobalDrawer.qml:125
+#, kde-format
+msgid "2 s"
+msgstr "2 sek."
+
+#: src/contents/ui/GlobalDrawer.qml:130
+#, kde-format
+msgid "5 s"
+msgstr "5 sek."
+
+#: src/contents/ui/GlobalDrawer.qml:135
+#, kde-format
+msgid "10 s"
+msgstr "10 sek."
+
+#: src/contents/ui/GlobalDrawer.qml:140
+#, kde-format
+msgid "20 s"
+msgstr "20 sek."
+
+#: src/contents/ui/GlobalDrawer.qml:146
+#, kde-format
+msgid "About"
+msgstr "Apie"
+
+#: src/contents/ui/main.qml:49
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr ""
+"Įvyko klaida: „%1“. Jei programa nustojo veikti, galite pabandyti paleisti "
+"ją iš naujo."
+
+#: src/main.cpp:42
+#, kde-format
+msgid "© Plasma Mobile Developers"
+msgstr "© Plasma Mobile programuotojai"
+
+#: src/main.cpp:44
+#, kde-format
+msgid "Marco Martin"
+msgstr "Marco Martin"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Jonah Brüchert"
+msgstr "Jonah Brüchert"

@@ -1,0 +1,196 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-camera package.
+#
+# Kristóf Kiszel <kiszel.kristof@gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-camera\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-04-07 00:45+0000\n"
+"PO-Revision-Date: 2020-12-07 22:06+0100\n"
+"Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
+"Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.03.70\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kiszel Kristóf"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kiszel.kristof@gmail.com"
+
+#: src/contents/ui/CameraPage.qml:19 src/contents/ui/GlobalDrawer.qml:44
+#: src/contents/ui/main.qml:53
+#, kde-format
+msgid "Camera"
+msgstr "Kamera"
+
+#: src/contents/ui/CameraPage.qml:31
+#, kde-format
+msgid "Switch mode"
+msgstr "Módváltás"
+
+#: src/contents/ui/CameraPage.qml:53
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "Önkioldó leállítása"
+
+#: src/contents/ui/CameraPage.qml:55
+#, kde-format
+msgid "Capture photo"
+msgstr "Fénykép készítése"
+
+#: src/contents/ui/CameraPage.qml:57
+#, kde-format
+msgid "Stop recording video"
+msgstr "Videofelvétel leállítása"
+
+#: src/contents/ui/CameraPage.qml:59
+#, kde-format
+msgid "Start recording video"
+msgstr "Videofelvétel indítása"
+
+#: src/contents/ui/CameraPage.qml:93
+#, kde-format
+msgid "Switch Camera"
+msgstr "Kameraváltás"
+
+#: src/contents/ui/CameraPage.qml:143
+#, kde-format
+msgid "Camera not available"
+msgstr "A kamera nem érhető el"
+
+#: src/contents/ui/CameraPage.qml:145
+#, kde-format
+msgid "Camera is busy. Is another application using it?"
+msgstr "A kamera foglalt. Talán másik alkalmazás használja?"
+
+#: src/contents/ui/CameraPage.qml:147
+#, kde-format
+msgid "Missing camera resource."
+msgstr "Hiányzó kameraerőforrás."
+
+#: src/contents/ui/CameraPage.qml:283
+#, kde-format
+msgid "Took a photo"
+msgstr "Fénykép készítése"
+
+#: src/contents/ui/CameraPage.qml:286
+#, kde-format
+msgid "Failed to take a photo"
+msgstr "Nem sikerült fényképet készíteni"
+
+#: src/contents/ui/CameraPage.qml:292
+#, kde-format
+msgid "Stopped recording"
+msgstr "Felvétel leállítva"
+
+#: src/contents/ui/CameraPage.qml:298
+#, kde-format
+msgid "Started recording"
+msgstr "Felvétel elindítva"
+
+#: src/contents/ui/CameraPage.qml:301
+#, kde-format
+msgid "Failed to start recording"
+msgstr "Nem sikerült elindítani a felvételt"
+
+#: src/contents/ui/GlobalDrawer.qml:61
+#, kde-format
+msgid "Resolution"
+msgstr "Felbontás"
+
+#: src/contents/ui/GlobalDrawer.qml:81
+#, kde-format
+msgid "White balance"
+msgstr "Fehéregyensúly"
+
+#: src/contents/ui/GlobalDrawer.qml:86
+#, kde-format
+msgid "Auto"
+msgstr "Automatikus"
+
+#: src/contents/ui/GlobalDrawer.qml:92
+#, kde-format
+msgid "Sunlight"
+msgstr "Napfény"
+
+#: src/contents/ui/GlobalDrawer.qml:98
+#, kde-format
+msgid "Cloudy"
+msgstr "Felhős"
+
+#: src/contents/ui/GlobalDrawer.qml:104
+#, kde-format
+msgid "Tungsten"
+msgstr "Wolframszálas"
+
+#: src/contents/ui/GlobalDrawer.qml:110
+#, kde-format
+msgid "Fluorescent"
+msgstr "Fluorescent"
+
+#: src/contents/ui/GlobalDrawer.qml:115
+#, kde-format
+msgid "Self-timer"
+msgstr "Önkioldó"
+
+#: src/contents/ui/GlobalDrawer.qml:120
+#, kde-format
+msgid "Off"
+msgstr "Ki"
+
+#: src/contents/ui/GlobalDrawer.qml:125
+#, kde-format
+msgid "2 s"
+msgstr "2 s"
+
+#: src/contents/ui/GlobalDrawer.qml:130
+#, kde-format
+msgid "5 s"
+msgstr "5 s"
+
+#: src/contents/ui/GlobalDrawer.qml:135
+#, kde-format
+msgid "10 s"
+msgstr "10 s"
+
+#: src/contents/ui/GlobalDrawer.qml:140
+#, kde-format
+msgid "20 s"
+msgstr "20 s"
+
+#: src/contents/ui/GlobalDrawer.qml:146
+#, kde-format
+msgid "About"
+msgstr "Névjegy"
+
+#: src/contents/ui/main.qml:49
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr "Hiba történt: „%1”. Indítsa újra az alkalmazást, ha az leállt."
+
+#: src/main.cpp:42
+#, kde-format
+msgid "© Plasma Mobile Developers"
+msgstr "© A Plasma Mobile fejlesztői"
+
+#: src/main.cpp:44
+#, kde-format
+msgid "Marco Martin"
+msgstr "Marco Martin"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Jonah Brüchert"
+msgstr "Jonah Brüchert"

@@ -1,0 +1,209 @@
+# Spanish translations for plasma-camera.po package.
+# Copyright (C) 2019 This file is copyright:
+# This file is distributed under the same license as the plasma-camera package.
+#
+# Automatically generated, 2019.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2019, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-camera\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-04-07 00:45+0000\n"
+"PO-Revision-Date: 2020-01-02 18:11+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 19.12.0\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Eloy Cuadra"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ecuadra@eloihr.net"
+
+#: src/contents/ui/CameraPage.qml:19 src/contents/ui/GlobalDrawer.qml:44
+#: src/contents/ui/main.qml:53
+#, kde-format
+msgid "Camera"
+msgstr "Cámara"
+
+#: src/contents/ui/CameraPage.qml:31
+#, kde-format
+msgid "Switch mode"
+msgstr "Cambiar el modo"
+
+#: src/contents/ui/CameraPage.qml:53
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "Cancelar temporizador"
+
+#: src/contents/ui/CameraPage.qml:55
+#, kde-format
+msgid "Capture photo"
+msgstr "Capturar foto"
+
+#: src/contents/ui/CameraPage.qml:57
+#, kde-format
+msgid "Stop recording video"
+msgstr "Detener la grabación de vídeo"
+
+#: src/contents/ui/CameraPage.qml:59
+#, kde-format
+msgid "Start recording video"
+msgstr "Empezar a grabar vídeo"
+
+#: src/contents/ui/CameraPage.qml:93
+#, kde-format
+msgid "Switch Camera"
+msgstr "Cambiar de cámara"
+
+#: src/contents/ui/CameraPage.qml:143
+#, kde-format
+msgid "Camera not available"
+msgstr "Cámara no disponible"
+
+#: src/contents/ui/CameraPage.qml:145
+#, kde-format
+msgid "Camera is busy. Is another application using it?"
+msgstr "La cámara está ocupada. ¿La está usando otra aplicación?"
+
+#: src/contents/ui/CameraPage.qml:147
+#, kde-format
+msgid "Missing camera resource."
+msgstr "Recurso de cámara ausente."
+
+#: src/contents/ui/CameraPage.qml:283
+#, kde-format
+msgid "Took a photo"
+msgstr "Hacer una foto"
+
+#: src/contents/ui/CameraPage.qml:286
+#, kde-format
+msgid "Failed to take a photo"
+msgstr "No se ha podido hacer una foto"
+
+#: src/contents/ui/CameraPage.qml:292
+#, kde-format
+msgid "Stopped recording"
+msgstr "Grabación detenida"
+
+#: src/contents/ui/CameraPage.qml:298
+#, kde-format
+msgid "Started recording"
+msgstr "Grabación iniciada"
+
+#: src/contents/ui/CameraPage.qml:301
+#, kde-format
+msgid "Failed to start recording"
+msgstr "No se ha podido empezar a grabar"
+
+#: src/contents/ui/GlobalDrawer.qml:61
+#, kde-format
+msgid "Resolution"
+msgstr "Resolución"
+
+#: src/contents/ui/GlobalDrawer.qml:81
+#, kde-format
+msgid "White balance"
+msgstr "Balance de blancos"
+
+#: src/contents/ui/GlobalDrawer.qml:86
+#, kde-format
+msgid "Auto"
+msgstr "Automático"
+
+#: src/contents/ui/GlobalDrawer.qml:92
+#, kde-format
+msgid "Sunlight"
+msgstr "Luz diurna"
+
+#: src/contents/ui/GlobalDrawer.qml:98
+#, kde-format
+msgid "Cloudy"
+msgstr "Nublado"
+
+#: src/contents/ui/GlobalDrawer.qml:104
+#, kde-format
+msgid "Tungsten"
+msgstr "Incandescente"
+
+#: src/contents/ui/GlobalDrawer.qml:110
+#, kde-format
+msgid "Fluorescent"
+msgstr "Fluorescente"
+
+#: src/contents/ui/GlobalDrawer.qml:115
+#, kde-format
+msgid "Self-timer"
+msgstr "Temporizador"
+
+#: src/contents/ui/GlobalDrawer.qml:120
+#, kde-format
+msgid "Off"
+msgstr "Desactivar"
+
+#: src/contents/ui/GlobalDrawer.qml:125
+#, kde-format
+msgid "2 s"
+msgstr "2 s"
+
+#: src/contents/ui/GlobalDrawer.qml:130
+#, kde-format
+msgid "5 s"
+msgstr "5 s"
+
+#: src/contents/ui/GlobalDrawer.qml:135
+#, kde-format
+msgid "10 s"
+msgstr "10 s"
+
+#: src/contents/ui/GlobalDrawer.qml:140
+#, kde-format
+msgid "20 s"
+msgstr "20 s"
+
+#: src/contents/ui/GlobalDrawer.qml:146
+#, kde-format
+msgid "About"
+msgstr "Acerca de"
+
+#: src/contents/ui/main.qml:49
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr ""
+"Ha ocurrido un error: «%1». Considere reiniciar la aplicación si ha dejado "
+"de funcionar."
+
+#: src/main.cpp:42
+#, kde-format
+msgid "© Plasma Mobile Developers"
+msgstr "© Los desarrolladores de Plasma Mobile"
+
+#: src/main.cpp:44
+#, kde-format
+msgid "Marco Martin"
+msgstr "Marco Martin"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Jonah Brüchert"
+msgstr "Jonah Brüchert"
+
+#~ msgid "Simple camera application"
+#~ msgstr "Aplicación de cámara sencilla"
+
+#~ msgid "License:"
+#~ msgstr "Licencia:"
+
+#~ msgid "View source code online"
+#~ msgstr "Ver código fuente en línea"

@@ -1,0 +1,206 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-camera package.
+# Jung Hee Lee <daemul72@gmail.com>, 2019.
+# Shinjo Park <kde@peremen.name>, 2019, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-camera\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-04-07 00:45+0000\n"
+"PO-Revision-Date: 2020-01-26 22:49+0100\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <kde-kr@kde.org>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.04.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "박신조"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde@peremen.name"
+
+#: src/contents/ui/CameraPage.qml:19 src/contents/ui/GlobalDrawer.qml:44
+#: src/contents/ui/main.qml:53
+#, kde-format
+msgid "Camera"
+msgstr "카메라"
+
+#: src/contents/ui/CameraPage.qml:31
+#, kde-format
+msgid "Switch mode"
+msgstr "모드 전환"
+
+#: src/contents/ui/CameraPage.qml:53
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "셀프 타이머 취소"
+
+#: src/contents/ui/CameraPage.qml:55
+#, kde-format
+msgid "Capture photo"
+msgstr "사진 찍기"
+
+#: src/contents/ui/CameraPage.qml:57
+#, kde-format
+msgid "Stop recording video"
+msgstr "비디오 녹화 중지"
+
+#: src/contents/ui/CameraPage.qml:59
+#, kde-format
+msgid "Start recording video"
+msgstr "비디오 녹화 시작"
+
+#: src/contents/ui/CameraPage.qml:93
+#, kde-format
+msgid "Switch Camera"
+msgstr "카메라 전환"
+
+#: src/contents/ui/CameraPage.qml:143
+#, kde-format
+msgid "Camera not available"
+msgstr "카메라를 사용할 수 없음"
+
+#: src/contents/ui/CameraPage.qml:145
+#, kde-format
+msgid "Camera is busy. Is another application using it?"
+msgstr "카메라를 사용할 수 없습니다. 다른 프로그램에서 사용하고 있습니까?"
+
+#: src/contents/ui/CameraPage.qml:147
+#, kde-format
+msgid "Missing camera resource."
+msgstr "카메라 자원이 없습니다."
+
+#: src/contents/ui/CameraPage.qml:283
+#, kde-format
+msgid "Took a photo"
+msgstr "사진 촬영"
+
+#: src/contents/ui/CameraPage.qml:286
+#, kde-format
+msgid "Failed to take a photo"
+msgstr "사진을 찍을 수 없음"
+
+#: src/contents/ui/CameraPage.qml:292
+#, kde-format
+msgid "Stopped recording"
+msgstr "녹화 중지"
+
+#: src/contents/ui/CameraPage.qml:298
+#, kde-format
+msgid "Started recording"
+msgstr "녹화 시작"
+
+#: src/contents/ui/CameraPage.qml:301
+#, kde-format
+msgid "Failed to start recording"
+msgstr "녹화를 시작할 수 없음"
+
+#: src/contents/ui/GlobalDrawer.qml:61
+#, kde-format
+msgid "Resolution"
+msgstr "해상도"
+
+#: src/contents/ui/GlobalDrawer.qml:81
+#, kde-format
+msgid "White balance"
+msgstr "화이트 밸런스"
+
+#: src/contents/ui/GlobalDrawer.qml:86
+#, kde-format
+msgid "Auto"
+msgstr "자동"
+
+#: src/contents/ui/GlobalDrawer.qml:92
+#, kde-format
+msgid "Sunlight"
+msgstr "햇살"
+
+#: src/contents/ui/GlobalDrawer.qml:98
+#, kde-format
+msgid "Cloudy"
+msgstr "흐림"
+
+#: src/contents/ui/GlobalDrawer.qml:104
+#, kde-format
+msgid "Tungsten"
+msgstr "텅스텐"
+
+#: src/contents/ui/GlobalDrawer.qml:110
+#, kde-format
+msgid "Fluorescent"
+msgstr "형광등"
+
+#: src/contents/ui/GlobalDrawer.qml:115
+#, kde-format
+msgid "Self-timer"
+msgstr "셀프 타이머"
+
+#: src/contents/ui/GlobalDrawer.qml:120
+#, kde-format
+msgid "Off"
+msgstr "끔"
+
+#: src/contents/ui/GlobalDrawer.qml:125
+#, kde-format
+msgid "2 s"
+msgstr "2초"
+
+#: src/contents/ui/GlobalDrawer.qml:130
+#, kde-format
+msgid "5 s"
+msgstr "5초"
+
+#: src/contents/ui/GlobalDrawer.qml:135
+#, kde-format
+msgid "10 s"
+msgstr "10초"
+
+#: src/contents/ui/GlobalDrawer.qml:140
+#, kde-format
+msgid "20 s"
+msgstr "20초"
+
+#: src/contents/ui/GlobalDrawer.qml:146
+#, kde-format
+msgid "About"
+msgstr "정보"
+
+#: src/contents/ui/main.qml:49
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr "오류 발생: \"%1\". 프로그램을 다시 시작하십시오."
+
+#: src/main.cpp:42
+#, kde-format
+msgid "© Plasma Mobile Developers"
+msgstr "© Plasma Mobile Developers"
+
+#: src/main.cpp:44
+#, kde-format
+msgid "Marco Martin"
+msgstr "Marco Martin"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "Jonah Brüchert"
+msgstr "Jonah Brüchert"
+
+#~ msgid "Simple camera application"
+#~ msgstr "간단한 카메라 응용 프로그램"
+
+#~ msgid "License:"
+#~ msgstr "라이선스:"
+
+#~ msgid "View source code online"
+#~ msgstr "소스 코드 온라인 보기"
