@@ -1,7 +1,7 @@
 {
     "id": "org.kde.plasma.camera",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-21.08",
+    "runtime-version": "5.15-22.08",
     "sdk": "org.kde.Sdk",
     "command": "plasma-camera",
     "tags": ["nightly"],
@@ -17,29 +17,6 @@
     "separate-locales": false,
 
     "modules": [
-        {
-            "name": "gst-plugins-bad",
-            "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [
-                "-Ddisable_gtkdoc=true"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.18.5.tar.xz",
-                    "sha256": "a164923b94f0d08578a6fcaeaac6e0c05da788a46903a1086870e9ca45ad678e"
-                }
-            ],
-            "cleanup": [
-                "/include",
-                "/lib/*.la",
-                "/lib/gstreamer-1.0/*.la",
-                "/lib/gstreamer-1.0/include",
-                "/lib/pkgconfig",
-                "/share/gtk-doc"
-            ]
-        },
         {
             "name": "plasma-camera",
             "buildsystem": "cmake-ninja",
