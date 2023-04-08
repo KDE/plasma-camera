@@ -1,11 +1,12 @@
 {
-    "id": "org.kde.plasma.camera",
+    "id": "org.kde.plasma-camera",
     "runtime": "org.kde.Platform",
     "runtime-version": "5.15-22.08",
     "sdk": "org.kde.Sdk",
     "command": "plasma-camera",
     "tags": ["nightly"],
     "desktop-file-name-suffix": " (Nightly)",
+    "rename-desktop-file": "org.kde.plasma.camera.desktop",
     "finish-args": [
         "--share=ipc",
         "--share=network",
