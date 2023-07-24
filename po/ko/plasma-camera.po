@@ -72,7 +72,7 @@ msgstr "카메라를 사용할 수 없음"
 #: src/contents/ui/CameraPage.qml:145
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
-msgstr "카메라를 사용할 수 없습니다. 다른 프로그램에서 사용하고 있습니까?"
+msgstr "카메라를 사용할 수 없습니다. 다른 앱에서 사용하고 있습니까?"
 
 #: src/contents/ui/CameraPage.qml:147
 #, kde-format
@@ -179,7 +179,7 @@ msgstr "정보"
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
-msgstr "오류 발생: \"%1\". 프로그램을 다시 시작하십시오."
+msgstr "오류 발생: \"%1\". 앱을 다시 시작하십시오."
 
 #: src/main.cpp:42
 #, kde-format
