@@ -77,7 +77,7 @@ msgstr "카메라를 사용할 수 없습니다. 다른 앱에서 사용하고 �
 #: src/contents/ui/CameraPage.qml:147
 #, kde-format
 msgid "Missing camera resource."
-msgstr "카메라 자원이 없습니다."
+msgstr "카메라 리소스가 없습니다."
 
 #: src/contents/ui/CameraPage.qml:283
 #, kde-format
