@@ -145,12 +145,7 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             text: i18n("About")
             iconName: "help-about"
-            onTriggered: {
-                while (pageStack.depth > 1)
-                    pageStack.pop()
-
-                pageStack.push(aboutPage)
-            }
+            onTriggered: pageStack.pushDialogLayer("qrc:/AboutPage.qml")
         }
     ]
 }
