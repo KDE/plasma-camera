@@ -19,12 +19,6 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Component {
-        id: aboutPage
-
-        AboutPage {}
-    }
-
     Camera {
         id: mainCamera
         captureMode: Camera.CaptureStillImage
