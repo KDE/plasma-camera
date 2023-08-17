@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-04-07 00:45+0000\n"
+"POT-Creation-Date: 2023-08-17 00:47+0000\n"
 "PO-Revision-Date: 2020-07-12 10:36+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -29,7 +29,7 @@ msgid "Your emails"
 msgstr "kekcuha@gmail.com"
 
 #: src/contents/ui/CameraPage.qml:19 src/contents/ui/GlobalDrawer.qml:44
-#: src/contents/ui/main.qml:53
+#: src/contents/ui/main.qml:47
 #, kde-format
 msgid "Camera"
 msgstr "Камера"
@@ -174,24 +174,24 @@ msgstr "20 с"
 msgid "About"
 msgstr "О программе"
 
-#: src/contents/ui/main.qml:49
+#: src/contents/ui/main.qml:43
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr "Произошла ошибка: «%1». Рекомендуется перезапуск приложения."
 
-#: src/main.cpp:42
+#: src/main.cpp:44
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Разработчики Plasma Mobile"
 
-#: src/main.cpp:44
+#: src/main.cpp:46
 #, kde-format
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: src/main.cpp:45
+#: src/main.cpp:47
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"

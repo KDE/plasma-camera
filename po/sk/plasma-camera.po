@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-04-07 00:45+0000\n"
+"POT-Creation-Date: 2023-08-17 00:47+0000\n"
 "PO-Revision-Date: 2020-03-26 14:20+0100\n"
 "Last-Translator: Dusan Kazik <prescott66@gmail.com>\n"
 "Language-Team: sk\n"
@@ -27,7 +27,7 @@ msgid "Your emails"
 msgstr "prescott66@gmail.com"
 
 #: src/contents/ui/CameraPage.qml:19 src/contents/ui/GlobalDrawer.qml:44
-#: src/contents/ui/main.qml:53
+#: src/contents/ui/main.qml:47
 #, kde-format
 msgid "Camera"
 msgstr "Fotoaparát"
@@ -172,7 +172,7 @@ msgstr "20 s"
 msgid "About"
 msgstr "O aplikácii"
 
-#: src/contents/ui/main.qml:49
+#: src/contents/ui/main.qml:43
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
@@ -181,17 +181,17 @@ msgstr ""
 "Vyskytla sa chyba: \"%1\". Prosím, zvážte reštart aplikácie, ak prestala "
 "pracovať."
 
-#: src/main.cpp:42
+#: src/main.cpp:44
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Vývojári Plasma Mobile"
 
-#: src/main.cpp:44
+#: src/main.cpp:46
 #, kde-format
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: src/main.cpp:45
+#: src/main.cpp:47
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
