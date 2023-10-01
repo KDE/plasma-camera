@@ -86,7 +86,7 @@ msgstr "Sacouse unha foto"
 #: src/contents/ui/CameraPage.qml:286
 #, kde-format
 msgid "Failed to take a photo"
-msgstr "Non se puido sacar unha foto"
+msgstr "Non foi posíbel sacar unha foto"
 
 #: src/contents/ui/CameraPage.qml:292
 #, kde-format
@@ -101,7 +101,7 @@ msgstr "Iniciouse a gravación"
 #: src/contents/ui/CameraPage.qml:301
 #, kde-format
 msgid "Failed to start recording"
-msgstr "Non se puido iniciar a gravación"
+msgstr "Non foi posíbel iniciar a gravación"
 
 #: src/contents/ui/GlobalDrawer.qml:61
 #, kde-format
