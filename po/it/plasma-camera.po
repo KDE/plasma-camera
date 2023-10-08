@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
-# Paolo Zamponi <feus73@gmail.com>, 2019, 2020.
+# SPDX-FileCopyrightText: 2019, 2020, 2023 Paolo Zamponi <feus73@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-17 00:47+0000\n"
-"PO-Revision-Date: 2020-01-12 19:18+0100\n"
+"PO-Revision-Date: 2023-10-01 21:36+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 19.12.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -81,7 +81,7 @@ msgstr "Risorsa fotocamera mancante."
 #: src/contents/ui/CameraPage.qml:283
 #, kde-format
 msgid "Took a photo"
-msgstr "Scatta una foto"
+msgstr "Ho scattato una foto"
 
 #: src/contents/ui/CameraPage.qml:286
 #, kde-format
@@ -96,7 +96,7 @@ msgstr "Registrazione interrotta"
 #: src/contents/ui/CameraPage.qml:298
 #, kde-format
 msgid "Started recording"
-msgstr "Registrazione iniziata"
+msgstr "Registrazione avviata"
 
 #: src/contents/ui/CameraPage.qml:301
 #, kde-format
