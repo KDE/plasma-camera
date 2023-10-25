@@ -11,7 +11,7 @@ import org.kde.plasmacamera 1.0
 Kirigami.GlobalDrawer {
     id: drawer
     property var camera
-
+    handleVisible: false
     Component {
         id: devicesSubAction
 
@@ -109,37 +109,6 @@ Kirigami.GlobalDrawer {
                 onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
                 text: i18n("Fluorescent")
                 checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceFluorescent
-            }
-        },
-        Kirigami.Action {
-            text: i18n("Self-timer")
-            iconName: "clock"
-            enabled: !camera.selfTimerRunning
-
-            Kirigami.Action {
-                text: i18n("Off")
-                onTriggered: camera.selfTimerDuration = 0
-                checked: camera.selfTimerDuration === 0
-            }
-            Kirigami.Action {
-                text: i18n("2 s")
-                onTriggered: camera.selfTimerDuration = 2
-                checked: camera.selfTimerDuration === 2
-            }
-            Kirigami.Action {
-                text: i18n("5 s")
-                onTriggered: camera.selfTimerDuration = 5
-                checked: camera.selfTimerDuration === 5
-            }
-            Kirigami.Action {
-                text: i18n("10 s")
-                onTriggered: camera.selfTimerDuration = 10
-                checked: camera.selfTimerDuration === 10
-            }
-            Kirigami.Action {
-                text: i18n("20 s")
-                onTriggered: camera.selfTimerDuration = 20
-                checked: camera.selfTimerDuration === 20
             }
         },
         Kirigami.Action {

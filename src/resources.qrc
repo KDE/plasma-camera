@@ -20,5 +20,6 @@
         <file alias="camera_white_balance_flourescent.png">contents/ui/images/camera_white_balance_flourescent.png</file>
         <file alias="camera_flash_fill.png">contents/ui/images/camera_flash_fill.png</file>
         <file alias="PreviewArea.qml">contents/ui/PreviewArea.qml</file>
+        <file alias="components/RadioSelector.qml">contents/ui/components/RadioSelector.qml</file>
     </qresource>
 </RCC>

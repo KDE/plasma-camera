@@ -10,7 +10,7 @@ import org.kde.plasmacamera 1.0
 
 Kirigami.ApplicationWindow {
     id: root
-
+    minimumWidth: 350
     Component {
         id: cameraPage
 

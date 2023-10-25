@@ -4,12 +4,12 @@
 
 import QtQuick 2.7
 import QtMultimedia 5.8
-import org.kde.kirigami 2.0 as Kirigami
-import QtQuick.Controls 2.0 as Controls
+import org.kde.kirigami 2.19 as Kirigami
+import QtQuick.Controls 2.12 as Controls
 import QtQuick.Controls.Material 2.0
 import QtQuick.Layouts 1.2
 import QtGraphicalEffects 1.0
-
+import "./components" as Components
 
 Kirigami.Page {
     id: cameraPage
@@ -25,9 +25,17 @@ Kirigami.Page {
 
     globalToolBarStyle: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.None : Kirigami.ApplicationHeaderStyle.ToolBar
     onIsCurrentPageChanged: isCurrentPage && pageStack.depth > 1 && pageStack.pop()
+    FontMetrics {
+        id: fontMetrics
+    }
 
+    function formatText(count, modelData) {
+        var data = count === 12 ? modelData + 1 : modelData;
+        return  data + " s";
+    }
     leftAction: Kirigami.Action {
         id: switchModeAction
+        visible: false
         text: i18n("Switch mode")
         icon.color: "transparent"
         icon.name: {
@@ -48,6 +56,7 @@ Kirigami.Page {
     }
     mainAction: Kirigami.Action {
         id: captureAction
+        visible: false
         text: {
             if (selfTimer.running)
                 return i18n("Cancel self-timer")
@@ -90,6 +99,8 @@ Kirigami.Page {
         }
     }
     rightAction: Kirigami.Action {
+        id: switchCameraAction
+        visible: false
         text: i18n("Switch Camera")
         icon.color: "transparent"
         icon.name: "camera-photo-symbolic"
@@ -103,89 +114,277 @@ Kirigami.Page {
     }
 
     Rectangle {
-        id: cameraUI
-        state: "PhotoCapture"
+            id: cameraUI
+            state: "PhotoCapture"
+            anchors.fill: parent
 
-        anchors {
-            fill: parent
-            centerIn: parent
+            color: "black"
+
+            states: [
+                State {
+                    name: "PhotoCapture"
+                    StateChangeScript {
+                        script: {
+                            cameraPage.camera.captureMode = Camera.CaptureStillImage
+                            cameraPage.camera.start()
+                        }
+                    }
+                },
+                State {
+                    name: "VideoCapture"
+                    StateChangeScript {
+                        script: {
+                            cameraPage.camera.captureMode = Camera.CaptureVideo
+                            cameraPage.camera.start()
+                        }
+                    }
+
+                }
+            ]
+
+            Kirigami.Heading {
+                anchors.centerIn: parent
+                wrapMode: Text.WordWrap
+                text: {
+                    if (cameraPage.camera.availability === Camera.Unavailable)
+                        return i18n("Camera not available")
+                    else if (cameraPage.camera.availability === Camera.Busy)
+                        return i18n("Camera is busy. Is another application using it?")
+                    else if (cameraPage.camera.availability === Camera.ResourceMissing)
+                        return i18n("Missing camera resource.")
+                    else if (cameraPage.camera.availability === Camera.Available)
+                        return ""
+                }
+            }
+
+            VideoOutput {
+                id: viewfinder
+                visible: cameraUI.state == "PhotoCapture" || cameraUI.state == "VideoCapture"
+
+                // Workaround
+                orientation: Kirigami.Settings.isMobile ? -90 : 0
+                width: parent.width
+                height: parent.height-controlContainer.height
+
+                source: cameraPage.camera
+            }
+
+            PinchArea {
+                anchors.fill: parent
+                property real initialZoom
+                onPinchStarted: {
+                    initialZoom = cameraPage.camera.digitalZoom;
+                }
+                onPinchUpdated: {
+                    var scale = cameraPage.camera.maximumDigitalZoom / 8 * pinch.scale - cameraPage.camera.maximumDigitalZoom / 8;
+                    cameraPage.camera.setDigitalZoom(Math.min(cameraPage.camera.maximumDigitalZoom, cameraPage.camera.digitalZoom + scale))
+                }
+            }
+
+            MouseArea {
+                anchors.fill: parent
+
+                onClicked: {
+                    if (cameraPage.camera.lockStatus === cameraPage.camera.Unlocked) {
+                        cameraPage.camera.searchAndLock();
+                        console.log("searching focus...")
+                    }
+                    else {
+                        cameraPage.camera.unlock();
+                        console.log("unlocking focus...")
+                    }
+                }
+            }
         }
 
+    Rectangle{
+        id: controlContainer
+
+        anchors.bottom: cameraUI.bottom
+        height: controlsLayout.height
+        width: cameraPage.width
         color: "black"
+        ColumnLayout {
+            id: controlsLayout
+            width: parent.width
 
-        states: [
-            State {
-                name: "PhotoCapture"
-                StateChangeScript {
-                    script: {
-                        cameraPage.camera.captureMode = Camera.CaptureStillImage
-                        cameraPage.camera.start()
+            Item {
+                id: timerDuration
+
+                Layout.margins: Kirigami.Units.largeSpacing
+                clip: true
+                Layout.minimumHeight: timerButton.checked ? Kirigami.Units.gridUnit * 2 : 0
+                Layout.fillWidth: true
+                Behavior on Layout.minimumHeight {
+                    PropertyAnimation {
+                        duration: Kirigami.Units.shortDuration
+                        easing.type: Easing.InOutCubic
                     }
                 }
-            },
-            State {
-                name: "VideoCapture"
-                StateChangeScript {
-                    script: {
-                        cameraPage.camera.captureMode = Camera.CaptureVideo
-                        cameraPage.camera.start()
+                Component {
+                    id: delegateComponent
+                    Item{
+                        width: Kirigami.Units.gridUnit *2
+                        opacity: 1.0 - Math.abs(Controls.Tumbler.displacement) / (Controls.Tumbler.tumbler.visibleItemCount / 2.5)
+                        Controls.Label {
+                            anchors.centerIn:parent
+                            rotation: 90
+                            color: "white"
+                            text: formatText(Controls.Tumbler.tumbler.count, modelData)
+                            font.pixelSize: fontMetrics.font.pixelSize * 1.25
+                        }
                     }
                 }
-                
-            }
-        ]
 
-        Kirigami.Heading {
-            anchors.centerIn: parent
-            wrapMode: Text.WordWrap
-            text: {
-                if (cameraPage.camera.availability === Camera.Unavailable)
-                    return i18n("Camera not available")
-                else if (cameraPage.camera.availability === Camera.Busy)
-                    return i18n("Camera is busy. Is another application using it?")
-                else if (cameraPage.camera.availability === Camera.ResourceMissing)
-                    return i18n("Missing camera resource.")
-                else if (cameraPage.camera.availability === Camera.Available)
-                    return ""
-            }
-        }
+                Controls.Tumbler{
+                    id: timerTumbler
 
-        VideoOutput {
-            id: viewfinder
-            visible: cameraUI.state == "PhotoCapture" || cameraUI.state == "VideoCapture"
-        
-            // Workaround
-            orientation: Kirigami.Settings.isMobile ? -90 : 0
+                    anchors.centerIn: parent
+                    wrap: false
+                    implicitHeight: Kirigami.Units.gridUnit * 25
+                    Layout.alignment: Qt.AlignHCenter
+                    model: [0,2,5,10,20]
+                    onMovingChanged: {
+                        camera.selfTimerDuration = model[currentIndex]
+                    }
+                    rotation:-90
+                    delegate: delegateComponent
+                    visibleItemCount: 7
 
-            anchors.fill: parent
-
-            source: cameraPage.camera
-        }
-
-        PinchArea {
-            anchors.fill: parent
-            property real initialZoom
-            onPinchStarted: {
-                initialZoom = cameraPage.camera.digitalZoom;
-            }
-            onPinchUpdated: {
-                var scale = cameraPage.camera.maximumDigitalZoom / 8 * pinch.scale - cameraPage.camera.maximumDigitalZoom / 8;
-                cameraPage.camera.setDigitalZoom(Math.min(cameraPage.camera.maximumDigitalZoom, cameraPage.camera.digitalZoom + scale))
-            }
-        }
-
-        MouseArea {
-            anchors.fill: parent
-
-            onClicked: {
-                if (cameraPage.camera.lockStatus === cameraPage.camera.Unlocked) {
-                    cameraPage.camera.searchAndLock();
-                    console.log("searching focus...")
                 }
-                else {
-                    cameraPage.camera.unlock();
-                    console.log("unlocking focus...")
+            }
+
+            RowLayout{
+                spacing: Kirigami.Units.gridUnit
+                Layout.fillWidth: true
+                Layout.alignment: Qt.AlignHCenter
+                Item {
+                    Layout.fillWidth: true
                 }
+                Item{
+                    width: 40
+                    height:40
+                    PreviewArea {
+                        id: previewArea
+                        imageCapture: camera.imageCapture
+                        videoRecorder: camera.videoRecorder
+                        anchors.fill: parent
+
+                    }
+                    Kirigami.Icon {
+                        visible: !previewArea.visible
+                        anchors.centerIn: parent
+                        source: "photo"
+                        color: "white"
+                        height: Kirigami.Units.gridUnit *1.3
+                    }
+                }
+                Controls.ToolButton{
+                    id: timerButton
+                    checkable: true
+                    icon.name: "clock"
+                    Layout.fillWidth: true
+                    icon.color: "white"
+                    Layout.maximumWidth: height
+
+                }
+                Controls.ToolButton{
+                    Layout.fillWidth: true
+                    implicitHeight: Kirigami.Units.gridUnit * 4
+                    Layout.maximumWidth: height
+
+                    onClicked: captureAction.triggered()
+
+                    background: Rectangle {
+                        height: parent.height
+                        width: height
+                        radius: height/2
+                        color: modeSelector.selectedIndex === 0 ?
+                                   Kirigami.ColorUtils.linearInterpolation(
+                                   Kirigami.Theme.hoverColor,
+                                   "transparent", 0.6) :
+                                   Kirigami.ColorUtils.linearInterpolation(
+                                   "red",
+                                   "transparent", 0.6)
+                        border.color: "white"
+                        border.width: parent.hovered ? (parent.down ? parent.height/2: 10 ) :  5
+                        Rectangle {
+                            opacity: modeSelector.selectedIndex === 1 ? 1 : 0
+                            height: modeSelector.selectedIndex === 1 ? Kirigami.Units.gridUnit : 0
+                            width: height
+                            anchors.centerIn: parent
+                            radius: (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus) ? Kirigami.Units.smallSpacing : height/2
+                            Behavior on opacity {
+                                PropertyAnimation {
+                                    duration: Kirigami.Units.shortDuration
+                                    easing.type: Easing.InOutCubic
+                                }
+                            }
+                            Behavior on height {
+                                PropertyAnimation {
+                                    duration: Kirigami.Units.shortDuration
+                                    easing.type: Easing.InOutCubic
+                                }
+                            }
+                        }
+                        Behavior on border.width {
+                            PropertyAnimation {
+                                duration: Kirigami.Units.shortDuration
+                                easing.type: Easing.InOutCubic
+                            }
+                        }
+                        Behavior on color {
+                            PropertyAnimation {
+                                duration: Kirigami.Units.longDuration
+                                easing.type: Easing.InOutCubic
+                            }
+                        }
+                    }
+
+                }
+                Controls.ToolButton{
+                    Layout.fillWidth: true
+                    icon.name: "circular-arrow-shape"
+                    icon.color: "white"
+                    Layout.maximumWidth: height
+                    onClicked: switchCameraAction.triggered()
+                    enabled: switchCameraAction.enabled
+                }
+                Item{
+                    width: 40
+                    height:40
+                    Controls.ToolButton{
+                        id: settingsButton
+                        icon.name: "settings-configure"
+                        icon.color: "white"
+                        anchors.centerIn: parent
+                        onClicked: applicationWindow().globalDrawer.open()
+                    }
+                }
+                Item {
+                    Layout.fillWidth: true
+                }
+            }
+            Components.RadioSelector {
+                id: modeSelector
+                color: "white"
+                Layout.alignment: Qt.AlignHCenter
+                Layout.fillWidth: true
+                Layout.margins: Kirigami.Units.largeSpacing * 3
+                Layout.maximumWidth: Kirigami.Units.gridUnit * 10
+                consistentWidth: true
+                actions: [
+                    Kirigami.Action {
+                        text: i18n("Photo")
+                        icon.name: "camera-photo-symbolic"
+                        onTriggered: camera.captureMode = Camera.CaptureStillImage
+                    },
+                    Kirigami.Action {
+                        text: i18n("Video")
+                        icon.name: "emblem-videos-symbolic"
+                        onTriggered: camera.captureMode = Camera.CaptureVideo
+                    }
+                ]
             }
         }
     }
@@ -193,11 +392,11 @@ Kirigami.Page {
     ZoomControl {
         anchors {
             right: parent.right
+            top: parent.top
             margins: Kirigami.Units.gridUnit * 2
         }
         width : Kirigami.Units.gridUnit * 2
-        height: parent.height
-
+        height: parent.height - controlContainer.height
         currentZoom: cameraPage.camera.digitalZoom
         maximumZoom: Math.min(4.0, cameraPage.camera.maximumDigitalZoom)
         onZoomTo: cameraPage.camera.setDigitalZoom(value)
@@ -425,18 +624,6 @@ Kirigami.Page {
                 to: 0
                 duration: 500
             }
-        }
-    }
-
-    PreviewArea {
-        id: previewArea
-        imageCapture: camera.imageCapture
-        videoRecorder: camera.videoRecorder
-
-        anchors {
-            right: parent.right
-            bottom: parent.bottom
-            margins: Kirigami.Units.gridUnit
         }
     }
 }
