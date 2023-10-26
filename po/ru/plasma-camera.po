@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:47+0000\n"
+"POT-Creation-Date: 2023-10-26 00:43+0000\n"
 "PO-Revision-Date: 2020-07-12 10:36+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -34,72 +34,82 @@ msgstr "kekcuha@gmail.com"
 msgid "Camera"
 msgstr "Камера"
 
-#: src/contents/ui/CameraPage.qml:31
+#: src/contents/ui/CameraPage.qml:39
 #, kde-format
 msgid "Switch mode"
 msgstr "Переключить режим"
 
-#: src/contents/ui/CameraPage.qml:53
+#: src/contents/ui/CameraPage.qml:62
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "Отменить таймер"
 
-#: src/contents/ui/CameraPage.qml:55
+#: src/contents/ui/CameraPage.qml:64
 #, kde-format
 msgid "Capture photo"
 msgstr "Захватить фотографию"
 
-#: src/contents/ui/CameraPage.qml:57
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Stop recording video"
 msgstr "Остановить запись видео"
 
-#: src/contents/ui/CameraPage.qml:59
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Start recording video"
 msgstr "Начать запись видео"
 
-#: src/contents/ui/CameraPage.qml:93
+#: src/contents/ui/CameraPage.qml:104
 #, kde-format
 msgid "Switch Camera"
 msgstr "Переключить камеру"
 
-#: src/contents/ui/CameraPage.qml:143
+#: src/contents/ui/CameraPage.qml:150
 #, kde-format
 msgid "Camera not available"
 msgstr "Камера недоступна"
 
-#: src/contents/ui/CameraPage.qml:145
+#: src/contents/ui/CameraPage.qml:152
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
 msgstr "Камера занята. Возможно, её использует другое приложение."
 
-#: src/contents/ui/CameraPage.qml:147
+#: src/contents/ui/CameraPage.qml:154
 #, kde-format
 msgid "Missing camera resource."
 msgstr "Отсуствует ресурс камеры."
 
-#: src/contents/ui/CameraPage.qml:283
+#: src/contents/ui/CameraPage.qml:378
+#, kde-format
+msgid "Photo"
+msgstr ""
+
+#: src/contents/ui/CameraPage.qml:383
+#, kde-format
+msgid "Video"
+msgstr ""
+
+#: src/contents/ui/CameraPage.qml:482
 #, kde-format
 msgid "Took a photo"
 msgstr "Фотография сделана"
 
-#: src/contents/ui/CameraPage.qml:286
+#: src/contents/ui/CameraPage.qml:485
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Не удалось сделать фотографию"
 
-#: src/contents/ui/CameraPage.qml:292
+#: src/contents/ui/CameraPage.qml:491
 #, kde-format
 msgid "Stopped recording"
 msgstr "Запись остановлена"
 
-#: src/contents/ui/CameraPage.qml:298
+#: src/contents/ui/CameraPage.qml:497
 #, kde-format
 msgid "Started recording"
 msgstr "Запись начата"
 
-#: src/contents/ui/CameraPage.qml:301
+#: src/contents/ui/CameraPage.qml:500
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Не удалось начать запись"
@@ -141,36 +151,6 @@ msgstr "Люминесцентная лампа"
 
 #: src/contents/ui/GlobalDrawer.qml:115
 #, kde-format
-msgid "Self-timer"
-msgstr "Таймер"
-
-#: src/contents/ui/GlobalDrawer.qml:120
-#, kde-format
-msgid "Off"
-msgstr "Выкл"
-
-#: src/contents/ui/GlobalDrawer.qml:125
-#, kde-format
-msgid "2 s"
-msgstr "2 с"
-
-#: src/contents/ui/GlobalDrawer.qml:130
-#, kde-format
-msgid "5 s"
-msgstr "5 с"
-
-#: src/contents/ui/GlobalDrawer.qml:135
-#, kde-format
-msgid "10 s"
-msgstr "10 с"
-
-#: src/contents/ui/GlobalDrawer.qml:140
-#, kde-format
-msgid "20 s"
-msgstr "20 с"
-
-#: src/contents/ui/GlobalDrawer.qml:146
-#, kde-format
 msgid "About"
 msgstr "О программе"
 
@@ -195,6 +175,24 @@ msgstr "Marco Martin"
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
+
+#~ msgid "Self-timer"
+#~ msgstr "Таймер"
+
+#~ msgid "Off"
+#~ msgstr "Выкл"
+
+#~ msgid "2 s"
+#~ msgstr "2 с"
+
+#~ msgid "5 s"
+#~ msgstr "5 с"
+
+#~ msgid "10 s"
+#~ msgstr "10 с"
+
+#~ msgid "20 s"
+#~ msgstr "20 с"
 
 #~ msgid "Simple camera application"
 #~ msgstr "Простое приложение для работы с камерой"

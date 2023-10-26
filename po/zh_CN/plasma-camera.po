@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:47+0000\n"
+"POT-Creation-Date: 2023-10-26 00:43+0000\n"
 "PO-Revision-Date: 2023-10-21 13:54\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -33,72 +33,82 @@ msgstr "tysontan@tysontan.com"
 msgid "Camera"
 msgstr "相机"
 
-#: src/contents/ui/CameraPage.qml:31
+#: src/contents/ui/CameraPage.qml:39
 #, kde-format
 msgid "Switch mode"
 msgstr "切换模式"
 
-#: src/contents/ui/CameraPage.qml:53
+#: src/contents/ui/CameraPage.qml:62
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "取消自拍定时器"
 
-#: src/contents/ui/CameraPage.qml:55
+#: src/contents/ui/CameraPage.qml:64
 #, kde-format
 msgid "Capture photo"
 msgstr "拍摄照片"
 
-#: src/contents/ui/CameraPage.qml:57
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Stop recording video"
 msgstr "停止录制视频"
 
-#: src/contents/ui/CameraPage.qml:59
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Start recording video"
 msgstr "开始录制视频"
 
-#: src/contents/ui/CameraPage.qml:93
+#: src/contents/ui/CameraPage.qml:104
 #, kde-format
 msgid "Switch Camera"
 msgstr "切换相机"
 
-#: src/contents/ui/CameraPage.qml:143
+#: src/contents/ui/CameraPage.qml:150
 #, kde-format
 msgid "Camera not available"
 msgstr "相机不可用"
 
-#: src/contents/ui/CameraPage.qml:145
+#: src/contents/ui/CameraPage.qml:152
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
 msgstr "相机正忙。请检查是否有其他应用正在使用相机。"
 
-#: src/contents/ui/CameraPage.qml:147
+#: src/contents/ui/CameraPage.qml:154
 #, kde-format
 msgid "Missing camera resource."
 msgstr "相机资源缺失。"
 
-#: src/contents/ui/CameraPage.qml:283
+#: src/contents/ui/CameraPage.qml:378
+#, kde-format
+msgid "Photo"
+msgstr ""
+
+#: src/contents/ui/CameraPage.qml:383
+#, kde-format
+msgid "Video"
+msgstr ""
+
+#: src/contents/ui/CameraPage.qml:482
 #, kde-format
 msgid "Took a photo"
 msgstr "拍摄照片"
 
-#: src/contents/ui/CameraPage.qml:286
+#: src/contents/ui/CameraPage.qml:485
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "照片拍摄失败"
 
-#: src/contents/ui/CameraPage.qml:292
+#: src/contents/ui/CameraPage.qml:491
 #, kde-format
 msgid "Stopped recording"
 msgstr "已停止录像"
 
-#: src/contents/ui/CameraPage.qml:298
+#: src/contents/ui/CameraPage.qml:497
 #, kde-format
 msgid "Started recording"
 msgstr "已开始录像"
 
-#: src/contents/ui/CameraPage.qml:301
+#: src/contents/ui/CameraPage.qml:500
 #, kde-format
 msgid "Failed to start recording"
 msgstr "无法开始录像"
@@ -140,36 +150,6 @@ msgstr "荧光灯"
 
 #: src/contents/ui/GlobalDrawer.qml:115
 #, kde-format
-msgid "Self-timer"
-msgstr "自拍定时器"
-
-#: src/contents/ui/GlobalDrawer.qml:120
-#, kde-format
-msgid "Off"
-msgstr "关闭"
-
-#: src/contents/ui/GlobalDrawer.qml:125
-#, kde-format
-msgid "2 s"
-msgstr "2 秒"
-
-#: src/contents/ui/GlobalDrawer.qml:130
-#, kde-format
-msgid "5 s"
-msgstr "5 秒"
-
-#: src/contents/ui/GlobalDrawer.qml:135
-#, kde-format
-msgid "10 s"
-msgstr "10 秒"
-
-#: src/contents/ui/GlobalDrawer.qml:140
-#, kde-format
-msgid "20 s"
-msgstr "20 秒"
-
-#: src/contents/ui/GlobalDrawer.qml:146
-#, kde-format
 msgid "About"
 msgstr "关于"
 
@@ -194,3 +174,21 @@ msgstr "Marco Martin"
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
+
+#~ msgid "Self-timer"
+#~ msgstr "自拍定时器"
+
+#~ msgid "Off"
+#~ msgstr "关闭"
+
+#~ msgid "2 s"
+#~ msgstr "2 秒"
+
+#~ msgid "5 s"
+#~ msgstr "5 秒"
+
+#~ msgid "10 s"
+#~ msgstr "10 秒"
+
+#~ msgid "20 s"
+#~ msgstr "20 秒"

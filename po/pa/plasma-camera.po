@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 00:47+0000\n"
+"POT-Creation-Date: 2023-10-26 00:43+0000\n"
 "PO-Revision-Date: 2021-01-01 12:02-0800\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -33,72 +33,82 @@ msgstr "alam.yellow@gmail.com"
 msgid "Camera"
 msgstr "ਕੈਮਰਾ"
 
-#: src/contents/ui/CameraPage.qml:31
+#: src/contents/ui/CameraPage.qml:39
 #, kde-format
 msgid "Switch mode"
 msgstr "ਢੰਗ ਬਦਲੋ"
 
-#: src/contents/ui/CameraPage.qml:53
+#: src/contents/ui/CameraPage.qml:62
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "ਸਵੈ-ਟਾਈਮਰ ਰੱਦ ਕਰੋ"
 
-#: src/contents/ui/CameraPage.qml:55
+#: src/contents/ui/CameraPage.qml:64
 #, kde-format
 msgid "Capture photo"
 msgstr "ਫ਼ੋਟੋ ਲਵੋ"
 
-#: src/contents/ui/CameraPage.qml:57
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Stop recording video"
 msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ"
 
-#: src/contents/ui/CameraPage.qml:59
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Start recording video"
 msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰੋ"
 
-#: src/contents/ui/CameraPage.qml:93
+#: src/contents/ui/CameraPage.qml:104
 #, kde-format
 msgid "Switch Camera"
 msgstr "ਕੈਮਰਾ ਬਦਲੋ"
 
-#: src/contents/ui/CameraPage.qml:143
+#: src/contents/ui/CameraPage.qml:150
 #, kde-format
 msgid "Camera not available"
 msgstr "ਕੈਮਰਾ ਮੌਜੂਦ ਨਹੀਂ ਹੈ"
 
-#: src/contents/ui/CameraPage.qml:145
+#: src/contents/ui/CameraPage.qml:152
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
 msgstr "ਕੈਮਰਾ ਰੁਝਿਆ ਹੈ। ਕੀ ਹੋਰ ਐਪਲੀਕੇਸ਼ਨ ਇਸ ਨੂੰ ਵਰਤ ਰਹੀ ਹੈ?"
 
-#: src/contents/ui/CameraPage.qml:147
+#: src/contents/ui/CameraPage.qml:154
 #, kde-format
 msgid "Missing camera resource."
 msgstr "ਕੈਮਰਾ ਸਰੋਤ ਗੁੰਮ ਹੈ।"
 
-#: src/contents/ui/CameraPage.qml:283
+#: src/contents/ui/CameraPage.qml:378
+#, kde-format
+msgid "Photo"
+msgstr ""
+
+#: src/contents/ui/CameraPage.qml:383
+#, kde-format
+msgid "Video"
+msgstr ""
+
+#: src/contents/ui/CameraPage.qml:482
 #, kde-format
 msgid "Took a photo"
 msgstr "ਫੋਟੋ ਲਵੋ"
 
-#: src/contents/ui/CameraPage.qml:286
+#: src/contents/ui/CameraPage.qml:485
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "ਫੋਟੋ ਲੈਣ ਲਈ ਅਸਫ਼ਲ ਹੈ"
 
-#: src/contents/ui/CameraPage.qml:292
+#: src/contents/ui/CameraPage.qml:491
 #, kde-format
 msgid "Stopped recording"
 msgstr "ਰਿਕਾਰਡਿੰਗ ਰੋਕੀ"
 
-#: src/contents/ui/CameraPage.qml:298
+#: src/contents/ui/CameraPage.qml:497
 #, kde-format
 msgid "Started recording"
 msgstr "ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕੀਤੀ"
 
-#: src/contents/ui/CameraPage.qml:301
+#: src/contents/ui/CameraPage.qml:500
 #, kde-format
 msgid "Failed to start recording"
 msgstr "ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਅਸਫ਼ਲ ਹੈ"
@@ -140,36 +150,6 @@ msgstr "ਪ੍ਰਕਾਸ਼ਮਾਨ"
 
 #: src/contents/ui/GlobalDrawer.qml:115
 #, kde-format
-msgid "Self-timer"
-msgstr "ਸਵੈ-ਟਾਈਮਰ"
-
-#: src/contents/ui/GlobalDrawer.qml:120
-#, kde-format
-msgid "Off"
-msgstr "ਬੰਦ"
-
-#: src/contents/ui/GlobalDrawer.qml:125
-#, kde-format
-msgid "2 s"
-msgstr "2 ਸਕਿੰਟ"
-
-#: src/contents/ui/GlobalDrawer.qml:130
-#, kde-format
-msgid "5 s"
-msgstr "5 ਸਕਿੰਟ"
-
-#: src/contents/ui/GlobalDrawer.qml:135
-#, kde-format
-msgid "10 s"
-msgstr "10 ਸਕਿੰਟ"
-
-#: src/contents/ui/GlobalDrawer.qml:140
-#, kde-format
-msgid "20 s"
-msgstr "20 ਸਕਿੰਟ"
-
-#: src/contents/ui/GlobalDrawer.qml:146
-#, kde-format
 msgid "About"
 msgstr "ਇਸ ਬਾਰੇ"
 
@@ -194,3 +174,21 @@ msgstr "ਮਾਰਕੋ ਮਾਰਟਿਨ"
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
+
+#~ msgid "Self-timer"
+#~ msgstr "ਸਵੈ-ਟਾਈਮਰ"
+
+#~ msgid "Off"
+#~ msgstr "ਬੰਦ"
+
+#~ msgid "2 s"
+#~ msgstr "2 ਸਕਿੰਟ"
+
+#~ msgid "5 s"
+#~ msgstr "5 ਸਕਿੰਟ"
+
+#~ msgid "10 s"
+#~ msgstr "10 ਸਕਿੰਟ"
+
+#~ msgid "20 s"
+#~ msgstr "20 ਸਕਿੰਟ"
