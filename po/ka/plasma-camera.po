@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-26 00:43+0000\n"
-"PO-Revision-Date: 2022-05-26 06:35+0200\n"
+"PO-Revision-Date: 2023-10-27 06:09+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -77,17 +77,17 @@ msgstr "კამერა დაკავებულია. სხვა ა�
 #: src/contents/ui/CameraPage.qml:154
 #, kde-format
 msgid "Missing camera resource."
-msgstr "კამერას რესურსები აკლია"
+msgstr "კამერას რესურსები აკლია."
 
 #: src/contents/ui/CameraPage.qml:378
 #, kde-format
 msgid "Photo"
-msgstr ""
+msgstr "სურათი"
 
 #: src/contents/ui/CameraPage.qml:383
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "ვიდეო"
 
 #: src/contents/ui/CameraPage.qml:482
 #, kde-format
