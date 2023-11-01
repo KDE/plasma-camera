@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-26 00:43+0000\n"
 "PO-Revision-Date: 2021-06-14 16:05+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -81,12 +81,12 @@ msgstr "Chybí zdroj fotoaparátu."
 #: src/contents/ui/CameraPage.qml:378
 #, kde-format
 msgid "Photo"
-msgstr ""
+msgstr "Fotka"
 
 #: src/contents/ui/CameraPage.qml:383
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: src/contents/ui/CameraPage.qml:482
 #, kde-format
@@ -174,18 +174,3 @@ msgstr "Marco Martin"
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
-
-#~ msgid "Off"
-#~ msgstr "Vypnuto"
-
-#~ msgid "2 s"
-#~ msgstr "2 s"
-
-#~ msgid "5 s"
-#~ msgstr "5 s"
-
-#~ msgid "10 s"
-#~ msgstr "10 s"
-
-#~ msgid "20 s"
-#~ msgstr "20 s"
