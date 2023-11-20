@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:36+0000\n"
-"PO-Revision-Date: 2023-10-21 13:54\n"
+"PO-Revision-Date: 2023-11-19 03:41\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -174,21 +174,3 @@ msgstr "Marco Martin"
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
-
-#~ msgid "Self-timer"
-#~ msgstr "自拍定时器"
-
-#~ msgid "Off"
-#~ msgstr "关闭"
-
-#~ msgid "2 s"
-#~ msgstr "2 秒"
-
-#~ msgid "5 s"
-#~ msgstr "5 秒"
-
-#~ msgid "10 s"
-#~ msgstr "10 秒"
-
-#~ msgid "20 s"
-#~ msgstr "20 秒"
