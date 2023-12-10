@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:36+0000\n"
-"PO-Revision-Date: 2023-11-25 02:29\n"
+"PO-Revision-Date: 2023-12-09 09:27\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -81,12 +81,12 @@ msgstr "相机资源缺失。"
 #: src/contents/ui/CameraPage.qml:378
 #, kde-format
 msgid "Photo"
-msgstr ""
+msgstr "照片"
 
 #: src/contents/ui/CameraPage.qml:383
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "视频"
 
 #: src/contents/ui/CameraPage.qml:482
 #, kde-format
