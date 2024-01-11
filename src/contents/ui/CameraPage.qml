@@ -83,7 +83,7 @@ Kirigami.Page {
                 selfTimer.stop()
             }
             else if ((camera.selfTimerDuration === 0) || (camera.videoRecorder.recorderStatus === CameraRecorder.RecordingStatus)) {
-                selfTimer.onTriggered()
+                selfTimer.triggered()
             }
             else {
                 countdownTimer.remainingSeconds = camera.selfTimerDuration
