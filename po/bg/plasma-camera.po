@@ -178,21 +178,3 @@ msgstr "Marco Martin"
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
-
-#~ msgid "Self-timer"
-#~ msgstr "Самоснимачка"
-
-#~ msgid "Off"
-#~ msgstr "Изкл."
-
-#~ msgid "2 s"
-#~ msgstr "2 s"
-
-#~ msgid "5 s"
-#~ msgstr "5 s"
-
-#~ msgid "10 s"
-#~ msgstr "10 s"
-
-#~ msgid "20 s"
-#~ msgstr "20 s"
