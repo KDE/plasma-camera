@@ -1,12 +1,11 @@
 # Translation of plasma-camera to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 12:36+0000\n"
-"PO-Revision-Date: 2020-02-16 14:46+0100\n"
+"PO-Revision-Date: 2024-03-23 12:52+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -14,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.12.2\n"
+"X-Generator: Lokalize 24.02.0\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -83,12 +82,12 @@ msgstr "Manglar kameraressurs."
 #: src/contents/ui/CameraPage.qml:378
 #, kde-format
 msgid "Photo"
-msgstr ""
+msgstr "Foto"
 
 #: src/contents/ui/CameraPage.qml:383
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: src/contents/ui/CameraPage.qml:482
 #, kde-format
