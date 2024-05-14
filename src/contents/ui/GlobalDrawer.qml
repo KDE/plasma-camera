@@ -4,7 +4,7 @@
 
 import org.kde.kirigami 2.0 as Kirigami
 import QtQuick 2.7
-import QtMultimedia 5.8
+import QtMultimedia
 
 import org.kde.plasmacamera 1.0
 
@@ -38,19 +38,24 @@ Kirigami.GlobalDrawer {
         }
     }
 
+    MediaDevices {
+        id: devices
+    }
+
     actions: [
         Kirigami.Action {
             id: devicesAction
             text: i18n("Camera")
-            iconName: "camera-photo-symbolic"
+            icon.name: "camera-photo-symbolic"
+
             Component.onCompleted: {
-                var cameras = QtMultimedia.availableCameras
+                var cameras = devices.videoInputs
                 var childrenList = []
 
                 for (var i in cameras) {
                     childrenList[i] = devicesSubAction.createObject(devicesAction, {
-                        value: cameras[i].deviceId,
-                        text: "%1".arg(cameras[i].displayName)
+                        value: cameras[i].id,
+                        text: "%1".arg(cameras[i].description)
                     })
                 }
                 devicesAction.children = childrenList
@@ -59,18 +64,18 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             id: resolutionAction
             text: i18n("Resolution")
-            iconName: "ratiocrop"
+            icon.name: "ratiocrop"
             Component.onCompleted: {
-                var resolutions = drawer.camera.imageCapture.supportedResolutions
+                var resolutions = drawer.camera.cameraDevice.videoFormats
                 var childrenList = []
 
                 for (var i in resolutions) {
-                    var pixels = resolutions[i].width * resolutions[i].height
+                    var pixels = resolutions[i].resolution.width * resolutions[i].resolution.height
                     var megapixels = Math.round(pixels / 10000) / 100
 
                     childrenList[i] = resolutionSubAction.createObject(resolutionAction, {
-                        value: resolutions[i],
-                        text: "%1 x %2 (%3 MP)".arg(resolutions[i].width).arg(resolutions[i].height).arg(megapixels)
+                        value: resolutions[i].resolution,
+                        text: "%1 x %2 (%3 MP)".arg(resolutions[i].resolution.width).arg(resolutions[i].resolution.height).arg(megapixels)
                     })
                 }
                 resolutionAction.children = childrenList
@@ -79,41 +84,41 @@ Kirigami.GlobalDrawer {
         Kirigami.Action {
             id: wbaction
             text: i18n("White balance")
-            iconName: "whitebalance"
+            icon.name: "whitebalance"
             Kirigami.Action {
-                iconName: "qrc:///camera_auto_mode.png"
-                onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceAuto
+                icon.name: "qrc:///camera_auto_mode.png"
+                onTriggered: CameraSettings.whiteBalanceMode = Camera.WhiteBalanceAuto
                 text: i18n("Auto")
-                checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceAuto
+                checked: CameraSettings.whiteBalanceMode === Camera.WhiteBalanceAuto
             }
             Kirigami.Action {
-                iconName: "qrc:///camera_white_balance_sunny.png"
-                onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceSunlight
+                icon.name: "qrc:///camera_white_balance_sunny.png"
+                onTriggered: CameraSettings.whiteBalanceMode = Camera.WhiteBalanceSunlight
                 text: i18n("Sunlight")
-                checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceSunlight
+                checked: CameraSettings.whiteBalanceMode === Camera.WhiteBalanceSunlight
             }
             Kirigami.Action {
-                iconName: "qrc:///camera_white_balance_cloudy.png"
-                onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceCloudy
+                icon.name: "qrc:///camera_white_balance_cloudy.png"
+                onTriggered: CameraSettings.whiteBalanceMode = Camera.WhiteBalanceCloudy
                 text: i18n("Cloudy")
-                checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceCloudy
+                checked: CameraSettings.whiteBalanceMode === Camera.WhiteBalanceCloudy
             }
             Kirigami.Action {
-                iconName: "qrc:///camera_white_balance_incandescent.png"
-                onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceTungsten
+                icon.name: "qrc:///camera_white_balance_incandescent.png"
+                onTriggered: CameraSettings.whiteBalanceMode = Camera.WhiteBalanceTungsten
                 text: i18n("Tungsten")
-                checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceTungsten
+                checked: CameraSettings.whiteBalanceMode === Camera.WhiteBalanceTungsten
             }
             Kirigami.Action {
-                iconName: "qrc:///camera_white_balance_flourescent.png"
-                onTriggered: CameraSettings.whiteBalanceMode = CameraImageProcessing.WhiteBalanceFluorescent
+                icon.name: "qrc:///camera_white_balance_flourescent.png"
+                onTriggered: CameraSettings.whiteBalanceMode = Camera.WhiteBalanceFluorescent
                 text: i18n("Fluorescent")
-                checked: CameraSettings.whiteBalanceMode === CameraImageProcessing.WhiteBalanceFluorescent
+                checked: CameraSettings.whiteBalanceMode === Camera.WhiteBalanceFluorescent
             }
         },
         Kirigami.Action {
             text: i18n("About")
-            iconName: "help-about"
+            icon.name: "help-about"
             onTriggered: pageStack.pushDialogLayer("qrc:/AboutPage.qml")
         }
     ]

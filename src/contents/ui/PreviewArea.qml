@@ -4,11 +4,11 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 import QtQuick 2.7
-import QtMultimedia 5.8
+import QtMultimedia
 import QtQuick.Controls.Material 2.0
 import QtQuick.Controls 2.0 as Controls
 import org.kde.kirigami 2.4 as Kirigami
-import QtGraphicalEffects 1.0
+import Qt5Compat.GraphicalEffects
 
 
 Rectangle {
@@ -18,8 +18,9 @@ Rectangle {
     property var videoRecorder
     property bool showVideoPreview: false // when set to true, the preview for the videoRecorder is shown, if false for the imageCapture
     property bool videoThumbnailRequested: false
+    property string imageUrl
 
-    visible: ((imageCapture.capturedImagePath && !showVideoPreview) || (videoRecorder.actualLocation && showVideoPreview)) && !(videoRecorder.recorderStatus === CameraRecorder.RecordingStatus)
+    visible: ((imageCapture.preview && !showVideoPreview) || (videoRecorder.actualLocation && showVideoPreview)) && !(videoRecorder.recorderState === MediaRecorder.RecordingStatus)
     width: Kirigami.Units.gridUnit * 6
     height: width
     layer.enabled: preview.enabled
@@ -30,7 +31,7 @@ Rectangle {
     }
 
     Component.onCompleted: {
-        videoRecorder.recorderStatusChanged.connect(createVideoThumbnail)
+        videoRecorder.recorderStateChanged.connect(createVideoThumbnail)
     }
 
     function setPhotoPreview() {
@@ -43,7 +44,7 @@ Rectangle {
     }
 
     function createVideoThumbnail() {
-        if (videoThumbnailRequested && !(videoRecorder.recorderStatus === CameraRecorder.FinalizingStatus)) {
+        if (videoThumbnailRequested && !(videoRecorder.recorderState === MediaRecorder.FinalizingStatus)) {
             video.source = videoRecorder.actualLocation
             video.play()
             video.pause()
@@ -58,7 +59,7 @@ Rectangle {
                 Qt.openUrlExternally(videoRecorder.actualLocation)
             }
             else {
-                Qt.openUrlExternally("file://" + imageCapture.capturedImagePath)
+                Qt.openUrlExternally(preview.imageUrl)
             }
         }
     }
@@ -67,7 +68,7 @@ Rectangle {
         visible: !showVideoPreview
         fillMode: Image.PreserveAspectCrop
         anchors.fill: parent
-        source: imageCapture.capturedImagePath ? "file://" + imageCapture.capturedImagePath : ""
+        source: imageCapture.preview
     }
 
     Rectangle {
@@ -84,7 +85,7 @@ Rectangle {
 
         Controls.BusyIndicator {
             id: thumbnailBusyIdicator
-            visible: (videoRecorder.recorderStatus === CameraRecorder.FinalizingStatus)
+            visible: (videoRecorder.recorderState === MediaRecorder.FinalizingStatus)
             Kirigami.Theme.textColor: "white"
             anchors.fill: parent
 

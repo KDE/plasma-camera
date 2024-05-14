@@ -3,9 +3,9 @@
 
 project(plasma-camera)
 
-cmake_minimum_required(VERSION 2.8.12)
-set(KF_MIN_VERSION "5.65.0")
-set(QT_MIN_VERSION "5.14.0")
+cmake_minimum_required(VERSION 3.16)
+set(KF_MIN_VERSION "6.0.0")
+set(QT_MIN_VERSION "6.6.0")
 
 include(FeatureSummary)
 
@@ -21,16 +21,13 @@ include(KDECMakeSettings)
 include(ECMPoQmTools)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2)
 
-if(ANDROID AND QT_MAJOR_VERSION EQUAL "5")
-    find_package(Qt5 ${QT_MIN_VERSION} REQUIRED COMPONENTS AndroidExtras)
-endif()
 if(NOT ANDROID)
-    find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets)
+    find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets)
 endif()
 
-find_package(KF${QT_MAJOR_VERSION} ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami2 CoreAddons I18n Config)
+find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami CoreAddons I18n Config)
 
 add_subdirectory(src)
 

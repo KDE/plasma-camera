@@ -9,15 +9,12 @@ set(plasma-camera_SRCS
 
 add_executable(plasma-camera ${plasma-camera_SRCS})
 target_link_libraries(plasma-camera Qt::Core Qt::Qml Qt::Quick Qt::Svg
-                                    KF${QT_MAJOR_VERSION}::CoreAddons KF${QT_MAJOR_VERSION}::I18n KF${QT_MAJOR_VERSION}::ConfigGui)
+                                    KF6::CoreAddons KF6::I18n KF6::ConfigGui)
 
 kconfig_add_kcfg_files(plasma-camera GENERATE_MOC camerasettings.kcfgc)
 
 if(ANDROID)
-    target_link_libraries(plasma-camera Qt::Svg KF${QT_MAJOR_VERSION}::Kirigami2)
-    if (QT_MAJOR_VERSION EQUAL "5")
-        target_link_libraries(plasma-camera Qt5::AndroidExtras)
-    endif()
+    target_link_libraries(plasma-camera Qt::Svg KF6::Kirigami)
 
     kirigami_package_breeze_icons(ICONS
         emblem-videos-symbolic

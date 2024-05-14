@@ -15,11 +15,12 @@
 #include "camerasettings.h"
 
 #ifdef Q_OS_ANDROID
-#include <QtAndroid>
 #include <QGuiApplication>
 #else
 #include <QApplication>
 #endif
+
+using namespace Qt::Literals::StringLiterals;
 
 constexpr auto URI = "org.kde.plasmacamera";
 
@@ -34,10 +35,10 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     KLocalizedString::setApplicationDomain("plasma-camera");
 
-    QCoreApplication::setOrganizationName("KDE");
-    QCoreApplication::setOrganizationDomain("kde.org");
-    QCoreApplication::setApplicationName("plasma-camera");
-    QGuiApplication::setApplicationDisplayName("Plasma Camera");
+    QCoreApplication::setOrganizationName(u"KDE"_s);
+    QCoreApplication::setOrganizationDomain(u"kde.org"_s);
+    QCoreApplication::setApplicationName(u"plasma-camera"_s);
+    QGuiApplication::setApplicationDisplayName(u"Plasma Camera"_s);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("camera-photo")));
 
     KAboutData about(app.applicationName(), app.applicationDisplayName(), app.applicationVersion(), QString(),
@@ -48,10 +49,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     about.setProgramLogo(app.windowIcon());
 
     KAboutData::setApplicationData(about);
-
-#ifdef Q_OS_ANDROID
-    QtAndroid::requestPermissionsSync({"android.permission.CAMERA"});
-#endif
 
     QQmlApplicationEngine engine;
 

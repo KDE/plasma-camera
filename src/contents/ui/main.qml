@@ -4,7 +4,7 @@
 
 import QtQuick 2.7
 import org.kde.kirigami 2.2 as Kirigami
-import QtMultimedia 5.8
+import QtMultimedia
 
 import org.kde.plasmacamera 1.0
 
@@ -19,27 +19,33 @@ Kirigami.ApplicationWindow {
         }
     }
 
+    MediaDevices {
+        id: devices
+    }
+
     Camera {
         id: mainCamera
-        captureMode: Camera.CaptureStillImage
-        deviceId: CameraSettings.cameraDeviceId
-        imageProcessing.whiteBalanceMode: CameraSettings.whiteBalanceMode
+
+        readonly property int captureStillImage: 1
+        readonly property int captureVideo: 2
+
+        property int captureMode: mainCamera.captureStillImage
+
+        active: true
+        cameraDevice: {
+            for (const device of devices.videoInputs) {
+                if (device.id == CameraSettings.cameraDeviceId)
+                    return device;
+            }
+            return devices.defaultVideoInput;
+        }
+        onCameraDeviceChanged: mainCamera.start()
+        whiteBalanceMode: CameraSettings.whiteBalanceMode
 
         property int selfTimerDuration: 0 // in seconds
         property bool selfTimerRunning: false
 
-        imageCapture {
-            id: imageCapture
-            resolution: CameraSettings.resolution
-        }
-
-        videoRecorder {
-            id: videoRecorder
-            resolution: CameraSettings.resolution
-            // frameRate: 30 // a fixed frame rate is not set for now as it does not always get enforced anyway and can cause errors
-        }
-
-        onError: {
+        onErrorOccurred: {
             showPassiveNotification(i18n("An error occurred: \"%1\". Please consider restarting the application if it stopped working.", errorString))
         }
     }
