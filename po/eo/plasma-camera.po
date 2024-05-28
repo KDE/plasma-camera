@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:36+0000\n"
+"POT-Creation-Date: 2024-05-28 00:40+0000\n"
 "PO-Revision-Date: 2024-03-24 10:34+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo.org>\n"
@@ -28,150 +28,150 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:19 src/contents/ui/GlobalDrawer.qml:44
-#: src/contents/ui/main.qml:47
+#: src/contents/ui/CameraPage.qml:21 src/contents/ui/GlobalDrawer.qml:48
+#: src/contents/ui/main.qml:53
 #, kde-format
 msgid "Camera"
 msgstr "Fotilo"
 
-#: src/contents/ui/CameraPage.qml:39
+#: src/contents/ui/CameraPage.qml:41
 #, kde-format
 msgid "Switch mode"
 msgstr "Ŝanĝi reĝimon"
 
-#: src/contents/ui/CameraPage.qml:62
+#: src/contents/ui/CameraPage.qml:64
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "Nuligi memtempigilon"
 
-#: src/contents/ui/CameraPage.qml:64
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Capture photo"
 msgstr "Kapti foton"
 
-#: src/contents/ui/CameraPage.qml:66
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Stop recording video"
 msgstr "Ĉesi registri videon"
 
-#: src/contents/ui/CameraPage.qml:68
+#: src/contents/ui/CameraPage.qml:70
 #, kde-format
 msgid "Start recording video"
 msgstr "Komenci registri videon"
 
-#: src/contents/ui/CameraPage.qml:104
+#: src/contents/ui/CameraPage.qml:106
 #, kde-format
 msgid "Switch Camera"
 msgstr "Ŝanĝi Fotilon"
 
-#: src/contents/ui/CameraPage.qml:150
+#: src/contents/ui/CameraPage.qml:152
 #, kde-format
 msgid "Camera not available"
 msgstr "Fotilo ne havebla"
 
-#: src/contents/ui/CameraPage.qml:152
+#: src/contents/ui/CameraPage.qml:154
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
 msgstr "Fotilo estas okupata. Ĉu alia aplikaĵo uzas ĝin?"
 
-#: src/contents/ui/CameraPage.qml:154
+#: src/contents/ui/CameraPage.qml:156
 #, kde-format
 msgid "Missing camera resource."
 msgstr "Mankas fotila rimedo."
 
-#: src/contents/ui/CameraPage.qml:378
+#: src/contents/ui/CameraPage.qml:403
 #, kde-format
 msgid "Photo"
 msgstr "Foto"
 
-#: src/contents/ui/CameraPage.qml:383
+#: src/contents/ui/CameraPage.qml:408
 #, kde-format
 msgid "Video"
 msgstr "Video"
 
-#: src/contents/ui/CameraPage.qml:482
+#: src/contents/ui/CameraPage.qml:507
 #, kde-format
 msgid "Took a photo"
 msgstr "Faris foton"
 
-#: src/contents/ui/CameraPage.qml:485
+#: src/contents/ui/CameraPage.qml:510
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Malsukcesis preni foton"
 
-#: src/contents/ui/CameraPage.qml:491
+#: src/contents/ui/CameraPage.qml:516
 #, kde-format
 msgid "Stopped recording"
 msgstr "Ĉesis registradon"
 
-#: src/contents/ui/CameraPage.qml:497
+#: src/contents/ui/CameraPage.qml:522
 #, kde-format
 msgid "Started recording"
 msgstr "Komencis registradon"
 
-#: src/contents/ui/CameraPage.qml:500
+#: src/contents/ui/CameraPage.qml:525
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Malsukcesis komenci registradon"
 
-#: src/contents/ui/GlobalDrawer.qml:61
+#: src/contents/ui/GlobalDrawer.qml:66
 #, kde-format
 msgid "Resolution"
 msgstr "Difino"
 
-#: src/contents/ui/GlobalDrawer.qml:81
+#: src/contents/ui/GlobalDrawer.qml:86
 #, kde-format
 msgid "White balance"
 msgstr "Blanka ekvilibro"
 
-#: src/contents/ui/GlobalDrawer.qml:86
+#: src/contents/ui/GlobalDrawer.qml:91
 #, kde-format
 msgid "Auto"
 msgstr "Aŭtomata"
 
-#: src/contents/ui/GlobalDrawer.qml:92
+#: src/contents/ui/GlobalDrawer.qml:97
 #, kde-format
 msgid "Sunlight"
 msgstr "Sunlumo"
 
-#: src/contents/ui/GlobalDrawer.qml:98
+#: src/contents/ui/GlobalDrawer.qml:103
 #, kde-format
 msgid "Cloudy"
 msgstr "Nuba"
 
-#: src/contents/ui/GlobalDrawer.qml:104
+#: src/contents/ui/GlobalDrawer.qml:109
 #, kde-format
 msgid "Tungsten"
 msgstr "Volframo"
 
-#: src/contents/ui/GlobalDrawer.qml:110
+#: src/contents/ui/GlobalDrawer.qml:115
 #, kde-format
 msgid "Fluorescent"
 msgstr "Fluoreska"
 
-#: src/contents/ui/GlobalDrawer.qml:115
+#: src/contents/ui/GlobalDrawer.qml:120
 #, kde-format
 msgid "About"
 msgstr "Pri"
 
-#: src/contents/ui/main.qml:43
+#: src/contents/ui/main.qml:49
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr ""
 
-#: src/main.cpp:44
+#: src/main.cpp:45
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Plasma Poŝtelefonaj Programistoj"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 #, kde-format
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: src/main.cpp:47
+#: src/main.cpp:48
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"

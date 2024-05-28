@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 12:36+0000\n"
+"POT-Creation-Date: 2024-05-28 00:40+0000\n"
 "PO-Revision-Date: 2021-01-05 19:24+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -27,150 +27,150 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xxmn77@gmail.com"
 
-#: src/contents/ui/CameraPage.qml:19 src/contents/ui/GlobalDrawer.qml:44
-#: src/contents/ui/main.qml:47
+#: src/contents/ui/CameraPage.qml:21 src/contents/ui/GlobalDrawer.qml:48
+#: src/contents/ui/main.qml:53
 #, kde-format
 msgid "Camera"
 msgstr "Kamera"
 
-#: src/contents/ui/CameraPage.qml:39
+#: src/contents/ui/CameraPage.qml:41
 #, kde-format
 msgid "Switch mode"
 msgstr "Dəyişmə rejimi"
 
-#: src/contents/ui/CameraPage.qml:62
+#: src/contents/ui/CameraPage.qml:64
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "Taymeri ləğv etmək"
 
-#: src/contents/ui/CameraPage.qml:64
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Capture photo"
 msgstr "Fotoşəkil çəkmək"
 
-#: src/contents/ui/CameraPage.qml:66
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Stop recording video"
 msgstr "Video çəkilişini dayandırmaq"
 
-#: src/contents/ui/CameraPage.qml:68
+#: src/contents/ui/CameraPage.qml:70
 #, kde-format
 msgid "Start recording video"
 msgstr "Video çəkilişini başlatmaq"
 
-#: src/contents/ui/CameraPage.qml:104
+#: src/contents/ui/CameraPage.qml:106
 #, kde-format
 msgid "Switch Camera"
 msgstr "Kameranı dəyişmək"
 
-#: src/contents/ui/CameraPage.qml:150
+#: src/contents/ui/CameraPage.qml:152
 #, kde-format
 msgid "Camera not available"
 msgstr "Kamera əlçatan deyil"
 
-#: src/contents/ui/CameraPage.qml:152
+#: src/contents/ui/CameraPage.qml:154
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
 msgstr "Kamera məşğuldur. Başqa tətbiq onu istifadə edir?"
 
-#: src/contents/ui/CameraPage.qml:154
+#: src/contents/ui/CameraPage.qml:156
 #, kde-format
 msgid "Missing camera resource."
 msgstr "Kamera mənbəyi çatışmır"
 
-#: src/contents/ui/CameraPage.qml:378
+#: src/contents/ui/CameraPage.qml:403
 #, kde-format
 msgid "Photo"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:383
+#: src/contents/ui/CameraPage.qml:408
 #, kde-format
 msgid "Video"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:482
+#: src/contents/ui/CameraPage.qml:507
 #, kde-format
 msgid "Took a photo"
 msgstr "Şəkil çəkildi"
 
-#: src/contents/ui/CameraPage.qml:485
+#: src/contents/ui/CameraPage.qml:510
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Şəkil çəkilişi uğursu oldu"
 
-#: src/contents/ui/CameraPage.qml:491
+#: src/contents/ui/CameraPage.qml:516
 #, kde-format
 msgid "Stopped recording"
 msgstr "Çəkiliş dayandırıldı"
 
-#: src/contents/ui/CameraPage.qml:497
+#: src/contents/ui/CameraPage.qml:522
 #, kde-format
 msgid "Started recording"
 msgstr "Çəkiliş başladı"
 
-#: src/contents/ui/CameraPage.qml:500
+#: src/contents/ui/CameraPage.qml:525
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Çəkilişi başlatmaq uğursuz oldu"
 
-#: src/contents/ui/GlobalDrawer.qml:61
+#: src/contents/ui/GlobalDrawer.qml:66
 #, kde-format
 msgid "Resolution"
 msgstr "Təsvir imkanları"
 
-#: src/contents/ui/GlobalDrawer.qml:81
+#: src/contents/ui/GlobalDrawer.qml:86
 #, kde-format
 msgid "White balance"
 msgstr "Bəyazlıq Balansı"
 
-#: src/contents/ui/GlobalDrawer.qml:86
+#: src/contents/ui/GlobalDrawer.qml:91
 #, kde-format
 msgid "Auto"
 msgstr "Avtomatik"
 
-#: src/contents/ui/GlobalDrawer.qml:92
+#: src/contents/ui/GlobalDrawer.qml:97
 #, kde-format
 msgid "Sunlight"
 msgstr "Gün işığı"
 
-#: src/contents/ui/GlobalDrawer.qml:98
+#: src/contents/ui/GlobalDrawer.qml:103
 #, kde-format
 msgid "Cloudy"
 msgstr "Buludlu"
 
-#: src/contents/ui/GlobalDrawer.qml:104
+#: src/contents/ui/GlobalDrawer.qml:109
 #, kde-format
 msgid "Tungsten"
 msgstr "Közərmə lampası"
 
-#: src/contents/ui/GlobalDrawer.qml:110
+#: src/contents/ui/GlobalDrawer.qml:115
 #, kde-format
 msgid "Fluorescent"
 msgstr "Lyuminesent lampası"
 
-#: src/contents/ui/GlobalDrawer.qml:115
+#: src/contents/ui/GlobalDrawer.qml:120
 #, kde-format
 msgid "About"
 msgstr "Haqqında"
 
-#: src/contents/ui/main.qml:43
+#: src/contents/ui/main.qml:49
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr "Xəta baş verdi: \"%1\". Tətbiqi yenidən başlatma tövsiyyə olunur."
 
-#: src/main.cpp:44
+#: src/main.cpp:45
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Plasma Mobile Tərtibçiləri"
 
-#: src/main.cpp:46
+#: src/main.cpp:47
 #, kde-format
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: src/main.cpp:47
+#: src/main.cpp:48
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
