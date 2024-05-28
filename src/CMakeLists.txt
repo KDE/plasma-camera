@@ -29,6 +29,8 @@ if(ANDROID)
         clock
         help-about
     )
+
+    ecm_add_android_apk(plasma-camera ANDROID_DIR ${CMAKE_SOURCE_DIR})
 else()
     target_link_libraries(plasma-camera Qt::Widgets)
 endif()
