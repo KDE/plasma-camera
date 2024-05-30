@@ -1,21 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
 #
 # Kristóf Kiszel <kiszel.kristof@gmail.com>, 2020.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:40+0000\n"
-"PO-Revision-Date: 2020-12-07 22:06+0100\n"
-"Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-05-29 09:41+0200\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -81,12 +82,12 @@ msgstr "Hiányzó kameraerőforrás."
 #: src/contents/ui/CameraPage.qml:403
 #, kde-format
 msgid "Photo"
-msgstr ""
+msgstr "Fénykép"
 
 #: src/contents/ui/CameraPage.qml:408
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "Videó"
 
 #: src/contents/ui/CameraPage.qml:507
 #, kde-format
