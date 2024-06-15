@@ -1,0 +1,176 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the plasma-camera package.
+#
+# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-camera\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-05-28 00:40+0000\n"
+"PO-Revision-Date: 2024-06-12 07:52+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 24.02.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#: src/contents/ui/CameraPage.qml:21 src/contents/ui/GlobalDrawer.qml:48
+#: src/contents/ui/main.qml:53
+#, kde-format
+msgid "Camera"
+msgstr "מצלמה"
+
+#: src/contents/ui/CameraPage.qml:41
+#, kde-format
+msgid "Switch mode"
+msgstr "החלפת מצב"
+
+#: src/contents/ui/CameraPage.qml:64
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "ביטול תזמון עצמי"
+
+#: src/contents/ui/CameraPage.qml:66
+#, kde-format
+msgid "Capture photo"
+msgstr "צילום תמונה"
+
+#: src/contents/ui/CameraPage.qml:68
+#, kde-format
+msgid "Stop recording video"
+msgstr "עצירת הקלטת סרטון"
+
+#: src/contents/ui/CameraPage.qml:70
+#, kde-format
+msgid "Start recording video"
+msgstr "התחלת הקלטת סרטון"
+
+#: src/contents/ui/CameraPage.qml:106
+#, kde-format
+msgid "Switch Camera"
+msgstr "החלפת מצלמה"
+
+#: src/contents/ui/CameraPage.qml:152
+#, kde-format
+msgid "Camera not available"
+msgstr "המצלמה לא זמינה"
+
+#: src/contents/ui/CameraPage.qml:154
+#, kde-format
+msgid "Camera is busy. Is another application using it?"
+msgstr "המצלמה עסוקה. האם יישומון אחר משתמש בה?"
+
+#: src/contents/ui/CameraPage.qml:156
+#, kde-format
+msgid "Missing camera resource."
+msgstr "משאב מצלמה חסר."
+
+#: src/contents/ui/CameraPage.qml:403
+#, kde-format
+msgid "Photo"
+msgstr "תמונה"
+
+#: src/contents/ui/CameraPage.qml:408
+#, kde-format
+msgid "Video"
+msgstr "סרטון"
+
+#: src/contents/ui/CameraPage.qml:507
+#, kde-format
+msgid "Took a photo"
+msgstr "צילום תמונה"
+
+#: src/contents/ui/CameraPage.qml:510
+#, kde-format
+msgid "Failed to take a photo"
+msgstr "צילום התמונה נכשל"
+
+#: src/contents/ui/CameraPage.qml:516
+#, kde-format
+msgid "Stopped recording"
+msgstr "ההקלטה נעצרה"
+
+#: src/contents/ui/CameraPage.qml:522
+#, kde-format
+msgid "Started recording"
+msgstr "ההקלטה החלה"
+
+#: src/contents/ui/CameraPage.qml:525
+#, kde-format
+msgid "Failed to start recording"
+msgstr "התחלת ההקלטה נכשלה"
+
+#: src/contents/ui/GlobalDrawer.qml:66
+#, kde-format
+msgid "Resolution"
+msgstr "רזולוציה"
+
+#: src/contents/ui/GlobalDrawer.qml:86
+#, kde-format
+msgid "White balance"
+msgstr "איזון לבן"
+
+#: src/contents/ui/GlobalDrawer.qml:91
+#, kde-format
+msgid "Auto"
+msgstr "אוטו׳"
+
+#: src/contents/ui/GlobalDrawer.qml:97
+#, kde-format
+msgid "Sunlight"
+msgstr "אור שמש"
+
+#: src/contents/ui/GlobalDrawer.qml:103
+#, kde-format
+msgid "Cloudy"
+msgstr "מעונן"
+
+#: src/contents/ui/GlobalDrawer.qml:109
+#, kde-format
+msgid "Tungsten"
+msgstr "טנגסטן"
+
+#: src/contents/ui/GlobalDrawer.qml:115
+#, kde-format
+msgid "Fluorescent"
+msgstr "פלורוסנט"
+
+#: src/contents/ui/GlobalDrawer.qml:120
+#, kde-format
+msgid "About"
+msgstr "על אודות"
+
+#: src/contents/ui/main.qml:49
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr "אירעה שגיאה: „%1”. נא לשקול להפעיל את היישומון מחדש אם הפסיק לתפקד."
+
+#: src/main.cpp:45
+#, kde-format
+msgid "© Plasma Mobile Developers"
+msgstr "© מפתחי פלזמה לניידים"
+
+#: src/main.cpp:47
+#, kde-format
+msgid "Marco Martin"
+msgstr "מרקו מרטין"
+
+#: src/main.cpp:48
+#, kde-format
+msgid "Jonah Brüchert"
+msgstr "יונה בריכרט"
