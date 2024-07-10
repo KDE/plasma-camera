@@ -515,15 +515,23 @@ Kirigami.Page {
         }
 
         Text {
-            text: {
-                // display hour count only on demand
-                // zero padding
-                // zero padding
-
-                "%1%2:%3".arg((Math.trunc(recordingDurationTimer.recordingDurationSeconds / 60) > 59) ? (Math.trunc(Math.trunc(recordingDurationTimer.recordingDurationSeconds / 60) / 60) + ":") : "").arg((((Math.trunc(recordingDurationTimer.recordingDurationSeconds / 60) % 60) < 10) ? "0" : "") + (Math.trunc(recordingDurationTimer.recordingDurationSeconds / 60) % 60)).arg((((recordingDurationTimer.recordingDurationSeconds % 60) < 10) ? "0" : "") + (recordingDurationTimer.recordingDurationSeconds % 60));
-            }
+            text: `${formatUtils.hoursOptional}${formatUtils.minutes}:${formatUtils.seconds}`
             font.pixelSize: Kirigami.Units.gridUnit
             color: "white"
+
+            QtObject {
+                id: formatUtils
+
+                property alias durationSeconds: recordingDurationTimer.recordingDurationSeconds
+                property int minutesPassed: Math.trunc(durationSeconds / 60)
+                // display hour count only on demand already with :-separator
+                property string hoursOptional: (minutesPassed > 59) ? (Math.trunc(minutesPassed / 60) + ":") : ""
+                // zero padding
+                property string minutes: (((minutesPassed % 60) < 10) ? "0" : "") + (minutesPassed % 60)
+                // zero padding
+                property string seconds: (((durationSeconds % 60) < 10) ? "0" : "") + (durationSeconds % 60)
+            }
+
         }
 
         layer.effect: DropShadow {
