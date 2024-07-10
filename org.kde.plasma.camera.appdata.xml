@@ -95,50 +95,12 @@
   <summary xml:lang="zh-TW">拍照或錄影</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0+</project_license>
-  <developer_name>KDE Community</developer_name>
-  <developer_name xml:lang="ar">مجتمع كِيدِي</developer_name>
-  <developer_name xml:lang="az">KDE Cəmiyyəti</developer_name>
-  <developer_name xml:lang="bg">Общност на KDE</developer_name>
-  <developer_name xml:lang="ca">La comunitat KDE</developer_name>
-  <developer_name xml:lang="ca-valencia">La comunitat KDE</developer_name>
-  <developer_name xml:lang="cs">Komunita KDE</developer_name>
-  <developer_name xml:lang="da">KDE-fællesskabet</developer_name>
-  <developer_name xml:lang="de">KDE-Gemeinschaft</developer_name>
-  <developer_name xml:lang="el">Κοινότητα του KDE</developer_name>
-  <developer_name xml:lang="en-GB">KDE Community</developer_name>
-  <developer_name xml:lang="eo">KDE-Komunumo</developer_name>
-  <developer_name xml:lang="es">Comunidad KDE</developer_name>
-  <developer_name xml:lang="et">KDE kogukond</developer_name>
-  <developer_name xml:lang="eu">KDE komunitatea</developer_name>
-  <developer_name xml:lang="fi">KDE-yhteisö</developer_name>
-  <developer_name xml:lang="fr">La communauté KDE</developer_name>
-  <developer_name xml:lang="gl">Comunidade KDE</developer_name>
-  <developer_name xml:lang="he">קהילת KDE</developer_name>
-  <developer_name xml:lang="hu">A KDE Közösség</developer_name>
-  <developer_name xml:lang="ia">Communitate de KDE</developer_name>
-  <developer_name xml:lang="id">Komunitas KDE</developer_name>
-  <developer_name xml:lang="is">KDE-samfélagið</developer_name>
-  <developer_name xml:lang="it">Comunità KDE</developer_name>
-  <developer_name xml:lang="ka">KDE-ის საზოგადოება</developer_name>
-  <developer_name xml:lang="ko">KDE 커뮤니티</developer_name>
-  <developer_name xml:lang="lt">KDE bendruomenė</developer_name>
-  <developer_name xml:lang="nl">KDE gemeenschap</developer_name>
-  <developer_name xml:lang="nn">KDE-fellesskapet</developer_name>
-  <developer_name xml:lang="pa">ਕੇਡੀਈ ਕਮਿਊਨਟੀ</developer_name>
-  <developer_name xml:lang="pl">Społeczność KDE</developer_name>
-  <developer_name xml:lang="pt">Comunidade do KDE</developer_name>
-  <developer_name xml:lang="pt-BR">KDE Community</developer_name>
-  <developer_name xml:lang="ro">Comunitatea KDE</developer_name>
-  <developer_name xml:lang="ru">Сообщество KDE</developer_name>
-  <developer_name xml:lang="sk">KDE komunita</developer_name>
-  <developer_name xml:lang="sl">Skupnost KDE</developer_name>
-  <developer_name xml:lang="sv">KDE-gemenskapen</developer_name>
-  <developer_name xml:lang="tg">Ҷамъияти KDE</developer_name>
-  <developer_name xml:lang="tr">KDE Topluluğu</developer_name>
-  <developer_name xml:lang="uk">Спільнота KDE</developer_name>
-  <developer_name xml:lang="x-test">xxKDE Communityxx</developer_name>
-  <developer_name xml:lang="zh-CN">KDE 社区</developer_name>
-  <developer_name xml:lang="zh-TW">KDE 社群</developer_name>
+  <developer id="kde.org">
+    <name>KDE Community</name>
+  </developer>
+  <url type="homepage">https://apps.kde.org/plasma.camera</url>
+  <content_rating type="oars-1.1"/>
+  <launchable type="desktop-id">org.kde.plasma.camera.desktop</launchable>
   <description>
     <p>Camera Application for Plasma Mobile.</p>
     <p xml:lang="ar">تطبيق الكاميرا لبلازما موبايل</p>
@@ -229,7 +191,7 @@
     <p xml:lang="zh-TW">此相機支援不同的解析度、白平衡模式，且允許切換成不同的相機裝置。</p>
   </description>
   <screenshots>
-    <screenshot>
+    <screenshot type="default">
       <image>https://cdn.kde.org/screenshots/plasma-camera/plasma-camera.png</image>
     </screenshot>
   </screenshots>
