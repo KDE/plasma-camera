@@ -526,10 +526,8 @@ Kirigami.Page {
                 property int minutesPassed: Math.trunc(durationSeconds / 60)
                 // display hour count only on demand already with :-separator
                 property string hoursOptional: (minutesPassed > 59) ? (Math.trunc(minutesPassed / 60) + ":") : ""
-                // zero padding
-                property string minutes: (((minutesPassed % 60) < 10) ? "0" : "") + (minutesPassed % 60)
-                // zero padding
-                property string seconds: (((durationSeconds % 60) < 10) ? "0" : "") + (durationSeconds % 60)
+                property string minutes: `${minutesPassed}`.padStart(2, '0')
+                property string seconds: `${durationSeconds}`.padStart(2, '0')
             }
 
         }
