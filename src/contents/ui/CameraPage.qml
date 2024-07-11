@@ -204,8 +204,6 @@ Kirigami.Page {
         }
 
         CaptureSession {
-            // videoFrameRate: 30 // a fixed frame rate is not set for now as it does not always get enforced anyway and can cause errors
-
             id: captureSession
 
             camera: cameraPage.camera
@@ -214,9 +212,10 @@ Kirigami.Page {
             imageCapture: ImageCapture {
                 onImageSaved: previewArea.imageUrl = "file://" + fileName
             }
-            // TODO set resolution
 
             recorder: MediaRecorder {
+                // a fixed frame rate (videoFrameRate: 30) is not set for now as it does not always get enforced anyway and can cause errors
+                // TODO set resolution
                 videoResolution: CameraSettings.resolution
             }
 
