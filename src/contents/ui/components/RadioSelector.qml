@@ -1,5 +1,11 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 // SPDX-FileCopyrightText: 2023 Mathis Brüchert <mbb@kaidan.im>
+
+import QtQuick 2.15
+import QtQuick.Controls 2.15 as QQC2
+import QtQuick.Layouts 1.15
+import org.kde.kirigami 2.19 as Kirigami
+
 /**
 * @brief A Component that allows sitching between multiple options.
 *
@@ -25,31 +31,24 @@
 * }
 * @endcode
 */
-
-import QtQuick 2.15
-import QtQuick.Controls 2.15 as QQC2
-import QtQuick.Layouts 1.15
-import org.kde.kirigami 2.19 as Kirigami
-
 RowLayout {
+    id: root
+
     /**
     * @brief This property holds a list of actions, each holding one of the options.
     */
+    property list<Kirigami.Action> actions
     /**
     * @brief This property holds whether all the items should have the same width.
     */
+    property bool consistentWidth: false
     /**
     * @brief This property holds which option will be selected by default.
     */
+    property int defaultIndex: 0
     /**
     * @brief This property holds the currently selected option.
     */
-
-    id: root
-
-    property list<Kirigami.Action> actions
-    property bool consistentWidth: false
-    property int defaultIndex: 0
     readonly property int selectedIndex: marker.selectedIndex
     property string color: Kirigami.Theme.textColor
 
