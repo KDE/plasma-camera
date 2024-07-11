@@ -1,9 +1,9 @@
 // SPDX-FileCopyrightText: 2013 Digia Plc and/or its subsidiary(-ies)
 // SPDX-License-Identifier: BSD-3-Clause
 
-import QtQuick 2.0
-import org.kde.kirigami 2.0 as Kirigami
-import QtMultimedia 5.0
+import QtQuick
+import org.kde.kirigami as Kirigami
+import QtMultimedia
 
 Item {
     id: zoomControl

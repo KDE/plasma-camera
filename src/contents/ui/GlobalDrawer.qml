@@ -2,10 +2,10 @@
 // SPDX-FileCopyrightText: 2013 Digia Plc and/or its subsidiary(-ies)
 // SPDX-License-Identifier: BSD-3-Clause
 
-import org.kde.kirigami 2.0 as Kirigami
-import QtQuick 2.7
+import org.kde.kirigami as Kirigami
+import QtQuick
 import QtMultimedia
-import org.kde.plasmacamera 1.0
+import org.kde.plasmacamera
 
 Kirigami.GlobalDrawer {
     id: drawer

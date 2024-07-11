@@ -2,11 +2,11 @@
 // SPDX-FileCopyrightText: 2020 Sebastian Pettke <sebpe@mailbox.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import QtQuick 2.7
+import QtQuick
 import QtMultimedia
-import QtQuick.Controls.Material 2.0
-import QtQuick.Controls 2.0 as Controls
-import org.kde.kirigami 2.4 as Kirigami
+import QtQuick.Controls.Material
+import QtQuick.Controls as Controls
+import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
 
 Rectangle {
