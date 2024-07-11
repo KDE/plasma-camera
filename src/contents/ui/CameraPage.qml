@@ -3,12 +3,12 @@
 // SPDX-License-Identifier: BSD-3-Clause
 
 import QtCore
-import QtQuick 2.7
+import QtQuick
 import QtMultimedia
-import org.kde.kirigami 2.19 as Kirigami
-import QtQuick.Controls 2.12 as Controls
-import QtQuick.Controls.Material 2.0
-import QtQuick.Layouts 1.2
+import org.kde.kirigami as Kirigami
+import QtQuick.Controls as Controls
+import QtQuick.Controls.Material
+import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
 import "./components" as Components
 import org.kde.plasmacamera
