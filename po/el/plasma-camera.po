@@ -1,21 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
 #
 # Stelios <sstavra@gmail.com>, 2019, 2020.
+# SPDX-FileCopyrightText: 2024 Antonis Geralis <capoiosct@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:40+0000\n"
-"PO-Revision-Date: 2020-09-17 09:55+0300\n"
-"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"PO-Revision-Date: 2024-09-19 16:47+0300\n"
+"Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -131,7 +132,7 @@ msgstr "Αυτόματο"
 #: src/contents/ui/GlobalDrawer.qml:97
 #, kde-format
 msgid "Sunlight"
-msgstr "Ηλιος"
+msgstr "Ήλιος"
 
 #: src/contents/ui/GlobalDrawer.qml:103
 #, kde-format
@@ -165,7 +166,7 @@ msgstr ""
 #: src/main.cpp:45
 #, kde-format
 msgid "© Plasma Mobile Developers"
-msgstr "© Οι προγραμματιστέ του Plasma Mobile"
+msgstr "© Οι προγραμματιστές του Plasma Mobile"
 
 #: src/main.cpp:47
 #, kde-format
