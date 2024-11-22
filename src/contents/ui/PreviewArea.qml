@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2025 Andrew Wang
 // SPDX-FileCopyrightText: 2020 Jonah Brüchert <jbb@kaidan.im>
 // SPDX-FileCopyrightText: 2020 Sebastian Pettke <sebpe@mailbox.org>
 // SPDX-License-Identifier: GPL-3.0-or-later
@@ -9,14 +10,16 @@ import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
 
+
 Rectangle {
     id: preview
 
-    property var imageCapture
+    // TODO: do we want to set up using imageCapture?
+    // property var imageCapture
     property var videoRecorder
     property bool showVideoPreview: false // when set to true, the preview for the videoRecorder is shown, if false for the imageCapture
     property bool videoThumbnailRequested: false
-    property string imageUrl
+    property string imageUrl  // TODO: set default image url to some placeholder? (the last picture you took)
 
     function setPhotoPreview() {
         showVideoPreview = false;
@@ -36,10 +39,13 @@ Rectangle {
         }
     }
 
-    visible: ((imageCapture.preview && !showVideoPreview) || (videoRecorder.actualLocation && showVideoPreview)) && !(videoRecorder.recorderState === MediaRecorder.RecordingStatus)
+    // TODO
+    // visible: ((imageCapture.preview && !showVideoPreview) || (videoRecorder.actualLocation && showVideoPreview)) && !(videoRecorder.recorderState === MediaRecorder.RecordingStatus)
+    visible: true
     width: Kirigami.Units.gridUnit * 6
     height: width
     layer.enabled: preview.enabled
+
     Component.onCompleted: {
         videoRecorder.recorderStateChanged.connect(createVideoThumbnail);
     }
@@ -55,10 +61,14 @@ Rectangle {
     }
 
     Image {
-        visible: !showVideoPreview
+        // TODO
+        // visible: !showVideoPreview
+        visible: true
         fillMode: Image.PreserveAspectCrop
         anchors.fill: parent
-        source: imageCapture.preview
+        // TODO
+        // source: imageCapture.preview
+        source: preview.imageUrl
     }
 
     Rectangle {
@@ -77,7 +87,9 @@ Rectangle {
         Controls.BusyIndicator {
             id: thumbnailBusyIdicator
 
-            visible: (videoRecorder.recorderState === MediaRecorder.FinalizingStatus)
+            // TODO
+            // visible: (videoRecorder.recorderState === MediaRecorder.FinalizingStatus)
+            visible: false
             Kirigami.Theme.textColor: "white"
             anchors.fill: parent
             layer.enabled: thumbnailBusyIdicator.enabled

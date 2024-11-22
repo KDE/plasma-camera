@@ -1,44 +1,54 @@
+// SPDX-FileCopyrightText: 2025 Andrew Wang
 // SPDX-FileCopyrightText: 2018 Jonah Brüchert <jbb@kaidan.im>
 // SPDX-FileCopyrightText: 2013 Digia Plc and/or its subsidiary(-ies)
 // SPDX-License-Identifier: BSD-3-Clause
 
-import org.kde.kirigami as Kirigami
 import QtQuick
 import QtMultimedia
+
+import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.plasmacamera
+
 
 Kirigami.GlobalDrawer {
     id: drawer
-
     property var camera
-
     handleVisible: false
+
     actions: [
         Kirigami.Action {
             id: devicesAction
 
             text: i18n("Camera")
             icon.name: "camera-photo-symbolic"
+
             Component.onCompleted: {
-                var cameras = devices.videoInputs;
+                var cameraIds = camera.getCameraDevicesId();
+                var cameraNames = camera.getCameraDevicesName();
                 var childrenList = [];
-                for (var i in cameras) {
+
+                for (var i = 0; i < cameraIds.length; i++) {
                     childrenList[i] = devicesSubAction.createObject(devicesAction, {
-                        "value": cameras[i].id,
-                        "text": "%1".arg(cameras[i].description)
+                        "value": cameraIds[i],
+                        "text": cameraNames[i],
                     });
                 }
+
                 devicesAction.children = childrenList;
             }
         },
+
         Kirigami.Action {
             id: resolutionAction
 
             text: i18n("Resolution")
             icon.name: "ratiocrop"
+
             Component.onCompleted: {
                 var resolutions = drawer.camera.cameraDevice.videoFormats;
                 var childrenList = [];
+
                 for (var i in resolutions) {
                     var pixels = resolutions[i].resolution.width * resolutions[i].resolution.height;
                     var megapixels = Math.round(pixels / 10000) / 100;
@@ -50,6 +60,7 @@ Kirigami.GlobalDrawer {
                 resolutionAction.children = childrenList;
             }
         },
+
         Kirigami.Action {
             id: wbaction
 
@@ -92,11 +103,14 @@ Kirigami.GlobalDrawer {
             }
 
         },
+
         Kirigami.Action {
             text: i18n("About")
             icon.name: "help-about"
-            onTriggered: pageStack.pushDialogLayer("qrc:/AboutPage.qml")
+            // onTriggered: pageStack.pushDialogLayer("qrc:/AboutPage.qml")
+            onTriggered: pageStack.pushDialogLayer(aboutPage)
         }
+
     ]
 
     Component {
@@ -107,7 +121,7 @@ Kirigami.GlobalDrawer {
 
             checked: value === CameraSettings.cameraDeviceId
             onTriggered: {
-                CameraSettings.cameraDeviceId = value;
+                camera.cameraDevice = value;
             }
         }
 
@@ -127,8 +141,13 @@ Kirigami.GlobalDrawer {
 
     }
 
-    MediaDevices {
-        id: devices
+    Component {
+        id: aboutPage
+
+        FormCard.AboutPage {
+            aboutData: About
+        }
+
     }
 
 }

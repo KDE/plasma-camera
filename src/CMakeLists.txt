@@ -1,15 +1,40 @@
+# SPDX-FileCopyrightText: 2025 Andrew Wang
 # SPDX-FileCopyrightText: 2018 Jonah Brüchert <jbb@kaidan.im>
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(plasma-camera_SRCS
     main.cpp
     plasmacamera.cpp
+    plasmacameramanager.cpp
+    plasmacamera/converter.cpp
+    plasmacamera/image.cpp
+    plasmacamera/path.cpp
+    plasmacamera/settings.cpp
+    plasmacamera/worker.cpp
     resources.qrc
 )
 
+find_package(Qt6 REQUIRED COMPONENTS Multimedia)
+
 add_executable(plasma-camera ${plasma-camera_SRCS})
-target_link_libraries(plasma-camera Qt::Core Qt::Qml Qt::Quick Qt::Svg
-                                    KF6::CoreAddons KF6::I18n KF6::ConfigGui)
+target_compile_options(plasma-camera PUBLIC -fexceptions)
+target_link_libraries(
+        plasma-camera
+        Qt::Core
+        Qt::Qml
+        Qt::Quick
+        Qt::Svg
+        Qt6::Multimedia
+        KF6::CoreAddons
+        KF6::I18n
+        KF6::ConfigGui
+)
+
+find_package(PkgConfig)
+pkg_check_modules(LIBCAMERA REQUIRED IMPORTED_TARGET libcamera)
+include_directories(${CMAKE_SOURCE_DIR} ${LIBCAMERA_INCLUDE_DIRS})
 
 kconfig_add_kcfg_files(plasma-camera GENERATE_MOC camerasettings.kcfgc)
 
@@ -32,7 +57,7 @@ if(ANDROID)
 
     ecm_add_android_apk(plasma-camera ANDROID_DIR ${CMAKE_SOURCE_DIR})
 else()
-    target_link_libraries(plasma-camera Qt::Widgets)
+    target_link_libraries(plasma-camera Qt::Widgets PkgConfig::LIBCAMERA)
 endif()
 
 install(TARGETS plasma-camera ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

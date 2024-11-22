@@ -1,11 +1,11 @@
 # SPDX-FileCopyrightText: 2018 Jonah Brüchert <jbb@kaidan.im>
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-project(plasma-camera)
-
 cmake_minimum_required(VERSION 3.16)
 set(KF_MIN_VERSION "6.0.0")
 set(QT_MIN_VERSION "6.6.0")
+
+project(plasma-camera)
 
 include(FeatureSummary)
 

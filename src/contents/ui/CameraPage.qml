@@ -1,3 +1,4 @@
+// SPDX-FileCopyrightText: 2025 Andrew Wang
 // SPDX-FileCopyrightText: 2018 Jonah Brüchert <jbb@kaidan.im>
 // SPDX-FileCopyrightText: 2013 Digia Plc and/or its subsidiary(-ies)
 // SPDX-License-Identifier: BSD-3-Clause
@@ -10,8 +11,10 @@ import QtQuick.Controls as Controls
 import QtQuick.Controls.Material
 import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
-import "./components" as Components
+
+import org.kde.kirigamiaddons.components as Components
 import org.kde.plasmacamera
+
 
 Kirigami.Page {
     id: cameraPage
@@ -28,8 +31,10 @@ Kirigami.Page {
     rightPadding: 0
     bottomPadding: 0
     topPadding: 0
+
     globalToolBarStyle: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.None : Kirigami.ApplicationHeaderStyle.ToolBar
     onIsCurrentPageChanged: isCurrentPage && pageStack.depth > 1 && pageStack.pop()
+
     Component.onCompleted: {
         if (permission.status == Qt.PermissionStatus.Undetermined)
             permission.request();
@@ -48,7 +53,9 @@ Kirigami.Page {
                 else if (camera.captureMode === camera.captureVideo)
                     return "camera-photo-symbolic";
             }
-            enabled: (captureSession.recorder.recorderState !== MediaRecorder.RecordingState)
+            // enabled: (captureSession.recorder.recorderState !== MediaRecorder.RecordingState)
+            // TODO: enabled when not recording video
+            enabled: true
             onTriggered: {
                 if (camera.captureMode === camera.captureStillImage)
                     camera.captureMode = camera.captureVideo;
@@ -95,7 +102,9 @@ Kirigami.Page {
             }
             enabled: {
                 if ((camera.captureMode === camera.captureStillImage) && !selfTimer.running)
-                    return captureSession.imageCapture.readyForCapture;
+                    // TODO
+                    // return captureSession.imageCapture.readyForCapture;
+                    return captureSession.readyForCapture;
                 else
                     return true;
             }
@@ -107,13 +116,19 @@ Kirigami.Page {
             text: i18n("Switch Camera")
             icon.color: "transparent"
             icon.name: "camera-photo-symbolic"
-            enabled: (camera.position !== Camera.UnspecifiedPosition)
+
+            // TODO:
             onTriggered: {
-                if (CameraSettings.cameraPosition === Camera.BackFace)
-                    CameraSettings.cameraPosition = Camera.FrontFace;
-                else if (CameraSettings.cameraPosition === Camera.FrontFace)
-                    CameraSettings.cameraPosition = Camera.BackFace;
+                // TODO: somehow this should modify the cameraSettings instead (so we get nice cycling in settings)
+                camera.nextCameraSrc()
             }
+            // enabled: (camera.position !== Camera.UnspecifiedPosition)
+            // onTriggered: {
+            //     if (CameraSettings.cameraPosition === Camera.BackFace)
+            //         CameraSettings.cameraPosition = Camera.FrontFace;
+            //     else if (CameraSettings.cameraPosition === Camera.FrontFace)
+            //         CameraSettings.cameraPosition = Camera.BackFace;
+            // }
         }
     ]
 
@@ -143,6 +158,7 @@ Kirigami.Page {
         state: "PhotoCapture"
         anchors.fill: parent
         color: "black"
+
         states: [
             State {
                 name: "PhotoCapture"
@@ -150,7 +166,7 @@ Kirigami.Page {
                 StateChangeScript {
                     script: {
                         cameraPage.camera.captureMode = camera.captureStillImage;
-                        cameraPage.camera.start();
+                        // cameraPage.camera.start();
                     }
                 }
 
@@ -187,9 +203,9 @@ Kirigami.Page {
             id: permission
 
             onStatusChanged: {
-                if (status == Qt.PermissionStatus.Granted)
+                if (status == Qt.PermissionStatus.Granted) {
                     cameraPage.camera.start();
-
+                }
             }
         }
 
@@ -197,42 +213,87 @@ Kirigami.Page {
             id: viewfinder
 
             visible: cameraUI.state == "PhotoCapture" || cameraUI.state == "VideoCapture"
-            // Workaround
-            orientation: Kirigami.Settings.isMobile ? -90 : 0
+
+            // TODO: fix previous orientation Workaround
+            // orientation: Kirigami.Settings.isMobile ? -90 : 0
             width: parent.width
             height: parent.height - controlContainer.height
         }
 
-        CaptureSession {
+        // TODO: init in main.qml and pass through to here
+        // TODO: switch with PlasmaCameramanager
+        // CaptureSession {
+        //     id: captureSession
+
+        //     camera: cameraPage.camera
+        //     videoOutput: viewfinder
+
+        //     imageCapture: ImageCapture {
+        //         onImageSaved: previewArea.imageUrl = "file://" + fileName
+        //     }
+
+        //     recorder: MediaRecorder {
+        //         // a fixed frame rate (videoFrameRate: 30) is not set for now as it does not always get enforced anyway and can cause errors
+        //         // TODO set resolution
+        //         videoResolution: CameraSettings.resolution
+        //     }
+
+        // }
+
+        PlasmaCameraManager {
             id: captureSession
 
-            camera: cameraPage.camera
-            videoOutput: viewfinder
+            // camera: cameraPage.camera
+            plasmaCamera: cameraPage.camera
+            // TODO: set this up too too ?
+            // videoOutput: viewfinder
+            videoSink: viewfinder.videoSink
+            // aboutData: About
 
-            imageCapture: ImageCapture {
-                onImageSaved: previewArea.imageUrl = "file://" + fileName
-            }
+            // TODO: set this up too
+            // imageCapture: ImageCapture {
+            //     onImageSaved: previewArea.imageUrl = "file://" + fileName
+            // }
 
+            // TODO: set this up video recording
             recorder: MediaRecorder {
-                // a fixed frame rate (videoFrameRate: 30) is not set for now as it does not always get enforced anyway and can cause errors
+                // not sure why this doesn't work
+                // videoFrameRate: 30
                 // TODO set resolution
-                videoResolution: CameraSettings.resolution
+                // videoResolution: CameraSettings.resolution
             }
 
         }
 
-        PinchArea {
-            property real initialZoom
+        // TODO:
+        // PinchArea {
+        //     property real initialZoom
 
-            anchors.fill: parent
-            onPinchStarted: {
-                initialZoom = cameraPage.camera.digitalZoom;
-            }
-            onPinchUpdated: {
-                var scale = cameraPage.camera.maximumDigitalZoom / 8 * pinch.scale - cameraPage.camera.maximumDigitalZoom / 8;
-                cameraPage.camera.setDigitalZoom(Math.min(cameraPage.camera.maximumDigitalZoom, cameraPage.camera.digitalZoom + scale));
-            }
-        }
+        //     anchors.fill: parent
+        //     onPinchStarted: {
+        //         initialZoom = cameraPage.camera.digitalZoom;
+        //     }
+        //     onPinchUpdated: {
+        //         var scale = cameraPage.camera.maximumDigitalZoom / 8 * pinch.scale - cameraPage.camera.maximumDigitalZoom / 8;
+        //         cameraPage.camera.setDigitalZoom(Math.min(cameraPage.camera.maximumDigitalZoom, cameraPage.camera.digitalZoom + scale));
+        //     }
+        // }
+
+        // TODO: focus mousearea is also above?
+        // MouseArea {
+        //     anchors.fill: parent
+        //
+        //     onClicked: {
+        //         if (cameraPage.camera.lockStatus === cameraPage.camera.Unlocked) {
+        //             cameraPage.camera.searchAndLock();
+        //             console.log("searching focus...")
+        //         }
+        //         else {
+        //             cameraPage.camera.unlock();
+        //             console.log("unlocking focus...")
+        //         }
+        //     }
+        // }
 
     }
 
@@ -284,9 +345,11 @@ Kirigami.Page {
                     implicitHeight: Kirigami.Units.gridUnit * 25
                     Layout.alignment: Qt.AlignHCenter
                     model: [0, 2, 5, 10, 20]
+
                     onMovingChanged: {
                         camera.selfTimerDuration = model[currentIndex];
                     }
+
                     rotation: -90
                     delegate: delegateComponent
                     visibleItemCount: 7
@@ -318,9 +381,18 @@ Kirigami.Page {
                     PreviewArea {
                         id: previewArea
 
-                        imageCapture: captureSession.imageCapture
+                        // TODO
+                        // imageCapture: captureSession.imageCapture
                         videoRecorder: captureSession.recorder
                         anchors.fill: parent
+
+                        // TODO: what is this for if we can just ask imageCapture directly?
+                        Component.onCompleted: {
+                            captureSession.imageSaved.connect(updatePreview)
+                        }
+                        function updatePreview(_, fileName: string) {
+                            previewArea.imageUrl = "file://" + fileName
+                        }
                     }
 
                     Kirigami.Icon {
@@ -362,7 +434,8 @@ Kirigami.Page {
                             height: modeSelector.selectedIndex === 1 ? Kirigami.Units.gridUnit : 0
                             width: height
                             anchors.centerIn: parent
-                            radius: (captureSession.recorder.recorderState === MediaRecorder.RecordingState) ? Kirigami.Units.smallSpacing : height / 2
+                            // TODO
+                            // radius: (captureSession.recorder.recorderState === MediaRecorder.RecordingState) ? Kirigami.Units.smallSpacing : height / 2
 
                             Behavior on opacity {
                                 PropertyAnimation {
@@ -435,12 +508,12 @@ Kirigami.Page {
             Components.RadioSelector {
                 id: modeSelector
 
-                color: "white"
                 Layout.alignment: Qt.AlignHCenter
                 Layout.fillWidth: true
                 Layout.margins: Kirigami.Units.largeSpacing * 3
                 Layout.maximumWidth: Kirigami.Units.gridUnit * 10
                 consistentWidth: true
+
                 actions: [
                     Kirigami.Action {
                         text: i18n("Photo")
@@ -459,85 +532,88 @@ Kirigami.Page {
 
     }
 
-    ZoomControl {
-        width: Kirigami.Units.gridUnit * 2
-        height: parent.height - controlContainer.height
-        currentZoom: cameraPage.camera.zoomFactor
-        maximumZoom: Math.min(4, cameraPage.camera.maximumZoomFactor)
-        onZoomTo: cameraPage.camera.zoomFactor = value
+    // TODO:
+    // ZoomControl {
+    //     width: Kirigami.Units.gridUnit * 2
+    //     height: parent.height - controlContainer.height
+    //     currentZoom: cameraPage.camera.zoomFactor
+    //     maximumZoom: Math.min(4, cameraPage.camera.maximumZoomFactor)
+    //     onZoomTo: cameraPage.camera.zoomFactor = value
 
-        anchors {
-            right: parent.right
-            top: parent.top
-            margins: Kirigami.Units.gridUnit * 2
-        }
+    //     anchors {
+    //         right: parent.right
+    //         top: parent.top
+    //         margins: Kirigami.Units.gridUnit * 2
+    //     }
 
-    }
+    // }
 
     // counts the seconds from the beginning of the current video recording
-    Timer {
-        id: recordingDurationTimer
+    // TODO:
+    // Timer {
+    //     id: recordingDurationTimer
 
-        property int recordingDurationSeconds: 0
+    //     property int recordingDurationSeconds: 0
 
-        interval: 1000
-        running: captureSession.recorder.recorderState === MediaRecorder.RecordingState
-        repeat: true
-        onTriggered: {
-            recordingDurationSeconds++;
-        }
-        onRunningChanged: {
-            if (!running)
-                recordingDurationSeconds = 0;
+    //     interval: 1000
+    //     running: captureSession.recorder.recorderState === MediaRecorder.RecordingState
+    //     repeat: true
+    //     onTriggered: {
+    //         recordingDurationSeconds++;
+    //     }
+    //     onRunningChanged: {
+    //         if (!running)
+    //             recordingDurationSeconds = 0;
 
-        }
-    }
+    //     }
+    // }
 
-    RowLayout {
-        id: recordingFeedback
+    // TODO:
+    // RowLayout {
+    //     id: recordingFeedback
 
-        visible: (captureSession.recorder.recorderState === MediaRecorder.RecordingState)
-        spacing: Kirigami.Units.gridUnit
-        layer.enabled: recordingFeedback.enabled
+    //     visible: (captureSession.recorder.recorderState === MediaRecorder.RecordingState)
+    //     spacing: Kirigami.Units.gridUnit
+    //     layer.enabled: recordingFeedback.enabled
 
-        anchors {
-            left: parent.left
-            top: parent.top
-            margins: Kirigami.Units.gridUnit * 2
-        }
+    //     anchors {
+    //         left: parent.left
+    //         top: parent.top
+    //         margins: Kirigami.Units.gridUnit * 2
+    //     }
 
-        Rectangle {
-            color: "red"
-            radius: Kirigami.Units.gridUnit
-            height: Kirigami.Units.gridUnit * 2
-            width: height
-        }
+    //     Rectangle {
+    //         color: "red"
+    //         radius: Kirigami.Units.gridUnit
+    //         height: Kirigami.Units.gridUnit * 2
+    //         width: height
+    //     }
 
-        Text {
-            text: `${formatUtils.hoursOptional}${formatUtils.minutes}:${formatUtils.seconds}`
-            font.pixelSize: Kirigami.Units.gridUnit
-            color: "white"
+    //     Text {
+    //         text: `${formatUtils.hoursOptional}${formatUtils.minutes}:${formatUtils.seconds}`
+    //         font.pixelSize: Kirigami.Units.gridUnit
+    //         color: "white"
 
-            QtObject {
-                id: formatUtils
+    //         QtObject {
+    //             id: formatUtils
 
-                property alias durationSeconds: recordingDurationTimer.recordingDurationSeconds
-                property int minutesPassed: Math.trunc(durationSeconds / 60)
-                // display hour count only on demand already with :-separator
-                property string hoursOptional: (minutesPassed > 59) ? (Math.trunc(minutesPassed / 60) + ":") : ""
-                property string minutes: `${minutesPassed}`.padStart(2, '0')
-                property string seconds: `${durationSeconds}`.padStart(2, '0')
-            }
+    //             property alias durationSeconds: recordingDurationTimer.recordingDurationSeconds
+    //             property int minutesPassed: Math.trunc(durationSeconds / 60)
+    //             // display hour count only on demand already with :-separator
+    //             property string hoursOptional: (minutesPassed > 59) ? (Math.trunc(minutesPassed / 60) + ":") : ""
+    //             property string minutes: `${minutesPassed}`.padStart(2, '0')
+    //             property string seconds: `${durationSeconds}`.padStart(2, '0')
+    //         }
 
-        }
+    //     }
 
-        layer.effect: DropShadow {
-            color: Material.dropShadowColor
-            samples: 30
-            spread: 0.5
-        }
+    //     layer.effect: DropShadow {
+    //         color: Material.dropShadowColor
+    //         samples: 30
+    //         spread: 0.5
+    //     }
 
-    }
+    // }
 
     Timer {
         id: selfTimer
@@ -545,20 +621,38 @@ Kirigami.Page {
         interval: camera.selfTimerDuration * 1000
         running: false
         repeat: false
+
         onTriggered: {
             running = false;
+
             if (camera.captureMode === camera.captureStillImage) {
-                if (captureSession.imageCapture.readyForCapture) {
-                    captureSession.imageCapture.captureToFile("");
-                    previewArea.setPhotoPreview();
-                    showPassiveNotification(i18n("Took a photo"));
-                } else {
+                // if (camera.readyForCapture) {
+                //    camera.captureToFile("")
+                if (captureSession.readyForCapture) {
+                    captureSession.captureToFile("")
+                    previewArea.setPhotoPreview()
+                    showPassiveNotification(i18n("Took a photo"))
+
+                    // TODO: this works!
+                    // showPassiveNotification(camera.cam.errorString)
+                    // qml does not like this
+                    // showPassiveNotification(camera.camera.errorString)
+                }
+                // TODO: fully replace?
+                // if (captureSession.imageCapture.readyForCapture) {
+                //     captureSession.imageCapture.captureToFile("");
+                //     previewArea.setPhotoPreview();
+                //     showPassiveNotification(i18n("Took a photo"));
+                // }
+                else {
                     showPassiveNotification(i18n("Failed to take a photo"));
                 }
+
             } else if (captureSession.recorder.recorderState === MediaRecorder.RecordingState) {
                 captureSession.recorder.stop();
                 previewArea.setVideoPreview();
                 showPassiveNotification(i18n("Stopped recording"));
+
             } else if (camera.captureMode === camera.captureVideo) {
                 captureSession.recorder.record();
                 if (captureSession.recorder.recorderState === MediaRecorder.RecordingState)
@@ -567,6 +661,7 @@ Kirigami.Page {
                     showPassiveNotification(i18n("Failed to start recording"));
             }
         }
+
         onRunningChanged: {
             if (!running) {
                 camera.selfTimerRunning = false;
@@ -574,6 +669,7 @@ Kirigami.Page {
                 countdownTimer.stop();
                 countdownTimer.remainingSeconds = camera.selfTimerDuration;
                 selfTimerIcon.opacity = 1;
+
             } else {
                 camera.selfTimerRunning = true;
             }
@@ -589,6 +685,7 @@ Kirigami.Page {
         interval: 1000
         running: false
         repeat: true
+
         onTriggered: {
             remainingSeconds--;
         }
