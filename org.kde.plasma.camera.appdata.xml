@@ -41,6 +41,7 @@
   <name xml:lang="pt-BR">Câmera do Plasma</name>
   <name xml:lang="ro">Plasma Camera</name>
   <name xml:lang="ru">Камера для Plasma</name>
+  <name xml:lang="sa">प्लाज्मा कैमरा</name>
   <name xml:lang="sk">Plasma Camera</name>
   <name xml:lang="sl">Plasma Camera</name>
   <name xml:lang="sv">Plasma kamera</name>
@@ -86,6 +87,7 @@
   <summary xml:lang="pt-BR">Tire fotos e grave vídeos</summary>
   <summary xml:lang="ro">Înregistrează poze și video</summary>
   <summary xml:lang="ru">Создание фотографий и запись видео</summary>
+  <summary xml:lang="sa">फोटो, विडियो च गृह्यताम्</summary>
   <summary xml:lang="sk">Tvorba fotiek a videa</summary>
   <summary xml:lang="sl">Zajem fotografij in videov</summary>
   <summary xml:lang="sv">Ta foton och spela in videor</summary>
@@ -140,6 +142,7 @@
     <p xml:lang="pt-BR">Aplicativo de câmera para o Plasma Mobile.</p>
     <p xml:lang="ro">Aplicație de aparat foto pentru Plasma Mobile.</p>
     <p xml:lang="ru">Приложение для работы с камерой для Plasma.</p>
+    <p xml:lang="sa">प्लाज्मा मोबाईलस्य कृते कैमरा अनुप्रयोगः।</p>
     <p xml:lang="sk">Aplikácia Camera pre Plasma Mobile</p>
     <p xml:lang="sl">Progam za kamero za Plasma Mobile.</p>
     <p xml:lang="sv">Kameraprogram för Plasma Mobil</p>
@@ -184,6 +187,7 @@
     <p xml:lang="pt-BR">Tem suporte a diferentes resoluções, diferentes modos de balanceamento de branco e alternância entre diferentes dispositivos de câmeras.</p>
     <p xml:lang="ro">Susține diverse rezoluții, regimuri diferite de balanțe de alb și schimbarea între diferite dispozitive fotografice.</p>
     <p xml:lang="ru">Приложение поддерживает различные разрешения, выбор режима баланса белого и переключение между камерами.</p>
+    <p xml:lang="sa">एतत् भिन्न-भिन्न-संकल्पं, भिन्न-भिन्न-श्वेत-तुल्य-विधानं, भिन्न-भिन्न-कॅमेरा-यन्त्राणां मध्ये स्विचिंग्-करणं च समर्थयति ।</p>
     <p xml:lang="sk">Podporuje rôzne rozlíšenia, vyváženie bielej a prepínanie medzi rôznymi zariadeniami fotoaparátu.</p>
     <p xml:lang="sl">Podpira različne ločljivosti, različne načine uravnoteževanje beline in preklapljanje med različnimi foto napravami.</p>
     <p xml:lang="sv">Det stöder olika upplösningar, olika vitbalanslägen och byte mellan olika kameraenheter.</p>
