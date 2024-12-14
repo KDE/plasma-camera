@@ -1,0 +1,177 @@
+# Sanskrit translations for plasma-camera package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the plasma-camera package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-camera\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-05-28 00:40+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/contents/ui/CameraPage.qml:21 src/contents/ui/GlobalDrawer.qml:48
+#: src/contents/ui/main.qml:53
+#, kde-format
+msgid "Camera"
+msgstr "कॅमेरा"
+
+#: src/contents/ui/CameraPage.qml:41
+#, kde-format
+msgid "Switch mode"
+msgstr "स्विच मोड"
+
+#: src/contents/ui/CameraPage.qml:64
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "स्वसमयनिर्धारकं रद्दं कुर्वन्तु"
+
+#: src/contents/ui/CameraPage.qml:66
+#, kde-format
+msgid "Capture photo"
+msgstr "फोटो कैप्चर करें"
+
+#: src/contents/ui/CameraPage.qml:68
+#, kde-format
+msgid "Stop recording video"
+msgstr "विडियो रिकार्ड् करणं स्थगयन्तु"
+
+#: src/contents/ui/CameraPage.qml:70
+#, kde-format
+msgid "Start recording video"
+msgstr "विडियो रिकार्ड् करणं आरभत"
+
+#: src/contents/ui/CameraPage.qml:106
+#, kde-format
+msgid "Switch Camera"
+msgstr "स्विच कॅमेरा"
+
+#: src/contents/ui/CameraPage.qml:152
+#, kde-format
+msgid "Camera not available"
+msgstr "कॅमेरा उपलब्धः नास्ति"
+
+#: src/contents/ui/CameraPage.qml:154
+#, kde-format
+msgid "Camera is busy. Is another application using it?"
+msgstr "कॅमेरा व्यस्तः अस्ति। अन्यः अनुप्रयोगः तस्य उपयोगं करोति वा ?"
+
+#: src/contents/ui/CameraPage.qml:156
+#, kde-format
+msgid "Missing camera resource."
+msgstr "कॅमेरा संसाधनं गम्यते।"
+
+#: src/contents/ui/CameraPage.qml:403
+#, kde-format
+msgid "Photo"
+msgstr "चित्रं"
+
+#: src/contents/ui/CameraPage.qml:408
+#, kde-format
+msgid "Video"
+msgstr "विडिओ"
+
+#: src/contents/ui/CameraPage.qml:507
+#, kde-format
+msgid "Took a photo"
+msgstr "एकं फोटो गृहीतवान्"
+
+#: src/contents/ui/CameraPage.qml:510
+#, kde-format
+msgid "Failed to take a photo"
+msgstr "फोटो ग्रहीतुं असफलः अभवत्"
+
+#: src/contents/ui/CameraPage.qml:516
+#, kde-format
+msgid "Stopped recording"
+msgstr "रिकार्डिङ्ग् स्थगितवान्"
+
+#: src/contents/ui/CameraPage.qml:522
+#, kde-format
+msgid "Started recording"
+msgstr "रिकार्डिङ्ग् आरब्धवान्"
+
+#: src/contents/ui/CameraPage.qml:525
+#, kde-format
+msgid "Failed to start recording"
+msgstr "रिकार्डिङ्ग् आरभ्यतुं असफलम्"
+
+#: src/contents/ui/GlobalDrawer.qml:66
+#, kde-format
+msgid "Resolution"
+msgstr "प्रस्ताव"
+
+#: src/contents/ui/GlobalDrawer.qml:86
+#, kde-format
+msgid "White balance"
+msgstr "श्वेततुल्यता"
+
+#: src/contents/ui/GlobalDrawer.qml:91
+#, kde-format
+msgid "Auto"
+msgstr "ऑटो"
+
+#: src/contents/ui/GlobalDrawer.qml:97
+#, kde-format
+msgid "Sunlight"
+msgstr "सूर्यप्रकाशः"
+
+#: src/contents/ui/GlobalDrawer.qml:103
+#, kde-format
+msgid "Cloudy"
+msgstr "धूमिल"
+
+#: src/contents/ui/GlobalDrawer.qml:109
+#, kde-format
+msgid "Tungsten"
+msgstr "टंगस्टन"
+
+#: src/contents/ui/GlobalDrawer.qml:115
+#, kde-format
+msgid "Fluorescent"
+msgstr "प्रतिदीप्ति"
+
+#: src/contents/ui/GlobalDrawer.qml:120
+#, kde-format
+msgid "About"
+msgstr "विषये"
+
+#: src/contents/ui/main.qml:49
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr ""
+"एकः त्रुटिः अभवत्: \"%1\" । यदि एप्लिकेशनं कार्यं स्थगितम् अस्ति तर्हि कृपया पुनः आरम्भं कर्तुं "
+"विचारयन्तु।"
+
+#: src/main.cpp:45
+#, kde-format
+msgid "© Plasma Mobile Developers"
+msgstr "© प्लाज्मा मोबाईल डेवलपर्स"
+
+#: src/main.cpp:47
+#, kde-format
+msgid "Marco Martin"
+msgstr "मार्को मार्टिन्"
+
+#: src/main.cpp:48
+#, kde-format
+msgid "Jonah Brüchert"
+msgstr "जोनाह ब्रुचेर्ट"
