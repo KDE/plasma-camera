@@ -24,6 +24,7 @@
   <name xml:lang="fr">Caméra Plasma</name>
   <name xml:lang="gl">Cámara de Plasma</name>
   <name xml:lang="he">מצלמה של פלזמה</name>
+  <name xml:lang="hi">प्लाज्मा कैमरा</name>
   <name xml:lang="hu">Plasma Kamera</name>
   <name xml:lang="ia">Plasma Camera</name>
   <name xml:lang="id">Plasma Camera</name>
@@ -70,6 +71,7 @@
   <summary xml:lang="fr">Prendre des photos et des vidéos</summary>
   <summary xml:lang="gl">Sacar fotos e gravar vídeos.</summary>
   <summary xml:lang="he">צילום תמונות וסרטונים</summary>
+  <summary xml:lang="hi">फोटो और वीडियो लें</summary>
   <summary xml:lang="hu">Fényképek és videók készítése</summary>
   <summary xml:lang="ia">Prende photos e videos</summary>
   <summary xml:lang="id">Ambil foto dan video</summary>
@@ -125,6 +127,7 @@
     <p xml:lang="fr">Application caméra pour Plasma Mobile.</p>
     <p xml:lang="gl">Aplicación de cámara para Plasma Mobile.</p>
     <p xml:lang="he">יישומון מצלמה לפלזמה לניידים.</p>
+    <p xml:lang="hi">प्लाज्मा मोबाइल के लिए कैमरा अनुप्रयोग.</p>
     <p xml:lang="hu">Kameraalkalmazás a Plasma Mobile-hoz.</p>
     <p xml:lang="ia">Application de Camera per Plasma Mobile.</p>
     <p xml:lang="id">Aplikasi Kamera untuk Plasma Mobile.</p>
@@ -170,6 +173,7 @@
     <p xml:lang="fr">Elle prend en charge différentes résolutions, différents modes de balance des blancs et le basculement entre plusieurs caméras.</p>
     <p xml:lang="gl">Permite varias resolucións, distintos modos de equilibrio de brancos e cambiar entre distintos dispositivos de cámara.</p>
     <p xml:lang="he">תומך במגוון רזולוציות, מצבי איזון לבד שונים והחלפה בין מספר התקני צילום.</p>
+    <p xml:lang="hi">यह विभिन्न रेजोल्यूशन, विभिन्न श्वेत संतुलन मोड और विभिन्न कैमरा डिवाइसों के बीच स्विचिंग का समर्थन करता है।</p>
     <p xml:lang="hu">Támogat különböző felbontásokat, fehéregyensúly módokat és kameraeszközök közötti váltást.</p>
     <p xml:lang="ia">Il supporta resolutiones differente, modos differente de balancia blanc e commutar inter differente dispoitivos de camera.</p>
     <p xml:lang="id">Ini mendukung resolusi yang berbeda, mode keseimbangan putih yang berbeda dan peralihan antara peranti kamera yang berbeda.</p>
