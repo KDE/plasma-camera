@@ -1,4 +1,4 @@
-# Sanskrit translations for plasma-camera package.
+# Hindi translations for plasma-camera package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,30 +8,29 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:40+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "भवतः नामानि"
+msgstr "तुम्हारे नाम"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "भवतः ईमेलपत्राणि"
+msgstr "आपके ईमेल"
 
 #: src/contents/ui/CameraPage.qml:21 src/contents/ui/GlobalDrawer.qml:48
 #: src/contents/ui/main.qml:53
 #, kde-format
 msgid "Camera"
-msgstr "कॅमेरा"
+msgstr "कैमरा"
 
 #: src/contents/ui/CameraPage.qml:41
 #, kde-format
@@ -41,7 +40,7 @@ msgstr "स्विच मोड"
 #: src/contents/ui/CameraPage.qml:64
 #, kde-format
 msgid "Cancel self-timer"
-msgstr "स्वसमयनिर्धारकं रद्दं कुर्वन्तु"
+msgstr "सेल्फ़-टाइमर रद्द करें"
 
 #: src/contents/ui/CameraPage.qml:66
 #, kde-format
@@ -51,77 +50,77 @@ msgstr "फोटो कैप्चर करें"
 #: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Stop recording video"
-msgstr "विडियो रिकार्ड् करणं स्थगयन्तु"
+msgstr "वीडियो रिकॉर्डिंग बंद करें"
 
 #: src/contents/ui/CameraPage.qml:70
 #, kde-format
 msgid "Start recording video"
-msgstr "विडियो रिकार्ड् करणं आरभत"
+msgstr "वीडियो रिकॉर्डिंग शुरू करें"
 
 #: src/contents/ui/CameraPage.qml:106
 #, kde-format
 msgid "Switch Camera"
-msgstr "स्विच कॅमेरा"
+msgstr "कैमरा स्विच करें"
 
 #: src/contents/ui/CameraPage.qml:152
 #, kde-format
 msgid "Camera not available"
-msgstr "कॅमेरा उपलब्धः नास्ति"
+msgstr "कैमरा उपलब्ध नहीं है"
 
 #: src/contents/ui/CameraPage.qml:154
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
-msgstr "कॅमेरा व्यस्तः अस्ति। अन्यः अनुप्रयोगः तस्य उपयोगं करोति वा ?"
+msgstr "कैमरा व्यस्त है। क्या कोई अन्य एप्लिकेशन इसका उपयोग कर रहा है?"
 
 #: src/contents/ui/CameraPage.qml:156
 #, kde-format
 msgid "Missing camera resource."
-msgstr "कॅमेरा संसाधनं गम्यते।"
+msgstr "कैमरा संसाधन गुम है."
 
 #: src/contents/ui/CameraPage.qml:403
 #, kde-format
 msgid "Photo"
-msgstr "चित्रं"
+msgstr "तस्वीर"
 
 #: src/contents/ui/CameraPage.qml:408
 #, kde-format
 msgid "Video"
-msgstr "विडिओ"
+msgstr "वीडियो"
 
 #: src/contents/ui/CameraPage.qml:507
 #, kde-format
 msgid "Took a photo"
-msgstr "एकं फोटो गृहीतवान्"
+msgstr "एक फोटो लिया"
 
 #: src/contents/ui/CameraPage.qml:510
 #, kde-format
 msgid "Failed to take a photo"
-msgstr "फोटो ग्रहीतुं असफलः अभवत्"
+msgstr "फ़ोटो लेने में विफल"
 
 #: src/contents/ui/CameraPage.qml:516
 #, kde-format
 msgid "Stopped recording"
-msgstr "रिकार्डिङ्ग् स्थगितवान्"
+msgstr "रिकॉर्डिंग बंद कर दी गई"
 
 #: src/contents/ui/CameraPage.qml:522
 #, kde-format
 msgid "Started recording"
-msgstr "रिकार्डिङ्ग् आरब्धवान्"
+msgstr "रिकॉर्डिंग शुरू की"
 
 #: src/contents/ui/CameraPage.qml:525
 #, kde-format
 msgid "Failed to start recording"
-msgstr "रिकार्डिङ्ग् आरभ्यतुं असफलम्"
+msgstr "रिकॉर्डिंग शुरू करने में विफल"
 
 #: src/contents/ui/GlobalDrawer.qml:66
 #, kde-format
 msgid "Resolution"
-msgstr "प्रस्ताव"
+msgstr "संकल्प"
 
 #: src/contents/ui/GlobalDrawer.qml:86
 #, kde-format
 msgid "White balance"
-msgstr "श्वेततुल्यता"
+msgstr "श्वेत संतुलन"
 
 #: src/contents/ui/GlobalDrawer.qml:91
 #, kde-format
@@ -131,12 +130,12 @@ msgstr "ऑटो"
 #: src/contents/ui/GlobalDrawer.qml:97
 #, kde-format
 msgid "Sunlight"
-msgstr "सूर्यप्रकाशः"
+msgstr "सूर्य का प्रकाश"
 
 #: src/contents/ui/GlobalDrawer.qml:103
 #, kde-format
 msgid "Cloudy"
-msgstr "धूमिल"
+msgstr "बादलों से घिरा"
 
 #: src/contents/ui/GlobalDrawer.qml:109
 #, kde-format
@@ -146,12 +145,12 @@ msgstr "टंगस्टन"
 #: src/contents/ui/GlobalDrawer.qml:115
 #, kde-format
 msgid "Fluorescent"
-msgstr "प्रतिदीप्ति"
+msgstr "फ्लोरोसेंट"
 
 #: src/contents/ui/GlobalDrawer.qml:120
 #, kde-format
 msgid "About"
-msgstr "विषये"
+msgstr "के बारे में"
 
 #: src/contents/ui/main.qml:49
 #, kde-format
@@ -159,20 +158,20 @@ msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr ""
-"एकः त्रुटिः अभवत्: \"%1\" । यदि एप्लिकेशनं कार्यं स्थगितम् अस्ति तर्हि कृपया पुनः आरम्भं कर्तुं "
-"विचारयन्तु।"
+"एक त्रुटि हुई: \"%1\"। यदि एप्लिकेशन ने काम करना बंद कर दिया है तो कृपया इसे पुनः आरंभ "
+"करने पर विचार करें।"
 
 #: src/main.cpp:45
 #, kde-format
 msgid "© Plasma Mobile Developers"
-msgstr "© प्लाज्मा मोबाईल डेवलपर्स"
+msgstr "© प्लाज्मा मोबाइल डेवलपर्स"
 
 #: src/main.cpp:47
 #, kde-format
 msgid "Marco Martin"
-msgstr "मार्को मार्टिन्"
+msgstr "मार्को मार्टिन"
 
 #: src/main.cpp:48
 #, kde-format
 msgid "Jonah Brüchert"
-msgstr "जोनाह ब्रुचेर्ट"
+msgstr "जोना ब्रुचर्ट"
