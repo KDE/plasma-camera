@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:40+0000\n"
+"POT-Creation-Date: 2025-02-06 00:42+0000\n"
 "PO-Revision-Date: 2024-09-03 21:54+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -29,133 +29,133 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-i18n-de@kde.org"
 
-#: src/contents/ui/CameraPage.qml:21 src/contents/ui/GlobalDrawer.qml:48
-#: src/contents/ui/main.qml:53
+#: src/contents/ui/CameraPage.qml:26 src/contents/ui/GlobalDrawer.qml:20
+#: src/contents/ui/main.qml:14
 #, kde-format
 msgid "Camera"
 msgstr "Kamera"
 
-#: src/contents/ui/CameraPage.qml:41
+#: src/contents/ui/CameraPage.qml:43
 #, kde-format
 msgid "Switch mode"
 msgstr "Modus wechseln"
 
-#: src/contents/ui/CameraPage.qml:64
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "Selbstauslöser abbrechen"
 
-#: src/contents/ui/CameraPage.qml:66
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Capture photo"
 msgstr "Fotoaufnahme"
 
-#: src/contents/ui/CameraPage.qml:68
+#: src/contents/ui/CameraPage.qml:70
 #, kde-format
 msgid "Stop recording video"
 msgstr "Video-Aufnahme beenden"
 
-#: src/contents/ui/CameraPage.qml:70
+#: src/contents/ui/CameraPage.qml:72
 #, kde-format
 msgid "Start recording video"
 msgstr "Video-Aufnahme starten"
 
-#: src/contents/ui/CameraPage.qml:106
+#: src/contents/ui/CameraPage.qml:107
 #, kde-format
 msgid "Switch Camera"
 msgstr "Kamera wechseln"
 
-#: src/contents/ui/CameraPage.qml:152
+#: src/contents/ui/CameraPage.qml:176
 #, kde-format
 msgid "Camera not available"
 msgstr "Kamera nicht verfügbar"
 
-#: src/contents/ui/CameraPage.qml:154
+#: src/contents/ui/CameraPage.qml:178
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
 msgstr "Die Kamera ist belegt. Wird sie von einer anderen Anwendung verwendet?"
 
-#: src/contents/ui/CameraPage.qml:156
+#: src/contents/ui/CameraPage.qml:180
 #, kde-format
 msgid "Missing camera resource."
 msgstr "Fehlende Kamera-Ressource."
 
-#: src/contents/ui/CameraPage.qml:403
+#: src/contents/ui/CameraPage.qml:446
 #, kde-format
 msgid "Photo"
 msgstr "Foto"
 
-#: src/contents/ui/CameraPage.qml:408
+#: src/contents/ui/CameraPage.qml:451
 #, kde-format
 msgid "Video"
 msgstr "Video"
 
-#: src/contents/ui/CameraPage.qml:507
+#: src/contents/ui/CameraPage.qml:554
 #, kde-format
 msgid "Took a photo"
 msgstr "Foto aufgenommen"
 
-#: src/contents/ui/CameraPage.qml:510
+#: src/contents/ui/CameraPage.qml:556
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Das Aufnehmen eines Fotos ist fehlgeschlagen"
 
-#: src/contents/ui/CameraPage.qml:516
+#: src/contents/ui/CameraPage.qml:561
 #, kde-format
 msgid "Stopped recording"
 msgstr "Aufnahme angehalten"
 
-#: src/contents/ui/CameraPage.qml:522
+#: src/contents/ui/CameraPage.qml:565
 #, kde-format
 msgid "Started recording"
 msgstr "Aufnahme gestartet"
 
-#: src/contents/ui/CameraPage.qml:525
+#: src/contents/ui/CameraPage.qml:567
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Start der Aufnahme fehlgeschlagen"
 
-#: src/contents/ui/GlobalDrawer.qml:66
+#: src/contents/ui/GlobalDrawer.qml:37
 #, kde-format
 msgid "Resolution"
 msgstr "Auflösung"
 
-#: src/contents/ui/GlobalDrawer.qml:86
+#: src/contents/ui/GlobalDrawer.qml:56
 #, kde-format
 msgid "White balance"
 msgstr "Weißabgleich"
 
-#: src/contents/ui/GlobalDrawer.qml:91
+#: src/contents/ui/GlobalDrawer.qml:62
 #, kde-format
 msgid "Auto"
 msgstr "Automatisch"
 
-#: src/contents/ui/GlobalDrawer.qml:97
+#: src/contents/ui/GlobalDrawer.qml:69
 #, kde-format
 msgid "Sunlight"
 msgstr "Sonnenlicht"
 
-#: src/contents/ui/GlobalDrawer.qml:103
+#: src/contents/ui/GlobalDrawer.qml:76
 #, kde-format
 msgid "Cloudy"
 msgstr "Bewölkt"
 
-#: src/contents/ui/GlobalDrawer.qml:109
+#: src/contents/ui/GlobalDrawer.qml:83
 #, kde-format
 msgid "Tungsten"
 msgstr "Wolfram"
 
-#: src/contents/ui/GlobalDrawer.qml:115
+#: src/contents/ui/GlobalDrawer.qml:90
 #, kde-format
 msgid "Fluorescent"
 msgstr "Neonlicht"
 
-#: src/contents/ui/GlobalDrawer.qml:120
+#: src/contents/ui/GlobalDrawer.qml:96
 #, kde-format
 msgid "About"
 msgstr "Über"
 
-#: src/contents/ui/main.qml:49
+#: src/contents/ui/main.qml:52
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "

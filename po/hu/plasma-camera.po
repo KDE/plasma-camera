@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:40+0000\n"
+"POT-Creation-Date: 2025-02-06 00:42+0000\n"
 "PO-Revision-Date: 2024-05-29 09:41+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -28,133 +28,133 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kiszel.kristof@gmail.com"
 
-#: src/contents/ui/CameraPage.qml:21 src/contents/ui/GlobalDrawer.qml:48
-#: src/contents/ui/main.qml:53
+#: src/contents/ui/CameraPage.qml:26 src/contents/ui/GlobalDrawer.qml:20
+#: src/contents/ui/main.qml:14
 #, kde-format
 msgid "Camera"
 msgstr "Kamera"
 
-#: src/contents/ui/CameraPage.qml:41
+#: src/contents/ui/CameraPage.qml:43
 #, kde-format
 msgid "Switch mode"
 msgstr "Módváltás"
 
-#: src/contents/ui/CameraPage.qml:64
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "Önkioldó leállítása"
 
-#: src/contents/ui/CameraPage.qml:66
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Capture photo"
 msgstr "Fénykép készítése"
 
-#: src/contents/ui/CameraPage.qml:68
+#: src/contents/ui/CameraPage.qml:70
 #, kde-format
 msgid "Stop recording video"
 msgstr "Videofelvétel leállítása"
 
-#: src/contents/ui/CameraPage.qml:70
+#: src/contents/ui/CameraPage.qml:72
 #, kde-format
 msgid "Start recording video"
 msgstr "Videofelvétel indítása"
 
-#: src/contents/ui/CameraPage.qml:106
+#: src/contents/ui/CameraPage.qml:107
 #, kde-format
 msgid "Switch Camera"
 msgstr "Kameraváltás"
 
-#: src/contents/ui/CameraPage.qml:152
+#: src/contents/ui/CameraPage.qml:176
 #, kde-format
 msgid "Camera not available"
 msgstr "A kamera nem érhető el"
 
-#: src/contents/ui/CameraPage.qml:154
+#: src/contents/ui/CameraPage.qml:178
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
 msgstr "A kamera foglalt. Talán másik alkalmazás használja?"
 
-#: src/contents/ui/CameraPage.qml:156
+#: src/contents/ui/CameraPage.qml:180
 #, kde-format
 msgid "Missing camera resource."
 msgstr "Hiányzó kameraerőforrás."
 
-#: src/contents/ui/CameraPage.qml:403
+#: src/contents/ui/CameraPage.qml:446
 #, kde-format
 msgid "Photo"
 msgstr "Fénykép"
 
-#: src/contents/ui/CameraPage.qml:408
+#: src/contents/ui/CameraPage.qml:451
 #, kde-format
 msgid "Video"
 msgstr "Videó"
 
-#: src/contents/ui/CameraPage.qml:507
+#: src/contents/ui/CameraPage.qml:554
 #, kde-format
 msgid "Took a photo"
 msgstr "Fénykép készítése"
 
-#: src/contents/ui/CameraPage.qml:510
+#: src/contents/ui/CameraPage.qml:556
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Nem sikerült fényképet készíteni"
 
-#: src/contents/ui/CameraPage.qml:516
+#: src/contents/ui/CameraPage.qml:561
 #, kde-format
 msgid "Stopped recording"
 msgstr "Felvétel leállítva"
 
-#: src/contents/ui/CameraPage.qml:522
+#: src/contents/ui/CameraPage.qml:565
 #, kde-format
 msgid "Started recording"
 msgstr "Felvétel elindítva"
 
-#: src/contents/ui/CameraPage.qml:525
+#: src/contents/ui/CameraPage.qml:567
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Nem sikerült elindítani a felvételt"
 
-#: src/contents/ui/GlobalDrawer.qml:66
+#: src/contents/ui/GlobalDrawer.qml:37
 #, kde-format
 msgid "Resolution"
 msgstr "Felbontás"
 
-#: src/contents/ui/GlobalDrawer.qml:86
+#: src/contents/ui/GlobalDrawer.qml:56
 #, kde-format
 msgid "White balance"
 msgstr "Fehéregyensúly"
 
-#: src/contents/ui/GlobalDrawer.qml:91
+#: src/contents/ui/GlobalDrawer.qml:62
 #, kde-format
 msgid "Auto"
 msgstr "Automatikus"
 
-#: src/contents/ui/GlobalDrawer.qml:97
+#: src/contents/ui/GlobalDrawer.qml:69
 #, kde-format
 msgid "Sunlight"
 msgstr "Napfény"
 
-#: src/contents/ui/GlobalDrawer.qml:103
+#: src/contents/ui/GlobalDrawer.qml:76
 #, kde-format
 msgid "Cloudy"
 msgstr "Felhős"
 
-#: src/contents/ui/GlobalDrawer.qml:109
+#: src/contents/ui/GlobalDrawer.qml:83
 #, kde-format
 msgid "Tungsten"
 msgstr "Wolframszálas"
 
-#: src/contents/ui/GlobalDrawer.qml:115
+#: src/contents/ui/GlobalDrawer.qml:90
 #, kde-format
 msgid "Fluorescent"
 msgstr "Fluorescent"
 
-#: src/contents/ui/GlobalDrawer.qml:120
+#: src/contents/ui/GlobalDrawer.qml:96
 #, kde-format
 msgid "About"
 msgstr "Névjegy"
 
-#: src/contents/ui/main.qml:49
+#: src/contents/ui/main.qml:52
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
