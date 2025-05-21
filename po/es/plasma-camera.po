@@ -1,15 +1,15 @@
 # Spanish translations for plasma-camera.po package.
-# Copyright (C) 2019 This file is copyright:
+# Copyright (C) 2019-2025 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
-#
 # Automatically generated, 2019.
-# SPDX-FileCopyrightText: 2019, 2020, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+#
+# SPDX-FileCopyrightText: 2019, 2020, 2023, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-06 00:42+0000\n"
-"PO-Revision-Date: 2023-10-27 00:36+0200\n"
+"PO-Revision-Date: 2025-05-21 01:28+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -178,30 +178,3 @@ msgstr "Marco Martin"
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
-
-#~ msgid "Self-timer"
-#~ msgstr "Temporizador"
-
-#~ msgid "Off"
-#~ msgstr "Desactivar"
-
-#~ msgid "2 s"
-#~ msgstr "2 s"
-
-#~ msgid "5 s"
-#~ msgstr "5 s"
-
-#~ msgid "10 s"
-#~ msgstr "10 s"
-
-#~ msgid "20 s"
-#~ msgstr "20 s"
-
-#~ msgid "Simple camera application"
-#~ msgstr "Aplicación de cámara sencilla"
-
-#~ msgid "License:"
-#~ msgstr "Licencia:"
-
-#~ msgid "View source code online"
-#~ msgstr "Ver código fuente en línea"
