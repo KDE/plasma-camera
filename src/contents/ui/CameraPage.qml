@@ -53,8 +53,6 @@ Kirigami.Page {
                 else if (camera.captureMode === camera.captureVideo)
                     return "camera-photo-symbolic";
             }
-            // enabled: (captureSession.recorder.recorderState !== MediaRecorder.RecordingState)
-            // TODO: enabled when not recording video
             enabled: true
             onTriggered: {
                 if (camera.captureMode === camera.captureStillImage)
@@ -102,8 +100,6 @@ Kirigami.Page {
             }
             enabled: {
                 if ((camera.captureMode === camera.captureStillImage) && !selfTimer.running)
-                    // TODO
-                    // return captureSession.imageCapture.readyForCapture;
                     return captureSession.readyForCapture;
                 else
                     return true;
@@ -117,18 +113,10 @@ Kirigami.Page {
             icon.color: "transparent"
             icon.name: "camera-photo-symbolic"
 
-            // TODO:
             onTriggered: {
                 // TODO: somehow this should modify the cameraSettings instead (so we get nice cycling in settings)
-                camera.nextCameraSrc()
+                camera.nextCameraSrc();
             }
-            // enabled: (camera.position !== Camera.UnspecifiedPosition)
-            // onTriggered: {
-            //     if (CameraSettings.cameraPosition === Camera.BackFace)
-            //         CameraSettings.cameraPosition = Camera.FrontFace;
-            //     else if (CameraSettings.cameraPosition === Camera.FrontFace)
-            //         CameraSettings.cameraPosition = Camera.BackFace;
-            // }
         }
     ]
 
@@ -137,22 +125,6 @@ Kirigami.Page {
     }
 
     Rectangle {
-        /* TODO KF6 focus locking API doesn't exist in QtMultimedia anymore
-            MouseArea {
-                anchors.fill: parent
-
-                onClicked: {
-                    if (cameraPage.camera.lockStatus === cameraPage.camera.Unlocked) {
-                        cameraPage.camera.searchAndLock();
-                        console.log("searching focus...")
-                    }
-                    else {
-                        cameraPage.camera.unlock();
-                        console.log("unlocking focus...")
-                    }
-                }
-            }*/
-
         id: cameraUI
 
         state: "PhotoCapture"
@@ -220,81 +192,19 @@ Kirigami.Page {
             height: parent.height - controlContainer.height
         }
 
-        // TODO: init in main.qml and pass through to here
-        // TODO: switch with PlasmaCameramanager
-        // CaptureSession {
-        //     id: captureSession
-
-        //     camera: cameraPage.camera
-        //     videoOutput: viewfinder
-
-        //     imageCapture: ImageCapture {
-        //         onImageSaved: previewArea.imageUrl = "file://" + fileName
-        //     }
-
-        //     recorder: MediaRecorder {
-        //         // a fixed frame rate (videoFrameRate: 30) is not set for now as it does not always get enforced anyway and can cause errors
-        //         // TODO set resolution
-        //         videoResolution: CameraSettings.resolution
-        //     }
-
-        // }
-
         PlasmaCameraManager {
             id: captureSession
 
-            // camera: cameraPage.camera
             plasmaCamera: cameraPage.camera
-            // TODO: set this up too too ?
-            // videoOutput: viewfinder
             videoSink: viewfinder.videoSink
-            // aboutData: About
 
-            // TODO: set this up too
-            // imageCapture: ImageCapture {
-            //     onImageSaved: previewArea.imageUrl = "file://" + fileName
-            // }
-
-            // TODO: set this up video recording
             recorder: MediaRecorder {
                 // not sure why this doesn't work
                 // videoFrameRate: 30
                 // TODO set resolution
                 // videoResolution: CameraSettings.resolution
             }
-
         }
-
-        // TODO:
-        // PinchArea {
-        //     property real initialZoom
-
-        //     anchors.fill: parent
-        //     onPinchStarted: {
-        //         initialZoom = cameraPage.camera.digitalZoom;
-        //     }
-        //     onPinchUpdated: {
-        //         var scale = cameraPage.camera.maximumDigitalZoom / 8 * pinch.scale - cameraPage.camera.maximumDigitalZoom / 8;
-        //         cameraPage.camera.setDigitalZoom(Math.min(cameraPage.camera.maximumDigitalZoom, cameraPage.camera.digitalZoom + scale));
-        //     }
-        // }
-
-        // TODO: focus mousearea is also above?
-        // MouseArea {
-        //     anchors.fill: parent
-        //
-        //     onClicked: {
-        //         if (cameraPage.camera.lockStatus === cameraPage.camera.Unlocked) {
-        //             cameraPage.camera.searchAndLock();
-        //             console.log("searching focus...")
-        //         }
-        //         else {
-        //             cameraPage.camera.unlock();
-        //             console.log("unlocking focus...")
-        //         }
-        //     }
-        // }
-
     }
 
     Rectangle {
@@ -381,12 +291,9 @@ Kirigami.Page {
                     PreviewArea {
                         id: previewArea
 
-                        // TODO
-                        // imageCapture: captureSession.imageCapture
                         videoRecorder: captureSession.recorder
                         anchors.fill: parent
 
-                        // TODO: what is this for if we can just ask imageCapture directly?
                         Component.onCompleted: {
                             captureSession.imageSaved.connect(updatePreview)
                         }
@@ -415,6 +322,7 @@ Kirigami.Page {
                     Layout.maximumWidth: height
                 }
 
+                // Capture photo/video button
                 Controls.ToolButton {
                     Layout.fillWidth: true
                     implicitHeight: Kirigami.Units.gridUnit * 4
@@ -429,20 +337,20 @@ Kirigami.Page {
                         border.color: "white"
                         border.width: parent.hovered ? (parent.down ? parent.height / 2 : 10) : 5
 
+                        // Recording indicator
                         Rectangle {
                             opacity: modeSelector.selectedIndex === 1 ? 1 : 0
                             height: modeSelector.selectedIndex === 1 ? Kirigami.Units.gridUnit : 0
                             width: height
                             anchors.centerIn: parent
-                            // TODO
-                            // radius: (captureSession.recorder.recorderState === MediaRecorder.RecordingState) ? Kirigami.Units.smallSpacing : height / 2
+
+                            radius: (captureSession.recorder.recorderState === MediaRecorder.RecordingState) ? 0 : width / 2
 
                             Behavior on opacity {
                                 PropertyAnimation {
                                     duration: Kirigami.Units.shortDuration
                                     easing.type: Easing.InOutCubic
                                 }
-
                             }
 
                             Behavior on height {
@@ -450,9 +358,7 @@ Kirigami.Page {
                                     duration: Kirigami.Units.shortDuration
                                     easing.type: Easing.InOutCubic
                                 }
-
                             }
-
                         }
 
                         Behavior on border.width {
@@ -502,7 +408,6 @@ Kirigami.Page {
                 Item {
                     Layout.fillWidth: true
                 }
-
             }
 
             Components.RadioSelector {
@@ -527,93 +432,8 @@ Kirigami.Page {
                     }
                 ]
             }
-
         }
-
     }
-
-    // TODO:
-    // ZoomControl {
-    //     width: Kirigami.Units.gridUnit * 2
-    //     height: parent.height - controlContainer.height
-    //     currentZoom: cameraPage.camera.zoomFactor
-    //     maximumZoom: Math.min(4, cameraPage.camera.maximumZoomFactor)
-    //     onZoomTo: cameraPage.camera.zoomFactor = value
-
-    //     anchors {
-    //         right: parent.right
-    //         top: parent.top
-    //         margins: Kirigami.Units.gridUnit * 2
-    //     }
-
-    // }
-
-    // counts the seconds from the beginning of the current video recording
-    // TODO:
-    // Timer {
-    //     id: recordingDurationTimer
-
-    //     property int recordingDurationSeconds: 0
-
-    //     interval: 1000
-    //     running: captureSession.recorder.recorderState === MediaRecorder.RecordingState
-    //     repeat: true
-    //     onTriggered: {
-    //         recordingDurationSeconds++;
-    //     }
-    //     onRunningChanged: {
-    //         if (!running)
-    //             recordingDurationSeconds = 0;
-
-    //     }
-    // }
-
-    // TODO:
-    // RowLayout {
-    //     id: recordingFeedback
-
-    //     visible: (captureSession.recorder.recorderState === MediaRecorder.RecordingState)
-    //     spacing: Kirigami.Units.gridUnit
-    //     layer.enabled: recordingFeedback.enabled
-
-    //     anchors {
-    //         left: parent.left
-    //         top: parent.top
-    //         margins: Kirigami.Units.gridUnit * 2
-    //     }
-
-    //     Rectangle {
-    //         color: "red"
-    //         radius: Kirigami.Units.gridUnit
-    //         height: Kirigami.Units.gridUnit * 2
-    //         width: height
-    //     }
-
-    //     Text {
-    //         text: `${formatUtils.hoursOptional}${formatUtils.minutes}:${formatUtils.seconds}`
-    //         font.pixelSize: Kirigami.Units.gridUnit
-    //         color: "white"
-
-    //         QtObject {
-    //             id: formatUtils
-
-    //             property alias durationSeconds: recordingDurationTimer.recordingDurationSeconds
-    //             property int minutesPassed: Math.trunc(durationSeconds / 60)
-    //             // display hour count only on demand already with :-separator
-    //             property string hoursOptional: (minutesPassed > 59) ? (Math.trunc(minutesPassed / 60) + ":") : ""
-    //             property string minutes: `${minutesPassed}`.padStart(2, '0')
-    //             property string seconds: `${durationSeconds}`.padStart(2, '0')
-    //         }
-
-    //     }
-
-    //     layer.effect: DropShadow {
-    //         color: Material.dropShadowColor
-    //         samples: 30
-    //         spread: 0.5
-    //     }
-
-    // }
 
     Timer {
         id: selfTimer
@@ -626,25 +446,11 @@ Kirigami.Page {
             running = false;
 
             if (camera.captureMode === camera.captureStillImage) {
-                // if (camera.readyForCapture) {
-                //    camera.captureToFile("")
                 if (captureSession.readyForCapture) {
                     captureSession.captureToFile("")
                     previewArea.setPhotoPreview()
                     showPassiveNotification(i18n("Took a photo"))
-
-                    // TODO: this works!
-                    // showPassiveNotification(camera.cam.errorString)
-                    // qml does not like this
-                    // showPassiveNotification(camera.camera.errorString)
-                }
-                // TODO: fully replace?
-                // if (captureSession.imageCapture.readyForCapture) {
-                //     captureSession.imageCapture.captureToFile("");
-                //     previewArea.setPhotoPreview();
-                //     showPassiveNotification(i18n("Took a photo"));
-                // }
-                else {
+                } else {
                     showPassiveNotification(i18n("Failed to take a photo"));
                 }
 

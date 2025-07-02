@@ -14,8 +14,6 @@ import Qt5Compat.GraphicalEffects
 Rectangle {
     id: preview
 
-    // TODO: do we want to set up using imageCapture?
-    // property var imageCapture
     property var videoRecorder
     property bool showVideoPreview: false // when set to true, the preview for the videoRecorder is shown, if false for the imageCapture
     property bool videoThumbnailRequested: false
@@ -39,8 +37,6 @@ Rectangle {
         }
     }
 
-    // TODO
-    // visible: ((imageCapture.preview && !showVideoPreview) || (videoRecorder.actualLocation && showVideoPreview)) && !(videoRecorder.recorderState === MediaRecorder.RecordingStatus)
     visible: true
     width: Kirigami.Units.gridUnit * 6
     height: width
@@ -61,13 +57,9 @@ Rectangle {
     }
 
     Image {
-        // TODO
-        // visible: !showVideoPreview
         visible: true
         fillMode: Image.PreserveAspectCrop
         anchors.fill: parent
-        // TODO
-        // source: imageCapture.preview
         source: preview.imageUrl
     }
 

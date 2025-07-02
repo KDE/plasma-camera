@@ -83,9 +83,6 @@ Item {
                 right: bar.left
                 rightMargin: Kirigami.Units.gridUnit * 1
             }
-
         }
-
     }
-
 }

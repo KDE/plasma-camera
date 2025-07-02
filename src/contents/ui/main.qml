@@ -19,8 +19,6 @@ Kirigami.ApplicationWindow {
     title: i18n("Camera")
 
     pageStack.initialPage: cameraPage
-    // TODO: Unable to assign [undefined] to int
-    // pageStack.globalToolBar.style: applicationWindow().headerStyle
 
     PlasmaCamera {
         id: mainCamera
@@ -31,17 +29,23 @@ Kirigami.ApplicationWindow {
         property int selfTimerDuration: 0  // seconds
         property bool selfTimerRunning: false
 
-        // ismobile: Kirigami.Settings.isMobile
-        // aboutData: aboutData
-
         active: true
 
-        // two-way binding between CameraSettings and PlasmaCamera for camera device
-        // TODO: unsure if this is proper or hacky
-        cameraDevice: {
+        function findCameraDevice() {
             for (const cameraId of mainCamera.getCameraDevicesId()) {
-                if (cameraId == CameraSettings.cameraDeviceId)
+                if (cameraId == CameraSettings.cameraDeviceId) {
                     return cameraId;
+                }
+            }
+        }
+
+        cameraDevice: findCameraDevice()
+
+        property Connections cameraDeviceConnection: Connections {
+            target: CameraSettings
+
+            function onCameraDeviceIdChanged() {
+                mainCamera.cameraDevice = mainCamera.findCameraDevice();
             }
         }
         onCameraDeviceChanged: {
@@ -51,12 +55,9 @@ Kirigami.ApplicationWindow {
         // one-way binding between CameraSettings and PlasmaCamera for white balance
         // whiteBalanceMode: CameraSettings.whiteBalanceMode
 
-        // TODO: https://forum.qt.io/topic/130485/injection-of-parameters-into-signal-handlers-is-deprecated-use-javascript-functions-with-formal-parameters-instead
-        //   - this doesn't work anymore
         onErrorOccurred: {
             showPassiveNotification(i18n("An error occurred: \"%1\". Please consider restarting the application if it stopped working.", errorString));
         }
-
     }
 
     Component {
@@ -65,7 +66,6 @@ Kirigami.ApplicationWindow {
         CameraPage {
             camera: mainCamera
         }
-
     }
 
     globalDrawer: GlobalDrawer {
