@@ -9,82 +9,80 @@ Settings::~Settings() {}
 
 void Settings::load(const libcamera::ControlInfoMap &infoMap)
 {
-    for (const auto &[controlId, controlInfo] : infoMap)
-    {
+    for (const auto &[controlId, controlInfo] : infoMap) {
         qDebug()
             << "\t" << controlId->name() << ":"
             << "min:" << controlInfo.min().toString()
             << " max:" << controlInfo.max().toString()
             << " default:" << controlInfo.def().toString();
 
-        switch (controlId->id())
-        {
+        switch (controlId->id()) {
         case libcamera::controls::AE_ENABLE:
-            ae_enable_available = true;
-            ae_enable_default = controlInfo.def().get<bool>();
-            ae_enable = ae_enable_default;
+            m_aeEnableAvailable = true;
+            m_aeEnableDefault = controlInfo.def().get<bool>();
+            m_aeEnable = m_aeEnableDefault;
             break;
 
         case libcamera::controls::EXPOSURE_VALUE:
-            manual_exposure_value_available = true;
-            exposure_value_default = controlInfo.def().get<float>();
-            exposure_value = exposure_value_default;
-            exposure_value_min = controlInfo.min().get<float>();
-            exposure_value_max = controlInfo.max().get<float>();
+            m_manualExposureValueAvailable = true;
+            m_exposureValueDefault = controlInfo.def().get<float>();
+            m_exposureValue = m_exposureValueDefault;
+            m_exposureValueMin = controlInfo.min().get<float>();
+            m_exposureValueMax = controlInfo.max().get<float>();
             break;
 
         case libcamera::controls::AF_WINDOWS:
             // TODO: should we check for AF_METERING instead?
             // TODO: how to convert Span<const Rectangle> to QSize?
-            af_window_available = true;
+            m_afWindowAvailable = true;
             break;
 
         case libcamera::controls::AWB_MODE:
             // TODO: AwbModeEnum
-            wb_mode_available = true;
-            wb_mode_default = controlInfo.def().get<int32_t>();
-            wb_mode = wb_mode_default;
+            m_wbModeAvailable = true;
+            m_wbModeDefault = controlInfo.def().get<int32_t>();
+            m_wbMode = m_wbModeDefault;
             break;
 
         case libcamera::controls::COLOUR_TEMPERATURE:
             // TODO: colour temperature min and max?
-            wb_temp_available = true;
-            wb_temp_default = controlInfo.def().get<int32_t>();
-            wb_temp = wb_temp_default;
+            m_wbTempAvailable = true;
+            m_wbTempDefault = controlInfo.def().get<int32_t>();
+            m_wbTemp = m_wbTempDefault;
             // wb_temp_min = controlInfo.min().get<int32_t>();
             // wb_temp_max = controlInfo.max().get<int32_t>();
             break;
 
         case libcamera::controls::EXPOSURE_TIME:
-            manual_exposure_time_available = true;
-            exposure_time_default = controlInfo.def().get<int32_t>();
-            exposure_time = exposure_time_default;
-            exposure_time_min = controlInfo.min().get<int32_t>();
-            exposure_time_max = controlInfo.max().get<int32_t>();
+            m_manualExposureTimeAvailable = true;
+            m_exposureTimeDefault = controlInfo.def().get<int32_t>();
+            m_exposureTime = m_exposureTimeDefault;
+            m_exposureTimeMin = controlInfo.min().get<int32_t>();
+            m_exposureTimeMax = controlInfo.max().get<int32_t>();
             break;
 
         case libcamera::controls::ANALOGUE_GAIN:
-            manual_analogue_gain_available = true;
-            analogue_gain_default = controlInfo.def().get<float>();
-            analogue_gain = analogue_gain_default;
-            analogue_gain_min = controlInfo.min().get<float>();
-            analogue_gain_max = controlInfo.max().get<float>();
+            m_manualAnalogueGainAvailable = true;
+            m_analogueGainDefault = controlInfo.def().get<float>();
+            m_analogueGain = m_analogueGainDefault;
+            m_analogueGainMin = controlInfo.min().get<float>();
+            m_analogueGainMax = controlInfo.max().get<float>();
             break;
 
         case libcamera::controls::CONTRAST:
-            manual_contrast_available = true;
-            contrast_default = controlInfo.def().get<float>();
-            contrast = contrast_default;
-            contrast_min = controlInfo.min().get<float>();
-            contrast_max = controlInfo.max().get<float>();
+            m_manualContrastAvailable = true;
+            m_contrastDefault = controlInfo.def().get<float>();
+            m_contrast = m_contrastDefault;
+            m_contrastMin = controlInfo.min().get<float>();
+            m_contrastMax = controlInfo.max().get<float>();
             break;
 
         case libcamera::controls::SATURATION:
-            manual_saturation_available = true;
-            saturation_default = controlInfo.def().get<float>();
-            saturation = saturation_default;
-            saturation_min = controlInfo.min().get<float>();
-            saturation_max = controlInfo.max().get<float>();
+            m_manualSaturationAvailable = true;
+            m_saturationDefault = controlInfo.def().get<float>();
+            m_saturation = m_saturationDefault;
+            m_saturationMin = controlInfo.min().get<float>();
+            m_saturationMax = controlInfo.max().get<float>();
             break;
 
         case libcamera::controls::HDR_MODE:
@@ -120,7 +118,7 @@ void Settings::reset()
 // Auto Exposure (AE) Settings
 bool Settings::canSetAeEnable() const
 {
-    return ae_enable_available;
+    return m_aeEnableAvailable;
 }
 
 bool Settings::trySetAeEnable(const bool enable)
@@ -130,14 +128,12 @@ bool Settings::trySetAeEnable(const bool enable)
         return false;
     }
 
-    if (ae_enable != enable)
-    {
-        ae_enable_use_default = false;
-        ae_enable = enable;
+    if (m_aeEnable != enable) {
+        m_aeEnableUseDefault = false;
+        m_aeEnable = enable;
 
         // if set to true, then set both exposure time and analogue gain to auto
-        if (ae_enable)
-        {
+        if (m_aeEnable) {
             unSetExposureTime();
             unSetGain();
         }
@@ -148,38 +144,33 @@ bool Settings::trySetAeEnable(const bool enable)
 
 void Settings::unSetAeEnable()
 {
-    ae_enable_use_default = true;
+    m_aeEnableUseDefault = true;
 }
 
 bool Settings::getAeEnable() const
 {
-    if (ae_enable_use_default)
-    {
-        return ae_enable_default;
+    if (m_aeEnableUseDefault) {
+        return m_aeEnableDefault;
     }
 
-    return ae_enable;
+    return m_aeEnable;
 }
 
 
 bool Settings::canSetExposureValue() const
 {
-    return ae_enable && manual_exposure_value_available;
+    return m_aeEnable && m_manualExposureValueAvailable;
 }
 
 bool Settings::trySetExposureValue(const float exposureValue)
 {
-    if (!canSetExposureValue() ||
-        exposureValue < exposure_value_min ||
-        exposureValue > exposure_value_max)
-    {
+    if (!canSetExposureValue() || exposureValue < m_exposureValueMin || exposureValue > m_exposureValueMax) {
         return false;
     }
 
-    if (exposure_value != exposureValue)
-    {
-        manual_exposure_value = true;
-        exposure_value = exposureValue;
+    if (m_exposureValue != exposureValue) {
+        m_manualExposureValue = true;
+        m_exposureValue = exposureValue;
     }
 
     return true;
@@ -187,39 +178,39 @@ bool Settings::trySetExposureValue(const float exposureValue)
 
 bool Settings::isSetExposureValue() const
 {
-    return manual_exposure_value;
+    return m_manualExposureValue;
 }
 
 void Settings::unSetExposureValue()
 {
-    manual_exposure_value = false;
+    m_manualExposureValue = false;
 }
 
 float Settings::getExposureValue() const
 {
     if (!isSetExposureValue())
     {
-        return exposure_value_default;
+        return m_exposureValueDefault;
     }
 
-    return exposure_value;
+    return m_exposureValue;
 }
 
 float Settings::minExposureValue() const
 {
-    return exposure_value_min;
+    return m_exposureValueMin;
 }
 
 float Settings::maxExposureValue() const
 {
-    return exposure_value_max;
+    return m_exposureValueMax;
 }
 
 
 // Auto Focus (AF) Settings
 bool Settings::canSetAfWindow() const
 {
-    return af_window_available;
+    return m_afWindowAvailable;
 }
 
 bool Settings::trySetAfWindow(const QSize window)
@@ -229,11 +220,10 @@ bool Settings::trySetAfWindow(const QSize window)
         return false;
     }
 
-    if (af_window_target != window)
-    {
-        af_window_use_default = false;
-        af_window = true;
-        af_window_target = window;
+    if (m_afWindowTarget != window) {
+        m_afWindowUseDefault = false;
+        m_afWindow = true;
+        m_afWindowTarget = window;
     }
 
     return true;
@@ -241,18 +231,17 @@ bool Settings::trySetAfWindow(const QSize window)
 
 void Settings::unSetAfWindow()
 {
-    af_window_use_default = true;
-    af_window = false;
+    m_afWindowUseDefault = true;
+    m_afWindow = false;
 }
 
 QSize Settings::getAfWindow() const
 {
-    if (af_window_use_default)
-    {
+    if (m_afWindowUseDefault) {
         return QSize();
     }
 
-    return af_window_target;
+    return m_afWindowTarget;
 }
 
 
@@ -263,37 +252,35 @@ QSize Settings::getAfWindow() const
  */
 void Settings::unSetWb()
 {
-    wb_auto = true;
-    wb_auto_use_default = true;
+    m_wbAuto = true;
+    m_wbAutoUseDefault = true;
 }
 
 bool Settings::wbMode() const
 {
-    return wb_auto;
+    return m_wbAuto;
 }
 
 bool Settings::wbTemp() const
 {
-    return !wb_auto;
+    return !m_wbAuto;
 }
 
 bool Settings::canSetWbMode() const
 {
-    return wb_mode_available;
+    return m_wbModeAvailable;
 }
 
 bool Settings::trySetWbMode(const int wbMode)
 {
-    if (!canSetWbMode())
-    {
+    if (!canSetWbMode()) {
         return false;
     }
 
-    if (wb_mode != wbMode)
-    {
-        wb_auto = true;
-        wb_auto_use_default = false;
-        wb_mode = wbMode;
+    if (m_wbMode != wbMode) {
+        m_wbAuto = true;
+        m_wbAutoUseDefault = false;
+        m_wbMode = wbMode;
     }
 
     return true;
@@ -306,17 +293,16 @@ void Settings::unSetWbMode()
 
 int Settings::getWbMode() const
 {
-    if (wb_auto_use_default || wbTemp())
-    {
-        return wb_mode_default;
+    if (m_wbAutoUseDefault || wbTemp()) {
+        return m_wbModeDefault;
     }
 
-    return wb_mode;
+    return m_wbMode;
 }
 
 bool Settings::canSetWbTemp() const
 {
-    return wb_temp_available;
+    return m_wbTempAvailable;
 }
 
 bool Settings::trySetWbTemp(const int wbTemp)
@@ -325,11 +311,10 @@ bool Settings::trySetWbTemp(const int wbTemp)
         return false;
     }
 
-    if (wb_temp != wbTemp)
-    {
-        wb_auto = false;
-        wb_auto_use_default = false;
-        wb_temp = wbTemp;
+    if (m_wbTemp != wbTemp) {
+        m_wbAuto = false;
+        m_wbAutoUseDefault = false;
+        m_wbTemp = wbTemp;
     }
 
     return true;
@@ -342,12 +327,11 @@ void Settings::unSetWbTemp()
 
 int Settings::getWbTemp() const
 {
-    if (wb_auto_use_default || wbMode())
-    {
-        return wb_temp_default;
+    if (m_wbAutoUseDefault || wbMode()) {
+        return m_wbTempDefault;
     }
 
-    return wb_temp;
+    return m_wbTemp;
 }
 
 
@@ -358,7 +342,7 @@ int Settings::getWbTemp() const
  */
 bool Settings::canSetExposureTime() const
 {
-    return manual_exposure_time_available;
+    return m_manualExposureTimeAvailable;
 }
 
 bool Settings::trySetExposureTime(const int exposureTime)
@@ -368,10 +352,9 @@ bool Settings::trySetExposureTime(const int exposureTime)
         return false;
     }
 
-    if (exposure_value != exposureTime)
-    {
-        manual_exposure_time = true;
-        exposure_value = exposureTime;
+    if (m_exposureValue != exposureTime) {
+        m_manualExposureTime = true;
+        m_exposureValue = exposureTime;
     }
 
     return true;
@@ -379,51 +362,48 @@ bool Settings::trySetExposureTime(const int exposureTime)
 
 bool Settings::isSetExposureTime() const
 {
-    return manual_exposure_time;
+    return m_manualExposureTime;
 }
 
 void Settings::unSetExposureTime()
 {
-    manual_exposure_time = false;
+    m_manualExposureTime = false;
 }
 
 int Settings::getExposureTime() const
 {
-    if (!manual_exposure_time)
-    {
-        return exposure_time_default;
+    if (!m_manualExposureTime) {
+        return m_exposureTimeDefault;
     }
 
-    return exposure_time;
+    return m_exposureTime;
 }
 
 int Settings::minExposureTime() const
 {
-    return exposure_time_min;
+    return m_exposureTimeMin;
 }
 
 int Settings::maxExposureTime() const
 {
-    return exposure_time_max;
+    return m_exposureTimeMax;
 }
 
 
 bool Settings::canSetGain() const
 {
-    return manual_analogue_gain_available;
+    return m_manualAnalogueGainAvailable;
 }
 
 bool Settings::trySetGain(const float iso)
 {
-    if (!canSetGain())
-    {
+    if (!canSetGain()) {
         return false;
     }
 
-    if (analogue_gain != iso)
-    {
-        manual_analogue_gain = true;
-        analogue_gain = iso;
+    if (m_analogueGain != iso) {
+        m_manualAnalogueGain = true;
+        m_analogueGain = iso;
     }
 
     return true;
@@ -431,39 +411,38 @@ bool Settings::trySetGain(const float iso)
 
 bool Settings::isSetGain() const
 {
-    return manual_analogue_gain;
+    return m_manualAnalogueGain;
 }
 
 void Settings::unSetGain()
 {
-    manual_analogue_gain = false;
+    m_manualAnalogueGain = false;
 }
 
 float Settings::getGain() const
 {
-    if (!manual_analogue_gain)
-    {
-        return analogue_gain_default;
+    if (!m_manualAnalogueGain) {
+        return m_analogueGainDefault;
     }
 
-    return analogue_gain;
+    return m_analogueGain;
 }
 
 float Settings::minGain() const
 {
-    return analogue_gain_min;
+    return m_analogueGainMin;
 }
 
 float Settings::maxGain() const
 {
-    return analogue_gain_max;
+    return m_analogueGainMax;
 }
 
 
 // Color Settings
 bool Settings::canSetContrast() const
 {
-    return manual_contrast_available;
+    return m_manualContrastAvailable;
 }
 
 bool Settings::trySetContrast(const float contrastValue)
@@ -473,10 +452,9 @@ bool Settings::trySetContrast(const float contrastValue)
         return false;
     }
 
-    if (contrast != contrastValue)
-    {
-        manual_contrast = true;
-        contrast = contrastValue;
+    if (m_contrast != contrastValue) {
+        m_manualContrast = true;
+        m_contrast = contrastValue;
     }
 
     return true;
@@ -484,38 +462,37 @@ bool Settings::trySetContrast(const float contrastValue)
 
 bool Settings::isSetContrast() const
 {
-    return manual_contrast;
+    return m_manualContrast;
 }
 
 void Settings::unSetContrast()
 {
-    manual_contrast = false;
+    m_manualContrast = false;
 }
 
 float Settings::getContrast() const
 {
-    if (!manual_contrast)
-    {
-        return contrast_default;
+    if (!m_manualContrast) {
+        return m_contrastDefault;
     }
 
-    return contrast;
+    return m_contrast;
 }
 
 float Settings::minContrast() const
 {
-    return contrast_min;
+    return m_contrastMin;
 }
 
 float Settings::maxContrast() const
 {
-    return contrast_max;
+    return m_contrastMax;
 }
 
 
 bool Settings::canSetSaturation() const
 {
-    return manual_saturation_available;
+    return m_manualSaturationAvailable;
 }
 
 bool Settings::trySetSaturation(const float saturationValue)
@@ -525,10 +502,9 @@ bool Settings::trySetSaturation(const float saturationValue)
         return false;
     }
 
-    if (saturation != saturationValue)
-    {
-        manual_saturation = true;
-        saturation = saturationValue;
+    if (m_saturation != saturationValue) {
+        m_manualSaturation = true;
+        m_saturation = saturationValue;
     }
 
     return true;
@@ -536,30 +512,29 @@ bool Settings::trySetSaturation(const float saturationValue)
 
 bool Settings::isSetSaturation() const
 {
-    return manual_saturation;
+    return m_manualSaturation;
 }
 
 void Settings::unSetSaturation()
 {
-    manual_saturation = false;
+    m_manualSaturation = false;
 }
 
 float Settings::getSaturation() const
 {
-    if (!manual_saturation)
-    {
-        return saturation_default;
+    if (!m_manualSaturation) {
+        return m_saturationDefault;
     }
 
-    return saturation;
+    return m_saturation;
 }
 
 float Settings::minSaturation() const
 {
-    return saturation_min;
+    return m_saturationMin;
 }
 
 float Settings::maxSaturation() const
 {
-    return saturation_max;
+    return m_saturationMax;
 }

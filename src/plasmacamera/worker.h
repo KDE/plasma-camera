@@ -20,8 +20,6 @@
 #include "image.h"
 #include "settings.h"
 
-
-// requires C++20
 // needed to pass shared_ptr via signals
 Q_DECLARE_METATYPE(const std::shared_ptr<libcamera::Camera>)
 
@@ -37,57 +35,49 @@ public:
 Q_SIGNALS:
 	void ready();
 	void running();
-	void finished(); // emit this signal to shut down this thread
+    void finished(); // Emit this signal to shut down this thread
 
-	// error handling
-	void errorChanged();
-	void errorOccurred(const QString &errorString);
+    // Error handling
+    void errorChanged();
+    void errorOccurred(const QString &errorString);
 
-	// start camera
-	void activeChanged(bool newActive);
-	void availableChanged(bool newAvailable);
+    // Camera has started/stopped
+    void activeChanged(bool newActive);
+    void availableChanged(bool newAvailable);
 
-	// get supported features
-	void cameraFormatChanged();
-	void supportedFeaturesChanged();
+    // Get supported features
+    void cameraFormatChanged();
+    void supportedFeaturesChanged();
 
-	// get frames
-	// TODO: https://stackoverflow.com/questions/8455887/stack-object-qt-signal-and-parameter-as-reference
-	//		- might not work properly for QQueue unless copy constructor is done recursively
-	//		- it looks like slots with queued connection might work really nicely?
-	void viewFinderFrame(const QImage &frame);				// connect to this to get new frames
-	void stillCaptureFrames(const QQueue<QImage> &frames);  // connect to this to get captures
-
-	// void gotData();  // new libcamera data stored on doneQueue_
+    // Get frames
+    // TODO: https://stackoverflow.com/questions/8455887/stack-object-qt-signal-and-parameter-as-reference
+    //		- might not work properly for QQueue unless copy constructor is done recursively
+    //		- it looks like slots with queued connection might work really nicely?
+    void viewFinderFrame(const QImage &frame); // connect to this to get new frames
+    void stillCaptureFrames(const QQueue<QImage> &frames); // connect to this to get captures
 
 public Q_SLOTS:
-	// camera
-	void init();		// worker startup
-	void shutdown();	// worker shutdown
+    // Camera
+    void init(); // worker startup
+    void shutdown(); // worker shutdown
 
-	// we need to get the shared pointer because of FrameBufferAllocator
-	void setCamera(const std::shared_ptr<libcamera::Camera>& camera);
-	void unsetCamera();
-	// void setCameraFormat(const QCameraFormat& cameraFormat);
-	// void setCameraConfig(const std::string& config, int val);
+    // We need to get the shared pointer because of FrameBufferAllocator
+    void setCamera(const std::shared_ptr<libcamera::Camera> &camera);
+    void unsetCamera();
 
-	// photo
-	void capture();
-	// void startCaptureImage();
-	// void startCaptureImageRaw();
+    // Photo capture
+    void capture();
 
-	// settings
-	void setSettings(const Settings& settings);
+    void setSettings(const Settings &settings);
 
 private Q_SLOTS:
-	// error
-	void setError(int libcameraError);
-	void setError(const QString &errorString);
-	void unsetError();
+    void setError(int libcameraError);
+    void setError(const QString &errorString);
+    void unsetError();
 
-	// photo
-	void requestNextFrame();			// triggered by timer, queues a frame request to libcamera
-	void processRequestDataAndEmit();	// triggered when libcamera processes the current data into a QImage and emits
+    // Photo capture
+    void requestNextFrame(); // triggered by timer, queues a frame request to libcamera
+    void processRequestDataAndEmit(); // triggered when libcamera processes the current data into a QImage and emits
 
 private:
 	enum class State
@@ -107,68 +97,63 @@ private:
 		Video,
 	};
 
-	// error
-	bool m_error = false;
-	QString m_errorString;
+    void startViewFinder();
+    void stopViewFinder();
 
-	// viewfinder
-	void startViewFinder();
-	void stopViewFinder();
-    QTimer *m_framePollTimer = nullptr;
+    void setState(State state);
+    void setMode(CaptureMode mode);
 
-	// state
-	void setState(State state);
-	void setMode(CaptureMode mode);
-	State m_state = State::None;
-	CaptureMode m_mode = CaptureMode::None;
-
-	// internals
-	void configure();
-    std::shared_ptr<libcamera::Camera> camera_;
-    std::unique_ptr<libcamera::CameraConfiguration> config_;
+    void configure();
 
     static const QList<libcamera::PixelFormat> &getNativeFormats();
-    int setFormat(
-    	const QSize &size,
-    	const libcamera::PixelFormat &format,
-    	const libcamera::ColorSpace &colorSpace,
-    	unsigned int stride);
-    QSize size_;
-    QImage image_;
-    Converter converter_;
-    libcamera::PixelFormat format_;
+    int setFormat(const QSize &size, const libcamera::PixelFormat &format, const libcamera::ColorSpace &colorSpace, unsigned int stride);
 
-	QMutex mutex_;
-	QQueue<QImage> stillCaptureFrames_;
+    /*
+     * How to get frames from libcamera
+     * 1. Queue requests to libcamera
+     * 2. Whenever libcamera finishes a request, it will call the appropriate requestComplete
+     * 3. requestComplete will queue that request onto the doneQueue_ then issue newData signal
+     * 4. newData will be processed by the appropriate processing method, then buffer will be placed on freeQueue_
+     * 5. Once the timer expires, we move the free buffer to the libcamera request queue
+     */
+    int createRequests();
 
-	/*
-	 * How to get frames from libcamera
-	 * 1. Queue requests to libcamera
-	 * 2. Whenever libcamera finishes a request, it will call the appropriate requestComplete
-	 * 3. requestComplete will queue that request onto the doneQueue_ then issue newData signal
-	 * 4. newData will be processed by the appropriate processing method, then buffer will be placed on freeQueue_
-	 * 5. Once the timer expires, we move the free buffer to the libcamera request queue
-	 */
-	int createRequests();
-    libcamera::Stream *stream_{};
-    libcamera::FrameBufferAllocator *allocator_{};
-    std::map<libcamera::FrameBuffer *, std::unique_ptr<Image>> mappedBuffers_;
-	std::vector<std::unique_ptr<libcamera::Request>> requests_;
+    void requestComplete(libcamera::Request *request);
+    void processRequestData(); // convert buffers to QImage stored at m_image
 
-  	void requestComplete(libcamera::Request *request);
-	void processRequestData();  // convert buffers to QImage stored at image_
-  	// void viewfinderRequestComplete(libcamera::Request *request);
-  	// void stillCaptureRequestComplete(libcamera::Request *request);
-	QQueue<libcamera::Request *> doneQueue_;
-	QQueue<libcamera::Request *> freeQueue_;
+    bool m_error = false;
+    QString m_errorString;
 
-	/*
-	 * we require mutexes because the libcamera process lives on a different thread
-	 * also we don't want to clog up the libcamera thread with the processing
-	 */
-	QMutex doneMutex_;
-	QMutex freeMutex_;
+    // viewfinder
+    QTimer *m_framePollTimer = nullptr;
 
-	// settings
-	Settings settings_;
+    State m_state = State::None;
+    CaptureMode m_mode = CaptureMode::None;
+
+    // internals
+    std::shared_ptr<libcamera::Camera> m_camera;
+    std::unique_ptr<libcamera::CameraConfiguration> m_config;
+
+    QSize m_size;
+    QImage m_image;
+    Converter m_converter;
+    libcamera::PixelFormat m_format;
+
+    QMutex m_mutex;
+    QQueue<QImage> m_stillCaptureFrames;
+
+    libcamera::Stream *m_stream{};
+    libcamera::FrameBufferAllocator *m_allocator{};
+    std::map<libcamera::FrameBuffer *, std::unique_ptr<Image>> m_mappedBuffers;
+    std::vector<std::unique_ptr<libcamera::Request>> m_requests;
+
+    QQueue<libcamera::Request *> m_doneQueue;
+    QQueue<libcamera::Request *> m_freeQueue;
+
+    // We require mutexes because the libcamera process lives on a different thread.
+    // We also we don't want to clog up the libcamera thread with the processing.
+    QMutex m_doneMutex;
+    QMutex m_freeMutex;
+
+    Settings m_settings;
 };

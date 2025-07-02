@@ -19,8 +19,9 @@ include(ECMGenerateHeaders)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(ECMPoQmTools)
+include(KDEGitCommitHooks)
 include(KDECompilerSettings NO_POLICY_SCOPE)
-include(ECMAddAndroidApk)
+include(KDEClangFormat)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2)
 
@@ -31,6 +32,10 @@ endif()
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami CoreAddons I18n Config)
 
 add_subdirectory(src)
+
+file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
+kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
+kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
 ki18n_install(po)
 

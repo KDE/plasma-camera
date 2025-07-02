@@ -82,9 +82,6 @@ public:
     bool trySetWbTemp(int wbTemp);
     void unSetWbTemp();
     int getWbTemp() const;
-    // int minWbTemp() const;
-    // int maxWbTemp() const;
-
 
     // Exposure Analogue Gain (EA) Settings
     /*
@@ -148,18 +145,17 @@ private:
      * - DigitalGain
      *  - we cannot set Digital Gain, but we can see its current value from adjusting Exposure Value
      */
-    bool ae_enable = true;
-    bool ae_enable_default = true;
-    bool ae_enable_use_default = true;
-    bool ae_enable_available = false;
+    bool m_aeEnable = true;
+    bool m_aeEnableDefault = true;
+    bool m_aeEnableUseDefault = true;
+    bool m_aeEnableAvailable = false;
 
-    float exposure_value = 0.0f; // set range to [-2, 2] with 0.25 steps
-    float exposure_value_min = -2.0f;
-    float exposure_value_max = 2.0f;
-    float exposure_value_default = 0.0f;
-    bool manual_exposure_value = false;
-    bool manual_exposure_value_available = false;
-
+    float m_exposureValue = 0.0f; // set range to [-2, 2] with 0.25 steps
+    float m_exposureValueMin = -2.0f;
+    float m_exposureValueMax = 2.0f;
+    float m_exposureValueDefault = 0.0f;
+    bool m_manualExposureValue = false;
+    bool m_manualExposureValueAvailable = false;
 
     // Auto Focus (AF) Settings
     /*
@@ -179,11 +175,10 @@ private:
      * - AfPause
      * - AfState
      */
-    QSize af_window_target;
-    bool af_window = false;
-    bool af_window_use_default = true;
-    bool af_window_available = false;
-
+    QSize m_afWindowTarget;
+    bool m_afWindow = false;
+    bool m_afWindowUseDefault = true;
+    bool m_afWindowAvailable = false;
 
     // White Balance (WB) Settings
     /*
@@ -196,17 +191,16 @@ private:
      * - AwbMode <-
      * - ColourTemperature <-
      */
-    bool wb_auto = true;
-    bool wb_auto_use_default = true;
+    bool m_wbAuto = true;
+    bool m_wbAutoUseDefault = true;
 
-    int wb_mode = 0;
-    int wb_mode_default = 0;
-    bool wb_mode_available = false;
+    int m_wbMode = 0;
+    int m_wbModeDefault = 0;
+    bool m_wbModeAvailable = false;
 
-    int wb_temp = 5000;
-    int wb_temp_default = 5000;
-    bool wb_temp_available = false;
-
+    int m_wbTemp = 5000;
+    int m_wbTempDefault = 5000;
+    bool m_wbTempAvailable = false;
 
     // Exposure Analogue Gain (EA) Settings
     /*
@@ -222,20 +216,19 @@ private:
      *  - increase or decrease the brightness of the image
      *  - I think this is to be used when exposure value can't be used (e.g. manual exposure time and analogue gain)
      */
-    int exposure_time = 25000;
-    int exposure_time_min = 300;
-    int exposure_time_max = 204700;
-    int exposure_time_default = 25000;
-    bool manual_exposure_time = false;
-    bool manual_exposure_time_available = false;
+    int m_exposureTime = 25000;
+    int m_exposureTimeMin = 300;
+    int m_exposureTimeMax = 204700;
+    int m_exposureTimeDefault = 25000;
+    bool m_manualExposureTime = false;
+    bool m_manualExposureTimeAvailable = false;
 
-    float analogue_gain = 1.0f;
-    float analogue_gain_min = 1.0f;
-    float analogue_gain_max = 4.0f;
-    float analogue_gain_default = 1.0f;
-    bool manual_analogue_gain = false;
-    bool manual_analogue_gain_available = false;
-
+    float m_analogueGain = 1.0f;
+    float m_analogueGainMin = 1.0f;
+    float m_analogueGainMax = 4.0f;
+    float m_analogueGainDefault = 1.0f;
+    bool m_manualAnalogueGain = false;
+    bool m_manualAnalogueGainAvailable = false;
 
     // Color Settings
     /*
@@ -243,19 +236,19 @@ private:
      * - Saturation <-
      * - HdrMode
      */
-    float contrast = 1.0f;
-    float contrast_min = 0.5f;
-    float contrast_max = 1.5f;
-    float contrast_default = 1.0f;
-    bool manual_contrast = false;
-    bool manual_contrast_available = false;
+    float m_contrast = 1.0f;
+    float m_contrastMin = 0.5f;
+    float m_contrastMax = 1.5f;
+    float m_contrastDefault = 1.0f;
+    bool m_manualContrast = false;
+    bool m_manualContrastAvailable = false;
 
-    float saturation = 1.0f;
-    float saturation_min = 0.0f;
-    float saturation_max = 2.0f;
-    float saturation_default = 1.0f;
-    bool manual_saturation = false;
-    bool manual_saturation_available = false;
+    float m_saturation = 1.0f;
+    float m_saturationMin = 0.0f;
+    float m_saturationMax = 2.0f;
+    float m_saturationDefault = 1.0f;
+    bool m_manualSaturation = false;
+    bool m_manualSaturationAvailable = false;
 
     // Zoom Settings
     /*

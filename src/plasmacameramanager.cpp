@@ -176,22 +176,22 @@ void PlasmaCameraManager::setRecorder(QMediaRecorder *recorder)
 
         // TODO: move this to a independent function so we can call it whenever we change a value
 
-        // set the format on the recorder
+        // Set the format on the recorder
         recorder->setMediaFormat(m_format);
 
-        // set the quality
+        // Set the quality
         recorder->setQuality(QMediaRecorder::Quality::NormalQuality);
 
-        // set the resolution
+        // Set the resolution
         // recorder->setVideoResolution(QSize(1280, 720));
 
-        // set the frame rate
+        // Set the frame rate
         recorder->setVideoFrameRate(30.0);
 
-        // attempt to disable hardware acceleration (does it even work?)
+        // Attempt to disable hardware acceleration (does it even work?)
         recorder->setProperty("hw-accel", false);
 
-        // set encoding paramaters
+        // Set encoding paramaters
         // recorder->setEncodingMode(QMediaRecorder::ConstantQualityEncoding);
 
         // connect(recorder, &QMediaRecorder::errorOccurred,
@@ -200,13 +200,10 @@ void PlasmaCameraManager::setRecorder(QMediaRecorder *recorder)
         // recorder->setMetaData()
 
         m_session.setRecorder(recorder);
-        connect(m_recorder, &QMediaRecorder::recorderStateChanged, this, [=]()
-        {
-            if (m_recorder->recorderState() == QMediaRecorder::RecordingState)
-            {
+        connect(m_recorder, &QMediaRecorder::recorderStateChanged, this, [=]() {
+            if (m_recorder->recorderState() == QMediaRecorder::RecordingState) {
                 m_videoFrameTimer.start();
-            } else
-            {
+            } else {
                 m_videoFrameTimer.stop();
             }
         });
@@ -232,8 +229,6 @@ void PlasmaCameraManager::setFps(const float fps)
         Q_EMIT fpsChanged(fps);
     }
 }
-
-
 
 void PlasmaCameraManager::setError(const int id, const Error error, const QString& errorString)
 {
@@ -327,14 +322,6 @@ void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
     // TODO: use QImageWriter to write EXIF data
     //  - https://doc.qt.io/qt-6/qimagewriter.html
 
-    // TODO: add some kind of animation when taking a picture? (quick fade in and out of black?)
-    // int plane = 0;
-    // QImage test_image(video_frame.bits(plane), video_frame.width(), video_frame.height(), image_format);
-    // test_image.fill(QColor::fromRgb(QRandomGenerator::global()->generate()));
-    // QPainter test_painter(&test_image);
-    // test_painter.drawText(test_image.rect(), Qt::AlignCenter, QDateTime::currentDateTime().toString());
-    // test_painter.end();
-
     Q_EMIT imageSaved(m_imageCaptureNum, fileName);
 }
 
@@ -362,8 +349,7 @@ int PlasmaCameraManager::captureImage()
 {
     const int newImageCaptureId = m_imageCaptureNum + 1;
 
-    if (!isReadyForCapture())
-    {
+    if (!isReadyForCapture()) {
         setError(
             newImageCaptureId,
             NotReadyError,
