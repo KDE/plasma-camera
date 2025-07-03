@@ -41,10 +41,6 @@ Q_SIGNALS:
     void errorChanged();
     void errorOccurred(const QString &errorString);
 
-    // Camera has started/stopped
-    void activeChanged(bool newActive);
-    void availableChanged(bool newAvailable);
-
     // Get supported features
     void cameraFormatChanged();
     void supportedFeaturesChanged();
@@ -62,7 +58,12 @@ public Q_SLOTS:
     void shutdown(); // worker shutdown
 
     // We need to get the shared pointer because of FrameBufferAllocator
-    void setCamera(const std::shared_ptr<libcamera::Camera> &camera);
+    void setCamera(std::shared_ptr<libcamera::Camera> camera);
+
+    /*!
+     * Remove the camera and cleanup.
+     * \param deleted - Whether the camera object has already been removed from libcamera
+     */
     void unsetCamera();
 
     // Photo capture
@@ -82,20 +83,20 @@ private Q_SLOTS:
 private:
 	enum class State
 	{
-		None,		// init
-		Ready,		// worker has started
-		Running,	// camera is active
-		Stopping,	// shutting down permanently
-	};
+        None, // Init
+        Ready, // Worker has started, waiting for camera
+        Running, // Camera is active
+        SwitchingCamera, // While the camera source is switching
+        Stopping, // Shutting down permanently
+    };
 
-	enum class CaptureMode
-	{
-		None,
-		ViewFinder,
-		StillImage,
-		RawImage,
-		Video,
-	};
+    enum class CaptureMode {
+        None,
+        ViewFinder,
+        StillImage,
+        RawImage,
+        Video,
+    };
 
     void startViewFinder();
     void stopViewFinder();

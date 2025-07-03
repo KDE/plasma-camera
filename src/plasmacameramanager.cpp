@@ -102,8 +102,7 @@ void PlasmaCameraManager::setReadyForCapture(const bool ready)
 {
     qDebug() << "PlasmaCameraManager::setReadyForCapture" << ready;
 
-    if (m_readyForCapture != ready)
-    {
+    if (m_readyForCapture != ready) {
         m_readyForCapture = ready;
         Q_EMIT readyForCaptureChanged(ready);
     }
@@ -198,7 +197,7 @@ void PlasmaCameraManager::setRecorder(QMediaRecorder *recorder)
         // recorder->setMetaData()
 
         m_session.setRecorder(recorder);
-        connect(m_recorder, &QMediaRecorder::recorderStateChanged, this, [=]() {
+        connect(m_recorder, &QMediaRecorder::recorderStateChanged, this, [this]() {
             if (m_recorder->recorderState() == QMediaRecorder::RecordingState) {
                 m_videoFrameTimer.start();
             } else {

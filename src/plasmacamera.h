@@ -46,9 +46,12 @@ class PlasmaCamera : public QObject
     Q_PROPERTY(bool error READ error NOTIFY errorChanged)
     Q_PROPERTY(QString errorString READ errorString NOTIFY errorChanged)
 
+    Q_PROPERTY(QList<QString> cameraDeviceIds READ cameraDeviceIds NOTIFY cameraDeviceListChanged)
+    Q_PROPERTY(QList<QString> cameraDeviceNames READ cameraDeviceNames NOTIFY cameraDeviceListChanged)
+
     // Camera state
-    Q_PROPERTY(bool active READ isActive NOTIFY activeChanged)
     Q_PROPERTY(bool available READ isAvailable NOTIFY availableChanged)
+    Q_PROPERTY(bool busy READ busy NOTIFY busyChanged)
     Q_PROPERTY(QString cameraDevice READ cameraDevice WRITE setCameraDevice NOTIFY cameraDeviceChanged)
     Q_PROPERTY(QCameraFormat cameraFormat READ cameraFormat WRITE setCameraFormat NOTIFY cameraFormatChanged)
 
@@ -106,17 +109,12 @@ public:
     /*!
      * Returns all camera devices as a list of ids.
      */
-    Q_INVOKABLE QList<QString> getCameraDevicesId() const;
+    QList<QString> cameraDeviceIds() const;
 
     /*!
      * Returns all camera devices as a list of names.
      */
-    Q_INVOKABLE QList<QString> getCameraDevicesName() const;
-
-    /*!
-     * Whether the camera has been requested to be active.
-     */
-    bool isActive() const;
+    QList<QString> cameraDeviceNames() const;
 
     /*!
      * Whether there is a camera running, and a stream available.
@@ -124,7 +122,12 @@ public:
     bool isAvailable() const;
 
     /*!
-     * Returns the name of the current camera device.
+     * Whether the camera is busy (ex. taking a picture) and controls should be blocked.
+     */
+    bool busy() const;
+
+    /*!
+     * Returns the id of the current camera device.
      */
     QString cameraDevice() const;
 
@@ -163,12 +166,12 @@ public:
 Q_SIGNALS:
     void errorChanged();
     void errorOccurred(const QString &errorString);
+    void cameraDeviceListChanged();
 
-    // Camera state
-    void activeChanged(bool newActive);
-    void availableChanged(bool newAvailable);
+    void availableChanged(bool available);
     void cameraDeviceChanged(const QString &cameraDevice);
     void cameraFormatChanged();
+    void busyChanged();
 
     // Photos
     /*
@@ -200,8 +203,8 @@ Q_SIGNALS:
 
 public Q_SLOTS:
     // Camera state
-    void setCameraDevice(const QString &cameraDevice);
-	void setCameraFormat(const QCameraFormat &cameraFormat);
+    void setCameraDevice(const QString &cameraDeviceId);
+    void setCameraFormat(const QCameraFormat &cameraFormat);
 
     // Focus
     void setAfWindow(const QSize &afWindow);
@@ -232,13 +235,15 @@ private Q_SLOTS:
 	void setError(const QString &errorString);
 	void unsetError();
 
+    void handleCameraAdded(std::shared_ptr<libcamera::Camera> camera);
+    void handleCameraRemoved(std::shared_ptr<libcamera::Camera> camera);
+
 private:
 	enum class State
 	{
         None, // Init
         Ready, // Libcamera manager and worker is started (set by worker)
         Running, // Ready for capture (set by worker)
-        Busy, // Currently taking a photo
         Stopping, // Shutting down
     };
 
@@ -259,6 +264,11 @@ private:
     void setActive(bool active);
 
     /*!
+     * Set the busy state of the camera.
+     */
+    void setBusy(bool busy);
+
+    /*!
      * Set the internal state of the camera object.
      */
     void setState(State state);
@@ -267,11 +277,6 @@ private:
      * Attempt to acquire the current camera (from libcamera).
      */
     void acquire();
-
-    /*!
-     * Release the lock on the current camera (in libcamera).
-     */
-    void release();
 
     bool m_error = false;
     QString m_errorString;
@@ -283,6 +288,9 @@ private:
     // Whether the camera has been requested to be active (see state for the actual camera state).
     bool m_active = false;
 
+    // Whether the camera is in a task (ex. taking photo) and controls should be blocked
+    bool m_busy = false;
+
     // The current state of the camera.
     State m_state = State::None;
 
@@ -290,7 +298,7 @@ private:
     Worker *m_cameraWorker;
     QThread *m_cameraThread;
 
-    QString m_cameraName;
+    QString m_cameraId;
     std::shared_ptr<libcamera::Camera> m_camera;
 
     QCameraFormat m_cameraFormat = QCameraFormat();

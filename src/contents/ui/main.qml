@@ -35,32 +35,43 @@ Kirigami.ApplicationWindow {
         property bool selfTimerRunning: false
 
         Component.onCompleted: {
+            // Restore selected camera from settings
+            const cameraId = findSettingsCameraDevice();
+            if (cameraId.length > 0) {
+                cameraDevice = cameraId;
+            }
+            // Start camera
             mainCamera.startCamera();
-        }
-
-        function findCameraDevice() {
-            for (const cameraId of mainCamera.getCameraDevicesId()) {
-                if (cameraId == CameraSettings.cameraDeviceId) {
-                    return cameraId;
-                }
-            }
-        }
-
-        cameraDevice: findCameraDevice()
-
-        property Connections cameraDeviceConnection: Connections {
-            target: CameraSettings
-
-            function onCameraDeviceIdChanged() {
-                mainCamera.cameraDevice = mainCamera.findCameraDevice();
-            }
-        }
-        onCameraDeviceChanged: {
-            CameraSettings.cameraDeviceId = mainCamera.cameraDevice;
         }
 
         // one-way binding between CameraSettings and PlasmaCamera for white balance
         // whiteBalanceMode: CameraSettings.whiteBalanceMode
+
+        // Returns which camera to select from settings, and nothing if the camera can't be found.
+        function findSettingsCameraDevice(): string {
+            for (const cameraId of mainCamera.cameraDeviceIds) {
+                if (cameraId == CameraSettings.cameraDeviceId) {
+                    return cameraId;
+                }
+            }
+            return "";
+        }
+
+        property Connections cameraDeviceConnection: Connections {
+            target: CameraSettings
+
+            // Listen to when the camera settings change, and update
+            function onCameraDeviceIdChanged() {
+                const cameraId = mainCamera.findSettingsCameraDevice();
+                if (cameraId.length > 0) {
+                    mainCamera.cameraDevice = cameraId;
+                }
+            }
+        }
+        onCameraDeviceChanged: {
+            // Bind settings to what the camera device is
+            CameraSettings.cameraDeviceId = mainCamera.cameraDevice;
+        }
 
         onErrorOccurred: {
             showPassiveNotification(i18n("An error occurred: \"%1\". Please consider restarting the application if it stopped working.", errorString));

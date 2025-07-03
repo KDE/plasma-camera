@@ -18,7 +18,7 @@ Kirigami.MenuDialog {
     id: root
     title: i18n('Settings')
 
-    property var camera
+    property PlasmaCamera camera
 
     actions: [
         Kirigami.Action {
@@ -41,7 +41,6 @@ Kirigami.MenuDialog {
     property Loader dialogLoader: Loader {
         id: selectCameraDialogLoader
         active: false
-        parent: root
 
         sourceComponent: Kirigami.Dialog {
             id: selectCameraDialog
@@ -54,8 +53,8 @@ Kirigami.MenuDialog {
                 spacing: 0
                 Repeater {
                     model: {
-                        let cameraIds = root.camera.getCameraDevicesId();
-                        let cameraNames = root.camera.getCameraDevicesName();
+                        let cameraIds = root.camera.cameraDeviceIds;
+                        let cameraNames = root.camera.cameraDeviceNames;
 
                         let list = [];
                         for (let i = 0; i < cameraIds.length; i++) {
@@ -76,7 +75,7 @@ Kirigami.MenuDialog {
                         checked: value == CameraSettings.cameraDeviceId
                         onCheckedChanged: {
                             if (checked) {
-                                root.camera.cameraDevice = value;
+                                CameraSettings.cameraDeviceId = value;
                                 checked = Qt.binding(() => (value == CameraSettings.cameraDeviceId));
                             }
                         }

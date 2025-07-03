@@ -28,7 +28,7 @@ void Worker::shutdown()
     Q_EMIT finished();
 }
 
-void Worker::setCamera(const std::shared_ptr<libcamera::Camera>& camera)
+void Worker::setCamera(std::shared_ptr<libcamera::Camera> camera)
 {
     switch (m_state) {
     case State::Ready:
@@ -46,11 +46,15 @@ void Worker::setCamera(const std::shared_ptr<libcamera::Camera>& camera)
         qDebug() << "restarting viewfinder";
         setMode(CaptureMode::None);
 
+        // Hold this while we switch camera
+        setState(State::SwitchingCamera);
+
         // if state is running then switch out the camera
         stopViewFinder();
         m_camera = camera;
         startViewFinder();
 
+        setState(State::Running);
         setMode(CaptureMode::ViewFinder);
         break;
 
@@ -139,6 +143,10 @@ void Worker::unsetError()
 
 void Worker::requestNextFrame()
 {
+    if (!m_camera) {
+        return;
+    }
+
     // this code used to be Camera::getViewfinderFrame()
     // how it makes more sense for the camera to continue to get frames even when the frames are not called for
     // - untie the image capture from how fast we can display the frames
@@ -163,12 +171,12 @@ void Worker::processRequestDataAndEmit()
     processRequestData();
     Q_EMIT viewFinderFrame(m_image.copy());
 
-    if (m_mode == CaptureMode::StillImage)
-    {
+    if (m_mode == CaptureMode::StillImage) {
         const QMutexLocker lock(&m_mutex);
 
-        if (m_stillCaptureFrames.length() >= 5)
+        if (m_stillCaptureFrames.length() >= 5) {
             return;
+        }
 
         m_stillCaptureFrames.enqueue(m_image.copy());
 
@@ -180,10 +188,14 @@ void Worker::processRequestDataAndEmit()
     }
 }
 
-
-
 void Worker::startViewFinder()
 {
+    if (!m_camera) {
+        return;
+    }
+
+    qDebug() << "start view finder";
+
     /*
      * https://libcamera.org/api-html/namespacelibcamera.html#a295d1f5e7828d95c0b0aabc0a8baac03
      * The StillCapture and Viewfinder roles both generate a config that uses the same resolution
@@ -210,17 +222,13 @@ void Worker::startViewFinder()
     configure();
 
     m_camera->requestCompleted.connect(this, &Worker::requestComplete);
-    int ret = m_camera->start();
-    if (ret < 0)
-    {
+    if (int ret = m_camera->start(); ret < 0) {
         setError(ret);
         return;
     }
 
     for (std::unique_ptr<libcamera::Request> &request : m_requests) {
-        ret = m_camera->queueRequest(request.get());
-        if (ret < 0)
-        {
+        if (int ret = m_camera->queueRequest(request.get()); ret < 0) {
             setError(ret);
             return;
         }
@@ -231,23 +239,32 @@ void Worker::startViewFinder()
 
 void Worker::stopViewFinder()
 {
+    qDebug() << "stop view finder";
     m_framePollTimer->stop();
 
-    int ret = m_camera->stop();
-    if (ret < 0)
-    {
-        setError(ret);
-        return;
+    if (m_camera) {
+        // All pending requests are cancelled
+        int ret = m_camera->stop();
+        if (ret < 0) {
+            setError(ret);
+            return;
+        }
+
+        // Cleanup signals
+        m_camera->requestCompleted.disconnect(this);
     }
-    m_camera->requestCompleted.disconnect(this);
+
+    // Must be cleared before following variables are cleared
+    m_requests.clear();
 
     m_config.reset();
 
-    m_allocator->free(m_stream);
-    delete m_allocator;
+    if (m_allocator) {
+        m_allocator->free(m_stream);
+        delete m_allocator;
+    }
 
     m_mappedBuffers.clear();
-    m_requests.clear();
 
     {
         const QMutexLocker lock(&m_freeMutex);
@@ -264,12 +281,14 @@ void Worker::stopViewFinder()
         m_doneQueue.clear();
     }
 
-    ret = m_camera->release();
-    if (ret < 0)
-    {
-        setError(ret);
-        return;
+    if (m_camera) {
+        int ret = m_camera->release();
+        if (ret < 0) {
+            setError(ret);
+            return;
+        }
     }
+
     m_camera.reset();
 }
 
@@ -290,8 +309,6 @@ void Worker::setState(const State state)
         switch (previous_state)
         {
         case State::None:
-            Q_EMIT ready();
-            break;
         case State::Stopping:
             Q_EMIT ready();
             break;
@@ -306,11 +323,18 @@ void Worker::setState(const State state)
         switch (previous_state)
         {
         case State::Ready:
+        case State::SwitchingCamera:
             break;
         default:
             qWarning() << "Transitioned from state other than Ready to Running";
             break;
         }
+
+        Q_EMIT running();
+        break;
+
+    case State::SwitchingCamera:
+        m_state = State::SwitchingCamera;
         break;
 
     case State::Stopping:
@@ -334,10 +358,8 @@ void Worker::setMode(CaptureMode mode)
         switch (previous_mode)
         {
         case CaptureMode::None:
-            Q_EMIT running();
             break;
         case CaptureMode::StillImage:
-            Q_EMIT running();
             break;
         default:
             qWarning() << "Transition from state other than None or StillImage to ViewFinder";
@@ -361,7 +383,7 @@ void Worker::setMode(CaptureMode mode)
 
 void Worker::configure()
 {
-    if (!m_config) {
+    if (!m_config || !m_camera) {
         // setError(CameraError, QString::fromStdString("Config is not set up"));
         return;
     }
@@ -403,8 +425,7 @@ void Worker::configure()
     //  - m_camera->configure can be called when the camera is in the configured state so we don't have to stop all the way
     //  - https://libcamera.org/api-html/classlibcamera_1_1Camera.html#a4c190f4c369628e5cd96770790559a26
     int ret = m_camera->configure(m_config.get());
-    if (ret < 0)
-    {
+    if (ret < 0) {
         setError(ret);
         return;
     }
@@ -416,15 +437,13 @@ void Worker::configure()
         config.pixelFormat,
         config.colorSpace.value_or(libcamera::ColorSpace::Sycc),
         config.stride);
-    if (ret < 0)
-    {
+    if (ret < 0) {
         setError(ret);
         return;
     }
 
     ret = createRequests();
-    if (ret < 0)
-    {
+    if (ret < 0) {
         setError(ret);
         return;
     }
@@ -454,8 +473,7 @@ int Worker::setFormat(
     const unsigned int stride)
 {
     m_image = QImage();
-    if (!getNativeFormats().contains(format))
-    {
+    if (!getNativeFormats().contains(format)) {
         if (const int ret = m_converter.configure(format, size, stride); ret < 0)
             return ret;
 
@@ -471,6 +489,11 @@ int Worker::setFormat(
 
 int Worker::createRequests()
 {
+    if (!m_camera) {
+        qWarning() << "No camera set in worker";
+        return -1;
+    }
+
     qDebug() << "create req" << QThread::currentThread()->currentThreadId();
 
     // FrameBufferAllocator creates FrameBuffer instances that can be used by libcamera to store frames
@@ -515,8 +538,9 @@ int Worker::createRequests()
 
 void Worker::requestComplete(libcamera::Request *request)
 {
-    if (request->status() == libcamera::Request::RequestCancelled)
+    if (request->status() == libcamera::Request::RequestCancelled) {
         return;
+    }
 
     {
         const QMutexLocker lock(&m_doneMutex);
@@ -540,8 +564,9 @@ void Worker::processRequestData()
         request = m_doneQueue.dequeue();
     }
 
-    if (!request->buffers().count(m_stream))
+    if (!request->buffers().count(m_stream)) {
         return;
+    }
 
     libcamera::FrameBuffer *buffer = request->buffers().at(m_stream);
     Image *image = m_mappedBuffers[buffer].get();

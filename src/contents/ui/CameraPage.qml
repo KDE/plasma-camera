@@ -19,7 +19,7 @@ import org.kde.plasmacamera
 Kirigami.Page {
     id: cameraPage
 
-    property var camera
+    property PlasmaCamera camera
 
     function formatText(count, modelData) {
         var data = count === 12 ? modelData + 1 : modelData;
@@ -93,12 +93,7 @@ Kirigami.Page {
                     selfTimer.start();
                 }
             }
-            enabled: {
-                if ((camera.captureMode === camera.captureStillImage) && !selfTimer.running)
-                    return captureSession.readyForCapture;
-                else
-                    return true;
-            }
+            enabled: !camera.busy && !selfTimer.running
         },
         Kirigami.Action {
             id: switchCameraAction
@@ -107,6 +102,7 @@ Kirigami.Page {
             text: i18n("Switch Camera")
             icon.color: "transparent"
             icon.name: "camera-photo-symbolic"
+            enabled: !cameraPage.camera.busy
 
             onTriggered: {
                 camera.switchToNextCamera();
@@ -149,22 +145,13 @@ Kirigami.Page {
         Kirigami.Heading {
             anchors.centerIn: parent
             wrapMode: Text.WordWrap
-            text: {
-                if (cameraPage.camera.availability === Camera.Unavailable)
-                    return i18n("Camera not available");
-                else if (cameraPage.camera.availability === Camera.Busy)
-                    return i18n("Camera is busy. Is another application using it?");
-                else if (cameraPage.camera.availability === Camera.ResourceMissing)
-                    return i18n("Missing camera resource.");
-                else if (cameraPage.camera.availability === Camera.Available)
-                    return "";
-            }
+            text: cameraPage.camera.available ? "" : i18n("Camera not available")
         }
 
         VideoOutput {
             id: viewfinder
 
-            visible: cameraUI.state == "PhotoCapture" || cameraUI.state == "VideoCapture"
+            visible: cameraPage.camera.available
 
             // TODO: fix previous orientation Workaround
             // orientation: Kirigami.Settings.isMobile ? -90 : 0
@@ -295,6 +282,7 @@ Kirigami.Page {
                 Controls.ToolButton {
                     id: timerButton
 
+                    enabled: !cameraPage.camera.busy
                     checkable: true
                     icon.name: "clock"
                     Layout.fillWidth: true
@@ -304,6 +292,7 @@ Kirigami.Page {
 
                 // Capture photo/video button
                 Controls.ToolButton {
+                    enabled: captureAction.enabled
                     Layout.fillWidth: true
                     implicitHeight: Kirigami.Units.gridUnit * 4
                     Layout.maximumWidth: height
