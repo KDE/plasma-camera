@@ -1,7 +1,7 @@
 {
     "id": "org.kde.plasma-camera",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.8",
+    "runtime-version": "6.9",
     "sdk": "org.kde.Sdk",
     "command": "plasma-camera",
     "tags": ["nightly"],
@@ -18,8 +18,10 @@
     "separate-locales": false,
 
     "modules": [
+        "flatpak/python3-modules.json",
         {
             "name": "libcamera",
+            "config-opts": [ "-Dtest=false" ],
             "buildsystem": "meson",
             "sources": [ { "type": "git", "url": "https://git.libcamera.org/libcamera/libcamera.git", "branch": "master" } ]
         },
