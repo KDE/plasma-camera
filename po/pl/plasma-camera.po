@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-06 00:42+0000\n"
+"POT-Creation-Date: 2025-07-03 06:58+0000\n"
 "PO-Revision-Date: 2023-10-29 09:27+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -27,133 +27,92 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "lukasz.wojnilowicz@gmail.com"
 
-#: src/contents/ui/CameraPage.qml:26 src/contents/ui/GlobalDrawer.qml:20
-#: src/contents/ui/main.qml:14
+#: src/contents/ui/CameraPage.qml:29 src/contents/ui/main.qml:19
 #, kde-format
 msgid "Camera"
 msgstr "Kamera"
 
-#: src/contents/ui/CameraPage.qml:43
+#: src/contents/ui/CameraPage.qml:48
 #, kde-format
 msgid "Switch mode"
 msgstr "Przełącz tryb"
 
-#: src/contents/ui/CameraPage.qml:66
+#: src/contents/ui/CameraPage.qml:71
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "Porzuć samoczasomierz"
 
-#: src/contents/ui/CameraPage.qml:68
+#: src/contents/ui/CameraPage.qml:73
 #, kde-format
 msgid "Capture photo"
 msgstr "Zrób zdjęcie"
 
-#: src/contents/ui/CameraPage.qml:70
+#: src/contents/ui/CameraPage.qml:75
 #, kde-format
 msgid "Stop recording video"
 msgstr "Zatrzymaj nagrywanie obrazu"
 
-#: src/contents/ui/CameraPage.qml:72
+#: src/contents/ui/CameraPage.qml:77
 #, kde-format
 msgid "Start recording video"
 msgstr "Rozpocznij nagrywanie obrazu"
 
-#: src/contents/ui/CameraPage.qml:107
+#: src/contents/ui/CameraPage.qml:112
 #, kde-format
 msgid "Switch Camera"
 msgstr "Przełącz kamerę"
 
-#: src/contents/ui/CameraPage.qml:176
+#: src/contents/ui/CameraPage.qml:164
 #, kde-format
 msgid "Camera not available"
 msgstr "Kamera jest niedostępna"
 
-#: src/contents/ui/CameraPage.qml:178
+#: src/contents/ui/CameraPage.qml:166
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
 msgstr "Kamera jest zajęta. Czy nie używa jej inna aplikacja?"
 
-#: src/contents/ui/CameraPage.qml:180
+#: src/contents/ui/CameraPage.qml:168
 #, kde-format
 msgid "Missing camera resource."
 msgstr "Brak zasobu kamery."
 
-#: src/contents/ui/CameraPage.qml:446
+#: src/contents/ui/CameraPage.qml:424
 #, kde-format
 msgid "Photo"
 msgstr "Zdjęcie"
 
-#: src/contents/ui/CameraPage.qml:451
+#: src/contents/ui/CameraPage.qml:429
 #, kde-format
 msgid "Video"
 msgstr "Film"
 
-#: src/contents/ui/CameraPage.qml:554
+#: src/contents/ui/CameraPage.qml:452
 #, kde-format
 msgid "Took a photo"
 msgstr "Zrobiono zdjęcie"
 
-#: src/contents/ui/CameraPage.qml:556
+#: src/contents/ui/CameraPage.qml:454
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Nie udało się zrobić zdjęcia"
 
-#: src/contents/ui/CameraPage.qml:561
+#: src/contents/ui/CameraPage.qml:460
 #, kde-format
 msgid "Stopped recording"
 msgstr "Zatrzymano nagrywanie"
 
-#: src/contents/ui/CameraPage.qml:565
+#: src/contents/ui/CameraPage.qml:465
 #, kde-format
 msgid "Started recording"
 msgstr "Rozpoczęto nagrywanie"
 
-#: src/contents/ui/CameraPage.qml:567
+#: src/contents/ui/CameraPage.qml:467
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Nie udało się rozpocząć nagrywania"
 
-#: src/contents/ui/GlobalDrawer.qml:37
-#, kde-format
-msgid "Resolution"
-msgstr "Rozdzielczość"
-
-#: src/contents/ui/GlobalDrawer.qml:56
-#, kde-format
-msgid "White balance"
-msgstr "Równowaga bieli"
-
-#: src/contents/ui/GlobalDrawer.qml:62
-#, kde-format
-msgid "Auto"
-msgstr "Auto"
-
-#: src/contents/ui/GlobalDrawer.qml:69
-#, kde-format
-msgid "Sunlight"
-msgstr "Światło słoneczne"
-
-#: src/contents/ui/GlobalDrawer.qml:76
-#, kde-format
-msgid "Cloudy"
-msgstr "Pochmurno"
-
-#: src/contents/ui/GlobalDrawer.qml:83
-#, kde-format
-msgid "Tungsten"
-msgstr "Żarówka"
-
-#: src/contents/ui/GlobalDrawer.qml:90
-#, kde-format
-msgid "Fluorescent"
-msgstr "Fluorescencyjne"
-
-#: src/contents/ui/GlobalDrawer.qml:96
-#, kde-format
-msgid "About"
-msgstr "O programie"
-
-#: src/contents/ui/main.qml:52
+#: src/contents/ui/main.qml:64
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
@@ -162,20 +121,57 @@ msgstr ""
 "Wystąpił błąd: \"%1\". Zalecane jest ponowne uruchomienie programu, jeśli "
 "przestał działać."
 
-#: src/main.cpp:45
+#: src/contents/ui/SettingsDialog.qml:25
+#, fuzzy, kde-format
+#| msgid "Switch Camera"
+msgid "Select camera"
+msgstr "Przełącz kamerę"
+
+#: src/contents/ui/SettingsDialog.qml:35
+#, kde-format
+msgid "About"
+msgstr "O programie"
+
+#: src/main.cpp:66
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Programiści Plasma Mobile"
 
-#: src/main.cpp:47
+#: src/main.cpp:70
 #, kde-format
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: src/main.cpp:48
+#: src/main.cpp:76
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
+
+#: src/main.cpp:82
+#, kde-format
+msgid "Andrew Wang"
+msgstr ""
+
+#~ msgid "Resolution"
+#~ msgstr "Rozdzielczość"
+
+#~ msgid "White balance"
+#~ msgstr "Równowaga bieli"
+
+#~ msgid "Auto"
+#~ msgstr "Auto"
+
+#~ msgid "Sunlight"
+#~ msgstr "Światło słoneczne"
+
+#~ msgid "Cloudy"
+#~ msgstr "Pochmurno"
+
+#~ msgid "Tungsten"
+#~ msgstr "Żarówka"
+
+#~ msgid "Fluorescent"
+#~ msgstr "Fluorescencyjne"
 
 #~ msgid "Self-timer"
 #~ msgstr "Samoczasomierz"

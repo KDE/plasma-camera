@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-06 00:42+0000\n"
+"POT-Creation-Date: 2025-07-03 06:58+0000\n"
 "PO-Revision-Date: 2021-06-14 16:05+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -27,150 +27,145 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "vit@pelcak.org"
 
-#: src/contents/ui/CameraPage.qml:26 src/contents/ui/GlobalDrawer.qml:20
-#: src/contents/ui/main.qml:14
+#: src/contents/ui/CameraPage.qml:29 src/contents/ui/main.qml:19
 #, kde-format
 msgid "Camera"
 msgstr "Fotoaparát"
 
-#: src/contents/ui/CameraPage.qml:43
+#: src/contents/ui/CameraPage.qml:48
 #, kde-format
 msgid "Switch mode"
 msgstr "Přepnout režim"
 
-#: src/contents/ui/CameraPage.qml:66
+#: src/contents/ui/CameraPage.qml:71
 #, kde-format
 msgid "Cancel self-timer"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:68
+#: src/contents/ui/CameraPage.qml:73
 #, kde-format
 msgid "Capture photo"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:70
+#: src/contents/ui/CameraPage.qml:75
 #, kde-format
 msgid "Stop recording video"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:72
+#: src/contents/ui/CameraPage.qml:77
 #, kde-format
 msgid "Start recording video"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:107
+#: src/contents/ui/CameraPage.qml:112
 #, kde-format
 msgid "Switch Camera"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:176
+#: src/contents/ui/CameraPage.qml:164
 #, kde-format
 msgid "Camera not available"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:178
+#: src/contents/ui/CameraPage.qml:166
 #, kde-format
 msgid "Camera is busy. Is another application using it?"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:180
+#: src/contents/ui/CameraPage.qml:168
 #, kde-format
 msgid "Missing camera resource."
 msgstr "Chybí zdroj fotoaparátu."
 
-#: src/contents/ui/CameraPage.qml:446
+#: src/contents/ui/CameraPage.qml:424
 #, kde-format
 msgid "Photo"
 msgstr "Fotka"
 
-#: src/contents/ui/CameraPage.qml:451
+#: src/contents/ui/CameraPage.qml:429
 #, kde-format
 msgid "Video"
 msgstr "Video"
 
-#: src/contents/ui/CameraPage.qml:554
+#: src/contents/ui/CameraPage.qml:452
 #, kde-format
 msgid "Took a photo"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:556
+#: src/contents/ui/CameraPage.qml:454
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Chyba při pořizování fotografie"
 
-#: src/contents/ui/CameraPage.qml:561
+#: src/contents/ui/CameraPage.qml:460
 #, kde-format
 msgid "Stopped recording"
 msgstr "Zastaveno nahrávání"
 
-#: src/contents/ui/CameraPage.qml:565
+#: src/contents/ui/CameraPage.qml:465
 #, kde-format
 msgid "Started recording"
 msgstr "Spuštěno nahrávání"
 
-#: src/contents/ui/CameraPage.qml:567
+#: src/contents/ui/CameraPage.qml:467
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Chyba při spuštění záznamu"
 
-#: src/contents/ui/GlobalDrawer.qml:37
-#, kde-format
-msgid "Resolution"
-msgstr "Rozlišení"
-
-#: src/contents/ui/GlobalDrawer.qml:56
-#, kde-format
-msgid "White balance"
-msgstr "Vyvážení bílé"
-
-#: src/contents/ui/GlobalDrawer.qml:62
-#, kde-format
-msgid "Auto"
-msgstr "Automaticky"
-
-#: src/contents/ui/GlobalDrawer.qml:69
-#, kde-format
-msgid "Sunlight"
-msgstr "Sluneční světlo"
-
-#: src/contents/ui/GlobalDrawer.qml:76
-#, kde-format
-msgid "Cloudy"
-msgstr "Zamračeno"
-
-#: src/contents/ui/GlobalDrawer.qml:83
-#, kde-format
-msgid "Tungsten"
-msgstr "Wolfram"
-
-#: src/contents/ui/GlobalDrawer.qml:90
-#, kde-format
-msgid "Fluorescent"
-msgstr "Fluorescentní"
-
-#: src/contents/ui/GlobalDrawer.qml:96
-#, kde-format
-msgid "About"
-msgstr "O aplikaci"
-
-#: src/contents/ui/main.qml:52
+#: src/contents/ui/main.qml:64
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr ""
 
-#: src/main.cpp:45
+#: src/contents/ui/SettingsDialog.qml:25
+#, kde-format
+msgid "Select camera"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:35
+#, kde-format
+msgid "About"
+msgstr "O aplikaci"
+
+#: src/main.cpp:66
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Vývojáři Plasma Mobile"
 
-#: src/main.cpp:47
+#: src/main.cpp:70
 #, kde-format
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: src/main.cpp:48
+#: src/main.cpp:76
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
+
+#: src/main.cpp:82
+#, kde-format
+msgid "Andrew Wang"
+msgstr ""
+
+#~ msgid "Resolution"
+#~ msgstr "Rozlišení"
+
+#~ msgid "White balance"
+#~ msgstr "Vyvážení bílé"
+
+#~ msgid "Auto"
+#~ msgstr "Automaticky"
+
+#~ msgid "Sunlight"
+#~ msgstr "Sluneční světlo"
+
+#~ msgid "Cloudy"
+#~ msgstr "Zamračeno"
+
+#~ msgid "Tungsten"
+#~ msgstr "Wolfram"
+
+#~ msgid "Fluorescent"
+#~ msgstr "Fluorescentní"
