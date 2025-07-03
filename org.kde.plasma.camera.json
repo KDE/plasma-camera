@@ -21,7 +21,34 @@
         {
             "name": "libcamera",
             "buildsystem": "meson",
-            "sources": [ { "type": "git", "url": "https://git.libcamera.org/libcamera/libcamera.git", "branch": "master" } ]
+            "sources": [ { "type": "git", "url": "https://git.libcamera.org/libcamera/libcamera.git", "branch": "master" } ],
+            "modules": [
+                {
+                    "name": "python3-package-installation",
+                    "buildsystem": "simple",
+                    "build-commands": [
+                        "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation PyYAML jinja2 ply"
+                    ],
+                    "sources": [
+                        {
+                            "type": "file",
+                            "url": "https://files.pythonhosted.org/packages/b9/2b/614b4752f2e127db5cc206abc23a8c19678e92b23c3db30fc86ab731d3bd/PyYAML-6.0.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                            "sha256": "80bab7bfc629882493af4aa31a4cfa43a4c57c83813253626916b8c7ada83476",
+                            "only-arches": [ "x86_64" ]
+                        },
+                        {
+                            "type": "file",
+                            "url": "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl",
+                            "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+                        },
+                        {
+                            "type": "file",
+                            "url": "https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl",
+                            "sha256": "096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "name": "kirigamiaddons",
