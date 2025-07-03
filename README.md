@@ -22,7 +22,6 @@ This application interfaces with `libcamera` directly, allowing for tighter inte
 * [libcamera](https://libcamera.org/)
 
 ## Installing
-This will compile and install kclock, kclockd, and the plasmoids onto the system. When running kclock, make sure that kclockd is running first (it is configured to autostart in sessions).
 
 ```
 mkdir build
