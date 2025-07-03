@@ -19,6 +19,11 @@ Kirigami.ApplicationWindow {
     title: i18n("Camera")
 
     pageStack.initialPage: cameraPage
+    pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.None
+
+    function openSettings() {
+        settingsDialog.open();
+    }
 
     PlasmaCamera {
         id: mainCamera
@@ -49,7 +54,7 @@ Kirigami.ApplicationWindow {
             }
         }
         onCameraDeviceChanged: {
-            CameraSettings.cameraDeviceId = cameraDevice;
+            CameraSettings.cameraDeviceId = mainCamera.cameraDevice;
         }
 
         // one-way binding between CameraSettings and PlasmaCamera for white balance
@@ -68,7 +73,8 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    globalDrawer: GlobalDrawer {
+    SettingsDialog {
+        id: settingsDialog
         camera: mainCamera
     }
 }

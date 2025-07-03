@@ -32,7 +32,7 @@ Kirigami.Page {
     bottomPadding: 0
     topPadding: 0
 
-    globalToolBarStyle: Kirigami.Settings.isMobile ? Kirigami.ApplicationHeaderStyle.None : Kirigami.ApplicationHeaderStyle.ToolBar
+    globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
     onIsCurrentPageChanged: isCurrentPage && pageStack.depth > 1 && pageStack.pop()
 
     Component.onCompleted: {
@@ -400,7 +400,7 @@ Kirigami.Page {
                         icon.name: "settings-configure"
                         icon.color: "white"
                         anchors.centerIn: parent
-                        onClicked: applicationWindow().globalDrawer.open()
+                        onClicked: applicationWindow().openSettings()
                     }
 
                 }

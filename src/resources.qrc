@@ -6,14 +6,8 @@
 <RCC>
     <qresource prefix="/">
         <file alias="main.qml">contents/ui/main.qml</file>
-<!--        <file alias="libcamera/main.qml">contents/ui/libcamera/main.qml</file>-->
-<!--        <file alias="libcamera/CameraPage.qml">contents/ui/libcamera/CameraPage.qml</file>-->
-<!--        <file alias="libcamera/PreviewArea.qml">contents/ui/libcamera/PreviewArea.qml</file>-->
-<!--        <file alias="libcamera/GlobalDrawer.qml">contents/ui/libcamera/GlobalDrawer.qml</file>-->
-<!--        <file alias="libcamera/components/RadioSelector.qml">contents/ui/libcamera/components/RadioSelector.qml</file>-->
-        <file alias="GlobalDrawer.qml">contents/ui/GlobalDrawer.qml</file>
+        <file alias="SettingsDialog.qml">contents/ui/SettingsDialog.qml</file>
         <file alias="CameraPage.qml">contents/ui/CameraPage.qml</file>
-<!--        <file alias="AboutPage.qml">contents/ui/AboutPage.qml</file>-->
         <file alias="ZoomControl.qml">contents/ui/ZoomControl.qml</file>
         <file alias="camera_flash_off.png">contents/ui/images/camera_flash_off.png</file>
         <file alias="camera_camera_setting.png">contents/ui/images/camera_camera_setting.png</file>
