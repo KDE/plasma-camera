@@ -1,7 +1,7 @@
 {
     "id": "org.kde.plasma-camera",
     "runtime": "org.kde.Platform",
-    "runtime-version": "6.7",
+    "runtime-version": "6.8",
     "sdk": "org.kde.Sdk",
     "command": "plasma-camera",
     "tags": ["nightly"],
@@ -10,7 +10,7 @@
     "finish-args": [
         "--share=ipc",
         "--share=network",
-        "--socket=x11",
+        "--socket=fallback-x11",
         "--socket=wayland",
         "--device=all",
         "--filesystem=home"
@@ -19,25 +19,15 @@
 
     "modules": [
         {
-            "name": "kirigami-addons",
-            "config-opts": [
-                "-DBUILD_TESTING=OFF",
-                "-DCMAKE_BUILD_TYPE=Release"
-            ],
+            "name": "libcamera",
+            "buildsystem": "meson",
+            "sources": [ { "type": "git", "url": "https://git.libcamera.org/libcamera/libcamera.git", "branch": "master" } ]
+        },
+        {
+            "name": "kirigamiaddons",
+            "config-opts": [ "-DBUILD_TESTING=OFF" ],
             "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.2.1.tar.xz",
-                    "sha256": "657426f9ec55cfec5a7f04848ed2b4df2ac8bfcb33c25626ad239219d444ee98",
-                    "x-checker-data": {
-                        "type": "anitya",
-                        "project-id": 242933,
-                        "stable-only": true,
-                        "url-template": "https://download.kde.org/stable/kirigami-addons/kirigami-addons-$version.tar.xz"
-                    }
-                }
-            ]
+            "sources": [ { "type": "git", "url": "https://invent.kde.org/libraries/kirigami-addons.git", "branch": "master" } ]
         },
         {
             "name": "plasma-camera",
