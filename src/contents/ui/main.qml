@@ -34,7 +34,9 @@ Kirigami.ApplicationWindow {
         property int selfTimerDuration: 0  // seconds
         property bool selfTimerRunning: false
 
-        active: true
+        Component.onCompleted: {
+            mainCamera.startCamera();
+        }
 
         function findCameraDevice() {
             for (const cameraId of mainCamera.getCameraDevicesId()) {

@@ -35,11 +35,6 @@ Kirigami.Page {
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
     onIsCurrentPageChanged: isCurrentPage && pageStack.depth > 1 && pageStack.pop()
 
-    Component.onCompleted: {
-        if (permission.status == Qt.PermissionStatus.Undetermined)
-            permission.request();
-
-    }
     actions: [
         Kirigami.Action {
             id: switchModeAction
@@ -114,8 +109,7 @@ Kirigami.Page {
             icon.name: "camera-photo-symbolic"
 
             onTriggered: {
-                // TODO: somehow this should modify the cameraSettings instead (so we get nice cycling in settings)
-                camera.nextCameraSrc();
+                camera.switchToNextCamera();
             }
         }
     ]
@@ -138,10 +132,8 @@ Kirigami.Page {
                 StateChangeScript {
                     script: {
                         cameraPage.camera.captureMode = camera.captureStillImage;
-                        // cameraPage.camera.start();
                     }
                 }
-
             },
             State {
                 name: "VideoCapture"
@@ -149,10 +141,8 @@ Kirigami.Page {
                 StateChangeScript {
                     script: {
                         cameraPage.camera.captureMode = camera.captureVideo;
-                        cameraPage.camera.start();
                     }
                 }
-
             }
         ]
 
@@ -168,16 +158,6 @@ Kirigami.Page {
                     return i18n("Missing camera resource.");
                 else if (cameraPage.camera.availability === Camera.Available)
                     return "";
-            }
-        }
-
-        CameraPermission {
-            id: permission
-
-            onStatusChanged: {
-                if (status == Qt.PermissionStatus.Granted) {
-                    cameraPage.camera.start();
-                }
             }
         }
 
@@ -447,8 +427,8 @@ Kirigami.Page {
 
             if (camera.captureMode === camera.captureStillImage) {
                 if (captureSession.readyForCapture) {
-                    captureSession.captureToFile("")
-                    previewArea.setPhotoPreview()
+                    captureSession.captureImageToFile("");
+                    previewArea.setPhotoPreview();
                     showPassiveNotification(i18n("Took a photo"))
                 } else {
                     showPassiveNotification(i18n("Failed to take a photo"));

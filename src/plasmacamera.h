@@ -37,8 +37,9 @@
  * 	- camera landscape mode (lock when recording, rotate image/video)
  */
 
-
-
+/**
+ * \brief Controller object for the application camera state, used from QML.
+ */
 class PlasmaCamera : public QObject
 {
     Q_OBJECT
@@ -46,7 +47,7 @@ class PlasmaCamera : public QObject
     Q_PROPERTY(QString errorString READ errorString NOTIFY errorChanged)
 
     // Camera state
-    Q_PROPERTY(bool active READ isActive WRITE setActive NOTIFY activeChanged)
+    Q_PROPERTY(bool active READ isActive NOTIFY activeChanged)
     Q_PROPERTY(bool available READ isAvailable NOTIFY availableChanged)
     Q_PROPERTY(QString cameraDevice READ cameraDevice WRITE setCameraDevice NOTIFY cameraDeviceChanged)
     Q_PROPERTY(QCameraFormat cameraFormat READ cameraFormat WRITE setCameraFormat NOTIFY cameraFormatChanged)
@@ -71,22 +72,71 @@ public:
     explicit PlasmaCamera(QObject *parent = nullptr);
     ~PlasmaCamera() override;
 
+    /*!
+     * Returns whether there is a reported error from the camera backend.
+     */
     bool error() const;
+
+    /*!
+     * Returns the error string of the reported error from the camera backend.
+     */
     QString errorString() const;
 
-    // Camera state
-    Q_INVOKABLE void start();
-    Q_INVOKABLE void stop();
-    Q_INVOKABLE bool nextCameraSrc();
-	Q_INVOKABLE QList<QString> getCameraDevicesId() const;
-	Q_INVOKABLE QList<QString> getCameraDevicesName() const;
+    /*!
+     * Switches the camera source to the next one.
+     * Returns whether it was able to switch the camera successfully.
+     */
+    Q_INVOKABLE bool switchToNextCamera();
 
-	bool isActive() const;
-	bool isAvailable() const;
+    /*!
+     * Starts the camera thread if not already started. This starts the viewfinder
+     * for generating previews.
+     *
+     * If the camera is not ready, it will wait until the state changes before starting.
+     */
+    Q_INVOKABLE void startCamera();
+
+    /*!
+     * Stops the camera thread if not already stopped.
+     *
+     * If the camera is not yet running, it will wait until the state changes before stopping.
+     */
+    Q_INVOKABLE void stopCamera();
+
+    /*!
+     * Returns all camera devices as a list of ids.
+     */
+    Q_INVOKABLE QList<QString> getCameraDevicesId() const;
+
+    /*!
+     * Returns all camera devices as a list of names.
+     */
+    Q_INVOKABLE QList<QString> getCameraDevicesName() const;
+
+    /*!
+     * Whether the camera has been requested to be active.
+     */
+    bool isActive() const;
+
+    /*!
+     * Whether there is a camera running, and a stream available.
+     */
+    bool isAvailable() const;
+
+    /*!
+     * Returns the name of the current camera device.
+     */
     QString cameraDevice() const;
-	QCameraFormat cameraFormat() const;
 
-    Q_INVOKABLE bool capture();
+    /*!
+     * Returns the camera format of the current camera device.
+     */
+    QCameraFormat cameraFormat() const;
+
+    /*!
+     * Capture an image with the current camera.
+     */
+    bool captureImage();
 
     // TODO: get min/max afWindow, iso, et, ev, wm, contrast, satruation?
 
@@ -150,7 +200,6 @@ Q_SIGNALS:
 
 public Q_SLOTS:
     // Camera state
-    void setActive(bool active);
     void setCameraDevice(const QString &cameraDevice);
 	void setCameraFormat(const QCameraFormat &cameraFormat);
 
@@ -186,19 +235,42 @@ private Q_SLOTS:
 private:
 	enum class State
 	{
-		None,		// init
-		Ready,		// libcamera manager and worker is started (set by worker)
-		Running,	// ready for capture (set by worker)
-		Busy,		// currently taking a photo
-		Stopping,	// shutting down
-	};
+        None, // Init
+        Ready, // Libcamera manager and worker is started (set by worker)
+        Running, // Ready for capture (set by worker)
+        Busy, // Currently taking a photo
+        Stopping, // Shutting down
+    };
 
+    /*!
+     * Starts the camera thread if not already started. This starts the viewfinder
+     * for generating previews.
+     */
+    void startCameraInternal();
+
+    /*!
+     * Stops the camera thread if not already stopped.
+     */
+    void stopCameraInternal();
+
+    /*!
+     * Set the active state of the camera, and start/stop the camera as needed.
+     */
+    void setActive(bool active);
+
+    /*!
+     * Set the internal state of the camera object.
+     */
     void setState(State state);
 
-    void startCamera();
-    void stopCamera();
-
+    /*!
+     * Attempt to acquire the current camera (from libcamera).
+     */
     void acquire();
+
+    /*!
+     * Release the lock on the current camera (in libcamera).
+     */
     void release();
 
     bool m_error = false;
@@ -208,7 +280,10 @@ private:
 
     Settings m_settings;
 
-    bool m_active = false; // only try to start camera if active
+    // Whether the camera has been requested to be active (see state for the actual camera state).
+    bool m_active = false;
+
+    // The current state of the camera.
     State m_state = State::None;
 
     std::unique_ptr<libcamera::CameraManager> m_cameraManager;

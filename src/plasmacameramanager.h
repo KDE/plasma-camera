@@ -23,9 +23,8 @@
  *  - ask for permission before using the camera?
  */
 
-
-/*
- * Manages the libcamera camera controller (similar to QMediaCaptureSession)
+/*!
+ * \brief Manages the libcamera camera controller (similar to QMediaCaptureSession)
  */
 
 class PlasmaCameraManager : public QObject
@@ -126,8 +125,8 @@ Q_SIGNALS:
 
 public Q_SLOTS:
     // preforming an image capture
-    int capture();
-    int captureToFile(const QString &location = QString());
+    int captureImage();
+    int captureImageToFile(const QString &location = QString());
     void setReadyForCapture(bool ready);
 
     // saving to file
@@ -155,6 +154,8 @@ private Q_SLOTS:
     void processVideoFrame();
 
 private:
+    int captureImageInternal();
+
     // error handling
     Error m_error;
     QString m_errorString;
@@ -186,7 +187,6 @@ private:
     // internal
     Settings m_settings;
 
-    int captureImage();
     int m_imageCaptureNum = 0;
     QString m_imageCaptureFileName;
 };

@@ -86,18 +86,16 @@ float PlasmaCameraManager::fps() const
     return m_fps;
 }
 
-
-
-int PlasmaCameraManager::capture()
+int PlasmaCameraManager::captureImage()
 {
     m_imageCaptureFileName.clear();
-    return captureImage();
+    return captureImageInternal();
 }
 
-int PlasmaCameraManager::captureToFile(const QString &location)
+int PlasmaCameraManager::captureImageToFile(const QString &location)
 {
     m_imageCaptureFileName = location;
-    return captureImage();
+    return captureImageInternal();
 }
 
 void PlasmaCameraManager::setReadyForCapture(const bool ready)
@@ -344,8 +342,7 @@ void PlasmaCameraManager::processVideoFrame()
     m_videoInput.sendVideoFrame(m_videoFrame);
 }
 
-
-int PlasmaCameraManager::captureImage()
+int PlasmaCameraManager::captureImageInternal()
 {
     const int newImageCaptureId = m_imageCaptureNum + 1;
 
@@ -358,7 +355,7 @@ int PlasmaCameraManager::captureImage()
     }
 
     m_imageCaptureNum = newImageCaptureId;
-    m_plasmaCamera->capture();
+    m_plasmaCamera->captureImage();
 
     return newImageCaptureId;
 }

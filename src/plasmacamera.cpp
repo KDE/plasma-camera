@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Andrew Wang
+// SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <map>
@@ -31,10 +32,10 @@ PlasmaCamera::PlasmaCamera(QObject *parent) : QObject(parent)
     connect(m_cameraThread, &QThread::finished, m_cameraThread, &QThread::deleteLater);
 
     // update this state as the worker updates its state
-    connect(m_cameraWorker, &Worker::ready, this, [=]() {
+    connect(m_cameraWorker, &Worker::ready, this, [this]() {
         setState(State::Ready);
     });
-    connect(m_cameraWorker, &Worker::running, this, [=]() {
+    connect(m_cameraWorker, &Worker::running, this, [this]() {
         setState(State::Running);
     });
 
@@ -54,7 +55,7 @@ PlasmaCamera::PlasmaCamera(QObject *parent) : QObject(parent)
 PlasmaCamera::~PlasmaCamera()
 {
     // optional
-    stop();
+    stopCamera();
 
     // set the thread to quit then wait for it to finish
     // shutdown in worker will emit finished() which is connected to quit() in the thread
@@ -72,26 +73,24 @@ QString PlasmaCamera::errorString() const
     return m_errorString;
 }
 
-void PlasmaCamera::start()
+void PlasmaCamera::startCamera()
 {
     setActive(true);
 }
 
-void PlasmaCamera::stop()
+void PlasmaCamera::stopCamera()
 {
     setActive(false);
 }
 
-bool PlasmaCamera::nextCameraSrc()
+bool PlasmaCamera::switchToNextCamera()
 {
-    if (m_state != State::Running)
-    {
+    if (m_state != State::Running) {
         return false;
     }
 
     const std::vector<std::shared_ptr<libcamera::Camera>> cameras = m_cameraManager->cameras();
-    if (cameras.empty())
-    {
+    if (cameras.empty()) {
         qDebug() << "Failed to find any cameras";
         return false;
     }
@@ -99,19 +98,18 @@ bool PlasmaCamera::nextCameraSrc()
     auto match = std::find_if(cameras.begin(), cameras.end(), [&](const std::shared_ptr<libcamera::Camera> &camera) {
         return camera->id() == m_cameraName;
     });
-    if (match == cameras.end())
-    {
+    if (match == cameras.end()) {
         qDebug() << "Failed to find desired camera: " << m_cameraName;
-        for (const auto &camera : cameras)
+        for (const auto &camera : cameras) {
             qDebug() << "Have camera: " << camera->id();
+        }
 
         return false;
     }
 
     // cyclic increment
     ++match;
-    if (match == cameras.end())
-    {
+    if (match == cameras.end()) {
         match = cameras.begin();
     }
 
@@ -161,10 +159,9 @@ QCameraFormat PlasmaCamera::cameraFormat() const
     return m_cameraFormat;
 }
 
-bool PlasmaCamera::capture()
+bool PlasmaCamera::captureImage()
 {
-    if (m_state != State::Running)
-    {
+    if (m_state != State::Running) {
         return false;
     }
 
@@ -222,72 +219,73 @@ float PlasmaCamera::fps() const
 
 void PlasmaCamera::setActive(const bool active)
 {
-    if (isActive() != active) {
-        m_active = active;
+    if (isActive() == active) {
+        return;
+    }
+    m_active = active;
 
-        if (active) {
-            // if we are currently not in Ready then wait until we setState to Ready to start the camera
-            if (m_state != State::Ready) {
-                return;
-            }
-
-            startCamera();
-
-        } else {
-            // if we are currently not in Running then wait until we setState to Running to stop the camera
-            if (m_state != State::Running) {
-                return;
-            }
-
-            stopCamera();
+    if (active) {
+        // If we are currently not in Ready, then wait until we setState to Ready to start the camera.
+        if (m_state != State::Ready) {
+            return;
         }
 
-        // if the state change request m_active cannot be handled right now
-        // it will be handled once setState sets the state to the Ready/Running
+        startCamera();
+
+    } else {
+        // If we are currently not in Running, then wait until we setState to Running to stop the camera.
+        if (m_state != State::Running) {
+            return;
+        }
+
+        stopCamera();
     }
+
+    // If the state change request m_active cannot be handled right now,
+    // it will be handled once setState sets the state to the Ready/Running.
 }
 
 void PlasmaCamera::setCameraDevice(const QString &cameraDevice)
 {
-    // set the camera name then attempt to use that camera if possible
-    if (cameraDevice != m_cameraName) {
-        const std::string cameraDeviceString = cameraDevice.toStdString();
+    // Set the camera name then attempt to use that camera if possible
+    if (cameraDevice == m_cameraName) {
+        return;
+    }
 
-        // since m_cameraManager is set up in the class init we should always have it
-        const std::vector<std::shared_ptr<libcamera::Camera>> cameras = m_cameraManager->cameras();
-        if (cameras.empty())
-            qDebug() << "Failed to find any cameras";
+    const std::string cameraDeviceString = cameraDevice.toStdString();
 
-        auto match = std::find_if(cameras.begin(), cameras.end(),
-            [&](const std::shared_ptr<libcamera::Camera> &camera) {return camera->id() == cameraDeviceString;});
-        if (match == cameras.end())
-        {
-            qDebug() << "Failed to find desired camera: " << cameraDevice;
-            for (const auto &camera : cameras)
-                qDebug() << "Have camera: " << camera->id();
-            return;
+    // Since m_cameraManager is set up in the class init we should always have it
+    const std::vector<std::shared_ptr<libcamera::Camera>> cameras = m_cameraManager->cameras();
+
+    auto match = std::find_if(cameras.begin(), cameras.end(), [&](const auto &camera) {
+        return camera->id() == cameraDeviceString;
+    });
+    if (match == cameras.end()) {
+        qDebug() << "Failed to find desired camera: " << cameraDevice;
+        for (const auto &camera : cameras) {
+            qDebug() << "Have camera: " << camera->id();
         }
 
-        qDebug() << "Using camera: " << cameraDevice;
-        m_cameraName = cameraDevice;
+        // Ignore this request if the camera could not be found
+        return;
+    }
 
-        // only when we are running can we switch cameras
-        if (m_state == State::Running)
-        {
-            // by going to the ready state if m_active we will start up using m_cameraName
-            // set state to stopping to emit not active then since we have no clean up, start
-            setState(State::Busy);
-            startCamera();
-        }
+    qDebug() << "Using camera: " << cameraDevice;
+    m_cameraName = cameraDevice;
+
+    // only when we are running can we switch cameras
+    if (m_state == State::Running) {
+        // by going to the ready state if m_active we will start up using m_cameraName
+        // set state to stopping to emit not active then since we have no clean up, start
+        setState(State::Busy);
+        startCameraInternal();
     }
 }
 
 void PlasmaCamera::setCameraFormat(const QCameraFormat &cameraFormat)
 {
-    if (cameraFormat != m_cameraFormat)
-    {
+    if (cameraFormat != m_cameraFormat) {
         m_cameraFormat = cameraFormat;
-
         Q_EMIT cameraFormatChanged();
     }
 }
@@ -308,8 +306,7 @@ void PlasmaCamera::resetAfWindow()
 void PlasmaCamera::setIso(const int iso)
 {
     // TODO: iso vs gain
-    if (m_settings.canSetGain() && m_settings.trySetGain(iso / 100.0f))
-    {
+    if (m_settings.canSetGain() && m_settings.trySetGain(iso / 100.0f)) {
         Q_EMIT settingsChanged(m_settings);
     }
 }
@@ -322,8 +319,7 @@ void PlasmaCamera::resetIso()
 
 void PlasmaCamera::setExposureTime(const int exposureTime)
 {
-    if (m_settings.canSetExposureTime() && m_settings.trySetExposureTime(exposureTime))
-    {
+    if (m_settings.canSetExposureTime() && m_settings.trySetExposureTime(exposureTime)) {
         Q_EMIT settingsChanged(m_settings);
     }
 }
@@ -336,8 +332,7 @@ void PlasmaCamera::resetExposureTime()
 
 void PlasmaCamera::setExposureValue(const float exposureValue)
 {
-    if (m_settings.canSetExposureValue() && m_settings.trySetExposureValue(exposureValue))
-    {
+    if (m_settings.canSetExposureValue() && m_settings.trySetExposureValue(exposureValue)) {
         Q_EMIT settingsChanged(m_settings);
     }
 }
@@ -350,8 +345,7 @@ void PlasmaCamera::resetExposureValue()
 
 void PlasmaCamera::setWbTemp(const int wbTemp)
 {
-    if (m_settings.canSetWbTemp() && m_settings.trySetWbTemp(wbTemp))
-    {
+    if (m_settings.canSetWbTemp() && m_settings.trySetWbTemp(wbTemp)) {
         Q_EMIT settingsChanged(m_settings);
     }
 }
@@ -364,8 +358,7 @@ void PlasmaCamera::resetAwb()
 
 void PlasmaCamera::setContrast(const int contrast)
 {
-    if (m_settings.canSetContrast() && m_settings.trySetContrast(contrast))
-    {
+    if (m_settings.canSetContrast() && m_settings.trySetContrast(contrast)) {
         Q_EMIT settingsChanged(m_settings);
     }
 }
@@ -378,8 +371,7 @@ void PlasmaCamera::resetContrast()
 
 void PlasmaCamera::setSaturation(const int saturation)
 {
-    if (m_settings.canSetSaturation() && m_settings.trySetSaturation(saturation))
-    {
+    if (m_settings.canSetSaturation() && m_settings.trySetSaturation(saturation)) {
         Q_EMIT settingsChanged(m_settings);
     }
 }
@@ -392,8 +384,7 @@ void PlasmaCamera::resetSaturation()
 
 void PlasmaCamera::setFps(const float fps)
 {
-    if (m_fps != fps)
-    {
+    if (m_fps != fps) {
         m_fps = fps;
         Q_EMIT fpsChanged(m_fps);
     }
@@ -416,14 +407,57 @@ void PlasmaCamera::unsetError()
     m_errorString.clear();
 }
 
+void PlasmaCamera::startCameraInternal()
+{
+    // If the m_cameraName is empty then default to the first one.
+    if (m_cameraName.isEmpty()) {
+        const std::vector<std::shared_ptr<libcamera::Camera>> cameras = m_cameraManager->cameras();
+
+        if (cameras.empty()) {
+            qDebug() << "Failed to find any cameras";
+            m_camera.reset();
+            m_cameraName.clear();
+            return;
+        }
+
+        // if no camera is set then get the first camera
+        for (const auto &camera : cameras) {
+            qDebug() << "Found camera: " << camera->id();
+        }
+
+        m_cameraName = QString::fromStdString(cameras[0]->id());
+    }
+
+    m_camera = m_cameraManager->get(m_cameraName.toStdString());
+    acquire();
+
+    // Only emit that we have changed camera once we acquire.
+    Q_EMIT cameraDeviceChanged(m_cameraName);
+
+    // We are relying on Worker to free the previous camera.
+    // This is because there are some things it needs to stop before it can stop the camera.
+    QMetaObject::invokeMethod(m_cameraWorker, "setCamera", Qt::QueuedConnection, Q_ARG(const std::shared_ptr<libcamera::Camera>, m_camera));
+}
+
+void PlasmaCamera::stopCameraInternal()
+{
+    setState(State::Stopping);
+
+    // Clear the current camera
+    m_cameraName.clear();
+    m_camera.reset();
+
+    // After the camera is stopped, the worker will set this state to Ready
+    QMetaObject::invokeMethod(m_cameraWorker, "unsetCamera", Qt::QueuedConnection);
+}
+
 void PlasmaCamera::setState(const State state)
 {
     // handles sending the signals for state changes
     // and attempting to change state based on m_active
-    const State previous_state = m_state;
+    const State previousState = m_state;
 
-    switch (state)
-    {
+    switch (state) {
     case State::None:
         // after initial init it should not be possible to go back to None
         // m_state = State::None;
@@ -431,22 +465,19 @@ void PlasmaCamera::setState(const State state)
 
     case State::Ready:
         m_state = State::Ready;
-        if (m_active)
-        {
-            startCamera();
+        if (m_active) {
+            startCameraInternal();
             break;
         }
         break;
 
     case State::Running:
         m_state = State::Running;
-        if (!m_active)
-        {
-            stopCamera();
+        if (!m_active) {
+            stopCameraInternal();
             break;
         }
-        switch (previous_state)
-        {
+        switch (previousState) {
         case State::Running:
             break;
         case State::Ready:
@@ -463,8 +494,7 @@ void PlasmaCamera::setState(const State state)
 
     case State::Busy:
         m_state = State::Busy;
-        switch (previous_state)
-        {
+        switch (previousState) {
         case State::Running:
             Q_EMIT availableChanged(false);
             break;
@@ -475,8 +505,7 @@ void PlasmaCamera::setState(const State state)
 
     case State::Stopping:
         m_state = State::Stopping;
-        switch (previous_state)
-        {
+        switch (previousState) {
         case State::Ready:
             break;
         case State::Running:
@@ -490,46 +519,12 @@ void PlasmaCamera::setState(const State state)
     }
 }
 
-void PlasmaCamera::startCamera()
-{
-    // if the m_cameraName is empty then default to the first one
-    if (m_cameraName.isEmpty()) {
-        const std::vector<std::shared_ptr<libcamera::Camera>> cameras = m_cameraManager->cameras();
-        if (cameras.empty())
-            qDebug() << "Failed to find any cameras";
-
-        // if no camera is set then get the first camera
-        for (const auto &camera : cameras)
-            qDebug() << "Found camera: " << camera->id();
-
-        m_cameraName = QString::fromStdString(cameras[0]->id());
-    }
-
-    m_camera = m_cameraManager->get(m_cameraName.toStdString());
-    acquire();
-
-    // only emit that we have changed camera once we
-    Q_EMIT cameraDeviceChanged(m_cameraName);
-
-    // we are relying on Worker to free the previous camera
-    // this is because there are some things it needs to stop before it can stop the camera
-    QMetaObject::invokeMethod(m_cameraWorker, "setCamera", Qt::QueuedConnection, Q_ARG(const std::shared_ptr<libcamera::Camera>, m_camera));
-}
-
-void PlasmaCamera::stopCamera()
-{
-    setState(State::Stopping);
-
-    // clear the current camera
-    m_cameraName.clear();
-    m_camera.reset();
-
-    // after camera is stopped worker will set this state to ready
-    QMetaObject::invokeMethod(m_cameraWorker, "unsetCamera", Qt::QueuedConnection);
-}
-
 void PlasmaCamera::acquire()
 {
+    if (!m_camera) {
+        return;
+    }
+
     // TODO:
     //  - acquire should attempt to set up the camera indicated in camera_name_
     //  - it should also get the control info for the camera
@@ -539,8 +534,7 @@ void PlasmaCamera::acquire()
     //  - what should occur if the worker doesn't accept camera_device_?
 
     int ret = m_camera->acquire();
-    if (ret < 0)
-    {
+    if (ret < 0) {
         setError(QString::fromStdString("Failed to acquire camera"));
         m_camera.reset();
         return;
@@ -553,15 +547,14 @@ void PlasmaCamera::acquire()
     // print camera properties
     const libcamera::ControlList &controls = m_camera->properties();
     qInfo() << "Acquired" << controls.size() << "properties";
-    for (const auto &info : controls)
-    {
+    for (const auto &info : controls) {
         qInfo() << "\t" << libcamera::controls::controls.at(info.first)->name() << " " << info.second.toString();
     }
 }
 
 void PlasmaCamera::release()
 {
-    // Actual camera teardown is done in Worker.
+    // TODO: Actual camera teardown is done in Worker.
     // This is to avoid possible errors if stopping is done out of order.
 
     m_cameraFormat = QCameraFormat();
