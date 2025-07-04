@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:58+0000\n"
+"POT-Creation-Date: 2025-07-04 00:44+0000\n"
 "PO-Revision-Date: 2019-03-02 16:12-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -29,87 +29,77 @@ msgstr ""
 msgid "Camera"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:48
+#: src/contents/ui/CameraPage.qml:43
 #, kde-format
 msgid "Switch mode"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:71
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Cancel self-timer"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:73
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Capture photo"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:75
+#: src/contents/ui/CameraPage.qml:70
 #, kde-format
 msgid "Stop recording video"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:77
+#: src/contents/ui/CameraPage.qml:72
 #, kde-format
 msgid "Start recording video"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:112
+#: src/contents/ui/CameraPage.qml:102
 #, kde-format
 msgid "Switch Camera"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:164
+#: src/contents/ui/CameraPage.qml:148
 #, kde-format
 msgid "Camera not available"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:166
-#, kde-format
-msgid "Camera is busy. Is another application using it?"
-msgstr ""
-
-#: src/contents/ui/CameraPage.qml:168
-#, kde-format
-msgid "Missing camera resource."
-msgstr ""
-
-#: src/contents/ui/CameraPage.qml:424
+#: src/contents/ui/CameraPage.qml:393
 #, kde-format
 msgid "Photo"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:429
+#: src/contents/ui/CameraPage.qml:398
 #, kde-format
 msgid "Video"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:452
+#: src/contents/ui/CameraPage.qml:421
 #, kde-format
 msgid "Took a photo"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:454
+#: src/contents/ui/CameraPage.qml:423
 #, kde-format
 msgid "Failed to take a photo"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:460
+#: src/contents/ui/CameraPage.qml:429
 #, kde-format
 msgid "Stopped recording"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:465
+#: src/contents/ui/CameraPage.qml:434
 #, kde-format
 msgid "Started recording"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:467
+#: src/contents/ui/CameraPage.qml:436
 #, kde-format
 msgid "Failed to start recording"
 msgstr ""
 
-#: src/contents/ui/main.qml:64
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "

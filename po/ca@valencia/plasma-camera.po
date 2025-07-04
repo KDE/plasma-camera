@@ -1,16 +1,16 @@
 # Translation of plasma-camera.po to Catalan (Valencian)
-# Copyright (C) 2019-2023 This_file_is_part_of_KDE
+# Copyright (C) 2019-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2019, 2020, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2019, 2020, 2023, 2025.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:58+0000\n"
-"PO-Revision-Date: 2023-10-26 12:06+0200\n"
+"POT-Creation-Date: 2025-07-04 00:44+0000\n"
+"PO-Revision-Date: 2025-07-03 16:18+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -36,87 +36,77 @@ msgstr "txemaq@gmail.com"
 msgid "Camera"
 msgstr "Càmera"
 
-#: src/contents/ui/CameraPage.qml:48
+#: src/contents/ui/CameraPage.qml:43
 #, kde-format
 msgid "Switch mode"
 msgstr "Canvi de mode"
 
-#: src/contents/ui/CameraPage.qml:71
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "Cancel·la el disparador automàtic"
 
-#: src/contents/ui/CameraPage.qml:73
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Capture photo"
 msgstr "Captura de foto"
 
-#: src/contents/ui/CameraPage.qml:75
+#: src/contents/ui/CameraPage.qml:70
 #, kde-format
 msgid "Stop recording video"
 msgstr "Para la gravació de vídeo"
 
-#: src/contents/ui/CameraPage.qml:77
+#: src/contents/ui/CameraPage.qml:72
 #, kde-format
 msgid "Start recording video"
 msgstr "Inicia la gravació de vídeo"
 
-#: src/contents/ui/CameraPage.qml:112
+#: src/contents/ui/CameraPage.qml:102
 #, kde-format
 msgid "Switch Camera"
 msgstr "Canvia la càmera"
 
-#: src/contents/ui/CameraPage.qml:164
+#: src/contents/ui/CameraPage.qml:148
 #, kde-format
 msgid "Camera not available"
 msgstr "Càmera no disponible"
 
-#: src/contents/ui/CameraPage.qml:166
-#, kde-format
-msgid "Camera is busy. Is another application using it?"
-msgstr "La càmera està ocupada. Hi ha una altra aplicació que l'utilitze?"
-
-#: src/contents/ui/CameraPage.qml:168
-#, kde-format
-msgid "Missing camera resource."
-msgstr "Falta el recurs de càmera."
-
-#: src/contents/ui/CameraPage.qml:424
+#: src/contents/ui/CameraPage.qml:393
 #, kde-format
 msgid "Photo"
 msgstr "Foto"
 
-#: src/contents/ui/CameraPage.qml:429
+#: src/contents/ui/CameraPage.qml:398
 #, kde-format
 msgid "Video"
 msgstr "Vídeo"
 
-#: src/contents/ui/CameraPage.qml:452
+#: src/contents/ui/CameraPage.qml:421
 #, kde-format
 msgid "Took a photo"
 msgstr "Pren una foto"
 
-#: src/contents/ui/CameraPage.qml:454
+#: src/contents/ui/CameraPage.qml:423
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "No s'ha pogut prendre una foto"
 
-#: src/contents/ui/CameraPage.qml:460
+#: src/contents/ui/CameraPage.qml:429
 #, kde-format
 msgid "Stopped recording"
 msgstr "S'ha parat la gravació"
 
-#: src/contents/ui/CameraPage.qml:465
+#: src/contents/ui/CameraPage.qml:434
 #, kde-format
 msgid "Started recording"
 msgstr "S'ha iniciat la gravació"
 
-#: src/contents/ui/CameraPage.qml:467
+#: src/contents/ui/CameraPage.qml:436
 #, kde-format
 msgid "Failed to start recording"
 msgstr "No s'ha pogut iniciar la gravació"
 
-#: src/contents/ui/main.qml:64
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
@@ -126,10 +116,9 @@ msgstr ""
 "el seu funcionament."
 
 #: src/contents/ui/SettingsDialog.qml:25
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select camera"
-msgstr "Canvia la càmera"
+msgstr "Seleccioneu la càmera"
 
 #: src/contents/ui/SettingsDialog.qml:35
 #, kde-format
@@ -154,25 +143,10 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:82
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "Andrew Wang"
 
-#~ msgid "Resolution"
-#~ msgstr "Resolució"
+#~ msgid "Camera is busy. Is another application using it?"
+#~ msgstr "La càmera està ocupada. Hi ha una altra aplicació que l'utilitze?"
 
-#~ msgid "White balance"
-#~ msgstr "Balanç de blancs"
-
-#~ msgid "Auto"
-#~ msgstr "Automàtic"
-
-#~ msgid "Sunlight"
-#~ msgstr "Llum del sol"
-
-#~ msgid "Cloudy"
-#~ msgstr "Ennuvolat"
-
-#~ msgid "Tungsten"
-#~ msgstr "Tungstè"
-
-#~ msgid "Fluorescent"
-#~ msgstr "Fluorescent"
+#~ msgid "Missing camera resource."
+#~ msgstr "Falta el recurs de càmera."

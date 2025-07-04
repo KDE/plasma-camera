@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:58+0000\n"
-"PO-Revision-Date: 2023-10-27 06:09+0200\n"
+"POT-Creation-Date: 2025-07-04 00:44+0000\n"
+"PO-Revision-Date: 2025-07-03 14:45+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.6\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -33,87 +33,77 @@ msgstr "Temuri.doghonadze@gmail.com"
 msgid "Camera"
 msgstr "კამერა"
 
-#: src/contents/ui/CameraPage.qml:48
+#: src/contents/ui/CameraPage.qml:43
 #, kde-format
 msgid "Switch mode"
 msgstr "რეჟიმის გადართვა"
 
-#: src/contents/ui/CameraPage.qml:71
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "წამმზომის გაუქმება"
 
-#: src/contents/ui/CameraPage.qml:73
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Capture photo"
 msgstr "ფოტოს გადაღება"
 
-#: src/contents/ui/CameraPage.qml:75
+#: src/contents/ui/CameraPage.qml:70
 #, kde-format
 msgid "Stop recording video"
 msgstr "ვიდეოს ჩაწერის შეჩერება"
 
-#: src/contents/ui/CameraPage.qml:77
+#: src/contents/ui/CameraPage.qml:72
 #, kde-format
 msgid "Start recording video"
 msgstr "ვიდეოს ჩაწერის დასაწყისი"
 
-#: src/contents/ui/CameraPage.qml:112
+#: src/contents/ui/CameraPage.qml:102
 #, kde-format
 msgid "Switch Camera"
 msgstr "კამერის გადართვა"
 
-#: src/contents/ui/CameraPage.qml:164
+#: src/contents/ui/CameraPage.qml:148
 #, kde-format
 msgid "Camera not available"
 msgstr "კამერა მიუწვდომელია"
 
-#: src/contents/ui/CameraPage.qml:166
-#, kde-format
-msgid "Camera is busy. Is another application using it?"
-msgstr "კამერა დაკავებულია. სხვა აპლიკაცია ხომ არ იყენებს?"
-
-#: src/contents/ui/CameraPage.qml:168
-#, kde-format
-msgid "Missing camera resource."
-msgstr "კამერას რესურსები აკლია."
-
-#: src/contents/ui/CameraPage.qml:424
+#: src/contents/ui/CameraPage.qml:393
 #, kde-format
 msgid "Photo"
 msgstr "სურათი"
 
-#: src/contents/ui/CameraPage.qml:429
+#: src/contents/ui/CameraPage.qml:398
 #, kde-format
 msgid "Video"
 msgstr "ვიდეო"
 
-#: src/contents/ui/CameraPage.qml:452
+#: src/contents/ui/CameraPage.qml:421
 #, kde-format
 msgid "Took a photo"
 msgstr "ფოტო გადავიღე"
 
-#: src/contents/ui/CameraPage.qml:454
+#: src/contents/ui/CameraPage.qml:423
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "ფოტოს გადაღების შეცდომა"
 
-#: src/contents/ui/CameraPage.qml:460
+#: src/contents/ui/CameraPage.qml:429
 #, kde-format
 msgid "Stopped recording"
 msgstr "ჩაწერა შეჩერებულია"
 
-#: src/contents/ui/CameraPage.qml:465
+#: src/contents/ui/CameraPage.qml:434
 #, kde-format
 msgid "Started recording"
 msgstr "ჩაწერა დაწყებულია"
 
-#: src/contents/ui/CameraPage.qml:467
+#: src/contents/ui/CameraPage.qml:436
 #, kde-format
 msgid "Failed to start recording"
 msgstr "ჩაწერის დაწყების შეცდომა"
 
-#: src/contents/ui/main.qml:64
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
@@ -121,10 +111,9 @@ msgid ""
 msgstr "შეცდომა: %1 . თუ პროგრამამ მუშაობა შეწყვიტა, გადატვირთეთ ის."
 
 #: src/contents/ui/SettingsDialog.qml:25
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select camera"
-msgstr "კამერის გადართვა"
+msgstr "აირჩიეთ კამერა"
 
 #: src/contents/ui/SettingsDialog.qml:35
 #, kde-format
@@ -149,7 +138,13 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:82
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "ენდრიუ ვანგი"
+
+#~ msgid "Camera is busy. Is another application using it?"
+#~ msgstr "კამერა დაკავებულია. სხვა აპლიკაცია ხომ არ იყენებს?"
+
+#~ msgid "Missing camera resource."
+#~ msgstr "კამერას რესურსები აკლია."
 
 #~ msgid "Resolution"
 #~ msgstr "გარჩევადობა"

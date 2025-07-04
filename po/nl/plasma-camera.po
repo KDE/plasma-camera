@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
 #
-# SPDX-FileCopyrightText: 2019, 2020, 2023 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2019, 2020, 2023, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:58+0000\n"
-"PO-Revision-Date: 2023-10-26 15:25+0200\n"
+"POT-Creation-Date: 2025-07-04 00:44+0000\n"
+"PO-Revision-Date: 2025-07-03 13:52+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - 2019 t/m 2023"
+msgstr "Freek de Kruijf - 2019 t/m 2025"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -32,87 +32,77 @@ msgstr "freekdekruijf@kde.nl"
 msgid "Camera"
 msgstr "Camera"
 
-#: src/contents/ui/CameraPage.qml:48
+#: src/contents/ui/CameraPage.qml:43
 #, kde-format
 msgid "Switch mode"
 msgstr "Modus omschakelen"
 
-#: src/contents/ui/CameraPage.qml:71
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "Zelfontspanner annuleren"
 
-#: src/contents/ui/CameraPage.qml:73
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Capture photo"
 msgstr "Foto nemen"
 
-#: src/contents/ui/CameraPage.qml:75
+#: src/contents/ui/CameraPage.qml:70
 #, kde-format
 msgid "Stop recording video"
 msgstr "Video opname stoppen"
 
-#: src/contents/ui/CameraPage.qml:77
+#: src/contents/ui/CameraPage.qml:72
 #, kde-format
 msgid "Start recording video"
 msgstr "Video opname starten"
 
-#: src/contents/ui/CameraPage.qml:112
+#: src/contents/ui/CameraPage.qml:102
 #, kde-format
 msgid "Switch Camera"
 msgstr "Camera omschakelen"
 
-#: src/contents/ui/CameraPage.qml:164
+#: src/contents/ui/CameraPage.qml:148
 #, kde-format
 msgid "Camera not available"
 msgstr "Camera niet beschikbaar"
 
-#: src/contents/ui/CameraPage.qml:166
-#, kde-format
-msgid "Camera is busy. Is another application using it?"
-msgstr "Camera is in gebruik. Gebruikt een andere toepassing deze?"
-
-#: src/contents/ui/CameraPage.qml:168
-#, kde-format
-msgid "Missing camera resource."
-msgstr "Ontbrekende camerahulpbron."
-
-#: src/contents/ui/CameraPage.qml:424
+#: src/contents/ui/CameraPage.qml:393
 #, kde-format
 msgid "Photo"
 msgstr "Foto"
 
-#: src/contents/ui/CameraPage.qml:429
+#: src/contents/ui/CameraPage.qml:398
 #, kde-format
 msgid "Video"
 msgstr "Video"
 
-#: src/contents/ui/CameraPage.qml:452
+#: src/contents/ui/CameraPage.qml:421
 #, kde-format
 msgid "Took a photo"
 msgstr "Nam een foto"
 
-#: src/contents/ui/CameraPage.qml:454
+#: src/contents/ui/CameraPage.qml:423
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Foto maken is mislukt"
 
-#: src/contents/ui/CameraPage.qml:460
+#: src/contents/ui/CameraPage.qml:429
 #, kde-format
 msgid "Stopped recording"
 msgstr "Opnemen is gestopt"
 
-#: src/contents/ui/CameraPage.qml:465
+#: src/contents/ui/CameraPage.qml:434
 #, kde-format
 msgid "Started recording"
 msgstr "Opnemen is gestart"
 
-#: src/contents/ui/CameraPage.qml:467
+#: src/contents/ui/CameraPage.qml:436
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Opnemen starten is mislukt"
 
-#: src/contents/ui/main.qml:64
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
@@ -122,10 +112,9 @@ msgstr ""
 "starten als het werken is gestopt."
 
 #: src/contents/ui/SettingsDialog.qml:25
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select camera"
-msgstr "Camera omschakelen"
+msgstr "Camera selecteren"
 
 #: src/contents/ui/SettingsDialog.qml:35
 #, kde-format
@@ -150,7 +139,13 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:82
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "Andrew Wang"
+
+#~ msgid "Camera is busy. Is another application using it?"
+#~ msgstr "Camera is in gebruik. Gebruikt een andere toepassing deze?"
+
+#~ msgid "Missing camera resource."
+#~ msgstr "Ontbrekende camerahulpbron."
 
 #~ msgid "Resolution"
 #~ msgstr "Resolutie"

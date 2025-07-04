@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:58+0000\n"
+"POT-Creation-Date: 2025-07-04 00:44+0000\n"
 "PO-Revision-Date: 2023-10-26 07:28+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -35,87 +35,77 @@ msgstr "xalba@euskalnet.net"
 msgid "Camera"
 msgstr "Kamera"
 
-#: src/contents/ui/CameraPage.qml:48
+#: src/contents/ui/CameraPage.qml:43
 #, kde-format
 msgid "Switch mode"
 msgstr "Aldatu modua"
 
-#: src/contents/ui/CameraPage.qml:71
+#: src/contents/ui/CameraPage.qml:66
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "Indargabetu kliskatze automatikoa"
 
-#: src/contents/ui/CameraPage.qml:73
+#: src/contents/ui/CameraPage.qml:68
 #, kde-format
 msgid "Capture photo"
 msgstr "Argazkia egin"
 
-#: src/contents/ui/CameraPage.qml:75
+#: src/contents/ui/CameraPage.qml:70
 #, kde-format
 msgid "Stop recording video"
 msgstr "Gelditu bideoa grabatzea"
 
-#: src/contents/ui/CameraPage.qml:77
+#: src/contents/ui/CameraPage.qml:72
 #, kde-format
 msgid "Start recording video"
 msgstr "Hasi bideoa grabatzen"
 
-#: src/contents/ui/CameraPage.qml:112
+#: src/contents/ui/CameraPage.qml:102
 #, kde-format
 msgid "Switch Camera"
 msgstr "Aldatu kamera"
 
-#: src/contents/ui/CameraPage.qml:164
+#: src/contents/ui/CameraPage.qml:148
 #, kde-format
 msgid "Camera not available"
 msgstr "Kamera ez dago erabilgarri"
 
-#: src/contents/ui/CameraPage.qml:166
-#, kde-format
-msgid "Camera is busy. Is another application using it?"
-msgstr "Kamera lanpetuta dago. Beste aplikazio bat hura erabiltzen ari da?"
-
-#: src/contents/ui/CameraPage.qml:168
-#, kde-format
-msgid "Missing camera resource."
-msgstr "Kamerako baliabidea falta da."
-
-#: src/contents/ui/CameraPage.qml:424
+#: src/contents/ui/CameraPage.qml:393
 #, kde-format
 msgid "Photo"
 msgstr "Argazkia"
 
-#: src/contents/ui/CameraPage.qml:429
+#: src/contents/ui/CameraPage.qml:398
 #, kde-format
 msgid "Video"
 msgstr "Bideoa"
 
-#: src/contents/ui/CameraPage.qml:452
+#: src/contents/ui/CameraPage.qml:421
 #, kde-format
 msgid "Took a photo"
 msgstr "Argazkia atera da"
 
-#: src/contents/ui/CameraPage.qml:454
+#: src/contents/ui/CameraPage.qml:423
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Huts egin du argazkia ateratzea"
 
-#: src/contents/ui/CameraPage.qml:460
+#: src/contents/ui/CameraPage.qml:429
 #, kde-format
 msgid "Stopped recording"
 msgstr "Gelditu da grabatzea"
 
-#: src/contents/ui/CameraPage.qml:465
+#: src/contents/ui/CameraPage.qml:434
 #, kde-format
 msgid "Started recording"
 msgstr "Hasi da grabatzen"
 
-#: src/contents/ui/CameraPage.qml:467
+#: src/contents/ui/CameraPage.qml:436
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Huts egin du grabatzen hastea"
 
-#: src/contents/ui/main.qml:64
+#: src/contents/ui/main.qml:77
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
@@ -154,6 +144,12 @@ msgstr "Jonah Brüchert"
 #, kde-format
 msgid "Andrew Wang"
 msgstr ""
+
+#~ msgid "Camera is busy. Is another application using it?"
+#~ msgstr "Kamera lanpetuta dago. Beste aplikazio bat hura erabiltzen ari da?"
+
+#~ msgid "Missing camera resource."
+#~ msgstr "Kamerako baliabidea falta da."
 
 #~ msgid "Resolution"
 #~ msgstr "Bereizmena"
