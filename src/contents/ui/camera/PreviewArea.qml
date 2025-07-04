@@ -10,11 +10,11 @@ import QtQuick.Controls as Controls
 import org.kde.kirigami as Kirigami
 import Qt5Compat.GraphicalEffects
 
-
 Rectangle {
     id: preview
 
-    property var videoRecorder
+    required property MediaRecorder videoRecorder
+
     property bool showVideoPreview: false // when set to true, the preview for the videoRecorder is shown, if false for the imageCapture
     property bool videoThumbnailRequested: false
     property string imageUrl  // TODO: set default image url to some placeholder? (the last picture you took)
@@ -120,5 +120,4 @@ Rectangle {
         samples: 30
         spread: 0.5
     }
-
 }

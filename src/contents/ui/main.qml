@@ -11,6 +11,7 @@ import QtMultimedia
 import org.kde.kirigami as Kirigami
 import org.kde.plasmacamera
 
+import "camera"
 
 Kirigami.ApplicationWindow {
     id: root
@@ -27,12 +28,6 @@ Kirigami.ApplicationWindow {
 
     PlasmaCamera {
         id: mainCamera
-
-        readonly property int captureStillImage: 1
-        readonly property int captureVideo: 2
-        property int captureMode: camera.captureStillImage
-        property int selfTimerDuration: 0  // seconds
-        property bool selfTimerRunning: false
 
         Component.onCompleted: {
             // Restore selected camera from settings

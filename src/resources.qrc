@@ -7,8 +7,17 @@
     <qresource prefix="/">
         <file alias="main.qml">contents/ui/main.qml</file>
         <file alias="SettingsDialog.qml">contents/ui/SettingsDialog.qml</file>
-        <file alias="CameraPage.qml">contents/ui/CameraPage.qml</file>
         <file alias="ZoomControl.qml">contents/ui/ZoomControl.qml</file>
+
+        <file alias="camera/CameraControls.qml">contents/ui/camera/CameraControls.qml</file>
+        <file alias="camera/CameraPage.qml">contents/ui/camera/CameraPage.qml</file>
+        <file alias="camera/CaptureButton.qml">contents/ui/camera/CaptureButton.qml</file>
+        <file alias="camera/CaptureController.qml">contents/ui/camera/CaptureController.qml</file>
+        <file alias="camera/PreviewArea.qml">contents/ui/camera/PreviewArea.qml</file>
+        <file alias="camera/TimerSelectStrip.qml">contents/ui/camera/TimerSelectStrip.qml</file>
+        <file alias="camera/Viewfinder.qml">contents/ui/camera/Viewfinder.qml</file>
+        <file alias="camera/ViewfinderTimerOverlay.qml">contents/ui/camera/ViewfinderTimerOverlay.qml</file>
+
         <file alias="camera_flash_off.png">contents/ui/images/camera_flash_off.png</file>
         <file alias="camera_camera_setting.png">contents/ui/images/camera_camera_setting.png</file>
         <file alias="camera_auto_mode.png">contents/ui/images/camera_auto_mode.png</file>
@@ -19,6 +28,5 @@
         <file alias="camera_white_balance_cloudy.png">contents/ui/images/camera_white_balance_cloudy.png</file>
         <file alias="camera_white_balance_flourescent.png">contents/ui/images/camera_white_balance_flourescent.png</file>
         <file alias="camera_flash_fill.png">contents/ui/images/camera_flash_fill.png</file>
-        <file alias="PreviewArea.qml">contents/ui/PreviewArea.qml</file>
     </qresource>
 </RCC>
