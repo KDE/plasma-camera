@@ -32,10 +32,7 @@ Rectangle {
         id: viewfinder
 
         visible: root.camera.available
-
-        // TODO: fix previous orientation Workaround
-        // orientation: Kirigami.Settings.isMobile ? -90 : 0
         width: parent.width
-        height: parent.height - root.bottomMargin
+        height: parent.height
     }
 }
