@@ -123,8 +123,7 @@ bool Settings::canSetAeEnable() const
 
 bool Settings::trySetAeEnable(const bool enable)
 {
-    if (!canSetAeEnable())
-    {
+    if (!canSetAeEnable()) {
         return false;
     }
 

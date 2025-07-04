@@ -40,12 +40,7 @@ Kirigami.Page {
         plasmaCamera: root.camera
         videoSink: viewfinder.videoSink
 
-        recorder: MediaRecorder {
-            // not sure why this doesn't work
-            // videoFrameRate: 30
-            // TODO set resolution
-            // videoResolution: CameraSettings.resolution
-        }
+        recorder: MediaRecorder {}
     }
 
     property CaptureController captureController: CaptureController {

@@ -69,7 +69,7 @@ Kirigami.ApplicationWindow {
         }
 
         onErrorOccurred: {
-            showPassiveNotification(i18n("An error occurred: \"%1\". Please consider restarting the application if it stopped working.", errorString));
+            showPassiveNotification(i18n("An error occurred: \"%1\". Please consider restarting the application if it stopped working.", mainCamera.errorString));
         }
     }
 

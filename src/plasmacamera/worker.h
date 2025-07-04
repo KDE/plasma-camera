@@ -140,7 +140,8 @@ private:
     Converter m_converter;
     libcamera::PixelFormat m_format;
 
-    QMutex m_mutex;
+    // Queue of images for capturing a photo
+    QMutex m_stillCaptureFramesMutex;
     QQueue<QImage> m_stillCaptureFrames;
 
     libcamera::Stream *m_stream{};
@@ -148,7 +149,10 @@ private:
     std::map<libcamera::FrameBuffer *, std::unique_ptr<Image>> m_mappedBuffers;
     std::vector<std::unique_ptr<libcamera::Request>> m_requests;
 
+    // Queue of finished requests with data, waiting for processing
     QQueue<libcamera::Request *> m_doneQueue;
+
+    // Queue of finished requests that have been processed, and can be reused for new requests
     QQueue<libcamera::Request *> m_freeQueue;
 
     // We require mutexes because the libcamera process lives on a different thread.

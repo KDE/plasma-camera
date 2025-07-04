@@ -233,6 +233,11 @@ float PlasmaCamera::fps() const
     return m_fps;
 }
 
+int PlasmaCamera::softwareRotationDegrees() const
+{
+    return m_softwareRotationDegrees;
+}
+
 bool PlasmaCamera::busy() const
 {
     return m_busy;
@@ -490,7 +495,9 @@ void PlasmaCamera::startCameraInternal()
 
     // Attempt to acquire lock on camera
     // TODO: wait until camera becomes available before doing so?
-    acquire();
+    if (!acquire()) {
+        return;
+    }
 
     qDebug() << "Setting camera to" << m_cameraId;
     QMetaObject::invokeMethod(m_cameraWorker, "setCamera", Qt::QueuedConnection, Q_ARG(const std::shared_ptr<libcamera::Camera>, m_camera));
@@ -561,10 +568,10 @@ void PlasmaCamera::setState(const State state)
     }
 }
 
-void PlasmaCamera::acquire()
+bool PlasmaCamera::acquire()
 {
     if (!m_camera) {
-        return;
+        return false;
     }
 
     // TODO:
@@ -579,19 +586,37 @@ void PlasmaCamera::acquire()
     if (ret < 0) {
         setError(QString::fromStdString("Failed to acquire camera"));
         m_camera.reset();
-        return;
+        return false;
     }
 
-    // get camera controls
+    // Get camera controls
     const libcamera::ControlInfoMap &infoMap = m_camera->controls();
     qInfo() << "Acquired" << infoMap.size() << "controls";
 
-    // print camera properties
+    // Print camera properties
     const libcamera::ControlList &controls = m_camera->properties();
     qInfo() << "Acquired" << controls.size() << "properties";
     for (const auto &info : controls) {
         qInfo() << "\t" << libcamera::controls::controls.at(info.first)->name() << " " << info.second.toString();
     }
 
-    // The camera's lock is released in Worker
+    // Find the amount of degrees needed to rotate the camera output by and populate m_softwareRotationDegrees
+    std::optional<int> cameraRotation = m_camera->properties().get(libcamera::properties::Rotation);
+    qInfo() << "Camera offset orientation:" << cameraRotation.value_or(0);
+    switch (cameraRotation.value_or(0)) {
+    case 0:
+        m_softwareRotationDegrees = 0;
+        break;
+    case 90:
+        m_softwareRotationDegrees = 270;
+        break;
+    case 180:
+        m_softwareRotationDegrees = 180;
+        break;
+    case 270:
+        m_softwareRotationDegrees = 90;
+        break;
+    }
+
+    return true;
 }

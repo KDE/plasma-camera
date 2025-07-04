@@ -162,6 +162,7 @@ public:
     // Camera settings
     Settings settings() const;
     float fps() const;
+    int softwareRotationDegrees() const;
 
 Q_SIGNALS:
     void errorChanged();
@@ -274,14 +275,20 @@ private:
     void setState(State state);
 
     /*!
-     * Attempt to acquire the current camera (from libcamera).
+     * Attempt to acquire the current camera (from libcamera), and then fetch
+     * camera details and load it into this object.
+     *
+     * Returns whether it was successful.
      */
-    void acquire();
+    bool acquire();
 
     bool m_error = false;
     QString m_errorString;
 
     float m_fps = 30.0f;
+
+    // The amount of degrees to rotate captured input by.
+    int m_softwareRotationDegrees = 0.0f;
 
     Settings m_settings;
 

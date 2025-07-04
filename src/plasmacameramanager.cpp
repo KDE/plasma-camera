@@ -253,24 +253,29 @@ void PlasmaCameraManager::setSettings(const Settings& settings)
 
 void PlasmaCameraManager::processViewfinderFrame(const QImage &image)
 {
-    if (image.isNull())
+    if (image.isNull()) {
         return;
-
-    // might need to convert to a format compatible with QVideoFrame
-    /*
-     * if (image.format() != QImage::Format_RGBA8888) {
-     *     image = image.convertToFormat(QImage::Format_RGBA8888);
-     * }
-     */
+    }
 
     m_currentFrame = image;
     m_videoFrame = QVideoFrame(image);
 
-    // if (m_ismobile)
-    // {
-    //     // TODO: rotation in CameraPage is useless? (set this in libcamera instead)
-    //     video_frame.setRotation(QtVideo::Rotation::Clockwise270);
-    // }
+    // Do software rotation
+    // From testing, most drivers don't seem to implement hardware orientation correctly (CameraConfiguration::orientation),
+    // it either isn't supported or just crashes. So we will just use software rotation for best hardware compatibility.
+    switch (m_plasmaCamera->softwareRotationDegrees()) {
+    case 0:
+        break;
+    case 90:
+        m_videoFrame.setRotation(QtVideo::Rotation::Clockwise90);
+        break;
+    case 180:
+        m_videoFrame.setRotation(QtVideo::Rotation::Clockwise180);
+        break;
+    case 270:
+        m_videoFrame.setRotation(QtVideo::Rotation::Clockwise270);
+        break;
+    }
 
     // TODO: I'm not sure what this code is actually doing?
     // if(!m_videoFrame.isValid() || !m_videoFrame.map(QVideoFrame::WriteOnly)){
@@ -298,18 +303,17 @@ void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
 
     QImage image = frames.head();
 
-    // if (m_ismobile)
-    // {
-    //     QTransform transform;
-    //     transform.rotate(270);
-    //     image = image.transformed(transform);
-    // }
+    // Do software rotation
+    // From testing, most drivers don't seem to implement hardware orientation correctly (CameraConfiguration::orientation),
+    // it either isn't supported or just crashes. So we will just use software rotation for best hardware compatibility.
+    QTransform transform;
+    transform.rotate(m_plasmaCamera->softwareRotationDegrees());
+    image = image.transformed(transform);
 
     // TODO: set format and quality
     qDebug() << "saving image to " << fileName;
     const bool res = image.save(&file, "JPEG", 50);
-    if (!res)
-    {
+    if (!res) {
         setError(
             0,
             ResourceError,
