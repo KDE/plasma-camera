@@ -56,20 +56,21 @@ class PlasmaCamera : public QObject
     Q_PROPERTY(QCameraFormat cameraFormat READ cameraFormat WRITE setCameraFormat NOTIFY cameraFormatChanged)
 
     // Focus
-    Q_PROPERTY(QSize afWindow READ afWindow WRITE setAfWindow RESET resetAfWindow NOTIFY afWindowChanged)
+    // Q_PROPERTY(QSize afWindow READ afWindow WRITE setAfWindow RESET resetAfWindow NOTIFY afWindowChanged)
 
     // Brightness
-    Q_PROPERTY(int iso READ iso WRITE setIso RESET resetIso NOTIFY isoChanged)
-    Q_PROPERTY(int exposureTime READ exposureTime WRITE setExposureTime RESET resetExposureTime NOTIFY exposureTimeChanged)
-    Q_PROPERTY(float exposureValue READ exposureValue WRITE setExposureValue RESET resetExposureValue NOTIFY exposureValueChanged)
+    // Q_PROPERTY(int iso READ iso WRITE setIso RESET resetIso NOTIFY settingsChanged)
+    // Q_PROPERTY(int exposureTime READ exposureTime WRITE setExposureTime RESET resetExposureTime NOTIFY settingsChanged)
+    Q_PROPERTY(bool exposureValueAvailable READ exposureValueAvailable NOTIFY settingsChanged)
+    Q_PROPERTY(float exposureValue READ exposureValue WRITE setExposureValue RESET resetExposureValue NOTIFY settingsChanged)
 
     // White balance
-    // Q_PROPERTY(int wbMode READ wbMode WRITE setWbMode RESET resetAwb NOTIFY wbModeChanged)
-    Q_PROPERTY(int wbTemp READ wbTemp WRITE setWbTemp RESET resetAwb NOTIFY wbTempChanged)
+    // Q_PROPERTY(int wbMode READ wbMode WRITE setWbMode RESET resetAwb NOTIFY settingsChanged)
+    // Q_PROPERTY(int wbTemp READ wbTemp WRITE setWbTemp RESET resetAwb NOTIFY settingsChanged)
 
     // Contrast and saturation
-    Q_PROPERTY(int contrast READ contrast WRITE setContrast RESET resetContrast NOTIFY contrastChanged)
-    Q_PROPERTY(int saturation READ saturation WRITE setSaturation RESET resetSaturation NOTIFY saturationChanged)
+    // Q_PROPERTY(int contrast READ contrast WRITE setContrast RESET resetContrast NOTIFY settingsChanged)
+    // Q_PROPERTY(int saturation READ saturation WRITE setSaturation RESET resetSaturation NOTIFY settingsChanged)
 
 public:
     explicit PlasmaCamera(QObject *parent = nullptr);
@@ -141,14 +142,13 @@ public:
      */
     bool captureImage();
 
-    // TODO: get min/max afWindow, iso, et, ev, wm, contrast, satruation?
-
     // Focus
     QSize afWindow() const;
 
     // Brightness
     int iso() const;
     int exposureTime() const;
+    bool exposureValueAvailable() const;
     float exposureValue() const;
 
     // White balance
@@ -184,19 +184,6 @@ Q_SIGNALS:
 
     // Focus
     void afWindowChanged(const QSize &newAfWindow);
-
-    // Brightness
-    void isoChanged(int newIso);
-    void exposureTimeChanged(int newExposureTime);
-    void exposureValueChanged(float newExposureValue);
-
-    // White balance
-    // void wbModeChanged(int newWbMode);
-    void wbTempChanged(int newWbTemp);
-
-    // Contrast and saturation
-    void contrastChanged(int newContrast);
-    void saturationChanged(int newSaturation);
 
     // Settings
     void settingsChanged(const Settings &settings);

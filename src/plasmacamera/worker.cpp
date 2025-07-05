@@ -93,8 +93,6 @@ void Worker::capture()
 void Worker::setSettings(const Settings& settings)
 {
     m_settings = settings;
-
-    // TODO: invoke changes to the requests
 }
 
 void Worker::setError(const QString &errorString)
@@ -153,27 +151,31 @@ void Worker::requestNextFrame()
         return;
     }
 
-    // this code used to be Camera::getViewfinderFrame()
-    // how it makes more sense for the camera to continue to get frames even when the frames are not called for
-    // - untie the image capture from how fast we can display the frames
+    libcamera::Request *request;
+    {
+        // Grab free request from m_freeQueue, if there are any available
+        const QMutexLocker lock(&m_freeMutex);
+        if (m_freeQueue.isEmpty()) {
+            return;
+        }
 
-     libcamera::Request *request;
-     {
-         const QMutexLocker lock(&m_freeMutex);
-         if (m_freeQueue.isEmpty()) {
-             return;
-             // return QImage();  // set null image?
-         }
+        request = m_freeQueue.dequeue();
+    }
 
-         request = m_freeQueue.dequeue();
-     }
+    // Clear request for usage
+    request->reuse(libcamera::Request::ReuseBuffers);
 
-     request->reuse(libcamera::Request::ReuseBuffers);
-     m_camera->queueRequest(request);
+    // Load our settings onto the camera request's controls
+    m_settings.set(request->controls());
+
+    // Queue request in camera for frame
+    m_camera->queueRequest(request);
 }
 
 void Worker::requestComplete(libcamera::Request *request)
 {
+    // This is a slot that is run in libcamera thread, when a request completes.
+
     if (request->status() == libcamera::Request::RequestCancelled) {
         return;
     }
@@ -263,19 +265,6 @@ void Worker::startViewFinder()
      * makes app more unstable (it could also be related to the demands of restarting the camera)
      */
     m_config = m_camera->generateConfiguration({libcamera::StreamRole::Viewfinder});
-
-    // TODO: this should work but doesn't
-    //  driver doesn't support it?: https://github.com/raspberrypi/rpicam-apps/issues/149
-
-    // this does work
-    // TODO: allow changing resolution but the camera will restart
-    // TODO: it appears I cannot extra the native camera output resolutions... (make some up using percents of the default resolution)
-    // m_config->at(0).size = libcamera::Size(100, 100);
-
-    // this doesn't seem to get any useful information
-    // libcamera::StreamConfiguration sc = m_config->at(0).formats();
-    // qDebug() << sc.size.toString();
-    // qDebug() << sc.toString();
 
     configure();
 
@@ -480,7 +469,6 @@ void Worker::configure()
     const libcamera::CameraConfiguration::Status validation = m_config->validate();
     if (validation == libcamera::CameraConfiguration::Adjusted) {
         qInfo() << "Adjusted viewfinder configuration is: " << streamConfig.toString();
-        qDebug() << "new orientation" << static_cast<int>(m_config->orientation); // TODO
     }
     if (validation == libcamera::CameraConfiguration::Invalid) {
         qWarning() << QString::fromStdString("Failed to validate camera configuration");

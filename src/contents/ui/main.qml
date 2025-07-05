@@ -39,9 +39,6 @@ Kirigami.ApplicationWindow {
             mainCamera.startCamera();
         }
 
-        // one-way binding between CameraSettings and PlasmaCamera for white balance
-        // whiteBalanceMode: CameraSettings.whiteBalanceMode
-
         // Returns which camera to select from settings, and nothing if the camera can't be found.
         function findSettingsCameraDevice(): string {
             for (const cameraId of mainCamera.cameraDeviceIds) {

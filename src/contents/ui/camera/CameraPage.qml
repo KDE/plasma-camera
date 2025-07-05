@@ -23,7 +23,6 @@ Kirigami.Page {
     topPadding: 0
 
     globalToolBarStyle: Kirigami.ApplicationHeaderStyle.None
-    onIsCurrentPageChanged: isCurrentPage && pageStack.depth > 1 && pageStack.pop()
 
     required property PlasmaCamera camera
 
@@ -103,6 +102,17 @@ Kirigami.Page {
         camera: root.camera
         bottomMargin: controlContainer.height
 
+        // Header controls
+        CameraExtraControls {
+            anchors.top: parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+
+            exposureValueEnabled: root.camera.exposureValueAvailable
+            onExposureValueRequested: (value) => root.camera.exposureValue = value;
+        }
+
+        // Footer controls
         CameraControls {
             id: controlContainer
             anchors.bottom: parent.bottom
@@ -127,6 +137,7 @@ Kirigami.Page {
             }
         }
 
+        // Indicator for timer
         ViewfinderTimerOverlay {
             id: timerOverlay
             anchors.fill: parent

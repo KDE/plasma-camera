@@ -203,6 +203,11 @@ int PlasmaCamera::exposureTime() const
     return m_settings.getExposureTime();
 }
 
+bool PlasmaCamera::exposureValueAvailable() const
+{
+    return m_settings.canSetExposureValue();
+}
+
 float PlasmaCamera::exposureValue() const
 {
     return m_settings.getExposureValue();
@@ -574,14 +579,7 @@ bool PlasmaCamera::acquire()
         return false;
     }
 
-    // TODO:
-    //  - acquire should attempt to set up the camera indicated in camera_name_
-    //  - it should also get the control info for the camera
-    //  - save the previous settings where? or just delete them
-    //  - need to reinit everything including requests?
-    //  - it should pass the camera_device_ to worker
-    //  - what should occur if the worker doesn't accept camera_device_?
-
+    // Attempt to acquire camera
     int ret = m_camera->acquire();
     if (ret < 0) {
         setError(QString::fromStdString("Failed to acquire camera"));
@@ -589,7 +587,7 @@ bool PlasmaCamera::acquire()
         return false;
     }
 
-    // Get camera controls
+    // List camera properties
     const libcamera::ControlInfoMap &infoMap = m_camera->controls();
     qInfo() << "Acquired" << infoMap.size() << "controls";
 
@@ -599,6 +597,11 @@ bool PlasmaCamera::acquire()
     for (const auto &info : controls) {
         qInfo() << "\t" << libcamera::controls::controls.at(info.first)->name() << " " << info.second.toString();
     }
+
+    // Load camera controls into settings
+    // m_camera->controls() is constant through the lifetime of m_camera, so we don't need to reload.
+    m_settings.load(m_camera->controls());
+    Q_EMIT settingsChanged(m_settings);
 
     // Find the amount of degrees needed to rotate the camera output by and populate m_softwareRotationDegrees
     std::optional<int> cameraRotation = m_camera->properties().get(libcamera::properties::Rotation);

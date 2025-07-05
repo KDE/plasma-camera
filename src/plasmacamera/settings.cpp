@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Andrew Wang
+// SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include "settings.h"
@@ -9,6 +10,9 @@ Settings::~Settings() {}
 
 void Settings::load(const libcamera::ControlInfoMap &infoMap)
 {
+    reset();
+
+    qDebug() << "Loading settings:";
     for (const auto &[controlId, controlInfo] : infoMap) {
         qDebug()
             << "\t" << controlId->name() << ":"
@@ -23,6 +27,7 @@ void Settings::load(const libcamera::ControlInfoMap &infoMap)
             m_aeEnable = m_aeEnableDefault;
             break;
 
+        // TODO: this value doesn't seem to be set by any camera tested, should we drop it?
         case libcamera::controls::EXPOSURE_VALUE:
             m_manualExposureValueAvailable = true;
             m_exposureValueDefault = controlInfo.def().get<float>();
@@ -100,8 +105,19 @@ void Settings::load(const libcamera::ControlInfoMap &infoMap)
 
 void Settings::set(libcamera::ControlList &controlMap)
 {
-    // TODO: use the settings to modify the ControlList
-    //  - add option to force writing default values to the controlMap
+    if (m_aeEnableAvailable && !m_aeEnableUseDefault) {
+        controlMap.set(libcamera::controls::AeEnable, m_aeEnable);
+    }
+
+    if (m_manualExposureValueAvailable && m_manualExposureValue) {
+        controlMap.set(libcamera::controls::ExposureValue, m_exposureValue);
+    }
+
+    if (m_manualExposureTimeAvailable && m_manualExposureTime) {
+        controlMap.set(libcamera::controls::ExposureTime, m_exposureTime);
+    }
+
+    // TODO: implement the rest of the settings
 }
 
 void Settings::reset()
@@ -346,14 +362,13 @@ bool Settings::canSetExposureTime() const
 
 bool Settings::trySetExposureTime(const int exposureTime)
 {
-    if (!canSetExposureTime())
-    {
+    if (!canSetExposureTime()) {
         return false;
     }
 
-    if (m_exposureValue != exposureTime) {
+    if (m_exposureTime != exposureTime) {
         m_manualExposureTime = true;
-        m_exposureValue = exposureTime;
+        m_exposureTime = exposureTime;
     }
 
     return true;
