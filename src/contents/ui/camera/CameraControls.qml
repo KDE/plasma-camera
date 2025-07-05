@@ -161,6 +161,9 @@ Rectangle {
             Layout.maximumWidth: Kirigami.Units.gridUnit * 10
             consistentWidth: true
 
+            Kirigami.Theme.inherit: false
+            Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+
             actions: [
                 Kirigami.Action {
                     text: i18n("Photo")
