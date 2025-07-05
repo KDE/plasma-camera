@@ -35,7 +35,7 @@ QQC2.ToolButton {
             if (root.captureMode === CameraPage.CaptureMode.Photo) {
                 return Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.hoverColor, "transparent", 0.6);
             }
-            return Kirigami.ColorUtils.linearInterpolation("red", "transparent", 0.6);
+            return Kirigami.Theme.negativeTextColor;
         }
 
         // Recording indicator

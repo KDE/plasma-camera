@@ -19,6 +19,7 @@
         <file alias="camera/Viewfinder.qml">contents/ui/camera/Viewfinder.qml</file>
         <file alias="camera/ViewfinderTimerOverlay.qml">contents/ui/camera/ViewfinderTimerOverlay.qml</file>
         <file alias="camera/ExposureSelectStrip.qml">contents/ui/camera/ExposureSelectStrip.qml</file>
+        <file alias="camera/ViewfinderVideoDurationOverlay.qml">contents/ui/camera/ViewfinderVideoDurationOverlay.qml</file>
 
         <file alias="camera_flash_off.png">contents/ui/images/camera_flash_off.png</file>
         <file alias="camera_camera_setting.png">contents/ui/images/camera_camera_setting.png</file>

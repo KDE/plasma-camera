@@ -104,6 +104,7 @@ Kirigami.Page {
 
         // Header controls
         CameraExtraControls {
+            id: cameraExtraControls
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.right: parent.right
@@ -144,6 +145,16 @@ Kirigami.Page {
 
             captureMode: root.captureMode
             captureController: root.captureController
+        }
+
+        // Video recording duration overlay
+        ViewfinderVideoDurationOverlay {
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.topMargin: cameraExtraControls.height + Kirigami.Units.largeSpacing
+
+            visible: root.captureSession.recorder.recorderState === MediaRecorder.RecordingState
+            duration: root.captureSession.recorder.duration
         }
     }
 }
