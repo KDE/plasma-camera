@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-04 00:44+0000\n"
+"POT-Creation-Date: 2025-07-05 00:44+0000\n"
 "PO-Revision-Date: 2023-10-28 10:37+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -27,82 +27,82 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "adrian@chaves.gal"
 
-#: src/contents/ui/CameraPage.qml:29 src/contents/ui/main.qml:19
-#, kde-format
-msgid "Camera"
-msgstr "Cámara"
-
-#: src/contents/ui/CameraPage.qml:43
-#, kde-format
-msgid "Switch mode"
-msgstr "Cambiar de modo"
-
-#: src/contents/ui/CameraPage.qml:66
-#, kde-format
-msgid "Cancel self-timer"
-msgstr "Cancelar o temporizador"
-
-#: src/contents/ui/CameraPage.qml:68
-#, kde-format
-msgid "Capture photo"
-msgstr "Sacar unha foto"
-
-#: src/contents/ui/CameraPage.qml:70
-#, kde-format
-msgid "Stop recording video"
-msgstr "Deter a gravación de vídeo"
-
-#: src/contents/ui/CameraPage.qml:72
-#, kde-format
-msgid "Start recording video"
-msgstr "Iniciar a gravación de vídeo"
-
-#: src/contents/ui/CameraPage.qml:102
-#, kde-format
-msgid "Switch Camera"
-msgstr "Cambiar de cámara"
-
-#: src/contents/ui/CameraPage.qml:148
-#, kde-format
-msgid "Camera not available"
-msgstr "Non hai ningunha cámara dispoñíbel"
-
-#: src/contents/ui/CameraPage.qml:393
+#: src/contents/ui/camera/CameraControls.qml:165
 #, kde-format
 msgid "Photo"
 msgstr "Foto"
 
-#: src/contents/ui/CameraPage.qml:398
+#: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Video"
 msgstr "Vídeo"
 
-#: src/contents/ui/CameraPage.qml:421
+#: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
+#, kde-format
+msgid "Camera"
+msgstr "Cámara"
+
+#: src/contents/ui/camera/CameraPage.qml:60
+#, kde-format
+msgid "Switch mode"
+msgstr "Cambiar de modo"
+
+#: src/contents/ui/camera/CameraPage.qml:90
+#, kde-format
+msgid "Switch Camera"
+msgstr "Cambiar de cámara"
+
+#: src/contents/ui/camera/CaptureController.qml:35
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "Cancelar o temporizador"
+
+#: src/contents/ui/camera/CaptureController.qml:37
+#, kde-format
+msgid "Capture photo"
+msgstr "Sacar unha foto"
+
+#: src/contents/ui/camera/CaptureController.qml:39
+#, kde-format
+msgid "Stop recording video"
+msgstr "Deter a gravación de vídeo"
+
+#: src/contents/ui/camera/CaptureController.qml:41
+#, kde-format
+msgid "Start recording video"
+msgstr "Iniciar a gravación de vídeo"
+
+#: src/contents/ui/camera/CaptureController.qml:89
 #, kde-format
 msgid "Took a photo"
 msgstr "Sacouse unha foto"
 
-#: src/contents/ui/CameraPage.qml:423
+#: src/contents/ui/camera/CaptureController.qml:92
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Non foi posíbel sacar unha foto"
 
-#: src/contents/ui/CameraPage.qml:429
+#: src/contents/ui/camera/CaptureController.qml:97
 #, kde-format
 msgid "Stopped recording"
 msgstr "Detívose a gravación"
 
-#: src/contents/ui/CameraPage.qml:434
+#: src/contents/ui/camera/CaptureController.qml:103
 #, kde-format
 msgid "Started recording"
 msgstr "Iniciouse a gravación"
 
-#: src/contents/ui/CameraPage.qml:436
+#: src/contents/ui/camera/CaptureController.qml:105
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Non foi posíbel iniciar a gravación"
 
-#: src/contents/ui/main.qml:77
+#: src/contents/ui/camera/Viewfinder.qml:28
+#, kde-format
+msgid "Camera not available"
+msgstr "Non hai ningunha cámara dispoñíbel"
+
+#: src/contents/ui/main.qml:72
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-04 00:44+0000\n"
+"POT-Creation-Date: 2025-07-05 00:44+0000\n"
 "PO-Revision-Date: 2024-09-03 21:54+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -29,82 +29,82 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-i18n-de@kde.org"
 
-#: src/contents/ui/CameraPage.qml:29 src/contents/ui/main.qml:19
-#, kde-format
-msgid "Camera"
-msgstr "Kamera"
-
-#: src/contents/ui/CameraPage.qml:43
-#, kde-format
-msgid "Switch mode"
-msgstr "Modus wechseln"
-
-#: src/contents/ui/CameraPage.qml:66
-#, kde-format
-msgid "Cancel self-timer"
-msgstr "Selbstauslöser abbrechen"
-
-#: src/contents/ui/CameraPage.qml:68
-#, kde-format
-msgid "Capture photo"
-msgstr "Fotoaufnahme"
-
-#: src/contents/ui/CameraPage.qml:70
-#, kde-format
-msgid "Stop recording video"
-msgstr "Video-Aufnahme beenden"
-
-#: src/contents/ui/CameraPage.qml:72
-#, kde-format
-msgid "Start recording video"
-msgstr "Video-Aufnahme starten"
-
-#: src/contents/ui/CameraPage.qml:102
-#, kde-format
-msgid "Switch Camera"
-msgstr "Kamera wechseln"
-
-#: src/contents/ui/CameraPage.qml:148
-#, kde-format
-msgid "Camera not available"
-msgstr "Kamera nicht verfügbar"
-
-#: src/contents/ui/CameraPage.qml:393
+#: src/contents/ui/camera/CameraControls.qml:165
 #, kde-format
 msgid "Photo"
 msgstr "Foto"
 
-#: src/contents/ui/CameraPage.qml:398
+#: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Video"
 msgstr "Video"
 
-#: src/contents/ui/CameraPage.qml:421
+#: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
+#, kde-format
+msgid "Camera"
+msgstr "Kamera"
+
+#: src/contents/ui/camera/CameraPage.qml:60
+#, kde-format
+msgid "Switch mode"
+msgstr "Modus wechseln"
+
+#: src/contents/ui/camera/CameraPage.qml:90
+#, kde-format
+msgid "Switch Camera"
+msgstr "Kamera wechseln"
+
+#: src/contents/ui/camera/CaptureController.qml:35
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "Selbstauslöser abbrechen"
+
+#: src/contents/ui/camera/CaptureController.qml:37
+#, kde-format
+msgid "Capture photo"
+msgstr "Fotoaufnahme"
+
+#: src/contents/ui/camera/CaptureController.qml:39
+#, kde-format
+msgid "Stop recording video"
+msgstr "Video-Aufnahme beenden"
+
+#: src/contents/ui/camera/CaptureController.qml:41
+#, kde-format
+msgid "Start recording video"
+msgstr "Video-Aufnahme starten"
+
+#: src/contents/ui/camera/CaptureController.qml:89
 #, kde-format
 msgid "Took a photo"
 msgstr "Foto aufgenommen"
 
-#: src/contents/ui/CameraPage.qml:423
+#: src/contents/ui/camera/CaptureController.qml:92
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Das Aufnehmen eines Fotos ist fehlgeschlagen"
 
-#: src/contents/ui/CameraPage.qml:429
+#: src/contents/ui/camera/CaptureController.qml:97
 #, kde-format
 msgid "Stopped recording"
 msgstr "Aufnahme angehalten"
 
-#: src/contents/ui/CameraPage.qml:434
+#: src/contents/ui/camera/CaptureController.qml:103
 #, kde-format
 msgid "Started recording"
 msgstr "Aufnahme gestartet"
 
-#: src/contents/ui/CameraPage.qml:436
+#: src/contents/ui/camera/CaptureController.qml:105
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Start der Aufnahme fehlgeschlagen"
 
-#: src/contents/ui/main.qml:77
+#: src/contents/ui/camera/Viewfinder.qml:28
+#, kde-format
+msgid "Camera not available"
+msgstr "Kamera nicht verfügbar"
+
+#: src/contents/ui/main.qml:72
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-04 00:44+0000\n"
+"POT-Creation-Date: 2025-07-05 00:44+0000\n"
 "PO-Revision-Date: 2024-04-23 19:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,82 +27,82 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tds00@qq.com"
 
-#: src/contents/ui/CameraPage.qml:29 src/contents/ui/main.qml:19
-#, kde-format
-msgid "Camera"
-msgstr "相机"
-
-#: src/contents/ui/CameraPage.qml:43
-#, kde-format
-msgid "Switch mode"
-msgstr "切换模式"
-
-#: src/contents/ui/CameraPage.qml:66
-#, kde-format
-msgid "Cancel self-timer"
-msgstr "取消自拍定时器"
-
-#: src/contents/ui/CameraPage.qml:68
-#, kde-format
-msgid "Capture photo"
-msgstr "拍摄照片"
-
-#: src/contents/ui/CameraPage.qml:70
-#, kde-format
-msgid "Stop recording video"
-msgstr "停止录制视频"
-
-#: src/contents/ui/CameraPage.qml:72
-#, kde-format
-msgid "Start recording video"
-msgstr "开始录制视频"
-
-#: src/contents/ui/CameraPage.qml:102
-#, kde-format
-msgid "Switch Camera"
-msgstr "切换相机"
-
-#: src/contents/ui/CameraPage.qml:148
-#, kde-format
-msgid "Camera not available"
-msgstr "相机不可用"
-
-#: src/contents/ui/CameraPage.qml:393
+#: src/contents/ui/camera/CameraControls.qml:165
 #, kde-format
 msgid "Photo"
 msgstr "照片"
 
-#: src/contents/ui/CameraPage.qml:398
+#: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Video"
 msgstr "视频"
 
-#: src/contents/ui/CameraPage.qml:421
+#: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
+#, kde-format
+msgid "Camera"
+msgstr "相机"
+
+#: src/contents/ui/camera/CameraPage.qml:60
+#, kde-format
+msgid "Switch mode"
+msgstr "切换模式"
+
+#: src/contents/ui/camera/CameraPage.qml:90
+#, kde-format
+msgid "Switch Camera"
+msgstr "切换相机"
+
+#: src/contents/ui/camera/CaptureController.qml:35
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "取消自拍定时器"
+
+#: src/contents/ui/camera/CaptureController.qml:37
+#, kde-format
+msgid "Capture photo"
+msgstr "拍摄照片"
+
+#: src/contents/ui/camera/CaptureController.qml:39
+#, kde-format
+msgid "Stop recording video"
+msgstr "停止录制视频"
+
+#: src/contents/ui/camera/CaptureController.qml:41
+#, kde-format
+msgid "Start recording video"
+msgstr "开始录制视频"
+
+#: src/contents/ui/camera/CaptureController.qml:89
 #, kde-format
 msgid "Took a photo"
 msgstr "拍摄照片"
 
-#: src/contents/ui/CameraPage.qml:423
+#: src/contents/ui/camera/CaptureController.qml:92
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "照片拍摄失败"
 
-#: src/contents/ui/CameraPage.qml:429
+#: src/contents/ui/camera/CaptureController.qml:97
 #, kde-format
 msgid "Stopped recording"
 msgstr "已停止录像"
 
-#: src/contents/ui/CameraPage.qml:434
+#: src/contents/ui/camera/CaptureController.qml:103
 #, kde-format
 msgid "Started recording"
 msgstr "已开始录像"
 
-#: src/contents/ui/CameraPage.qml:436
+#: src/contents/ui/camera/CaptureController.qml:105
 #, kde-format
 msgid "Failed to start recording"
 msgstr "无法开始录像"
 
-#: src/contents/ui/main.qml:77
+#: src/contents/ui/camera/Viewfinder.qml:28
+#, kde-format
+msgid "Camera not available"
+msgstr "相机不可用"
+
+#: src/contents/ui/main.qml:72
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
@@ -110,10 +110,9 @@ msgid ""
 msgstr "发生错误：“%1”。如果应用已停止工作，请考虑重新启动它。"
 
 #: src/contents/ui/SettingsDialog.qml:25
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select camera"
-msgstr "切换相机"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:35
 #, kde-format
@@ -139,30 +138,3 @@ msgstr "Jonah Brüchert"
 #, kde-format
 msgid "Andrew Wang"
 msgstr ""
-
-#~ msgid "Camera is busy. Is another application using it?"
-#~ msgstr "相机正忙。请检查是否有其他应用正在使用相机。"
-
-#~ msgid "Missing camera resource."
-#~ msgstr "相机资源缺失。"
-
-#~ msgid "Resolution"
-#~ msgstr "分辨率"
-
-#~ msgid "White balance"
-#~ msgstr "白平衡"
-
-#~ msgid "Auto"
-#~ msgstr "自动"
-
-#~ msgid "Sunlight"
-#~ msgstr "日光"
-
-#~ msgid "Cloudy"
-#~ msgstr "阴天"
-
-#~ msgid "Tungsten"
-#~ msgstr "白炽灯"
-
-#~ msgid "Fluorescent"
-#~ msgstr "荧光灯"

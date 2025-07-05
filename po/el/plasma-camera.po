@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-04 00:44+0000\n"
+"POT-Creation-Date: 2025-07-05 00:44+0000\n"
 "PO-Revision-Date: 2024-09-19 16:47+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -28,82 +28,82 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sstavra@gmail.com"
 
-#: src/contents/ui/CameraPage.qml:29 src/contents/ui/main.qml:19
-#, kde-format
-msgid "Camera"
-msgstr "Κάμερα"
-
-#: src/contents/ui/CameraPage.qml:43
-#, kde-format
-msgid "Switch mode"
-msgstr "Εναλλαγή λειτουργίας"
-
-#: src/contents/ui/CameraPage.qml:66
-#, kde-format
-msgid "Cancel self-timer"
-msgstr "Ακύρωση χρονομέτρου"
-
-#: src/contents/ui/CameraPage.qml:68
-#, kde-format
-msgid "Capture photo"
-msgstr "Λήψη φωτογραφίας"
-
-#: src/contents/ui/CameraPage.qml:70
-#, kde-format
-msgid "Stop recording video"
-msgstr "Διακοπή εγγραφής βίντεο"
-
-#: src/contents/ui/CameraPage.qml:72
-#, kde-format
-msgid "Start recording video"
-msgstr "Έναρξη εγγραφής βίντεο"
-
-#: src/contents/ui/CameraPage.qml:102
-#, kde-format
-msgid "Switch Camera"
-msgstr "Εναλλαγή κάμερας"
-
-#: src/contents/ui/CameraPage.qml:148
-#, kde-format
-msgid "Camera not available"
-msgstr "Η κάμερα δεν είναι διαθέσιμη"
-
-#: src/contents/ui/CameraPage.qml:393
+#: src/contents/ui/camera/CameraControls.qml:165
 #, kde-format
 msgid "Photo"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:398
+#: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Video"
 msgstr ""
 
-#: src/contents/ui/CameraPage.qml:421
+#: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
+#, kde-format
+msgid "Camera"
+msgstr "Κάμερα"
+
+#: src/contents/ui/camera/CameraPage.qml:60
+#, kde-format
+msgid "Switch mode"
+msgstr "Εναλλαγή λειτουργίας"
+
+#: src/contents/ui/camera/CameraPage.qml:90
+#, kde-format
+msgid "Switch Camera"
+msgstr "Εναλλαγή κάμερας"
+
+#: src/contents/ui/camera/CaptureController.qml:35
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "Ακύρωση χρονομέτρου"
+
+#: src/contents/ui/camera/CaptureController.qml:37
+#, kde-format
+msgid "Capture photo"
+msgstr "Λήψη φωτογραφίας"
+
+#: src/contents/ui/camera/CaptureController.qml:39
+#, kde-format
+msgid "Stop recording video"
+msgstr "Διακοπή εγγραφής βίντεο"
+
+#: src/contents/ui/camera/CaptureController.qml:41
+#, kde-format
+msgid "Start recording video"
+msgstr "Έναρξη εγγραφής βίντεο"
+
+#: src/contents/ui/camera/CaptureController.qml:89
 #, kde-format
 msgid "Took a photo"
 msgstr "Ελήφθη φωτογραφία"
 
-#: src/contents/ui/CameraPage.qml:423
+#: src/contents/ui/camera/CaptureController.qml:92
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Αποτυχία λήψης φωτογραφίας"
 
-#: src/contents/ui/CameraPage.qml:429
+#: src/contents/ui/camera/CaptureController.qml:97
 #, kde-format
 msgid "Stopped recording"
 msgstr "Η εγγραφή διακόπηκε"
 
-#: src/contents/ui/CameraPage.qml:434
+#: src/contents/ui/camera/CaptureController.qml:103
 #, kde-format
 msgid "Started recording"
 msgstr "Η εγγραφή ξεκίνησε"
 
-#: src/contents/ui/CameraPage.qml:436
+#: src/contents/ui/camera/CaptureController.qml:105
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Αποτυχία έναρξης εγγραφής"
 
-#: src/contents/ui/main.qml:77
+#: src/contents/ui/camera/Viewfinder.qml:28
+#, kde-format
+msgid "Camera not available"
+msgstr "Η κάμερα δεν είναι διαθέσιμη"
+
+#: src/contents/ui/main.qml:72
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
