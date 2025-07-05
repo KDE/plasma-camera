@@ -129,6 +129,7 @@ Rectangle {
                 Layout.maximumWidth: height
 
                 enabled: root.switchCameraEnabled
+                opacity: enabled ? 1 : 0 // use opacity instead of visible, so space is still used
                 onClicked: root.switchCameraRequested()
             }
 

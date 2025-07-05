@@ -89,7 +89,7 @@ Kirigami.Page {
             text: i18n("Switch Camera")
             icon.color: "transparent"
             icon.name: "camera-photo-symbolic"
-            enabled: !root.camera.busy
+            enabled: !root.camera.busy && root.camera.cameraDeviceIds.length > 1
 
             onTriggered: root.camera.switchToNextCamera();
         }
