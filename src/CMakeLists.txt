@@ -26,6 +26,7 @@ target_link_libraries(
         Qt::Qml
         Qt::Quick
         Qt::Svg
+        Qt::Sensors
         Qt6::Multimedia
         KF6::CoreAddons
         KF6::I18n

@@ -21,6 +21,9 @@ PlasmaCameraManager::PlasmaCameraManager(QObject *parent) : QObject(parent)
 
     m_session.setVideoFrameInput(&m_videoInput);
     connect(&m_videoFrameTimer, &QTimer::timeout, this, &PlasmaCameraManager::processVideoFrame);
+    connect(&m_orientationSensor, &QOrientationSensor::readingChanged, this, &PlasmaCameraManager::updateFromOrientationSensor);
+
+    m_orientationSensor.start();
 
     m_format.setFileFormat(QMediaFormat::FileFormat::MPEG4);
     m_format.setVideoCodec(QMediaFormat::VideoCodec::H264);
@@ -344,16 +347,16 @@ void PlasmaCameraManager::processViewfinderFrame(const QImage &image)
     // Mirror output if requested
     frame.setMirrored(m_plasmaCamera->mirrorOutput());
 
+    // Add to sink
     m_videoSink->setVideoFrame(frame);
+
+    // Set as video frame for video recording
     m_videoFrame = std::move(frame);
     m_frameRecorded = false;
 }
 
 void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
 {
-    // TODO: should this be moved to a different thread (saving an image can be a heavy task)
-    // qDebug() << "PlasmaCameraManager::processCaptureImage";
-
     const QString fileName = PlasmaLibcameraUtils::generateFileName(
         m_imageCaptureFileName, QStandardPaths::PicturesLocation, QLatin1String("jpg"));
     QFile file(fileName);
@@ -362,15 +365,15 @@ void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
 
     // Flip image if requested
     if (m_plasmaCamera->mirrorOutput()) {
-        // image = image.flipped();
-        image = image.mirrored(); // Deprecated, replace with above once we are on Qt 6.9
+        image = image.mirrored(); // Deprecated, replace with image.flipped() once we are on Qt 6.9
     }
 
     // Do software rotation
     // From testing, most drivers don't seem to implement hardware orientation correctly (CameraConfiguration::orientation),
     // it either isn't supported or just crashes. So we will just use software rotation for best hardware compatibility.
     QTransform transform;
-    transform.rotate(m_plasmaCamera->softwareRotationDegrees());
+    double degrees = m_plasmaCamera->softwareRotationDegrees() + m_orientationSensorDegrees;
+    transform.rotate(degrees);
     image = image.transformed(transform);
 
     // TODO: set format and quality
@@ -405,6 +408,37 @@ void PlasmaCameraManager::processVideoFrame()
         m_frameRecorded = true;
     }
     m_frameRecordingCount++;
+}
+
+void PlasmaCameraManager::updateFromOrientationSensor()
+{
+    QOrientationReading *reading = m_orientationSensor.reading();
+    if (!reading) {
+        return;
+    }
+
+    qInfo() << "Orientation sensor reported update:" << reading->orientation();
+
+    switch (reading->orientation()) {
+    case QOrientationReading::Orientation::TopUp:
+        m_orientationSensorDegrees = 0.0f;
+        break;
+    case QOrientationReading::Orientation::TopDown:
+        m_orientationSensorDegrees = 180.0f;
+        break;
+    case QOrientationReading::Orientation::LeftUp:
+        m_orientationSensorDegrees = 90.0f;
+        break;
+    case QOrientationReading::Orientation::RightUp:
+        m_orientationSensorDegrees = 270.0f;
+        break;
+    case QOrientationReading::Orientation::FaceUp:
+    case QOrientationReading::Orientation::FaceDown:
+    case QOrientationReading::Orientation::Undefined:
+    default:
+        m_orientationSensorDegrees = 0.0f;
+        break;
+    }
 }
 
 int PlasmaCameraManager::captureImageInternal()

@@ -23,7 +23,15 @@ include(KDEGitCommitHooks)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
 
-find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS Core Quick Test Gui Svg QuickControls2)
+find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS
+    Core
+    Quick
+    Test
+    Gui
+    Svg
+    QuickControls2
+    Sensors
+)
 
 if(NOT ANDROID)
     find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Widgets)

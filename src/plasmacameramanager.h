@@ -3,8 +3,9 @@
 
 #pragma once
 
-#include <QQmlEngine>
 #include <KAboutData>
+#include <QOrientationSensor>
+#include <QQmlEngine>
 #include <QtMultimedia>
 
 #include <libcamera/libcamera.h>
@@ -168,6 +169,7 @@ private Q_SLOTS:
     void processViewfinderFrame(const QImage &image);
     void processCaptureImage(const QQueue<QImage> &frames);
     void processVideoFrame();
+    void updateFromOrientationSensor();
 
     void setIsSavingVideo(bool isSavingVideo);
 
@@ -203,6 +205,10 @@ private:
     QMediaRecorder *m_recorder = nullptr;
     QAudioInput *m_audioInput = nullptr;
     float m_videoRecordingFps = 24.0f;
+
+    // Device orientation for correct rotation
+    QOrientationSensor m_orientationSensor;
+    float m_orientationSensorDegrees = 0.0f;
 
     // internal
     Settings m_settings;
