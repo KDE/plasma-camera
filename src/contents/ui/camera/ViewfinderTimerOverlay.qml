@@ -87,8 +87,8 @@ Item {
         ParallelAnimation {
             OpacityAnimator {
                 target: captureTimerIcon
-                from: 0
-                to: 1
+                from: 1
+                to: 0
                 duration: 500
             }
 
@@ -103,8 +103,8 @@ Item {
         ParallelAnimation {
             OpacityAnimator {
                 target: captureTimerIcon
-                from: 1
-                to: 0
+                from: 0
+                to: 1
                 duration: 500
             }
 
