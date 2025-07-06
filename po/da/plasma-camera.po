@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 00:44+0000\n"
+"POT-Creation-Date: 2025-07-06 00:44+0000\n"
 "PO-Revision-Date: 2020-10-15 21:44+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish\n"
@@ -26,12 +26,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ","
 
-#: src/contents/ui/camera/CameraControls.qml:165
+#: src/contents/ui/camera/CameraControls.qml:169
 #, kde-format
 msgid "Photo"
 msgstr ""
 
-#: src/contents/ui/camera/CameraControls.qml:170
+#: src/contents/ui/camera/CameraControls.qml:174
 #, kde-format
 msgid "Video"
 msgstr ""
@@ -41,12 +41,12 @@ msgstr ""
 msgid "Camera"
 msgstr "Kamera"
 
-#: src/contents/ui/camera/CameraPage.qml:60
+#: src/contents/ui/camera/CameraPage.qml:59
 #, kde-format
 msgid "Switch mode"
 msgstr "Skift tilstand"
 
-#: src/contents/ui/camera/CameraPage.qml:90
+#: src/contents/ui/camera/CameraPage.qml:89
 #, kde-format
 msgid "Switch Camera"
 msgstr "Skift kamera"
@@ -101,7 +101,7 @@ msgstr "Kunne ikke starte optagelse"
 msgid "Camera not available"
 msgstr "Kamera ikke tilgængeligt"
 
-#: src/contents/ui/main.qml:72
+#: src/contents/ui/main.qml:69
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "

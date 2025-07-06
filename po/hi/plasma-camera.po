@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 00:44+0000\n"
+"POT-Creation-Date: 2025-07-06 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -27,12 +27,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "आपके ईमेल"
 
-#: src/contents/ui/camera/CameraControls.qml:165
+#: src/contents/ui/camera/CameraControls.qml:169
 #, kde-format
 msgid "Photo"
 msgstr "तस्वीर"
 
-#: src/contents/ui/camera/CameraControls.qml:170
+#: src/contents/ui/camera/CameraControls.qml:174
 #, kde-format
 msgid "Video"
 msgstr "वीडियो"
@@ -42,12 +42,12 @@ msgstr "वीडियो"
 msgid "Camera"
 msgstr "कैमरा"
 
-#: src/contents/ui/camera/CameraPage.qml:60
+#: src/contents/ui/camera/CameraPage.qml:59
 #, kde-format
 msgid "Switch mode"
 msgstr "स्विच मोड"
 
-#: src/contents/ui/camera/CameraPage.qml:90
+#: src/contents/ui/camera/CameraPage.qml:89
 #, kde-format
 msgid "Switch Camera"
 msgstr "कैमरा स्विच करें"
@@ -102,7 +102,7 @@ msgstr "रिकॉर्डिंग शुरू करने में व�
 msgid "Camera not available"
 msgstr "कैमरा उपलब्ध नहीं है"
 
-#: src/contents/ui/main.qml:72
+#: src/contents/ui/main.qml:69
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "

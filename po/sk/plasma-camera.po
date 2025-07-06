@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 00:44+0000\n"
+"POT-Creation-Date: 2025-07-06 00:44+0000\n"
 "PO-Revision-Date: 2020-03-26 14:20+0100\n"
 "Last-Translator: Dusan Kazik <prescott66@gmail.com>\n"
 "Language-Team: sk\n"
@@ -26,12 +26,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "prescott66@gmail.com"
 
-#: src/contents/ui/camera/CameraControls.qml:165
+#: src/contents/ui/camera/CameraControls.qml:169
 #, kde-format
 msgid "Photo"
 msgstr ""
 
-#: src/contents/ui/camera/CameraControls.qml:170
+#: src/contents/ui/camera/CameraControls.qml:174
 #, kde-format
 msgid "Video"
 msgstr ""
@@ -41,12 +41,12 @@ msgstr ""
 msgid "Camera"
 msgstr "Fotoaparát"
 
-#: src/contents/ui/camera/CameraPage.qml:60
+#: src/contents/ui/camera/CameraPage.qml:59
 #, kde-format
 msgid "Switch mode"
 msgstr "Prepnúť režim"
 
-#: src/contents/ui/camera/CameraPage.qml:90
+#: src/contents/ui/camera/CameraPage.qml:89
 #, kde-format
 msgid "Switch Camera"
 msgstr "Prepnúť fotoaparát"
@@ -101,7 +101,7 @@ msgstr "Zlyhalo spustenie nahrávania"
 msgid "Camera not available"
 msgstr "Fotoaparát nie je dostupný"
 
-#: src/contents/ui/main.qml:72
+#: src/contents/ui/main.qml:69
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
