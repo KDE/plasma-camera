@@ -29,7 +29,15 @@ QQC2.ToolButton {
         width: height
         radius: height / 2
         border.color: "white"
-        border.width: (!Kirigami.Settings.isMobile && parent.hovered) ? (parent.down ? parent.height / 2 : 10) : 5
+        border.width: {
+            if (parent.down) {
+                return parent.height / 2;
+            }
+            if (parent.hovered && !Kirigami.Settings.isMobile) {
+                return 10;
+            }
+            return 5;
+        }
 
         color: {
             if (root.captureMode === CameraPage.CaptureMode.Photo) {
@@ -45,7 +53,7 @@ QQC2.ToolButton {
             width: height
             anchors.centerIn: parent
 
-            radius: root.isRecording ? Kirigami.Units.cornerRadius : width / 2
+            radius: root.isRecording ? Kirigami.Units.smallSpacing : width / 2
 
             Behavior on opacity {
                 PropertyAnimation {
