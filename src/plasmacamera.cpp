@@ -243,6 +243,11 @@ int PlasmaCamera::softwareRotationDegrees() const
     return m_softwareRotationDegrees;
 }
 
+bool PlasmaCamera::mirrorOutput() const
+{
+    return m_mirrorOutput;
+}
+
 bool PlasmaCamera::busy() const
 {
     return m_busy;
@@ -620,6 +625,10 @@ bool PlasmaCamera::acquire()
         m_softwareRotationDegrees = 90;
         break;
     }
+
+    // Find whether the camera output needs to be mirrored (ex. selife cam)
+    std::optional<int> location = m_camera->properties().get(libcamera::properties::Location);
+    m_mirrorOutput = location.value_or(libcamera::properties::CameraLocationExternal) == libcamera::properties::CameraLocationFront;
 
     return true;
 }

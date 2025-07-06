@@ -163,6 +163,7 @@ public:
     Settings settings() const;
     float fps() const;
     int softwareRotationDegrees() const;
+    bool mirrorOutput() const;
 
 Q_SIGNALS:
     void errorChanged();
@@ -276,6 +277,9 @@ private:
 
     // The amount of degrees to rotate captured input by.
     int m_softwareRotationDegrees = 0.0f;
+
+    // Whether the camera output should be mirrored
+    bool m_mirrorOutput = false;
 
     Settings m_settings;
 

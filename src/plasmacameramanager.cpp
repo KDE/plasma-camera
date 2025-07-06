@@ -341,6 +341,9 @@ void PlasmaCameraManager::processViewfinderFrame(const QImage &image)
         break;
     }
 
+    // Mirror output if requested
+    frame.setMirrored(m_plasmaCamera->mirrorOutput());
+
     m_videoSink->setVideoFrame(frame);
     m_videoFrame = std::move(frame);
     m_frameRecorded = false;
@@ -356,6 +359,12 @@ void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
     QFile file(fileName);
 
     QImage image = frames.head();
+
+    // Flip image if requested
+    if (m_plasmaCamera->mirrorOutput()) {
+        // image = image.flipped();
+        image = image.mirrored(); // Deprecated, replace with above once we are on Qt 6.9
+    }
 
     // Do software rotation
     // From testing, most drivers don't seem to implement hardware orientation correctly (CameraConfiguration::orientation),
