@@ -13,8 +13,11 @@ import org.kde.kirigamiaddons.components as Components
 Rectangle {
     id: root
 
+    required property bool audioRecordingEnabled
+    required property bool audioRecordingEnabledShown
     required property bool exposureValueEnabled
 
+    signal audioEnabledChangeRequested(enabled: bool)
     signal exposureValueRequested(value: real)
 
     height: controlsLayout.implicitHeight
@@ -22,6 +25,7 @@ Rectangle {
 
     ColumnLayout {
         id: controlsLayout
+        spacing: Kirigami.Units.smallSpacing
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top
@@ -31,13 +35,26 @@ Rectangle {
 
         RowLayout {
             id: controlsRow
-            visible: exposureControlsButton.visible
+
             spacing: Kirigami.Units.largeSpacing
             Layout.fillWidth: true
             Layout.topMargin: Kirigami.Units.largeSpacing
             Layout.bottomMargin: Kirigami.Units.largeSpacing
 
             Item { Layout.fillWidth: true }
+
+            QQC2.ToolButton {
+                id: audioRecordingButton
+                icon.name: root.audioRecordingEnabled ? 'microphone-sensitivity-high-symbolic' : 'microphone-sensitivity-muted-symbolic'
+                icon.color: 'white'
+                text: root.audioRecordingEnabled ? i18n('Microphone is enabled') : i18n('Microphone is disabled')
+                display: QQC2.ToolButton.IconOnly
+                visible: root.audioRecordingEnabledShown
+                onClicked: root.audioEnabledChangeRequested(!root.audioRecordingEnabled)
+
+                QQC2.ToolTip.visible: down
+                QQC2.ToolTip.text: text
+            }
 
             QQC2.ToolButton {
                 id: exposureControlsButton
@@ -47,6 +64,9 @@ Rectangle {
                 display: QQC2.ToolButton.IconOnly
                 visible: root.exposureValueEnabled
                 onClicked: exposureSelectStrip.shown = !exposureSelectStrip.shown
+
+                QQC2.ToolTip.visible: down
+                QQC2.ToolTip.text: text
             }
 
             Item { Layout.fillWidth: true }

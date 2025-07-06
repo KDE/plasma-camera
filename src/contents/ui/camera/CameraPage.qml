@@ -112,8 +112,12 @@ Kirigami.Page {
             anchors.left: parent.left
             anchors.right: parent.right
 
+            audioRecordingEnabled: root.captureSession.audioRecordingEnabled
+            audioRecordingEnabledShown: root.captureMode === CameraPage.CaptureMode.Video && !root.captureSession.isRecordingVideo && !root.captureSession.isSavingVideo
             exposureValueEnabled: root.camera.exposureValueAvailable
+
             onExposureValueRequested: (value) => root.camera.exposureValue = value;
+            onAudioEnabledChangeRequested: (enabled) => root.captureSession.audioRecordingEnabled = enabled;
         }
 
         // Footer controls

@@ -15,12 +15,10 @@ PlasmaCameraManager::PlasmaCameraManager(QObject *parent)
     setQuality(static_cast<Quality>(CameraSettings::self()->videoRecordingQuality()));
 
     // Set to default audio input
-    m_audioInput = new QAudioInput();
-    m_audioInput->setDevice(QAudioDevice());
+    setAudioRecordingEnabledInternal(true);
 
     // m_session links m_videoInput and m_audioInput to m_recorder
     m_session.setVideoFrameInput(&m_videoInput);
-    m_session.setAudioInput(m_audioInput);
     connect(&m_videoFrameTimer, &QTimer::timeout, this, &PlasmaCameraManager::processVideoFrame);
     connect(&m_orientationSensor, &QOrientationSensor::readingChanged, this, &PlasmaCameraManager::updateFromOrientationSensor);
 
@@ -29,6 +27,17 @@ PlasmaCameraManager::PlasmaCameraManager(QObject *parent)
     m_format.setFileFormat(QMediaFormat::FileFormat::MPEG4);
     m_format.setVideoCodec(QMediaFormat::VideoCodec::H264);
     m_format.setAudioCodec(QMediaFormat::AudioCodec::MP3);
+
+    // Listen to audio inputs changing, and change audio device if needed
+    QMediaDevices *mediaDevices = new QMediaDevices(this);
+    connect(mediaDevices, &QMediaDevices::audioInputsChanged, this, [this]() {
+        if (audioRecordingEnabled()) {
+            bool success = findAndSetDefaultRecordingDevice();
+            if (!success) {
+                setAudioRecordingEnabled(false);
+            }
+        }
+    });
 }
 
 PlasmaCameraManager::~PlasmaCameraManager() = default;
@@ -86,6 +95,34 @@ QAudioInput *PlasmaCameraManager::audioInput() const
 float PlasmaCameraManager::videoRecordingFps() const
 {
     return m_videoRecordingFps;
+}
+
+bool PlasmaCameraManager::audioRecordingEnabled() const
+{
+    return m_audioRecordingEnabled;
+}
+
+void PlasmaCameraManager::setAudioRecordingEnabled(bool enabled)
+{
+    if (enabled == m_audioRecordingEnabled) {
+        return;
+    }
+    setAudioRecordingEnabledInternal(enabled);
+}
+
+void PlasmaCameraManager::setAudioRecordingEnabledInternal(bool enabled)
+{
+    if (enabled) {
+        // Try to set the default recording device
+        if (!findAndSetDefaultRecordingDevice()) {
+            return;
+        }
+    } else {
+        setAudioInput(nullptr);
+    }
+
+    m_audioRecordingEnabled = enabled;
+    Q_EMIT audioRecordingEnabledChanged();
 }
 
 bool PlasmaCameraManager::isRecordingVideo() const
@@ -271,6 +308,29 @@ void PlasmaCameraManager::setAudioInput(QAudioInput *audioInput)
 
         m_session.setAudioInput(m_audioInput);
     }
+}
+
+bool PlasmaCameraManager::findAndSetDefaultRecordingDevice()
+{
+    // Initialize default audio input if we are enabling it
+    QAudioDevice audioDevice;
+
+    for (const QAudioDevice &device : QMediaDevices::audioInputs()) {
+        if (device.isDefault() && device.mode() == QAudioDevice::Input) {
+            audioDevice = device;
+        }
+    }
+
+    if (QMediaDevices::audioInputs().isEmpty() || audioDevice.isNull()) {
+        qWarning() << "No audio devices found for recording";
+        return false;
+    }
+
+    QAudioInput *audioInput = new QAudioInput();
+    audioInput->setDevice(std::move(audioDevice));
+    setAudioInput(audioInput);
+
+    return true;
 }
 
 void PlasmaCameraManager::setVideoRecordingFps(const float fps)

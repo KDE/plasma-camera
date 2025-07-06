@@ -47,6 +47,7 @@ class PlasmaCameraManager : public QObject
   	Q_PROPERTY(PlasmaCamera *plasmaCamera READ plasmaCamera WRITE setPlasmaCamera NOTIFY plasmaCameraChanged)
     Q_PROPERTY(QVideoSink *videoSink READ videoSink WRITE setVideoSink NOTIFY videoSinkChanged)
     Q_PROPERTY(QMediaRecorder *recorder READ recorder WRITE setRecorder NOTIFY recorderChanged)
+    Q_PROPERTY(bool audioRecordingEnabled READ audioRecordingEnabled WRITE setAudioRecordingEnabled NOTIFY audioRecordingEnabledChanged)
     Q_PROPERTY(QAudioInput *audioInput READ audioInput WRITE setAudioInput NOTIFY audioInputChanged)
     Q_PROPERTY(float videoRecordingFps READ videoRecordingFps WRITE setVideoRecordingFps NOTIFY videoRecordingFpsChanged)
 
@@ -106,6 +107,9 @@ public:
     QAudioInput *audioInput() const;
     float videoRecordingFps() const;
 
+    bool audioRecordingEnabled() const;
+    void setAudioRecordingEnabled(bool enabled);
+
     bool isRecordingVideo() const;
     bool isSavingVideo() const;
 
@@ -136,6 +140,7 @@ Q_SIGNALS:
     void videoRecordingFpsChanged(float fps);
     void imageSaved(int id, const QString &fileName);
 
+    void audioRecordingEnabledChanged();
     void isRecordingVideoChanged();
     void isSavingVideoChanged();
 
@@ -174,6 +179,15 @@ private Q_SLOTS:
     void setIsSavingVideo(bool isSavingVideo);
 
 private:
+    /*!
+     * Loop over the list of available audio input devices and set it to be the
+     * audio input for video recording.
+     *
+     * Returns whether an audio input was able to be found and set.
+     */
+    bool findAndSetDefaultRecordingDevice();
+
+    void setAudioRecordingEnabledInternal(bool enabled);
     int captureImageInternal();
 
     // error handling
@@ -205,6 +219,7 @@ private:
     QMediaRecorder *m_recorder = nullptr;
     QAudioInput *m_audioInput = nullptr;
     float m_videoRecordingFps = 24.0f;
+    bool m_audioRecordingEnabled = true;
 
     // Device orientation for correct rotation
     QOrientationSensor m_orientationSensor;
