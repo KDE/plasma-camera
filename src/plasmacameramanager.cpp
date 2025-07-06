@@ -6,20 +6,15 @@
 #include "plasmacameramanager.h"
 #include "plasmacamera/path.h"
 
-
-
 PlasmaCameraManager::PlasmaCameraManager(QObject *parent) : QObject(parent)
 {
-    /*
-     * m_session links m_videoInput and m_audioInput to m_recorder
-     * QVideoFrameInput m_videoInput will just regurgitate the stream of frames we feed it
-     *
-     * readyToSendVideoFrame signal is not matched with the recorder fps
-     * - connect(&m_videoInput, &QVideoFrameInput::readyToSendVideoFrame, this, &PlasmaCameraManager::processVideoFrame);
-     * - with a basic test I got ~200 readyToSendVideoFrames signals in 1 second (but we are recording at 24 fps)
-     */
+    // Set to default audio input
+    m_audioInput = new QAudioInput();
+    m_audioInput->setDevice(QAudioDevice());
 
+    // m_session links m_videoInput and m_audioInput to m_recorder
     m_session.setVideoFrameInput(&m_videoInput);
+    m_session.setAudioInput(m_audioInput);
     connect(&m_videoFrameTimer, &QTimer::timeout, this, &PlasmaCameraManager::processVideoFrame);
     connect(&m_orientationSensor, &QOrientationSensor::readingChanged, this, &PlasmaCameraManager::updateFromOrientationSensor);
 
@@ -31,8 +26,6 @@ PlasmaCameraManager::PlasmaCameraManager(QObject *parent) : QObject(parent)
 }
 
 PlasmaCameraManager::~PlasmaCameraManager() = default;
-
-
 
 PlasmaCameraManager::Error PlasmaCameraManager::error() const
 {
@@ -259,9 +252,6 @@ void PlasmaCameraManager::updateRecorderSettings()
     // Set the frame rate
     m_recorder->setVideoFrameRate(m_videoRecordingFps);
 
-    // Set encoding paramaters
-    // m_recorder->setEncodingMode(QMediaRecorder::ConstantQualityEncoding);
-
     // Set frame timer polling rate
     m_videoFrameTimer.setInterval(static_cast<int>(1000.0f / m_videoRecordingFps));
 }
@@ -271,6 +261,8 @@ void PlasmaCameraManager::setAudioInput(QAudioInput *audioInput)
     if (m_audioInput != audioInput) {
         m_audioInput = audioInput;
         Q_EMIT audioInputChanged();
+
+        m_session.setAudioInput(m_audioInput);
     }
 }
 
