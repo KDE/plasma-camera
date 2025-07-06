@@ -84,6 +84,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         QString(),
         QStringLiteral("https://koitu.com/"));
 
+    about.addAuthor(i18n("Devin Lin"), QString(), QStringLiteral("devin@kde.org"), QStringLiteral("https://espi.dev/"));
+
     about.setProgramLogo(QApplication::windowIcon());
 
     // set about as the information about the app
