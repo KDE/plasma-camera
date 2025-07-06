@@ -3,11 +3,17 @@
 
 #include <QSize>
 
-#include "plasmacameramanager.h"
+#include "camerasettings.h"
 #include "plasmacamera/path.h"
+#include "plasmacameramanager.h"
 
-PlasmaCameraManager::PlasmaCameraManager(QObject *parent) : QObject(parent)
+PlasmaCameraManager::PlasmaCameraManager(QObject *parent)
+    : QObject(parent)
 {
+    // Read saved configuration settings from kconfig
+    setVideoRecordingFps(CameraSettings::self()->videoRecordingFps());
+    setQuality(static_cast<Quality>(CameraSettings::self()->videoRecordingQuality()));
+
     // Set to default audio input
     m_audioInput = new QAudioInput();
     m_audioInput->setDevice(QAudioDevice());
@@ -150,6 +156,7 @@ void PlasmaCameraManager::setQuality(const Quality quality)
         m_quality = quality;
         Q_EMIT qualityChanged();
 
+        CameraSettings::self()->setVideoRecordingQuality(static_cast<int>(quality));
         updateRecorderSettings();
     }
 }
@@ -270,6 +277,7 @@ void PlasmaCameraManager::setVideoRecordingFps(const float fps)
 {
     if (m_videoRecordingFps != fps) {
         m_videoRecordingFps = fps;
+        CameraSettings::self()->setVideoRecordingFps(fps);
         Q_EMIT videoRecordingFpsChanged(fps);
 
         updateRecorderSettings();

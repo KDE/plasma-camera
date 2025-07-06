@@ -9,9 +9,15 @@
                           http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
     <kcfgfile name="plasmacamerarc" />
     <group name="General">
-        <entry key="resolution" type="size"></entry>
+        <entry key="resolution" type="size"></entry> <!-- Unused -->
         <entry key="cameraDeviceId" type="string"></entry>
-        <entry key="cameraPosition" type="int"></entry>
-        <entry key="whiteBalanceMode" type="int"></entry>
+        <entry key="cameraPosition" type="int"></entry> <!-- Unused -->
+        <entry key="whiteBalanceMode" type="int"></entry> <!-- Unused -->
+        <entry key="videoRecordingFps" type="int">
+            <default>24</default>
+        </entry>
+        <entry key="videoRecordingQuality" type="int">
+            <default>2</default> <!-- NormalQuality -->
+        </entry>
     </group>
 </kcfg>

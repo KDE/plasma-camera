@@ -9,10 +9,9 @@
 
 #include "plasmacamera.h"
 
-
-
 PlasmaCamera::PlasmaCamera(QObject *parent) : QObject(parent)
 {
+    // Initialize camera manager
     m_cameraManager = std::make_unique<libcamera::CameraManager>();
     if (const int ret = m_cameraManager->start(); ret != 0) {
         // if there exists two CameraManager we get undefined behavior
