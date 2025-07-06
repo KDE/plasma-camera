@@ -29,7 +29,7 @@ QQC2.ToolButton {
         width: height
         radius: height / 2
         border.color: "white"
-        border.width: parent.hovered ? (parent.down ? parent.height / 2 : 10) : 5
+        border.width: (!Kirigami.Settings.isMobile && parent.hovered) ? (parent.down ? parent.height / 2 : 10) : 5
 
         color: {
             if (root.captureMode === CameraPage.CaptureMode.Photo) {
