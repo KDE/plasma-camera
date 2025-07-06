@@ -294,7 +294,8 @@ void PlasmaCameraManager::updateRecorderSettings()
     // m_recorder->setVideoResolution(QSize(1280, 720));
 
     // Set the frame rate
-    m_recorder->setVideoFrameRate(m_videoRecordingFps);
+    // m_recorder->setVideoFrameRate(m_videoRecordingFps);
+    m_recorder->setVideoFrameRate(0);
 
     // Set frame timer polling rate
     m_videoFrameTimer.setInterval(static_cast<int>(1000.0f / m_videoRecordingFps));
@@ -456,11 +457,10 @@ void PlasmaCameraManager::processVideoFrame()
 {
     // Set the time in the video that the frame should show up.
     // This allows for frames to be dropped without impacting video speed.
-    // TODO: This causes severe frame corruption on devices that drop frames, so it's disabled for now
-    //
-    // int frameLengthMicroseconds = qRound(1000.0 * 1000.0 / m_videoRecordingFps);
-    // m_videoFrame.setStartTime(m_frameRecordingCount * frameLengthMicroseconds);
-    // m_videoFrame.setEndTime((m_frameRecordingCount + 1) * frameLengthMicroseconds);
+    // TODO: This causes severe frame corruption on devices that drop frames, how do we make it smoother?
+    int frameLengthMicroseconds = qRound(1000.0 * 1000.0 / m_videoRecordingFps);
+    m_videoFrame.setStartTime(m_frameRecordingCount * frameLengthMicroseconds);
+    m_videoFrame.setEndTime((m_frameRecordingCount + 1) * frameLengthMicroseconds - 1);
 
     // Attempt to send frame
     bool success = m_videoInput.sendVideoFrame(m_videoFrame);
