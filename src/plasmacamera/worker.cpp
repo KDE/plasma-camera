@@ -21,7 +21,7 @@ void Worker::init()
 {
     // start init after we have moved to the other thread
     m_framePollTimer = new QTimer(this);
-    m_framePollTimer->setInterval(1000/24); // manually set 24 fps
+    m_framePollTimer->setInterval(1000 / 60); // manually set 60 fps
     connect(m_framePollTimer, &QTimer::timeout, this, &Worker::requestNextFrame);
 
     setState(State::Ready);
