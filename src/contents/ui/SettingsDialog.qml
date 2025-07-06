@@ -40,6 +40,16 @@ Kirigami.MenuDialog {
         },
 
         Kirigami.Action {
+            text: i18n('Video recording framerate')
+            icon.name: 'emblem-videos-symbolic'
+
+            onTriggered: {
+                videoFpsDialogLoader.active = true;
+                videoFpsDialogLoader.item.open();
+            }
+        },
+
+        Kirigami.Action {
             text: i18n("About")
             icon.name: "help-about"
             onTriggered: applicationWindow().pageStack.push(aboutPage)
@@ -84,6 +94,50 @@ Kirigami.MenuDialog {
                             if (checked) {
                                 root.cameraManager.quality = radioDelegate.value;
                                 checked = Qt.binding(() => (radioDelegate.value == root.cameraManager.quality));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    property Loader videoFpsDialogLoader: Loader {
+        id: videoFpsDialogLoader
+        active: false
+
+        sourceComponent: Kirigami.Dialog {
+            id: selectVideoRecordingDialog
+            title: i18n('Video Recording Framerate')
+            preferredWidth: Kirigami.Units.gridUnit * 16
+
+            onClosed: videoFpsDialogLoader.active = false
+
+            ColumnLayout {
+                spacing: 0
+
+                Repeater {
+                    model: [
+                        { name: '24 FPS', value: 24 },
+                        { name: '30 FPS', value: 30 },
+                        { name: '60 FPS', value: 60 },
+                    ]
+
+                    delegate: QQC2.RadioDelegate {
+                        id: radioDelegate
+                        property string name: modelData.name
+                        property int value: modelData.value
+
+                        Layout.fillWidth: true
+                        topPadding: Kirigami.Units.smallSpacing * 2
+                        bottomPadding: Kirigami.Units.smallSpacing * 2
+
+                        text: name
+                        checked: value == root.cameraManager.videoRecordingFps
+                        onCheckedChanged: {
+                            if (checked) {
+                                root.cameraManager.videoRecordingFps = radioDelegate.value;
+                                checked = Qt.binding(() => (radioDelegate.value == root.cameraManager.videoRecordingFps));
                             }
                         }
                     }

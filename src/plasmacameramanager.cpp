@@ -20,7 +20,6 @@ PlasmaCameraManager::PlasmaCameraManager(QObject *parent) : QObject(parent)
      */
 
     m_session.setVideoFrameInput(&m_videoInput);
-    m_videoFrameTimer.setInterval(static_cast<int>(1000.0f / m_videoRecordingFps));
     connect(&m_videoFrameTimer, &QTimer::timeout, this, &PlasmaCameraManager::processVideoFrame);
 
     m_format.setFileFormat(QMediaFormat::FileFormat::MPEG4);
@@ -259,6 +258,9 @@ void PlasmaCameraManager::updateRecorderSettings()
 
     // Set encoding paramaters
     // m_recorder->setEncodingMode(QMediaRecorder::ConstantQualityEncoding);
+
+    // Set frame timer polling rate
+    m_videoFrameTimer.setInterval(static_cast<int>(1000.0f / m_videoRecordingFps));
 }
 
 void PlasmaCameraManager::setAudioInput(QAudioInput *audioInput)
