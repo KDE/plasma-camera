@@ -14,6 +14,7 @@ Rectangle {
     id: preview
 
     required property MediaRecorder videoRecorder
+    required property bool isSavingVideo
 
     property bool showVideoPreview: false // when set to true, the preview for the videoRecorder is shown, if false for the imageCapture
     property bool videoThumbnailRequested: false
@@ -29,7 +30,7 @@ Rectangle {
     }
 
     function createVideoThumbnail() {
-        if (videoThumbnailRequested && !(videoRecorder.recorderState === MediaRecorder.FinalizingStatus)) {
+        if (videoThumbnailRequested && !preview.isSavingVideo) {
             video.source = videoRecorder.actualLocation;
             video.play();
             video.pause();
@@ -79,9 +80,7 @@ Rectangle {
         Controls.BusyIndicator {
             id: thumbnailBusyIdicator
 
-            // TODO
-            // visible: (videoRecorder.recorderState === MediaRecorder.FinalizingStatus)
-            visible: false
+            visible: preview.isSavingVideo
             Kirigami.Theme.textColor: "white"
             anchors.fill: parent
             layer.enabled: thumbnailBusyIdicator.enabled

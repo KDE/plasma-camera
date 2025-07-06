@@ -47,7 +47,10 @@ class PlasmaCameraManager : public QObject
     Q_PROPERTY(QVideoSink *videoSink READ videoSink WRITE setVideoSink NOTIFY videoSinkChanged)
     Q_PROPERTY(QMediaRecorder *recorder READ recorder WRITE setRecorder NOTIFY recorderChanged)
     Q_PROPERTY(QAudioInput *audioInput READ audioInput WRITE setAudioInput NOTIFY audioInputChanged)
-    Q_PROPERTY(float fps READ fps WRITE setFps NOTIFY fpsChanged)
+    Q_PROPERTY(float videoRecordingFps READ videoRecordingFps WRITE setVideoRecordingFps NOTIFY videoRecordingFpsChanged)
+
+    Q_PROPERTY(bool isRecordingVideo READ isRecordingVideo NOTIFY isRecordingVideoChanged)
+    Q_PROPERTY(bool isSavingVideo READ isSavingVideo NOTIFY isSavingVideoChanged)
 
 public:
     explicit PlasmaCameraManager(QObject *parent = nullptr);
@@ -100,7 +103,16 @@ public:
     QVideoSink *videoSink() const;
     QMediaRecorder *recorder() const;
     QAudioInput *audioInput() const;
-    float fps() const;
+    float videoRecordingFps() const;
+
+    bool isRecordingVideo() const;
+    bool isSavingVideo() const;
+
+    // Called when the UI wants to start recording
+    Q_INVOKABLE void startRecordingVideo();
+
+    // Called when the UI wants to stop recording
+    Q_INVOKABLE void stopRecordingVideo();
 
 Q_SIGNALS:
     // error handling
@@ -120,8 +132,11 @@ Q_SIGNALS:
     void videoSinkChanged();
     void recorderChanged();
     void audioInputChanged();
-    void fpsChanged(float fps);
+    void videoRecordingFpsChanged(float fps);
     void imageSaved(int id, const QString &fileName);
+
+    void isRecordingVideoChanged();
+    void isSavingVideoChanged();
 
 public Q_SLOTS:
     // preforming an image capture
@@ -138,7 +153,7 @@ public Q_SLOTS:
     void setVideoSink(QVideoSink *videoSink);
     void setRecorder(QMediaRecorder *recorder);
     void setAudioInput(QAudioInput *audioInput);
-    void setFps(float fps);
+    void setVideoRecordingFps(float fps);
 
 private Q_SLOTS:
     // error handling
@@ -146,12 +161,15 @@ private Q_SLOTS:
     void unsetError();
 
     // settings
+    void updateRecorderSettings();
     void setSettings(const Settings &settings);
 
     // image processing
     void processViewfinderFrame(const QImage &image);
     void processCaptureImage(const QQueue<QImage> &frames);
     void processVideoFrame();
+
+    void setIsSavingVideo(bool isSavingVideo);
 
 private:
     int captureImageInternal();
@@ -166,7 +184,7 @@ private:
 
     // saving to file
     FileFormat m_fileFormat;
-    Quality m_quality;
+    Quality m_quality = Quality::NormalQuality;
     QList<FileFormat> m_supportedFileFormats;
 
     // preview and video recording
@@ -175,6 +193,8 @@ private:
     QImage m_currentFrame;
     QVideoFrame m_videoFrame;
     QVideoSink *m_videoSink = nullptr;
+    int m_frameRecordingCount = 0;
+    bool m_frameRecorded = false;
 
     QMediaCaptureSession m_session;
     QTimer m_videoFrameTimer;
@@ -182,11 +202,13 @@ private:
     QVideoFrameInput m_videoInput;
     QMediaRecorder *m_recorder = nullptr;
     QAudioInput *m_audioInput = nullptr;
-    float m_fps = 30.0f;
+    float m_videoRecordingFps = 24.0f;
 
     // internal
     Settings m_settings;
 
     int m_imageCaptureNum = 0;
     QString m_imageCaptureFileName;
+
+    bool m_isSavingVideo = false;
 };

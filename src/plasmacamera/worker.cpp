@@ -194,7 +194,6 @@ void Worker::processRequestDataAndEmit()
 {
     // Populates m_image
     processRequestData();
-    Q_EMIT viewFinderFrame(m_image.copy());
 
     // Implement photo capture
     if (m_mode == CaptureMode::StillImage) {
@@ -213,6 +212,9 @@ void Worker::processRequestDataAndEmit()
             Q_EMIT stillCaptureFrames(m_stillCaptureFrames);
         }
     }
+
+    // Emit view finder frame, m_image is moved for performance
+    Q_EMIT viewFinderFrame(std::move(m_image));
 }
 
 void Worker::processRequestData()

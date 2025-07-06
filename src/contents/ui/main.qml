@@ -19,8 +19,11 @@ Kirigami.ApplicationWindow {
     minimumWidth: 350
     title: i18n("Camera")
 
-    pageStack.initialPage: cameraPage
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.None
+    pageStack.initialPage: CameraPage {
+        id: cameraPage
+        camera: mainCamera
+    }
 
     function openSettings() {
         settingsDialog.open();
@@ -70,17 +73,10 @@ Kirigami.ApplicationWindow {
         }
     }
 
-    Component {
-        id: cameraPage
-
-        CameraPage {
-            camera: mainCamera
-        }
-    }
-
     SettingsDialog {
         id: settingsDialog
         camera: mainCamera
+        cameraManager: cameraPage.captureSession
     }
 }
 

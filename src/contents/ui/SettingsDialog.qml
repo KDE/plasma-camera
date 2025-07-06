@@ -1,8 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
-// SPDX-FileCopyrightText: 2025 Andrew Wang
-// SPDX-FileCopyrightText: 2018 Jonah Brüchert <jbb@kaidan.im>
-// SPDX-FileCopyrightText: 2013 Digia Plc and/or its subsidiary(-ies)
-// SPDX-License-Identifier: BSD-3-Clause
+// SPDX-License-Identifier: GPL-2.0-or-later
 
 import QtQuick
 import QtQuick.Layouts
@@ -19,6 +16,7 @@ Kirigami.MenuDialog {
     title: i18n('Settings')
 
     property PlasmaCamera camera
+    property PlasmaCameraManager cameraManager
 
     actions: [
         Kirigami.Action {
@@ -32,19 +30,75 @@ Kirigami.MenuDialog {
         },
 
         Kirigami.Action {
+            text: i18n('Video recording quality')
+            icon.name: 'emblem-videos-symbolic'
+
+            onTriggered: {
+                selectVideoRecordingQualityLoader.active = true;
+                selectVideoRecordingQualityLoader.item.open();
+            }
+        },
+
+        Kirigami.Action {
             text: i18n("About")
             icon.name: "help-about"
-            onTriggered: applicationWindow().pageStack.pushDialogLayer(aboutPage)
+            onTriggered: applicationWindow().pageStack.push(aboutPage)
         }
     ]
 
-    property Loader dialogLoader: Loader {
+    property Loader qualityLoader: Loader {
+        id: selectVideoRecordingQualityLoader
+        active: false
+
+        sourceComponent: Kirigami.Dialog {
+            id: selectVideoRecordingDialog
+            title: i18n('Video Recording Quality')
+            preferredWidth: Kirigami.Units.gridUnit * 16
+
+            onClosed: selectVideoRecordingQualityLoader.active = false
+
+            ColumnLayout {
+                spacing: 0
+
+                Repeater {
+                    model: [
+                        { name: i18n('Very low quality'), value: PlasmaCameraManager.VeryLowQuality },
+                        { name: i18n('Low quality'), value: PlasmaCameraManager.LowQuality },
+                        { name: i18n('Normal quality'), value: PlasmaCameraManager.NormalQuality },
+                        { name: i18n('High quality'), value: PlasmaCameraManager.HighQuality },
+                        { name: i18n('Very high quality'), value: PlasmaCameraManager.VeryHighQuality },
+                    ]
+
+                    delegate: QQC2.RadioDelegate {
+                        id: radioDelegate
+                        property string name: modelData.name
+                        property int value: modelData.value
+
+                        Layout.fillWidth: true
+                        topPadding: Kirigami.Units.smallSpacing * 2
+                        bottomPadding: Kirigami.Units.smallSpacing * 2
+
+                        text: name
+                        checked: value == root.cameraManager.quality
+                        onCheckedChanged: {
+                            if (checked) {
+                                root.cameraManager.quality = radioDelegate.value;
+                                checked = Qt.binding(() => (radioDelegate.value == root.cameraManager.quality));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    property Loader cameraDialogLoader: Loader {
         id: selectCameraDialogLoader
         active: false
 
         sourceComponent: Kirigami.Dialog {
             id: selectCameraDialog
-            title: qsTr("Select Camera")
+            title: i18n("Select Camera")
             preferredWidth: Kirigami.Units.gridUnit * 16
 
             onClosed: selectCameraDialogLoader.active = false

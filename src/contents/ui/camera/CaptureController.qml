@@ -24,7 +24,10 @@ QtObject {
     readonly property int countdownRemainingSeconds: countdownTimer.countdownRemainingSeconds
 
     // Whether the capture session is currently recording a video
-    readonly property bool isRecording: root.captureSession.recorder.recorderState === MediaRecorder.RecordingState
+    readonly property bool isRecording: root.captureSession.isRecordingVideo
+
+    // Whether the capture session is currently saving a video
+    readonly property bool isSaving: root.captureSession.isSavingVideo
 
     // Whether the capture timer is running
     readonly property bool captureTimerRunning: captureTimer.running
@@ -35,7 +38,7 @@ QtObject {
             return i18n("Cancel self-timer");
         else if (root.captureMode === CameraPage.CaptureMode.Photo)
             return i18n("Capture photo");
-        else if (captureSession.isRecording)
+        else if (root.isRecording)
             return i18n("Stop recording video");
         else if (root.captureMode === CameraPage.CaptureMode.Video)
             return i18n("Start recording video");
@@ -93,12 +96,12 @@ QtObject {
                 }
 
             } else if (root.isRecording) {
-                root.captureSession.recorder.stop();
+                root.captureSession.stopRecordingVideo();
                 showPassiveNotification(i18n("Stopped recording"));
                 root.videoCaptured();
 
             } else if (root.captureMode === CameraPage.CaptureMode.Video) {
-                root.captureSession.recorder.record();
+                root.captureSession.startRecordingVideo();
                 if (root.isRecording)
                     showPassiveNotification(i18n("Started recording"));
                 else

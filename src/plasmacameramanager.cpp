@@ -18,8 +18,9 @@ PlasmaCameraManager::PlasmaCameraManager(QObject *parent) : QObject(parent)
      * - connect(&m_videoInput, &QVideoFrameInput::readyToSendVideoFrame, this, &PlasmaCameraManager::processVideoFrame);
      * - with a basic test I got ~200 readyToSendVideoFrames signals in 1 second (but we are recording at 24 fps)
      */
+
     m_session.setVideoFrameInput(&m_videoInput);
-    m_videoFrameTimer.setInterval(static_cast<int>(1000.0f / m_fps));
+    m_videoFrameTimer.setInterval(static_cast<int>(1000.0f / m_videoRecordingFps));
     connect(&m_videoFrameTimer, &QTimer::timeout, this, &PlasmaCameraManager::processVideoFrame);
 
     m_format.setFileFormat(QMediaFormat::FileFormat::MPEG4);
@@ -81,9 +82,41 @@ QAudioInput *PlasmaCameraManager::audioInput() const
     return m_audioInput;
 }
 
-float PlasmaCameraManager::fps() const
+float PlasmaCameraManager::videoRecordingFps() const
 {
-    return m_fps;
+    return m_videoRecordingFps;
+}
+
+bool PlasmaCameraManager::isRecordingVideo() const
+{
+    if (!m_recorder) {
+        return false;
+    }
+    return m_recorder->recorderState() == QMediaRecorder::RecordingState && !m_isSavingVideo;
+}
+
+bool PlasmaCameraManager::isSavingVideo() const
+{
+    return m_isSavingVideo;
+}
+
+void PlasmaCameraManager::startRecordingVideo()
+{
+    if (!m_recorder) {
+        return;
+    }
+    m_recorder->record();
+}
+
+void PlasmaCameraManager::stopRecordingVideo()
+{
+    if (!m_recorder) {
+        return;
+    }
+    m_recorder->stop();
+    setIsSavingVideo(true);
+
+    m_videoFrameTimer.stop();
 }
 
 int PlasmaCameraManager::captureImage()
@@ -110,8 +143,7 @@ void PlasmaCameraManager::setReadyForCapture(const bool ready)
 
 void PlasmaCameraManager::setFileFormat(const FileFormat fileFormat)
 {
-    if (m_fileFormat != fileFormat)
-    {
+    if (m_fileFormat != fileFormat) {
         m_fileFormat = fileFormat;
         Q_EMIT fileFormatChanged();
     }
@@ -119,37 +151,31 @@ void PlasmaCameraManager::setFileFormat(const FileFormat fileFormat)
 
 void PlasmaCameraManager::setQuality(const Quality quality)
 {
-    if (m_quality != quality)
-    {
+    if (m_quality != quality) {
         m_quality = quality;
         Q_EMIT qualityChanged();
+
+        updateRecorderSettings();
     }
 }
 
 void PlasmaCameraManager::setPlasmaCamera(PlasmaCamera *plasmaCamera)
 {
-    if (plasmaCamera != m_plasmaCamera)
-    {
-        if (m_plasmaCamera)
-        {
+    if (plasmaCamera != m_plasmaCamera) {
+        if (m_plasmaCamera) {
             disconnect(plasmaCamera, &PlasmaCamera::availableChanged, this, &PlasmaCameraManager::setReadyForCapture);
             disconnect(plasmaCamera, &PlasmaCamera::settingsChanged, this, &PlasmaCameraManager::setSettings);
             disconnect(plasmaCamera, &PlasmaCamera::viewFinderFrame, this, &PlasmaCameraManager::processViewfinderFrame);
             disconnect(plasmaCamera, &PlasmaCamera::stillCaptureFrames, this, &PlasmaCameraManager::processCaptureImage);
-
-            disconnect(this, &PlasmaCameraManager::fpsChanged, plasmaCamera, &PlasmaCamera::setFps);
         }
 
         m_plasmaCamera = plasmaCamera;
 
-        if (m_plasmaCamera)
-        {
+        if (m_plasmaCamera) {
             connect(plasmaCamera, &PlasmaCamera::availableChanged, this, &PlasmaCameraManager::setReadyForCapture);
             connect(plasmaCamera, &PlasmaCamera::settingsChanged, this, &PlasmaCameraManager::setSettings);
             connect(plasmaCamera, &PlasmaCamera::viewFinderFrame, this, &PlasmaCameraManager::processViewfinderFrame);
             connect(plasmaCamera, &PlasmaCamera::stillCaptureFrames, this, &PlasmaCameraManager::processCaptureImage);
-
-            connect(this, &PlasmaCameraManager::fpsChanged, plasmaCamera, &PlasmaCamera::setFps);
         }
 
         Q_EMIT plasmaCameraChanged();
@@ -158,8 +184,7 @@ void PlasmaCameraManager::setPlasmaCamera(PlasmaCamera *plasmaCamera)
 
 void PlasmaCameraManager::setVideoSink(QVideoSink *videoSink)
 {
-    if (m_videoSink != videoSink)
-    {
+    if (m_videoSink != videoSink) {
         m_videoSink = videoSink;
         Q_EMIT videoSinkChanged();
     }
@@ -167,63 +192,90 @@ void PlasmaCameraManager::setVideoSink(QVideoSink *videoSink)
 
 void PlasmaCameraManager::setRecorder(QMediaRecorder *recorder)
 {
-    if (m_recorder != recorder)
-    {
-        m_recorder = recorder;
-
-        // TODO: move this to a independent function so we can call it whenever we change a value
-
-        // Set the format on the recorder
-        recorder->setMediaFormat(m_format);
-
-        // Set the quality
-        recorder->setQuality(QMediaRecorder::Quality::NormalQuality);
-
-        // Set the resolution
-        // recorder->setVideoResolution(QSize(1280, 720));
-
-        // Set the frame rate
-        recorder->setVideoFrameRate(30.0);
-
-        // Attempt to disable hardware acceleration (does it even work?)
-        recorder->setProperty("hw-accel", false);
-
-        // Set encoding paramaters
-        // recorder->setEncodingMode(QMediaRecorder::ConstantQualityEncoding);
-
-        // connect(recorder, &QMediaRecorder::errorOccurred,
-        //     [](QMediaRecorder::Error error, const QString &errorString) {
-        //         qDebug() << "Recording error:" << error << errorString; });
-        // recorder->setMetaData()
-
-        m_session.setRecorder(recorder);
-        connect(m_recorder, &QMediaRecorder::recorderStateChanged, this, [this]() {
-            if (m_recorder->recorderState() == QMediaRecorder::RecordingState) {
-                m_videoFrameTimer.start();
-            } else {
-                m_videoFrameTimer.stop();
-            }
-        });
-
-        Q_EMIT recorderChanged();
+    if (m_recorder == recorder) {
+        return;
     }
+
+    m_recorder = recorder;
+    updateRecorderSettings();
+
+    // TODO: Set metadata
+    // connect(recorder, &QMediaRecorder::errorOccurred,
+    //     [](QMediaRecorder::Error error, const QString &errorString) {
+    //         qDebug() << "Recording error:" << error << errorString; });
+    // recorder->setMetaData()
+
+    m_session.setRecorder(recorder);
+    connect(m_recorder, &QMediaRecorder::recorderStateChanged, this, [this]() {
+        if (m_recorder->recorderState() == QMediaRecorder::RecordingState) {
+            m_videoFrameTimer.start();
+        } else {
+            m_videoFrameTimer.stop();
+        }
+
+        // Once the recorder changes to any state, it no longer is saving video
+        // - Saving video happens in the gap between calling m_recorder->stop() and stopping state
+        setIsSavingVideo(false);
+
+        Q_EMIT isRecordingVideoChanged();
+    });
+
+    Q_EMIT recorderChanged();
+}
+
+void PlasmaCameraManager::updateRecorderSettings()
+{
+    if (!m_recorder) {
+        return;
+    }
+
+    // Set the format on the recorder
+    m_recorder->setMediaFormat(m_format);
+
+    // Set the quality
+    switch (m_quality) {
+    case PlasmaCameraManager::VeryLowQuality:
+        m_recorder->setQuality(QMediaRecorder::Quality::VeryLowQuality);
+        break;
+    case PlasmaCameraManager::LowQuality:
+        m_recorder->setQuality(QMediaRecorder::Quality::LowQuality);
+        break;
+    case PlasmaCameraManager::NormalQuality:
+        m_recorder->setQuality(QMediaRecorder::Quality::NormalQuality);
+        break;
+    case PlasmaCameraManager::HighQuality:
+        m_recorder->setQuality(QMediaRecorder::Quality::HighQuality);
+        break;
+    case PlasmaCameraManager::VeryHighQuality:
+        m_recorder->setQuality(QMediaRecorder::Quality::VeryHighQuality);
+        break;
+    }
+
+    // Set the resolution
+    // m_recorder->setVideoResolution(QSize(1280, 720));
+
+    // Set the frame rate
+    m_recorder->setVideoFrameRate(m_videoRecordingFps);
+
+    // Set encoding paramaters
+    // m_recorder->setEncodingMode(QMediaRecorder::ConstantQualityEncoding);
 }
 
 void PlasmaCameraManager::setAudioInput(QAudioInput *audioInput)
 {
-    if (m_audioInput != audioInput)
-    {
+    if (m_audioInput != audioInput) {
         m_audioInput = audioInput;
         Q_EMIT audioInputChanged();
     }
 }
 
-void PlasmaCameraManager::setFps(const float fps)
+void PlasmaCameraManager::setVideoRecordingFps(const float fps)
 {
-    if (m_fps != fps)
-    {
-        m_fps = fps;
-        Q_EMIT fpsChanged(fps);
+    if (m_videoRecordingFps != fps) {
+        m_videoRecordingFps = fps;
+        Q_EMIT videoRecordingFpsChanged(fps);
+
+        updateRecorderSettings();
     }
 }
 
@@ -247,8 +299,18 @@ void PlasmaCameraManager::unsetError()
 void PlasmaCameraManager::setSettings(const Settings& settings)
 {
     m_settings = settings;
+}
 
-    // TODO: get the new values out and set
+void PlasmaCameraManager::setIsSavingVideo(bool isSavingVideo)
+{
+    if (isSavingVideo == m_isSavingVideo) {
+        return;
+    }
+    m_isSavingVideo = isSavingVideo;
+    Q_EMIT isSavingVideoChanged();
+
+    // Since it depends on m_isSavingVideo
+    Q_EMIT isRecordingVideoChanged();
 }
 
 void PlasmaCameraManager::processViewfinderFrame(const QImage &image)
@@ -258,7 +320,7 @@ void PlasmaCameraManager::processViewfinderFrame(const QImage &image)
     }
 
     m_currentFrame = image;
-    m_videoFrame = QVideoFrame(image);
+    QVideoFrame frame = QVideoFrame(image);
 
     // Do software rotation
     // From testing, most drivers don't seem to implement hardware orientation correctly (CameraConfiguration::orientation),
@@ -267,29 +329,19 @@ void PlasmaCameraManager::processViewfinderFrame(const QImage &image)
     case 0:
         break;
     case 90:
-        m_videoFrame.setRotation(QtVideo::Rotation::Clockwise90);
+        frame.setRotation(QtVideo::Rotation::Clockwise90);
         break;
     case 180:
-        m_videoFrame.setRotation(QtVideo::Rotation::Clockwise180);
+        frame.setRotation(QtVideo::Rotation::Clockwise180);
         break;
     case 270:
-        m_videoFrame.setRotation(QtVideo::Rotation::Clockwise270);
+        frame.setRotation(QtVideo::Rotation::Clockwise270);
         break;
     }
 
-    // TODO: I'm not sure what this code is actually doing?
-    // if(!m_videoFrame.isValid() || !m_videoFrame.map(QVideoFrame::WriteOnly)){
-    //     qWarning() << "QVideoFrame is not valid or not writable";
-    //     return;
-    // }
-    // QImage::Format image_format = QVideoFrameFormat::imageFormatFromPixelFormat(m_videoFrame.pixelFormat());
-    // if(image_format == QImage::Format_Invalid){
-    //     qWarning() << "It is not possible to obtain image format from the pixel format of the videoframe";
-    //     return;
-    // }
-    // m_videoFrame.unmap();
-
-    m_videoSink->setVideoFrame(m_videoFrame);
+    m_videoSink->setVideoFrame(frame);
+    m_videoFrame = std::move(frame);
+    m_frameRecorded = false;
 }
 
 void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
@@ -328,21 +380,20 @@ void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
 
 void PlasmaCameraManager::processVideoFrame()
 {
-    // Whenever m_videoFrame is ready for another frame, send the current one
-    // bool res;
-    // QMetaObject::invokeMethod(&m_videoInput, "sendVideoFrame", Qt::AutoConnection,
-    //     Q_RETURN_ARG(bool, res),
-    //     Q_ARG(const QVideoFrame&, m_videoFrame));
-    // bool sendVideoFrame(const QVideoFrame &frame);
-    // TODO: unsure which is better
-    //  - it appears that the phone is having trouble encoding the video
-    //  - using cpu capabilities: ARMv8 NEON
-    //  - INFO Debayer debayer_cpu:788 Processed 30 frames in 3078733us, 102624 us/frame
-    //      - processing 30 frames in 3 seconds (not great?)
-    //  - Killed
-    //  - ffmpeg sees some kind of error in the produced files so refuses to play them
-    // m_videoInput.sendVideoFrame(QVideoFrame(m_currentFrame));
-    m_videoInput.sendVideoFrame(m_videoFrame);
+    // Set the time in the video that the frame should show up.
+    // This allows for frames to be dropped without impacting video speed.
+    // TODO: This causes severe frame corruption on devices that drop frames, so it's disabled for now
+    //
+    // int frameLengthMicroseconds = qRound(1000.0 * 1000.0 / m_videoRecordingFps);
+    // m_videoFrame.setStartTime(m_frameRecordingCount * frameLengthMicroseconds);
+    // m_videoFrame.setEndTime((m_frameRecordingCount + 1) * frameLengthMicroseconds);
+
+    // Attempt to send frame
+    bool success = m_videoInput.sendVideoFrame(m_videoFrame);
+    if (success) {
+        m_frameRecorded = true;
+    }
+    m_frameRecordingCount++;
 }
 
 int PlasmaCameraManager::captureImageInternal()

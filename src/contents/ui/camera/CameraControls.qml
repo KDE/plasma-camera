@@ -68,12 +68,13 @@ Rectangle {
                     anchors.fill: parent
 
                     videoRecorder: root.captureSession.recorder
+                    isSavingVideo: root.captureSession.isSavingVideo
 
                     Component.onCompleted: {
                         root.captureSession.imageSaved.connect(updatePreview)
                     }
                     function updatePreview(_, fileName: string) {
-                        previewArea.imageUrl = "file://" + fileName
+                        previewArea.imageUrl = "file://" + fileName;
                     }
 
                     // Listen for photo capture and video capture events

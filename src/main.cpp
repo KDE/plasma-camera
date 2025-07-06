@@ -40,8 +40,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
      *  - ffmpeg -i file.mp4 -vf scale=1280x720 -c:v libx264 -preset ultrafast -crf 28 test.mp4
      */
     qputenv("QT_MEDIA_BACKEND", "ffmpeg");
-    qputenv("QT_FFMPEG_DECODING_HW_DEVICE_TYPES", ",");
-    qputenv("QT_FFMPEG_ENCODING_HW_DEVICE_TYPES", ",");
+    // qputenv("QT_FFMPEG_DECODING_HW_DEVICE_TYPES", ",");
+    // qputenv("QT_FFMPEG_ENCODING_HW_DEVICE_TYPES", ",");
 
 #ifdef Q_OS_ANDROID
     QGuiApplication app(argc, argv);

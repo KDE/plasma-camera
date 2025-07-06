@@ -45,7 +45,7 @@ QQC2.ToolButton {
             width: height
             anchors.centerIn: parent
 
-            radius: root.isRecording ? 0 : width / 2
+            radius: root.isRecording ? Kirigami.Units.cornerRadius : width / 2
 
             Behavior on opacity {
                 PropertyAnimation {

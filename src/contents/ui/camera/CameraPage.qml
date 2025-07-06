@@ -80,7 +80,10 @@ Kirigami.Page {
             icon.color: "transparent"
             icon.name: root.captureController.intendedIcon
             onTriggered: root.captureController.requestCapture()
-            enabled: !camera.busy && !root.captureController.captureTimerRunning
+
+            enabled: !camera.busy
+                && !root.captureController.captureTimerRunning
+                && !root.captureSession.isSavingVideo
         },
         Kirigami.Action {
             id: switchCameraAction
@@ -150,10 +153,10 @@ Kirigami.Page {
         // Video recording duration overlay
         ViewfinderVideoDurationOverlay {
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.topMargin: cameraExtraControls.height + Kirigami.Units.largeSpacing
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: controlContainer.height + Kirigami.Units.largeSpacing
 
-            visible: root.captureSession.recorder.recorderState === MediaRecorder.RecordingState
+            visible: root.captureSession.isRecordingVideo
             duration: root.captureSession.recorder.duration
         }
     }
