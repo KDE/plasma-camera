@@ -143,6 +143,12 @@ void PlasmaCameraManager::startRecordingVideo()
     if (!m_recorder) {
         return;
     }
+
+    // Set the correct rotation metadata prior to recording
+    QMediaMetaData metaData;
+    metaData.insert(QMediaMetaData::Orientation, outputOrientationDegrees());
+    m_recorder->setMetaData(metaData);
+
     m_recorder->record();
 }
 
@@ -238,11 +244,9 @@ void PlasmaCameraManager::setRecorder(QMediaRecorder *recorder)
     m_recorder = recorder;
     updateRecorderSettings();
 
-    // TODO: Set metadata
-    // connect(recorder, &QMediaRecorder::errorOccurred,
-    //     [](QMediaRecorder::Error error, const QString &errorString) {
-    //         qDebug() << "Recording error:" << error << errorString; });
-    // recorder->setMetaData()
+    connect(recorder, &QMediaRecorder::errorOccurred, [](QMediaRecorder::Error error, const QString &errorString) {
+        qDebug() << "Recording error:" << error << errorString;
+    });
 
     m_session.setRecorder(recorder);
     connect(m_recorder, &QMediaRecorder::recorderStateChanged, this, [this]() {
@@ -433,8 +437,7 @@ void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
     // From testing, most drivers don't seem to implement hardware orientation correctly (CameraConfiguration::orientation),
     // it either isn't supported or just crashes. So we will just use software rotation for best hardware compatibility.
     QTransform transform;
-    double degrees = m_plasmaCamera->softwareRotationDegrees() + m_orientationSensorDegrees;
-    transform.rotate(degrees);
+    transform.rotate(outputOrientationDegrees());
     image = image.transformed(transform);
 
     // TODO: set format and quality
@@ -517,4 +520,9 @@ int PlasmaCameraManager::captureImageInternal()
     m_plasmaCamera->captureImage();
 
     return newImageCaptureId;
+}
+
+float PlasmaCameraManager::outputOrientationDegrees() const
+{
+    return m_plasmaCamera->softwareRotationDegrees() + m_orientationSensorDegrees;
 }

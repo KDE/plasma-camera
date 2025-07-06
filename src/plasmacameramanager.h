@@ -190,13 +190,18 @@ private:
     void setAudioRecordingEnabledInternal(bool enabled);
     int captureImageInternal();
 
+    /*!
+     * The amount of degrees to rotate the final output frame by.
+     * This adds the camera orientation and the device orientation degrees together.
+     */
+    float outputOrientationDegrees() const;
+
     // error handling
     Error m_error;
     QString m_errorString;
 
     // preforming an image capture
     bool m_readyForCapture = false;
-    QMediaMetaData m_metaData;
 
     // saving to file
     FileFormat m_fileFormat;
