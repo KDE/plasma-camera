@@ -89,7 +89,7 @@ QtObject {
             if (root.captureMode === CameraPage.CaptureMode.Photo) {
                 if (root.captureSession.readyForCapture) {
                     root.captureSession.captureImageToFile("");
-                    showPassiveNotification(i18n("Took a photo"))
+                    console.log("Took a photo");
                     root.photoCaptured();
                 } else {
                     showPassiveNotification(i18n("Failed to take a photo"));
@@ -97,13 +97,13 @@ QtObject {
 
             } else if (root.isRecording) {
                 root.captureSession.stopRecordingVideo();
-                showPassiveNotification(i18n("Stopped recording"));
+                console.log("Stopped recording");
                 root.videoCaptured();
 
             } else if (root.captureMode === CameraPage.CaptureMode.Video) {
                 root.captureSession.startRecordingVideo();
                 if (root.isRecording)
-                    showPassiveNotification(i18n("Started recording"));
+                    console.log("Started recording");
                 else
                     showPassiveNotification(i18n("Failed to start recording"));
             }

@@ -5,12 +5,12 @@
 
 import QtQuick
 import QtMultimedia
-import QtQuick.Controls.Material
 import QtQuick.Controls as Controls
-import org.kde.kirigami as Kirigami
-import Qt5Compat.GraphicalEffects
+import QtQuick.Effects
 
-Rectangle {
+import org.kde.kirigami as Kirigami
+
+Item {
     id: preview
 
     required property MediaRecorder videoRecorder
@@ -41,7 +41,6 @@ Rectangle {
     visible: true
     width: Kirigami.Units.gridUnit * 6
     height: width
-    layer.enabled: preview.enabled
 
     Component.onCompleted: {
         videoRecorder.recorderStateChanged.connect(createVideoThumbnail);
@@ -57,66 +56,118 @@ Rectangle {
         }
     }
 
-    Image {
-        visible: true
-        fillMode: Image.PreserveAspectCrop
-        anchors.fill: parent
-        source: preview.imageUrl
-    }
-
     Rectangle {
-        visible: showVideoPreview
+        id: container
         anchors.fill: parent
-        color: "grey"
 
-        Video {
-            id: video
+        Kirigami.Theme.inherit: false
+        Kirigami.Theme.colorSet: Kirigami.Theme.Complementary
+        color: Kirigami.Theme.backgroundColor
 
+        Image {
+            id: imagePreview
+            fillMode: Image.PreserveAspectCrop
             anchors.fill: parent
-            muted: true
-            fillMode: VideoOutput.PreserveAspectCrop
-        }
+            source: preview.imageUrl
+            visible: status == Image.Ready
 
-        Controls.BusyIndicator {
-            id: thumbnailBusyIdicator
-
-            visible: preview.isSavingVideo
-            Kirigami.Theme.textColor: "white"
-            anchors.fill: parent
-            layer.enabled: thumbnailBusyIdicator.enabled
-
-            layer.effect: DropShadow {
-                color: Material.dropShadowColor
-                samples: 30
-                spread: 0.5
+            onSourceChanged: {
+                if (status === Image.Ready) {
+                    squishAnim.restart();
+                }
             }
 
-        }
-
-        Kirigami.Icon {
-            id: playbackIcon
-
-            visible: !thumbnailBusyIdicator.visible
-            source: "media-playback-start"
-            color: "white"
-            width: parent.width * 0.75
-            height: width
-            anchors.centerIn: parent
-            layer.enabled: playbackIcon.enabled
-
-            layer.effect: DropShadow {
-                color: Material.dropShadowColor
-                samples: 30
-                spread: 0.5
+            transform: Scale {
+                id: scaleTransform
+                origin.x: imagePreview.width / 2
+                origin.y: imagePreview.height / 2
+                xScale: 1
+                yScale: 1
             }
 
+            SequentialAnimation {
+                id: squishAnim
+                running: false
+
+                ParallelAnimation {
+                    PropertyAnimation {
+                        target: scaleTransform
+                        property: "xScale"
+                        to: 0.7
+                        duration: 100
+                        easing.type: Easing.InExpo
+                    }
+                    PropertyAnimation {
+                        target: scaleTransform
+                        property: "yScale"
+                        to: 0.7
+                        duration: 100
+                        easing.type: Easing.InExpo
+                    }
+                }
+
+                ParallelAnimation {
+                    PropertyAnimation {
+                        target: scaleTransform
+                        property: "xScale"
+                        to: 1
+                        duration: 200
+                        easing.type: Easing.OutExpo
+                    }
+                    PropertyAnimation {
+                        target: scaleTransform
+                        property: "yScale"
+                        to: 1
+                        duration: 200
+                        easing.type: Easing.OutExpo
+                    }
+                }
+            }
         }
 
+        Rectangle {
+            visible: showVideoPreview
+            anchors.fill: parent
+            color: "grey"
+
+            Video {
+                id: video
+
+                anchors.fill: parent
+                muted: true
+                fillMode: VideoOutput.PreserveAspectCrop
+            }
+
+            Controls.BusyIndicator {
+                id: thumbnailBusyIdicator
+
+                visible: preview.isSavingVideo
+                Kirigami.Theme.textColor: "white"
+                anchors.fill: parent
+                layer.enabled: thumbnailBusyIdicator.enabled
+            }
+
+            Kirigami.Icon {
+                id: playbackIcon
+
+                visible: !thumbnailBusyIdicator.visible
+                source: "media-playback-start"
+                color: "white"
+                width: parent.width * 0.75
+                height: width
+                anchors.centerIn: parent
+                layer.enabled: playbackIcon.enabled
+            }
+        }
     }
 
-    layer.effect: DropShadow {
-        color: Material.dropShadowColor
-        samples: 30
-        spread: 0.5
+    MultiEffect {
+        id: frameShadow
+        anchors.fill: container
+        source: container
+        blurMax: 16
+        shadowEnabled: true
+        shadowOpacity: 0.6
+        shadowColor: 'black'
     }
 }
