@@ -19,6 +19,7 @@ Kirigami.ApplicationWindow {
     minimumWidth: 350
     title: i18n("Camera")
 
+    pageStack.columnView.columnResizeMode: Kirigami.ColumnView.SingleColumn
     pageStack.globalToolBar.style: Kirigami.ApplicationHeaderStyle.None
     pageStack.initialPage: CameraPage {
         id: cameraPage

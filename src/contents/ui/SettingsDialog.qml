@@ -52,7 +52,14 @@ Kirigami.MenuDialog {
         Kirigami.Action {
             text: i18n("About")
             icon.name: "help-about"
-            onTriggered: applicationWindow().pageStack.push(aboutPage)
+            onTriggered: {
+                if (Kirigami.Settings.isMobile) {
+                    applicationWindow().pageStack.push(aboutPage);
+                } else {
+                    // HACK: pushDialogLayer is bugged because there's no way to exit the page on mobile
+                    applicationWindow().pageStack.pushDialogLayer(aboutPage);
+                }
+            }
         }
     ]
 
