@@ -61,4 +61,5 @@ else()
     target_link_libraries(plasma-camera Qt::Widgets PkgConfig::LIBCAMERA)
 endif()
 
+target_include_directories(plasma-camera PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS plasma-camera ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

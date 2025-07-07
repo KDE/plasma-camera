@@ -4,8 +4,9 @@
 cmake_minimum_required(VERSION 3.16)
 set(KF_MIN_VERSION "6.0.0")
 set(QT_MIN_VERSION "6.6.0")
+set(PROJECT_VERSION "2.0")
 
-project(plasma-camera)
+project(plasma-camera VERSION ${PROJECT_VERSION})
 
 include(FeatureSummary)
 
@@ -16,12 +17,18 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
+include(ECMConfiguredInstall)
+include(ECMPoQmTools)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(ECMPoQmTools)
 include(KDEGitCommitHooks)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
+
+ecm_setup_version(${PROJECT_VERSION}
+    VARIABLE_PREFIX PLASMACAMERA
+    VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
+)
 
 find_package(Qt6 ${QT_MIN_VERSION} REQUIRED NO_MODULE COMPONENTS
     Core

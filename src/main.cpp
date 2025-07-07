@@ -22,6 +22,8 @@
 #include <QApplication>
 #endif
 
+#include "version.h"
+
 using namespace Qt::Literals::StringLiterals;
 
 constexpr auto URI = "org.kde.plasmacamera";
@@ -54,6 +56,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName(u"KDE"_s);
     QCoreApplication::setOrganizationDomain(u"kde.org"_s);
     QCoreApplication::setApplicationName(u"plasma-camera"_s);
+    QCoreApplication::setApplicationVersion(QStringLiteral(PLASMACAMERA_VERSION_STRING));
     QGuiApplication::setApplicationDisplayName(u"Plasma Camera"_s);
     QGuiApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("camera-photo")));
 
