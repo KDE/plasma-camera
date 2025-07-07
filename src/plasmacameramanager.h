@@ -166,6 +166,8 @@ Q_SIGNALS:
     void isRecordingVideoChanged();
     void isSavingVideoChanged();
 
+    void framesDropped();
+
 public Q_SLOTS:
     // preforming an image capture
     int captureImage();
@@ -263,4 +265,5 @@ private:
     QString m_imageCaptureFileName;
 
     bool m_isSavingVideo = false;
+    bool m_droppedFrames = false;
 };

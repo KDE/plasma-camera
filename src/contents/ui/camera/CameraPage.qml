@@ -43,6 +43,9 @@ Kirigami.Page {
         onErrorOccurred: {
             showPassiveNotification(i18n("An error occurred: \"%1\". Please consider restarting the application if it stopped working.", captureSession.errorString))
         }
+        onFramesDropped: {
+            showPassiveNotification(i18n("The video encoder is struggling to keep up. Try lowering your recording settings to improve performance."));
+        }
     }
 
     property CaptureController captureController: CaptureController {

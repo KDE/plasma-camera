@@ -152,6 +152,8 @@ void PlasmaCameraManager::startRecordingVideo()
         return;
     }
 
+    m_droppedFrames = false; // reset
+
     // Set the correct rotation metadata prior to recording
     QMediaMetaData metaData;
     metaData.insert(QMediaMetaData::Orientation, outputOrientationDegrees());
@@ -547,6 +549,11 @@ void PlasmaCameraManager::processVideoFrame()
     bool success = m_videoInput.sendVideoFrame(m_videoFrame);
     if (success) {
         m_frameRecorded = true;
+    } else {
+        if (!m_droppedFrames) {
+            Q_EMIT framesDropped();
+            m_droppedFrames = true;
+        }
     }
     m_frameRecordingCount++;
 }
