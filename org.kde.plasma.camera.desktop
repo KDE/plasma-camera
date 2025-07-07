@@ -101,3 +101,4 @@ Type=Application
 Icon=camera-photo
 Exec=plasma-camera
 Categories=Qt;KDE;AudioVideo;
+X-KDE-FormFactor=desktop;tablet;handset;
