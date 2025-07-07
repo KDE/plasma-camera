@@ -210,4 +210,7 @@
   <requires>
     <display_length compare="ge">360</display_length>
   </requires>
+  <releases>
+    <release version="2.0" date="2025-07-07"/>
+  </releases>
 </component>
