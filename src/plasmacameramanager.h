@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Andrew Wang
+// SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
@@ -12,17 +13,6 @@
 #include <libcamera/camera_manager.h>
 
 #include "plasmacamera.h"
-
-
-/*
- * TODO:
- *  - create a worker for file saving (split off image and video saving to a different thread)
- *  - save location is currently ~/Photos (change to ~/Photos/plamsa-camera)
- *  - save location is currently ~/Videos (change to ~/Videos/plamsa-camera)
- *  - allow setting video/audio format
- *  - audio recording when recording video
- *  - ask for permission before using the camera?
- */
 
 /*!
  * \brief Manages the libcamera camera controller (similar to QMediaCaptureSession)
@@ -106,19 +96,18 @@ public:
     };
     Q_ENUM(VideoCodec)
 
-    // error handling
     Error error() const;
     QString errorString() const;
 
-    // preforming an image capture
+    /*!
+     * Whether an image is currently being captured (for photo).
+     */
     bool isReadyForCapture() const;
 
-    // saving to file
     QList<FileFormat> supportedFileFormats() const;
     FileFormat fileFormat() const;
     Quality quality() const;
 
-    // preview and video recording
     PlasmaCamera *plasmaCamera() const;
     QVideoSink *videoSink() const;
     QMediaRecorder *recorder() const;
@@ -133,26 +122,26 @@ public:
     bool isRecordingVideo() const;
     bool isSavingVideo() const;
 
-    // Called when the UI wants to start recording
+    /*!
+     * Start a new video recording.
+     */
     Q_INVOKABLE void startRecordingVideo();
 
-    // Called when the UI wants to stop recording
+    /*!
+     * Stop the current video recording, and save to disk.
+     */
     Q_INVOKABLE void stopRecordingVideo();
 
 Q_SIGNALS:
-    // error handling
     void errorChanged();
     void errorOccurred(int id, Error error, const QString &errorString);
 
-    // preforming an image capture
     void readyForCaptureChanged(bool ready);
     void metaDataChanged();
 
-    // saving to file
     void fileFormatChanged();
     void qualityChanged();
 
-    // preview and video recording
     void plasmaCameraChanged();
     void videoSinkChanged();
     void recorderChanged();
@@ -169,16 +158,20 @@ Q_SIGNALS:
     void framesDropped();
 
 public Q_SLOTS:
-    // preforming an image capture
+    /*!
+     * Take a photo with the camera.
+     */
     int captureImage();
+
+    /*!
+     * Take a photo with the camera, and store it at a specific location.
+     */
     int captureImageToFile(const QString &location = QString());
+
     void setReadyForCapture(bool ready);
 
-    // saving to file
     void setFileFormat(FileFormat fileFormat);
     void setQuality(Quality quality);
-
-    // preview and video recording
     void setPlasmaCamera(PlasmaCamera *plasmaCamera);
     void setVideoSink(QVideoSink *videoSink);
     void setRecorder(QMediaRecorder *recorder);
@@ -214,6 +207,7 @@ private:
     bool findAndSetDefaultRecordingDevice();
 
     void setAudioRecordingEnabledInternal(bool enabled);
+
     int captureImageInternal();
 
     /*!

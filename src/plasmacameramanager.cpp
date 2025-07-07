@@ -1,4 +1,5 @@
 // SPDX-FileCopyrightText: 2025 Andrew Wang
+// SPDX-FileCopyrightText: 2025 Devin Lin <devin@kde.org>
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include <QSize>
@@ -348,7 +349,7 @@ void PlasmaCameraManager::updateRecorderSettings()
         break;
     }
 
-    // Set the frame rate
+    // Set the frame rate (let recorder decide)
     // m_recorder->setVideoFrameRate(m_videoRecordingFps);
     m_recorder->setVideoFrameRate(0);
 
