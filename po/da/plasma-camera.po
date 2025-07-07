@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:44+0000\n"
+"POT-Creation-Date: 2025-07-07 00:44+0000\n"
 "PO-Revision-Date: 2020-10-15 21:44+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish\n"
@@ -26,12 +26,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ","
 
-#: src/contents/ui/camera/CameraControls.qml:169
+#: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Photo"
 msgstr ""
 
-#: src/contents/ui/camera/CameraControls.qml:174
+#: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
 msgstr ""
@@ -46,52 +46,37 @@ msgstr "Kamera"
 msgid "Switch mode"
 msgstr "Skift tilstand"
 
-#: src/contents/ui/camera/CameraPage.qml:89
+#: src/contents/ui/camera/CameraPage.qml:92
 #, kde-format
 msgid "Switch Camera"
 msgstr "Skift kamera"
 
-#: src/contents/ui/camera/CaptureController.qml:35
+#: src/contents/ui/camera/CaptureController.qml:38
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "Annuller selvudløser"
 
-#: src/contents/ui/camera/CaptureController.qml:37
+#: src/contents/ui/camera/CaptureController.qml:40
 #, kde-format
 msgid "Capture photo"
 msgstr "Tag billede"
 
-#: src/contents/ui/camera/CaptureController.qml:39
+#: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
 msgstr "Stop optagelse af video"
 
-#: src/contents/ui/camera/CaptureController.qml:41
+#: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
 msgid "Start recording video"
 msgstr "Start optagelse af video"
 
-#: src/contents/ui/camera/CaptureController.qml:89
-#, kde-format
-msgid "Took a photo"
-msgstr "Tog et billede"
-
-#: src/contents/ui/camera/CaptureController.qml:92
+#: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "Kunne ikke tage et billede"
 
-#: src/contents/ui/camera/CaptureController.qml:97
-#, kde-format
-msgid "Stopped recording"
-msgstr "Stoppede optagelse"
-
-#: src/contents/ui/camera/CaptureController.qml:103
-#, kde-format
-msgid "Started recording"
-msgstr "Startede optagelse"
-
-#: src/contents/ui/camera/CaptureController.qml:105
+#: src/contents/ui/camera/CaptureController.qml:108
 #, kde-format
 msgid "Failed to start recording"
 msgstr "Kunne ikke starte optagelse"
@@ -101,7 +86,7 @@ msgstr "Kunne ikke starte optagelse"
 msgid "Camera not available"
 msgstr "Kamera ikke tilgængeligt"
 
-#: src/contents/ui/main.qml:69
+#: src/contents/ui/main.qml:73
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
@@ -110,16 +95,22 @@ msgstr ""
 "Der opstod en fejl: \"%1\". Overvej venligst at genstarte programmet hvis "
 "det holdt op med at virke."
 
-#: src/contents/ui/SettingsDialog.qml:25
+#: src/contents/ui/SettingsDialog.qml:23
 #, fuzzy, kde-format
 #| msgid "Switch Camera"
 msgid "Select camera"
 msgstr "Skift kamera"
 
-#: src/contents/ui/SettingsDialog.qml:35
+#: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "About"
 msgstr "Om"
+
+#: src/contents/ui/SettingsDialog.qml:162
+#, fuzzy, kde-format
+#| msgid "Switch Camera"
+msgid "Select Camera"
+msgstr "Skift kamera"
 
 #: src/main.cpp:66
 #, fuzzy, kde-format
@@ -140,6 +131,20 @@ msgstr "Jonah Brüchert"
 #, kde-format
 msgid "Andrew Wang"
 msgstr ""
+
+#: src/main.cpp:87
+#, kde-format
+msgid "Devin Lin"
+msgstr ""
+
+#~ msgid "Took a photo"
+#~ msgstr "Tog et billede"
+
+#~ msgid "Stopped recording"
+#~ msgstr "Stoppede optagelse"
+
+#~ msgid "Started recording"
+#~ msgstr "Startede optagelse"
 
 #~ msgid "Camera is busy. Is another application using it?"
 #~ msgstr "Kamera er optaget. Bruges det af et andet program?"

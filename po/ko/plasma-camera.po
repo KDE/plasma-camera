@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:44+0000\n"
+"POT-Creation-Date: 2025-07-07 00:44+0000\n"
 "PO-Revision-Date: 2024-02-09 19:17+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28,12 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: src/contents/ui/camera/CameraControls.qml:169
+#: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Photo"
 msgstr "사진"
 
-#: src/contents/ui/camera/CameraControls.qml:174
+#: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
 msgstr "동영상"
@@ -48,52 +48,37 @@ msgstr "카메라"
 msgid "Switch mode"
 msgstr "모드 전환"
 
-#: src/contents/ui/camera/CameraPage.qml:89
+#: src/contents/ui/camera/CameraPage.qml:92
 #, kde-format
 msgid "Switch Camera"
 msgstr "카메라 전환"
 
-#: src/contents/ui/camera/CaptureController.qml:35
+#: src/contents/ui/camera/CaptureController.qml:38
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "셀프 타이머 취소"
 
-#: src/contents/ui/camera/CaptureController.qml:37
+#: src/contents/ui/camera/CaptureController.qml:40
 #, kde-format
 msgid "Capture photo"
 msgstr "사진 찍기"
 
-#: src/contents/ui/camera/CaptureController.qml:39
+#: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
 msgstr "비디오 녹화 중지"
 
-#: src/contents/ui/camera/CaptureController.qml:41
+#: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
 msgid "Start recording video"
 msgstr "비디오 녹화 시작"
 
-#: src/contents/ui/camera/CaptureController.qml:89
-#, kde-format
-msgid "Took a photo"
-msgstr "사진 촬영"
-
-#: src/contents/ui/camera/CaptureController.qml:92
+#: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "사진을 찍을 수 없음"
 
-#: src/contents/ui/camera/CaptureController.qml:97
-#, kde-format
-msgid "Stopped recording"
-msgstr "녹화 중지"
-
-#: src/contents/ui/camera/CaptureController.qml:103
-#, kde-format
-msgid "Started recording"
-msgstr "녹화 시작"
-
-#: src/contents/ui/camera/CaptureController.qml:105
+#: src/contents/ui/camera/CaptureController.qml:108
 #, kde-format
 msgid "Failed to start recording"
 msgstr "녹화를 시작할 수 없음"
@@ -103,23 +88,29 @@ msgstr "녹화를 시작할 수 없음"
 msgid "Camera not available"
 msgstr "카메라를 사용할 수 없음"
 
-#: src/contents/ui/main.qml:69
+#: src/contents/ui/main.qml:73
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr "오류 발생: \"%1\". 앱을 다시 시작하십시오."
 
-#: src/contents/ui/SettingsDialog.qml:25
+#: src/contents/ui/SettingsDialog.qml:23
 #, fuzzy, kde-format
 #| msgid "Switch Camera"
 msgid "Select camera"
 msgstr "카메라 전환"
 
-#: src/contents/ui/SettingsDialog.qml:35
+#: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "About"
 msgstr "정보"
+
+#: src/contents/ui/SettingsDialog.qml:162
+#, fuzzy, kde-format
+#| msgid "Switch Camera"
+msgid "Select Camera"
+msgstr "카메라 전환"
 
 #: src/main.cpp:66
 #, kde-format
@@ -140,6 +131,20 @@ msgstr "Jonah Brüchert"
 #, kde-format
 msgid "Andrew Wang"
 msgstr ""
+
+#: src/main.cpp:87
+#, kde-format
+msgid "Devin Lin"
+msgstr ""
+
+#~ msgid "Took a photo"
+#~ msgstr "사진 촬영"
+
+#~ msgid "Stopped recording"
+#~ msgstr "녹화 중지"
+
+#~ msgid "Started recording"
+#~ msgstr "녹화 시작"
 
 #~ msgid "Camera is busy. Is another application using it?"
 #~ msgstr "카메라를 사용할 수 없습니다. 다른 앱에서 사용하고 있습니까?"

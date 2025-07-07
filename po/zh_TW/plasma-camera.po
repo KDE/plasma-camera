@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:44+0000\n"
+"POT-Creation-Date: 2025-07-07 00:44+0000\n"
 "PO-Revision-Date: 2025-07-03 23:53+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -28,12 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "pan93412@gmail.com"
 
-#: src/contents/ui/camera/CameraControls.qml:169
+#: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Photo"
 msgstr "相片"
 
-#: src/contents/ui/camera/CameraControls.qml:174
+#: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
 msgstr "影片"
@@ -48,52 +48,37 @@ msgstr "相機"
 msgid "Switch mode"
 msgstr "切換模式"
 
-#: src/contents/ui/camera/CameraPage.qml:89
+#: src/contents/ui/camera/CameraPage.qml:92
 #, kde-format
 msgid "Switch Camera"
 msgstr "切換相機"
 
-#: src/contents/ui/camera/CaptureController.qml:35
+#: src/contents/ui/camera/CaptureController.qml:38
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "取消自動計時器"
 
-#: src/contents/ui/camera/CaptureController.qml:37
+#: src/contents/ui/camera/CaptureController.qml:40
 #, kde-format
 msgid "Capture photo"
 msgstr "拍照"
 
-#: src/contents/ui/camera/CaptureController.qml:39
+#: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
 msgstr "停止錄影"
 
-#: src/contents/ui/camera/CaptureController.qml:41
+#: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
 msgid "Start recording video"
 msgstr "開始錄影"
 
-#: src/contents/ui/camera/CaptureController.qml:89
-#, kde-format
-msgid "Took a photo"
-msgstr "拍張照片"
-
-#: src/contents/ui/camera/CaptureController.qml:92
+#: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "無法拍照"
 
-#: src/contents/ui/camera/CaptureController.qml:97
-#, kde-format
-msgid "Stopped recording"
-msgstr "已停止錄影"
-
-#: src/contents/ui/camera/CaptureController.qml:103
-#, kde-format
-msgid "Started recording"
-msgstr "已開始錄影"
-
-#: src/contents/ui/camera/CaptureController.qml:105
+#: src/contents/ui/camera/CaptureController.qml:108
 #, kde-format
 msgid "Failed to start recording"
 msgstr "無法開始錄影"
@@ -103,22 +88,28 @@ msgstr "無法開始錄影"
 msgid "Camera not available"
 msgstr "相機無法使用"
 
-#: src/contents/ui/main.qml:69
+#: src/contents/ui/main.qml:73
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr "發生錯誤：「%1」。當其停止運作時，請考慮重新啟動應用程式。"
 
-#: src/contents/ui/SettingsDialog.qml:25
+#: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
 msgid "Select camera"
 msgstr "選取相機"
 
-#: src/contents/ui/SettingsDialog.qml:35
+#: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "About"
 msgstr "關於"
+
+#: src/contents/ui/SettingsDialog.qml:162
+#, fuzzy, kde-format
+#| msgid "Select camera"
+msgid "Select Camera"
+msgstr "選取相機"
 
 #: src/main.cpp:66
 #, kde-format
@@ -139,6 +130,20 @@ msgstr "Jonah Brüchert"
 #, kde-format
 msgid "Andrew Wang"
 msgstr "Andrew Wang"
+
+#: src/main.cpp:87
+#, kde-format
+msgid "Devin Lin"
+msgstr ""
+
+#~ msgid "Took a photo"
+#~ msgstr "拍張照片"
+
+#~ msgid "Stopped recording"
+#~ msgstr "已停止錄影"
+
+#~ msgid "Started recording"
+#~ msgstr "已開始錄影"
 
 #~ msgid "Camera is busy. Is another application using it?"
 #~ msgstr "相機忙碌中。是否有其他應用程式使用中？"

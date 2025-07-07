@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:44+0000\n"
+"POT-Creation-Date: 2025-07-07 00:44+0000\n"
 "PO-Revision-Date: 2025-07-04 13:38+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -28,12 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-l10n-he@kde.org"
 
-#: src/contents/ui/camera/CameraControls.qml:169
+#: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Photo"
 msgstr "תמונה"
 
-#: src/contents/ui/camera/CameraControls.qml:174
+#: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
 msgstr "סרטון"
@@ -48,52 +48,37 @@ msgstr "מצלמה"
 msgid "Switch mode"
 msgstr "החלפת מצב"
 
-#: src/contents/ui/camera/CameraPage.qml:89
+#: src/contents/ui/camera/CameraPage.qml:92
 #, kde-format
 msgid "Switch Camera"
 msgstr "החלפת מצלמה"
 
-#: src/contents/ui/camera/CaptureController.qml:35
+#: src/contents/ui/camera/CaptureController.qml:38
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "ביטול תזמון עצמי"
 
-#: src/contents/ui/camera/CaptureController.qml:37
+#: src/contents/ui/camera/CaptureController.qml:40
 #, kde-format
 msgid "Capture photo"
 msgstr "צילום תמונה"
 
-#: src/contents/ui/camera/CaptureController.qml:39
+#: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
 msgstr "עצירת הקלטת סרטון"
 
-#: src/contents/ui/camera/CaptureController.qml:41
+#: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
 msgid "Start recording video"
 msgstr "התחלת הקלטת סרטון"
 
-#: src/contents/ui/camera/CaptureController.qml:89
-#, kde-format
-msgid "Took a photo"
-msgstr "צילום תמונה"
-
-#: src/contents/ui/camera/CaptureController.qml:92
+#: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "צילום התמונה נכשל"
 
-#: src/contents/ui/camera/CaptureController.qml:97
-#, kde-format
-msgid "Stopped recording"
-msgstr "ההקלטה נעצרה"
-
-#: src/contents/ui/camera/CaptureController.qml:103
-#, kde-format
-msgid "Started recording"
-msgstr "ההקלטה החלה"
-
-#: src/contents/ui/camera/CaptureController.qml:105
+#: src/contents/ui/camera/CaptureController.qml:108
 #, kde-format
 msgid "Failed to start recording"
 msgstr "התחלת ההקלטה נכשלה"
@@ -103,22 +88,28 @@ msgstr "התחלת ההקלטה נכשלה"
 msgid "Camera not available"
 msgstr "המצלמה לא זמינה"
 
-#: src/contents/ui/main.qml:69
+#: src/contents/ui/main.qml:73
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr "אירעה שגיאה: „%1”. נא לשקול להפעיל את היישומון מחדש אם הפסיק לתפקד."
 
-#: src/contents/ui/SettingsDialog.qml:25
+#: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
 msgid "Select camera"
 msgstr "בחירת מצלמה"
 
-#: src/contents/ui/SettingsDialog.qml:35
+#: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "About"
 msgstr "על אודות"
+
+#: src/contents/ui/SettingsDialog.qml:162
+#, fuzzy, kde-format
+#| msgid "Select camera"
+msgid "Select Camera"
+msgstr "בחירת מצלמה"
 
 #: src/main.cpp:66
 #, kde-format
@@ -139,6 +130,20 @@ msgstr "יונה בריכרט"
 #, kde-format
 msgid "Andrew Wang"
 msgstr "אנדרו וונג"
+
+#: src/main.cpp:87
+#, kde-format
+msgid "Devin Lin"
+msgstr ""
+
+#~ msgid "Took a photo"
+#~ msgstr "צילום תמונה"
+
+#~ msgid "Stopped recording"
+#~ msgstr "ההקלטה נעצרה"
+
+#~ msgid "Started recording"
+#~ msgstr "ההקלטה החלה"
 
 #~ msgid "Camera is busy. Is another application using it?"
 #~ msgstr "המצלמה עסוקה. האם יישומון אחר משתמש בה?"

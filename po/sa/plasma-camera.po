@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-06 00:44+0000\n"
+"POT-Creation-Date: 2025-07-07 00:44+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -29,12 +29,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "skkalwar999@gmail.com"
 
-#: src/contents/ui/camera/CameraControls.qml:169
+#: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Photo"
 msgstr "चित्रं"
 
-#: src/contents/ui/camera/CameraControls.qml:174
+#: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
 msgstr "विडिओ"
@@ -49,52 +49,37 @@ msgstr "कॅमेरा"
 msgid "Switch mode"
 msgstr "स्विच मोड"
 
-#: src/contents/ui/camera/CameraPage.qml:89
+#: src/contents/ui/camera/CameraPage.qml:92
 #, kde-format
 msgid "Switch Camera"
 msgstr "स्विच कॅमेरा"
 
-#: src/contents/ui/camera/CaptureController.qml:35
+#: src/contents/ui/camera/CaptureController.qml:38
 #, kde-format
 msgid "Cancel self-timer"
 msgstr "स्वसमयनिर्धारकं रद्दं कुर्वन्तु"
 
-#: src/contents/ui/camera/CaptureController.qml:37
+#: src/contents/ui/camera/CaptureController.qml:40
 #, kde-format
 msgid "Capture photo"
 msgstr "फोटो कैप्चर करें"
 
-#: src/contents/ui/camera/CaptureController.qml:39
+#: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
 msgstr "विडियो रिकार्ड् करणं स्थगयन्तु"
 
-#: src/contents/ui/camera/CaptureController.qml:41
+#: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
 msgid "Start recording video"
 msgstr "विडियो रिकार्ड् करणं आरभत"
 
-#: src/contents/ui/camera/CaptureController.qml:89
-#, kde-format
-msgid "Took a photo"
-msgstr "एकं फोटो गृहीतवान्"
-
-#: src/contents/ui/camera/CaptureController.qml:92
+#: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
 msgid "Failed to take a photo"
 msgstr "फोटो ग्रहीतुं असफलः अभवत्"
 
-#: src/contents/ui/camera/CaptureController.qml:97
-#, kde-format
-msgid "Stopped recording"
-msgstr "रिकार्डिङ्ग् स्थगितवान्"
-
-#: src/contents/ui/camera/CaptureController.qml:103
-#, kde-format
-msgid "Started recording"
-msgstr "रिकार्डिङ्ग् आरब्धवान्"
-
-#: src/contents/ui/camera/CaptureController.qml:105
+#: src/contents/ui/camera/CaptureController.qml:108
 #, kde-format
 msgid "Failed to start recording"
 msgstr "रिकार्डिङ्ग् आरभ्यतुं असफलम्"
@@ -104,7 +89,7 @@ msgstr "रिकार्डिङ्ग् आरभ्यतुं असफ�
 msgid "Camera not available"
 msgstr "कॅमेरा उपलब्धः नास्ति"
 
-#: src/contents/ui/main.qml:69
+#: src/contents/ui/main.qml:73
 #, kde-format
 msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
@@ -113,16 +98,22 @@ msgstr ""
 "एकः त्रुटिः अभवत्: \"%1\" । यदि एप्लिकेशनं कार्यं स्थगितम् अस्ति तर्हि कृपया पुनः आरम्भं कर्तुं "
 "विचारयन्तु।"
 
-#: src/contents/ui/SettingsDialog.qml:25
+#: src/contents/ui/SettingsDialog.qml:23
 #, fuzzy, kde-format
 #| msgid "Switch Camera"
 msgid "Select camera"
 msgstr "स्विच कॅमेरा"
 
-#: src/contents/ui/SettingsDialog.qml:35
+#: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "About"
 msgstr "विषये"
+
+#: src/contents/ui/SettingsDialog.qml:162
+#, fuzzy, kde-format
+#| msgid "Switch Camera"
+msgid "Select Camera"
+msgstr "स्विच कॅमेरा"
 
 #: src/main.cpp:66
 #, kde-format
@@ -143,6 +134,20 @@ msgstr "जोनाह ब्रुचेर्ट"
 #, kde-format
 msgid "Andrew Wang"
 msgstr ""
+
+#: src/main.cpp:87
+#, kde-format
+msgid "Devin Lin"
+msgstr ""
+
+#~ msgid "Took a photo"
+#~ msgstr "एकं फोटो गृहीतवान्"
+
+#~ msgid "Stopped recording"
+#~ msgstr "रिकार्डिङ्ग् स्थगितवान्"
+
+#~ msgid "Started recording"
+#~ msgstr "रिकार्डिङ्ग् आरब्धवान्"
 
 #~ msgid "Camera is busy. Is another application using it?"
 #~ msgstr "कॅमेरा व्यस्तः अस्ति। अन्यः अनुप्रयोगः तस्य उपयोगं करोति वा ?"
