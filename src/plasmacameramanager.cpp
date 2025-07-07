@@ -13,6 +13,8 @@ PlasmaCameraManager::PlasmaCameraManager(QObject *parent)
     // Read saved configuration settings from kconfig
     setVideoRecordingFps(CameraSettings::self()->videoRecordingFps());
     setQuality(static_cast<Quality>(CameraSettings::self()->videoRecordingQuality()));
+    setVideoResolution(static_cast<Resolution>(CameraSettings::self()->videoResolution()));
+    setVideoCodec(static_cast<VideoCodec>(CameraSettings::self()->videoCodec()));
 
     // Set to default audio input
     setAudioRecordingEnabledInternal(true);
@@ -23,10 +25,6 @@ PlasmaCameraManager::PlasmaCameraManager(QObject *parent)
     connect(&m_orientationSensor, &QOrientationSensor::readingChanged, this, &PlasmaCameraManager::updateFromOrientationSensor);
 
     m_orientationSensor.start();
-
-    m_format.setFileFormat(QMediaFormat::FileFormat::MPEG4);
-    m_format.setVideoCodec(QMediaFormat::VideoCodec::H264);
-    m_format.setAudioCodec(QMediaFormat::AudioCodec::MP3);
 
     // Listen to audio inputs changing, and change audio device if needed
     QMediaDevices *mediaDevices = new QMediaDevices(this);
@@ -95,6 +93,16 @@ QAudioInput *PlasmaCameraManager::audioInput() const
 float PlasmaCameraManager::videoRecordingFps() const
 {
     return m_videoRecordingFps;
+}
+
+PlasmaCameraManager::Resolution PlasmaCameraManager::videoResolution() const
+{
+    return m_videoResolution;
+}
+
+PlasmaCameraManager::VideoCodec PlasmaCameraManager::videoCodec() const
+{
+    return m_videoCodec;
 }
 
 bool PlasmaCameraManager::audioRecordingEnabled() const
@@ -244,8 +252,9 @@ void PlasmaCameraManager::setRecorder(QMediaRecorder *recorder)
     m_recorder = recorder;
     updateRecorderSettings();
 
-    connect(recorder, &QMediaRecorder::errorOccurred, [](QMediaRecorder::Error error, const QString &errorString) {
+    connect(recorder, &QMediaRecorder::errorOccurred, [this](QMediaRecorder::Error error, const QString &errorString) {
         qDebug() << "Recording error:" << error << errorString;
+        setError(0, Error::ResourceError, errorString);
     });
 
     m_session.setRecorder(recorder);
@@ -272,6 +281,27 @@ void PlasmaCameraManager::updateRecorderSettings()
         return;
     }
 
+    // We use mp4 container with mp3 audio stream for simplicity
+    m_format.setFileFormat(QMediaFormat::FileFormat::MPEG4);
+    m_format.setAudioCodec(QMediaFormat::AudioCodec::MP3);
+
+    switch (m_videoCodec) {
+    case PlasmaCameraManager::MPEG2:
+        // For slower devices
+        m_format.setVideoCodec(QMediaFormat::VideoCodec::MPEG2);
+        break;
+    case PlasmaCameraManager::H264:
+        // Good for most cases
+        m_format.setVideoCodec(QMediaFormat::VideoCodec::H264);
+        break;
+    case PlasmaCameraManager::H265:
+        m_format.setVideoCodec(QMediaFormat::VideoCodec::H265);
+        break;
+    default:
+        m_format.setVideoCodec(QMediaFormat::VideoCodec::H264);
+        break;
+    }
+
     // Set the format on the recorder
     m_recorder->setMediaFormat(m_format);
 
@@ -295,7 +325,26 @@ void PlasmaCameraManager::updateRecorderSettings()
     }
 
     // Set the resolution
-    // m_recorder->setVideoResolution(QSize(1280, 720));
+    switch (m_videoResolution) {
+    case ResolutionAuto:
+        m_recorder->setVideoResolution(QSize());
+        break;
+    case Resolution540p:
+        m_recorder->setVideoResolution(QSize(960, 540));
+        break;
+    case Resolution720p:
+        m_recorder->setVideoResolution(QSize(1280, 720));
+        break;
+    case Resolution1080p:
+        m_recorder->setVideoResolution(QSize(1920, 1080));
+        break;
+    case Resolution1440p:
+        m_recorder->setVideoResolution(QSize(2560, 1440));
+        break;
+    case Resolution2160p:
+        m_recorder->setVideoResolution(QSize(3840, 2160));
+        break;
+    }
 
     // Set the frame rate
     // m_recorder->setVideoFrameRate(m_videoRecordingFps);
@@ -340,13 +389,42 @@ bool PlasmaCameraManager::findAndSetDefaultRecordingDevice()
 
 void PlasmaCameraManager::setVideoRecordingFps(const float fps)
 {
-    if (m_videoRecordingFps != fps) {
-        m_videoRecordingFps = fps;
-        CameraSettings::self()->setVideoRecordingFps(fps);
-        Q_EMIT videoRecordingFpsChanged(fps);
-
-        updateRecorderSettings();
+    if (m_videoRecordingFps == fps) {
+        return;
     }
+
+    m_videoRecordingFps = fps;
+    CameraSettings::self()->setVideoRecordingFps(fps);
+    Q_EMIT videoRecordingFpsChanged(fps);
+
+    updateRecorderSettings();
+}
+
+void PlasmaCameraManager::setVideoResolution(Resolution resolution)
+{
+    if (m_videoResolution == resolution) {
+        return;
+    }
+
+    m_videoResolution = resolution;
+    CameraSettings::self()->setVideoResolution(static_cast<int>(resolution));
+    Q_EMIT videoResolutionChanged();
+
+    // TODO: persist video resolution, but it needs to be per-camera
+    updateRecorderSettings();
+}
+
+void PlasmaCameraManager::setVideoCodec(VideoCodec codec)
+{
+    if (m_videoCodec == codec) {
+        return;
+    }
+
+    m_videoCodec = codec;
+    CameraSettings::self()->setVideoCodec(static_cast<int>(codec));
+    Q_EMIT videoCodecChanged();
+
+    updateRecorderSettings();
 }
 
 void PlasmaCameraManager::setError(const int id, const Error error, const QString& errorString)

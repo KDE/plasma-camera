@@ -38,18 +38,19 @@ class PlasmaCameraManager : public QObject
     // preforming an image capture
     Q_PROPERTY(bool readyForCapture READ isReadyForCapture NOTIFY readyForCaptureChanged)
 
-    // saving to file
     Q_PROPERTY(QList<FileFormat> supportedFileFormats READ supportedFileFormats CONSTANT)
     Q_PROPERTY(FileFormat fileFormat READ fileFormat WRITE setFileFormat NOTIFY fileFormatChanged)
     Q_PROPERTY(Quality quality READ quality WRITE setQuality NOTIFY qualityChanged)
 
     // preview and video recording
-  	Q_PROPERTY(PlasmaCamera *plasmaCamera READ plasmaCamera WRITE setPlasmaCamera NOTIFY plasmaCameraChanged)
+    Q_PROPERTY(PlasmaCamera *plasmaCamera READ plasmaCamera WRITE setPlasmaCamera NOTIFY plasmaCameraChanged)
     Q_PROPERTY(QVideoSink *videoSink READ videoSink WRITE setVideoSink NOTIFY videoSinkChanged)
     Q_PROPERTY(QMediaRecorder *recorder READ recorder WRITE setRecorder NOTIFY recorderChanged)
     Q_PROPERTY(bool audioRecordingEnabled READ audioRecordingEnabled WRITE setAudioRecordingEnabled NOTIFY audioRecordingEnabledChanged)
     Q_PROPERTY(QAudioInput *audioInput READ audioInput WRITE setAudioInput NOTIFY audioInputChanged)
     Q_PROPERTY(float videoRecordingFps READ videoRecordingFps WRITE setVideoRecordingFps NOTIFY videoRecordingFpsChanged)
+    Q_PROPERTY(Resolution videoResolution READ videoResolution WRITE setVideoResolution NOTIFY videoResolutionChanged)
+    Q_PROPERTY(VideoCodec videoCodec READ videoCodec WRITE setVideoCodec NOTIFY videoCodecChanged)
 
     Q_PROPERTY(bool isRecordingVideo READ isRecordingVideo NOTIFY isRecordingVideoChanged)
     Q_PROPERTY(bool isSavingVideo READ isSavingVideo NOTIFY isSavingVideoChanged)
@@ -71,11 +72,11 @@ public:
 
     enum Quality
     {
-        VeryLowQuality,
-        LowQuality,
-        NormalQuality,
-        HighQuality,
-        VeryHighQuality,
+        VeryLowQuality = 0,
+        LowQuality = 1,
+        NormalQuality = 2,
+        HighQuality = 3,
+        VeryHighQuality = 4,
     };
     Q_ENUM(Quality)
 
@@ -87,6 +88,23 @@ public:
         Tiff,
     };
     Q_ENUM(FileFormat)
+
+    enum Resolution {
+        ResolutionAuto = 0,
+        Resolution540p = 1,
+        Resolution720p = 2,
+        Resolution1080p = 3,
+        Resolution1440p = 4,
+        Resolution2160p = 5
+    };
+    Q_ENUM(Resolution)
+
+    enum VideoCodec {
+        H264 = 0,
+        H265 = 1,
+        MPEG2 = 2
+    };
+    Q_ENUM(VideoCodec)
 
     // error handling
     Error error() const;
@@ -106,6 +124,8 @@ public:
     QMediaRecorder *recorder() const;
     QAudioInput *audioInput() const;
     float videoRecordingFps() const;
+    Resolution videoResolution() const;
+    VideoCodec videoCodec() const;
 
     bool audioRecordingEnabled() const;
     void setAudioRecordingEnabled(bool enabled);
@@ -138,6 +158,8 @@ Q_SIGNALS:
     void recorderChanged();
     void audioInputChanged();
     void videoRecordingFpsChanged(float fps);
+    void videoResolutionChanged();
+    void videoCodecChanged();
     void imageSaved(int id, const QString &fileName);
 
     void audioRecordingEnabledChanged();
@@ -160,6 +182,8 @@ public Q_SLOTS:
     void setRecorder(QMediaRecorder *recorder);
     void setAudioInput(QAudioInput *audioInput);
     void setVideoRecordingFps(float fps);
+    void setVideoResolution(Resolution resolution);
+    void setVideoCodec(VideoCodec codec);
 
 private Q_SLOTS:
     // error handling
@@ -225,6 +249,8 @@ private:
     QAudioInput *m_audioInput = nullptr;
     float m_videoRecordingFps = 24.0f;
     bool m_audioRecordingEnabled = true;
+    Resolution m_videoResolution = Resolution::ResolutionAuto;
+    VideoCodec m_videoCodec = VideoCodec::H264;
 
     // Device orientation for correct rotation
     QOrientationSensor m_orientationSensor;

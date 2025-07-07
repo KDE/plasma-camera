@@ -30,8 +30,18 @@ Kirigami.MenuDialog {
         },
 
         Kirigami.Action {
+            text: i18n('Video recording resolution')
+            icon.name: 'view-fullscreen-symbolic'
+
+            onTriggered: {
+                selectVideoResolutionDialogLoader.active = true;
+                selectVideoResolutionDialogLoader.item.open();
+            }
+        },
+
+        Kirigami.Action {
             text: i18n('Video recording quality')
-            icon.name: 'emblem-videos-symbolic'
+            icon.name: 'kstars_stars-symbolic' // TODO
 
             onTriggered: {
                 selectVideoRecordingQualityLoader.active = true;
@@ -40,12 +50,22 @@ Kirigami.MenuDialog {
         },
 
         Kirigami.Action {
-            text: i18n('Video recording framerate')
+            text: i18n('Video recording frame rate')
             icon.name: 'emblem-videos-symbolic'
 
             onTriggered: {
                 videoFpsDialogLoader.active = true;
                 videoFpsDialogLoader.item.open();
+            }
+        },
+
+        Kirigami.Action {
+            text: i18n('Video recording codec')
+            icon.name: 'show-gpu-effects-symbolic' // TODO
+
+            onTriggered: {
+                videoCodecDialogLoader.active = true;
+                videoCodecDialogLoader.item.open();
             }
         },
 
@@ -62,6 +82,53 @@ Kirigami.MenuDialog {
             }
         }
     ]
+
+    property Loader selectVideoResolutionDialogLoader: Loader {
+        id: selectVideoResolutionDialogLoader
+        active: false
+
+        sourceComponent: Kirigami.Dialog {
+            id: selectVideoResolutionDialog
+            title: i18n('Video Recording Resolution')
+            preferredWidth: Kirigami.Units.gridUnit * 16
+
+            onClosed: selectVideoResolutionDialogLoader.active = false
+
+            ColumnLayout {
+                spacing: 0
+
+                Repeater {
+                    model: [
+                        { name: i18n('Auto'), value: PlasmaCameraManager.ResolutionAuto },
+                        { name: i18n('540p'), value: PlasmaCameraManager.Resolution540p },
+                        { name: i18n('720p'), value: PlasmaCameraManager.Resolution720p },
+                        { name: i18n('1080p'), value: PlasmaCameraManager.Resolution1080p },
+                        { name: i18n('1440p'), value: PlasmaCameraManager.Resolution1440p },
+                        { name: i18n('2160p'), value: PlasmaCameraManager.Resolution2160p },
+                    ]
+
+                    delegate: QQC2.RadioDelegate {
+                        id: radioDelegate
+                        property string name: modelData.name
+                        property int value: modelData.value
+
+                        Layout.fillWidth: true
+                        topPadding: Kirigami.Units.smallSpacing * 2
+                        bottomPadding: Kirigami.Units.smallSpacing * 2
+
+                        text: name
+                        checked: value == root.cameraManager.videoResolution
+                        onCheckedChanged: {
+                            if (checked) {
+                                root.cameraManager.videoResolution = radioDelegate.value;
+                                checked = Qt.binding(() => (radioDelegate.value == root.cameraManager.videoResolution));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     property Loader qualityLoader: Loader {
         id: selectVideoRecordingQualityLoader
@@ -145,6 +212,50 @@ Kirigami.MenuDialog {
                             if (checked) {
                                 root.cameraManager.videoRecordingFps = radioDelegate.value;
                                 checked = Qt.binding(() => (radioDelegate.value == root.cameraManager.videoRecordingFps));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    property Loader videoCodecDialogLoader: Loader {
+        id: videoCodecDialogLoader
+        active: false
+
+        sourceComponent: Kirigami.Dialog {
+            id: videoCodecDialog
+            title: i18n('Video Recording Codec')
+            preferredWidth: Kirigami.Units.gridUnit * 16
+
+            onClosed: videoFpsDialogLoader.active = false
+
+            ColumnLayout {
+                spacing: 0
+
+                Repeater {
+                    model: [
+                        { name: 'H264 (Recommended)', value: PlasmaCameraManager.H264 },
+                        { name: 'H265', value: PlasmaCameraManager.H265 },
+                        { name: 'MPEG2 (Fastest)', value: PlasmaCameraManager.MPEG2 },
+                    ]
+
+                    delegate: QQC2.RadioDelegate {
+                        id: radioDelegate
+                        property string name: modelData.name
+                        property int value: modelData.value
+
+                        Layout.fillWidth: true
+                        topPadding: Kirigami.Units.smallSpacing * 2
+                        bottomPadding: Kirigami.Units.smallSpacing * 2
+
+                        text: name
+                        checked: value == root.cameraManager.videoCodec
+                        onCheckedChanged: {
+                            if (checked) {
+                                root.cameraManager.videoCodec = radioDelegate.value;
+                                checked = Qt.binding(() => (radioDelegate.value == root.cameraManager.videoCodec));
                             }
                         }
                     }

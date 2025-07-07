@@ -40,6 +40,9 @@ Kirigami.Page {
         videoSink: viewfinder.videoSink
 
         recorder: MediaRecorder {}
+        onErrorOccurred: {
+            showPassiveNotification(i18n("An error occurred: \"%1\". Please consider restarting the application if it stopped working.", captureSession.errorString))
+        }
     }
 
     property CaptureController captureController: CaptureController {

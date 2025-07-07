@@ -17,7 +17,13 @@
             <default>24</default>
         </entry>
         <entry key="videoRecordingQuality" type="int">
-            <default>2</default> <!-- NormalQuality -->
+            <default>2</default> <!-- PlasmaCameraManager::NormalQuality -->
+        </entry>
+        <entry key="videoResolution" type="int">
+            <default>0</default> <!-- PlasmaCameraManager::ResolutionAuto -->
+        </entry>
+        <entry key="videoCodec" type="int">
+            <default>0</default> <!-- PlasmaCameraManager::H264 -->
         </entry>
     </group>
 </kcfg>
