@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-07 00:44+0000\n"
+"POT-Creation-Date: 2025-07-08 00:44+0000\n"
 "PO-Revision-Date: 2025-07-03 23:53+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -43,12 +43,26 @@ msgstr "影片"
 msgid "Camera"
 msgstr "相機"
 
-#: src/contents/ui/camera/CameraPage.qml:59
+#: src/contents/ui/camera/CameraPage.qml:44 src/contents/ui/main.qml:73
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr "發生錯誤：「%1」。當其停止運作時，請考慮重新啟動應用程式。"
+
+#: src/contents/ui/camera/CameraPage.qml:47
+#, kde-format
+msgid ""
+"The video encoder is struggling to keep up. Try lowering your recording "
+"settings to improve performance."
+msgstr ""
+
+#: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
 msgid "Switch mode"
 msgstr "切換模式"
 
-#: src/contents/ui/camera/CameraPage.qml:92
+#: src/contents/ui/camera/CameraPage.qml:98
 #, kde-format
 msgid "Switch Camera"
 msgstr "切換相機"
@@ -88,50 +102,43 @@ msgstr "無法開始錄影"
 msgid "Camera not available"
 msgstr "相機無法使用"
 
-#: src/contents/ui/main.qml:73
-#, kde-format
-msgid ""
-"An error occurred: \"%1\". Please consider restarting the application if it "
-"stopped working."
-msgstr "發生錯誤：「%1」。當其停止運作時，請考慮重新啟動應用程式。"
-
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
 msgid "Select camera"
 msgstr "選取相機"
 
-#: src/contents/ui/SettingsDialog.qml:53
+#: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "About"
 msgstr "關於"
 
-#: src/contents/ui/SettingsDialog.qml:162
+#: src/contents/ui/SettingsDialog.qml:273
 #, fuzzy, kde-format
 #| msgid "Select camera"
 msgid "Select Camera"
 msgstr "選取相機"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Plasma Mobile 行動版開發者"
 
-#: src/main.cpp:70
+#: src/main.cpp:73
 #, kde-format
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: src/main.cpp:76
+#: src/main.cpp:79
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
 
-#: src/main.cpp:82
+#: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
 msgstr "Andrew Wang"
 
-#: src/main.cpp:87
+#: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
 msgstr ""

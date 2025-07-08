@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-07 00:44+0000\n"
-"PO-Revision-Date: 2025-07-03 16:18+0200\n"
+"POT-Creation-Date: 2025-07-08 00:44+0000\n"
+"PO-Revision-Date: 2025-07-07 13:07+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -46,12 +46,28 @@ msgstr "Vídeo"
 msgid "Camera"
 msgstr "Càmera"
 
-#: src/contents/ui/camera/CameraPage.qml:59
+#: src/contents/ui/camera/CameraPage.qml:44 src/contents/ui/main.qml:73
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr ""
+"S'ha detectat un error: «%1». Considereu reiniciar l'aplicació si s'ha "
+"aturat el seu funcionament."
+
+#: src/contents/ui/camera/CameraPage.qml:47
+#, kde-format
+msgid ""
+"The video encoder is struggling to keep up. Try lowering your recording "
+"settings to improve performance."
+msgstr ""
+
+#: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
 msgid "Switch mode"
 msgstr "Canvi de mode"
 
-#: src/contents/ui/camera/CameraPage.qml:92
+#: src/contents/ui/camera/CameraPage.qml:98
 #, kde-format
 msgid "Switch Camera"
 msgstr "Commuta la càmera"
@@ -91,67 +107,42 @@ msgstr "Ha fallat en iniciar l'enregistrament"
 msgid "Camera not available"
 msgstr "Càmera no disponible"
 
-#: src/contents/ui/main.qml:73
-#, kde-format
-msgid ""
-"An error occurred: \"%1\". Please consider restarting the application if it "
-"stopped working."
-msgstr ""
-"S'ha detectat un error: «%1». Considereu reiniciar l'aplicació si s'ha "
-"aturat el seu funcionament."
-
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
 msgid "Select camera"
 msgstr "Selecció de càmera"
 
-#: src/contents/ui/SettingsDialog.qml:53
+#: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "About"
 msgstr "Quant al"
 
-#: src/contents/ui/SettingsDialog.qml:162
-#, fuzzy, kde-format
-#| msgid "Select camera"
+#: src/contents/ui/SettingsDialog.qml:273
+#, kde-format
 msgid "Select Camera"
 msgstr "Selecció de càmera"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Els desenvolupadors del Plasma Mobile"
 
-#: src/main.cpp:70
+#: src/main.cpp:73
 #, kde-format
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: src/main.cpp:76
+#: src/main.cpp:79
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
 
-#: src/main.cpp:82
+#: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
 msgstr "Andrew Wang"
 
-#: src/main.cpp:87
+#: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
-
-#~ msgid "Took a photo"
-#~ msgstr "Pren una foto"
-
-#~ msgid "Stopped recording"
-#~ msgstr "S'ha aturat l'enregistrament"
-
-#~ msgid "Started recording"
-#~ msgstr "S'ha iniciat l'enregistrament"
-
-#~ msgid "Camera is busy. Is another application using it?"
-#~ msgstr "La càmera està ocupada. Hi ha una altra aplicació que l'usi?"
-
-#~ msgid "Missing camera resource."
-#~ msgstr "Manca el recurs de càmera."
+msgstr "Devin Lin"

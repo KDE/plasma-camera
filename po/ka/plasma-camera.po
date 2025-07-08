@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-07 00:44+0000\n"
-"PO-Revision-Date: 2025-07-03 14:45+0200\n"
+"POT-Creation-Date: 2025-07-08 00:44+0000\n"
+"PO-Revision-Date: 2025-07-07 05:28+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -43,12 +43,26 @@ msgstr "ვიდეო"
 msgid "Camera"
 msgstr "კამერა"
 
-#: src/contents/ui/camera/CameraPage.qml:59
+#: src/contents/ui/camera/CameraPage.qml:44 src/contents/ui/main.qml:73
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr "შეცდომა: %1 . თუ პროგრამამ მუშაობა შეწყვიტა, გადატვირთეთ ის."
+
+#: src/contents/ui/camera/CameraPage.qml:47
+#, kde-format
+msgid ""
+"The video encoder is struggling to keep up. Try lowering your recording "
+"settings to improve performance."
+msgstr ""
+
+#: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
 msgid "Switch mode"
 msgstr "რეჟიმის გადართვა"
 
-#: src/contents/ui/camera/CameraPage.qml:92
+#: src/contents/ui/camera/CameraPage.qml:98
 #, kde-format
 msgid "Switch Camera"
 msgstr "კამერის გადართვა"
@@ -88,53 +102,45 @@ msgstr "ჩაწერის დაწყების შეცდომა"
 msgid "Camera not available"
 msgstr "კამერა მიუწვდომელია"
 
-#: src/contents/ui/main.qml:73
-#, kde-format
-msgid ""
-"An error occurred: \"%1\". Please consider restarting the application if it "
-"stopped working."
-msgstr "შეცდომა: %1 . თუ პროგრამამ მუშაობა შეწყვიტა, გადატვირთეთ ის."
-
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
 msgid "Select camera"
 msgstr "აირჩიეთ კამერა"
 
-#: src/contents/ui/SettingsDialog.qml:53
+#: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "About"
 msgstr "შესახებ"
 
-#: src/contents/ui/SettingsDialog.qml:162
-#, fuzzy, kde-format
-#| msgid "Select camera"
+#: src/contents/ui/SettingsDialog.qml:273
+#, kde-format
 msgid "Select Camera"
 msgstr "აირჩიეთ კამერა"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Plasma Mobile-ის პროგრამისტები"
 
-#: src/main.cpp:70
+#: src/main.cpp:73
 #, kde-format
 msgid "Marco Martin"
 msgstr "მაკრო მარტინი"
 
-#: src/main.cpp:76
+#: src/main.cpp:79
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
 
-#: src/main.cpp:82
+#: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
 msgstr "ენდრიუ ვანგი"
 
-#: src/main.cpp:87
+#: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #~ msgid "Took a photo"
 #~ msgstr "ფოტო გადავიღე"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-07 00:44+0000\n"
+"POT-Creation-Date: 2025-07-08 00:44+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -44,12 +44,28 @@ msgstr "विडिओ"
 msgid "Camera"
 msgstr "कॅमेरा"
 
-#: src/contents/ui/camera/CameraPage.qml:59
+#: src/contents/ui/camera/CameraPage.qml:44 src/contents/ui/main.qml:73
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr ""
+"एकः त्रुटिः अभवत्: \"%1\" । यदि एप्लिकेशनं कार्यं स्थगितम् अस्ति तर्हि कृपया पुनः आरम्भं कर्तुं "
+"विचारयन्तु।"
+
+#: src/contents/ui/camera/CameraPage.qml:47
+#, kde-format
+msgid ""
+"The video encoder is struggling to keep up. Try lowering your recording "
+"settings to improve performance."
+msgstr ""
+
+#: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
 msgid "Switch mode"
 msgstr "स्विच मोड"
 
-#: src/contents/ui/camera/CameraPage.qml:92
+#: src/contents/ui/camera/CameraPage.qml:98
 #, kde-format
 msgid "Switch Camera"
 msgstr "स्विच कॅमेरा"
@@ -89,53 +105,44 @@ msgstr "रिकार्डिङ्ग् आरभ्यतुं असफ�
 msgid "Camera not available"
 msgstr "कॅमेरा उपलब्धः नास्ति"
 
-#: src/contents/ui/main.qml:73
-#, kde-format
-msgid ""
-"An error occurred: \"%1\". Please consider restarting the application if it "
-"stopped working."
-msgstr ""
-"एकः त्रुटिः अभवत्: \"%1\" । यदि एप्लिकेशनं कार्यं स्थगितम् अस्ति तर्हि कृपया पुनः आरम्भं कर्तुं "
-"विचारयन्तु।"
-
 #: src/contents/ui/SettingsDialog.qml:23
 #, fuzzy, kde-format
 #| msgid "Switch Camera"
 msgid "Select camera"
 msgstr "स्विच कॅमेरा"
 
-#: src/contents/ui/SettingsDialog.qml:53
+#: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "About"
 msgstr "विषये"
 
-#: src/contents/ui/SettingsDialog.qml:162
+#: src/contents/ui/SettingsDialog.qml:273
 #, fuzzy, kde-format
 #| msgid "Switch Camera"
 msgid "Select Camera"
 msgstr "स्विच कॅमेरा"
 
-#: src/main.cpp:66
+#: src/main.cpp:69
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© प्लाज्मा मोबाईल डेवलपर्स"
 
-#: src/main.cpp:70
+#: src/main.cpp:73
 #, kde-format
 msgid "Marco Martin"
 msgstr "मार्को मार्टिन्"
 
-#: src/main.cpp:76
+#: src/main.cpp:79
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "जोनाह ब्रुचेर्ट"
 
-#: src/main.cpp:82
+#: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
 msgstr ""
 
-#: src/main.cpp:87
+#: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
 msgstr ""
