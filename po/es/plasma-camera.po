@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-08 00:44+0000\n"
-"PO-Revision-Date: 2025-07-07 17:34+0100\n"
+"PO-Revision-Date: 2025-07-08 04:02+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -59,6 +59,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
+"El codificador de vídeo tiene dificultades para mantener el ritmo. Intente "
+"rebajar la configuración de grabación para mejorar el rendimiento."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
