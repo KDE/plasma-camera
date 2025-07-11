@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-08 00:44+0000\n"
-"PO-Revision-Date: 2025-07-03 16:18+0200\n"
+"PO-Revision-Date: 2025-07-08 11:39+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -61,6 +61,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
+"El codificador de vídeo està funcionant atrafegat. Intenteu reduir els "
+"paràmetres de gravació per a millorar el rendiment."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -118,8 +120,7 @@ msgid "About"
 msgstr "Quant a"
 
 #: src/contents/ui/SettingsDialog.qml:273
-#, fuzzy, kde-format
-#| msgid "Select camera"
+#, kde-format
 msgid "Select Camera"
 msgstr "Seleccioneu la càmera"
 
@@ -146,19 +147,4 @@ msgstr "Andrew Wang"
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
-
-#~ msgid "Took a photo"
-#~ msgstr "Pren una foto"
-
-#~ msgid "Stopped recording"
-#~ msgstr "S'ha parat la gravació"
-
-#~ msgid "Started recording"
-#~ msgstr "S'ha iniciat la gravació"
-
-#~ msgid "Camera is busy. Is another application using it?"
-#~ msgstr "La càmera està ocupada. Hi ha una altra aplicació que l'utilitze?"
-
-#~ msgid "Missing camera resource."
-#~ msgstr "Falta el recurs de càmera."
+msgstr "Devin Lin"
