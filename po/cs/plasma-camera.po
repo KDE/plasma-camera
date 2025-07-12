@@ -112,10 +112,9 @@ msgid "About"
 msgstr "O aplikaci"
 
 #: src/contents/ui/SettingsDialog.qml:273
-#, fuzzy, kde-format
-#| msgid "Camera"
+#, kde-format
 msgid "Select Camera"
-msgstr "Fotoaparát"
+msgstr "Vyberte fotoaparát"
 
 #: src/main.cpp:69
 #, kde-format
@@ -140,7 +139,7 @@ msgstr ""
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #~ msgid "Stopped recording"
 #~ msgstr "Zastaveno nahrávání"
