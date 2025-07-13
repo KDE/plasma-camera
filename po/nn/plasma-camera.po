@@ -145,39 +145,3 @@ msgstr ""
 #, kde-format
 msgid "Devin Lin"
 msgstr ""
-
-#~ msgid "Took a photo"
-#~ msgstr "Tok eit bilete"
-
-#~ msgid "Stopped recording"
-#~ msgstr "Stoppa opptak"
-
-#~ msgid "Started recording"
-#~ msgstr "Starta opptak"
-
-#~ msgid "Camera is busy. Is another application using it?"
-#~ msgstr "Kameraet er oppteke. Kanskje i bruk av eit anna program?"
-
-#~ msgid "Missing camera resource."
-#~ msgstr "Manglar kameraressurs."
-
-#~ msgid "Resolution"
-#~ msgstr "Oppløysing"
-
-#~ msgid "White balance"
-#~ msgstr "Kvitbalanse"
-
-#~ msgid "Auto"
-#~ msgstr "Auto"
-
-#~ msgid "Sunlight"
-#~ msgstr "Sollys"
-
-#~ msgid "Cloudy"
-#~ msgstr "Overskya"
-
-#~ msgid "Tungsten"
-#~ msgstr "Glødelampe"
-
-#~ msgid "Fluorescent"
-#~ msgstr "Lysrøyr"
