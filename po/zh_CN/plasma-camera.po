@@ -54,7 +54,7 @@ msgstr "发生错误：“%1”。如果应用已停止工作，请考虑重新�
 msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
-msgstr ""
+msgstr "视频编码器无法流畅处理录像数据。请尝试降低录像设置以改善性能。"
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -104,7 +104,7 @@ msgstr "相机不可用"
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
 msgid "Select camera"
-msgstr ""
+msgstr "选择相机"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -112,10 +112,9 @@ msgid "About"
 msgstr "关于"
 
 #: src/contents/ui/SettingsDialog.qml:273
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select Camera"
-msgstr "切换相机"
+msgstr "选择相机"
 
 #: src/main.cpp:69
 #, kde-format
@@ -135,18 +134,9 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "Andrew Wang"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
-
-#~ msgid "Took a photo"
-#~ msgstr "拍摄照片"
-
-#~ msgid "Stopped recording"
-#~ msgstr "已停止录像"
-
-#~ msgid "Started recording"
-#~ msgstr "已开始录像"
+msgstr "Devin Lin"
