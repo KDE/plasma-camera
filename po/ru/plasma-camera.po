@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
 #
-# SPDX-FileCopyrightText: 2019, 2020, 2024 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2024, 2025 Alexander Yavorsky <kekcuha@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-08 00:44+0000\n"
-"PO-Revision-Date: 2024-02-09 23:17+0300\n"
+"PO-Revision-Date: 2025-07-04 18:08+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -103,10 +103,9 @@ msgid "Camera not available"
 msgstr "Камера недоступна"
 
 #: src/contents/ui/SettingsDialog.qml:23
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select camera"
-msgstr "Переключить камеру"
+msgstr "Выбрать камеру"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -137,7 +136,7 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "Andrew Wang"
 
 #: src/main.cpp:90
 #, kde-format
