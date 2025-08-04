@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
-# SPDX-FileCopyrightText: 2019, 2020, 2023 Paolo Zamponi <feus73@gmail.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2023, 2025 Paolo Zamponi <feus73@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-08 00:44+0000\n"
-"PO-Revision-Date: 2023-10-26 17:45+0200\n"
+"PO-Revision-Date: 2025-07-27 22:39+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -57,6 +57,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
+"Il codificatore video sta facendo fatica a stare al passo. Per migliorare le "
+"prestazioni prova a ridurre le impostazioni di registrazione."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -104,10 +106,9 @@ msgid "Camera not available"
 msgstr "Fotocamera non disponibile"
 
 #: src/contents/ui/SettingsDialog.qml:23
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select camera"
-msgstr "Cambia fotocamera"
+msgstr "Seleziona fotocamera"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -115,10 +116,9 @@ msgid "About"
 msgstr "Informazioni su"
 
 #: src/contents/ui/SettingsDialog.qml:273
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select Camera"
-msgstr "Cambia fotocamera"
+msgstr "Seleziona fotocamera"
 
 #: src/main.cpp:69
 #, kde-format
@@ -138,12 +138,12 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "Andrew Wang"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #~ msgid "Took a photo"
 #~ msgstr "Ho scattato una foto"
