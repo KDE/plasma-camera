@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-08 00:44+0000\n"
-"PO-Revision-Date: 2025-07-03 23:53+0900\n"
+"PO-Revision-Date: 2025-08-08 02:31+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -55,7 +55,7 @@ msgstr "發生錯誤：「%1」。當其停止運作時，請考慮重新啟動�
 msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
-msgstr ""
+msgstr "影片編碼器有困難跟上錄製。請試著降低您的錄影設定來改善效能。"
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -113,8 +113,7 @@ msgid "About"
 msgstr "關於"
 
 #: src/contents/ui/SettingsDialog.qml:273
-#, fuzzy, kde-format
-#| msgid "Select camera"
+#, kde-format
 msgid "Select Camera"
 msgstr "選取相機"
 
@@ -141,7 +140,7 @@ msgstr "Andrew Wang"
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #~ msgid "Took a photo"
 #~ msgstr "拍張照片"
