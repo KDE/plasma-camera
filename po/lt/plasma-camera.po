@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-08 00:44+0000\n"
-"PO-Revision-Date: 2024-06-16 02:25+0300\n"
+"PO-Revision-Date: 2025-08-23 13:38+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -59,6 +59,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
+"Vaizdo koduotuvas nespėja laiku apdoroti visų duomenų. Pamėginkite sumažinti "
+"filmavimo nuostatas, kad pagerintumėte našumą."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -83,12 +85,12 @@ msgstr "Fotografuoti"
 #: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
-msgstr "Stabdyti vaizdo įrašą"
+msgstr "Stabdyti vaizdo įrašo filmavimą"
 
 #: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
 msgid "Start recording video"
-msgstr "Pradėti vaizdo įrašą"
+msgstr "Pradėti vaizdo įrašo filmavimą"
 
 #: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
@@ -98,7 +100,7 @@ msgstr "Nepavyko fotografuoti"
 #: src/contents/ui/camera/CaptureController.qml:108
 #, kde-format
 msgid "Failed to start recording"
-msgstr "Nepavyko pradėti įrašo"
+msgstr "Nepavyko pradėti filmuoti"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -106,10 +108,9 @@ msgid "Camera not available"
 msgstr "Kamera neprieinama"
 
 #: src/contents/ui/SettingsDialog.qml:23
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select camera"
-msgstr "Perjungti kamerą"
+msgstr "Pasirinkti kamerą"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -117,10 +118,9 @@ msgid "About"
 msgstr "Apie"
 
 #: src/contents/ui/SettingsDialog.qml:273
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select Camera"
-msgstr "Perjungti kamerą"
+msgstr "Pasirinkti kamerą"
 
 #: src/main.cpp:69
 #, kde-format
@@ -140,12 +140,12 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "Andrew Wang"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #~ msgid "Took a photo"
 #~ msgstr "Fotografuoti"
