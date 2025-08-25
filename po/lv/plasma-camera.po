@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-08 00:44+0000\n"
-"PO-Revision-Date: 2024-08-30 11:52+0300\n"
+"PO-Revision-Date: 2025-08-22 16:00+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -56,6 +56,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
+"Video kodētājam rodas problēmas paspēt. Mēģiniet uzlabot veiktspēju, "
+"samazinot ierakstīšanas iestatījumus."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -103,10 +105,9 @@ msgid "Camera not available"
 msgstr "Kamera nav pieejama"
 
 #: src/contents/ui/SettingsDialog.qml:23
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select camera"
-msgstr "Pārslēgt kameru"
+msgstr "Atlasīt kameru"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -114,10 +115,9 @@ msgid "About"
 msgstr "Par"
 
 #: src/contents/ui/SettingsDialog.qml:273
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select Camera"
-msgstr "Pārslēgt kameru"
+msgstr "Atlasīt kameru"
 
 #: src/main.cpp:69
 #, kde-format
@@ -137,12 +137,12 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "Andrew Wang"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #~ msgid "Took a photo"
 #~ msgstr "Uzņēma foto"
