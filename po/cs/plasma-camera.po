@@ -140,33 +140,3 @@ msgstr ""
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
-
-#~ msgid "Stopped recording"
-#~ msgstr "Zastaveno nahrávání"
-
-#~ msgid "Started recording"
-#~ msgstr "Spuštěno nahrávání"
-
-#~ msgid "Missing camera resource."
-#~ msgstr "Chybí zdroj fotoaparátu."
-
-#~ msgid "Resolution"
-#~ msgstr "Rozlišení"
-
-#~ msgid "White balance"
-#~ msgstr "Vyvážení bílé"
-
-#~ msgid "Auto"
-#~ msgstr "Automaticky"
-
-#~ msgid "Sunlight"
-#~ msgstr "Sluneční světlo"
-
-#~ msgid "Cloudy"
-#~ msgstr "Zamračeno"
-
-#~ msgid "Tungsten"
-#~ msgstr "Wolfram"
-
-#~ msgid "Fluorescent"
-#~ msgstr "Fluorescentní"
