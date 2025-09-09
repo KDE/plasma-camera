@@ -46,6 +46,8 @@ endif()
 
 find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS Kirigami CoreAddons I18n Config)
 
+find_package(LibExiv2 REQUIRED)
+
 add_subdirectory(src)
 
 file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)

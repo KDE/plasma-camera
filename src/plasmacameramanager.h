@@ -206,6 +206,11 @@ private:
      */
     bool findAndSetDefaultRecordingDevice();
 
+    /*!
+     * Writes EXIF data based on the current camera state to the given fileName.
+     */
+    void writeExifData(const QString &fileName);
+
     void setAudioRecordingEnabledInternal(bool enabled);
 
     int captureImageInternal();

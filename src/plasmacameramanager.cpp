@@ -8,6 +8,9 @@
 #include "plasmacamera/path.h"
 #include "plasmacameramanager.h"
 
+#include <exiv2/exiv2.hpp>
+#include <memory>
+
 PlasmaCameraManager::PlasmaCameraManager(QObject *parent)
     : QObject(parent)
 {
@@ -158,6 +161,7 @@ void PlasmaCameraManager::startRecordingVideo()
     // Set the correct rotation metadata prior to recording
     QMediaMetaData metaData;
     metaData.insert(QMediaMetaData::Orientation, outputOrientationDegrees());
+    metaData.insert(QMediaMetaData::Date, QDateTime::currentDateTime());
     m_recorder->setMetaData(metaData);
 
     m_recorder->record();
@@ -531,10 +535,56 @@ void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
             QString::fromStdString("Could not save to file: %1").arg(fileName));
     }
 
-    // TODO: use QImageWriter to write EXIF data
-    //  - https://doc.qt.io/qt-6/qimagewriter.html
+    // Write EXIF data
+    writeExifData(fileName);
 
     Q_EMIT imageSaved(m_imageCaptureNum, fileName);
+}
+
+QString getExifOffsetFormat(int offsetSeconds)
+{
+    char sign = (offsetSeconds >= 0) ? '+' : '-';
+    int absOffsetSeconds = qAbs(offsetSeconds);
+    int hours = absOffsetSeconds / 3600;
+    int minutes = (absOffsetSeconds % 3600) / 60;
+
+    return QStringLiteral("%1%2:%3").arg(sign).arg(hours, 2, 10, QLatin1Char('0')).arg(minutes, 2, 10, QLatin1Char('0'));
+}
+
+void PlasmaCameraManager::writeExifData(const QString &fileName)
+{
+    try {
+        Exiv2::Image::UniquePtr image = Exiv2::ImageFactory::open(fileName.toStdString());
+        if (!image) {
+            return;
+        }
+
+        image->readMetadata();
+
+        Exiv2::ExifData &exifData = image->exifData();
+
+        // Write time and date related information
+        QDateTime now = QDateTime::currentDateTime();
+
+        std::string exifDateTime = now.toString(QStringLiteral("yyyy:MM:dd HH:mm:ss")).toStdString();
+        exifData["Exif.Image.DateTime"] = exifDateTime;
+        exifData["Exif.Photo.DateTimeOriginal"] = exifDateTime;
+        exifData["Exif.Photo.DateTimeDigitized"] = exifDateTime;
+
+        std::string exifOffset = getExifOffsetFormat(now.offsetFromUtc()).toStdString();
+        exifData["Exif.Photo.OffsetTime"] = exifOffset;
+        exifData["Exif.Photo.OffsetTimeOriginal"] = exifOffset;
+        exifData["Exif.Photo.OffsetTimeDigitized"] = exifOffset;
+
+        image->setExifData(exifData);
+        image->writeMetadata();
+    } catch (const Exiv2::Error &e) {
+        qWarning() << "Error writing EXIF data (exiv2 Error): " << e.what();
+        return;
+    } catch (const std::exception &e) {
+        qWarning() << "Error writing EXIF data: " << e.what();
+        return;
+    }
 }
 
 void PlasmaCameraManager::processVideoFrame()

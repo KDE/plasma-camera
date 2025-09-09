@@ -31,6 +31,7 @@ target_link_libraries(
         KF6::CoreAddons
         KF6::I18n
         KF6::ConfigGui
+        LibExiv2::LibExiv2
 )
 
 find_package(PkgConfig)
