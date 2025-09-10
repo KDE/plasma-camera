@@ -13,7 +13,7 @@ import org.kde.plasmacamera
 
 Kirigami.MenuDialog {
     id: root
-    title: i18n('Settings')
+    title: i18n("Settings")
 
     property PlasmaCamera camera
     property PlasmaCameraManager cameraManager
@@ -30,7 +30,7 @@ Kirigami.MenuDialog {
         },
 
         Kirigami.Action {
-            text: i18n('Video recording resolution')
+            text: i18n("Video recording resolution")
             icon.name: 'view-fullscreen-symbolic'
 
             onTriggered: {
@@ -40,7 +40,7 @@ Kirigami.MenuDialog {
         },
 
         Kirigami.Action {
-            text: i18n('Video recording quality')
+            text: i18n("Video recording quality")
             icon.name: 'kstars_stars-symbolic' // TODO
 
             onTriggered: {
@@ -50,7 +50,7 @@ Kirigami.MenuDialog {
         },
 
         Kirigami.Action {
-            text: i18n('Video recording frame rate')
+            text: i18n("Video recording frame rate")
             icon.name: 'emblem-videos-symbolic'
 
             onTriggered: {
@@ -60,7 +60,7 @@ Kirigami.MenuDialog {
         },
 
         Kirigami.Action {
-            text: i18n('Video recording codec')
+            text: i18n("Video recording codec")
             icon.name: 'show-gpu-effects-symbolic' // TODO
 
             onTriggered: {
@@ -89,7 +89,7 @@ Kirigami.MenuDialog {
 
         sourceComponent: Kirigami.Dialog {
             id: selectVideoResolutionDialog
-            title: i18n('Video Recording Resolution')
+            title: i18n("Video Recording Resolution")
             preferredWidth: Kirigami.Units.gridUnit * 16
 
             onClosed: selectVideoResolutionDialogLoader.active = false
@@ -99,12 +99,12 @@ Kirigami.MenuDialog {
 
                 Repeater {
                     model: [
-                        { name: i18n('Auto'), value: PlasmaCameraManager.ResolutionAuto },
-                        { name: i18n('540p'), value: PlasmaCameraManager.Resolution540p },
-                        { name: i18n('720p'), value: PlasmaCameraManager.Resolution720p },
-                        { name: i18n('1080p'), value: PlasmaCameraManager.Resolution1080p },
-                        { name: i18n('1440p'), value: PlasmaCameraManager.Resolution1440p },
-                        { name: i18n('2160p'), value: PlasmaCameraManager.Resolution2160p },
+                        { name: i18n("Auto"), value: PlasmaCameraManager.ResolutionAuto },
+                        { name: "540p", value: PlasmaCameraManager.Resolution540p },
+                        { name: "720p", value: PlasmaCameraManager.Resolution720p },
+                        { name: "1080p", value: PlasmaCameraManager.Resolution1080p },
+                        { name: "1440p", value: PlasmaCameraManager.Resolution1440p },
+                        { name: "2160p", value: PlasmaCameraManager.Resolution2160p },
                     ]
 
                     delegate: QQC2.RadioDelegate {
@@ -136,7 +136,7 @@ Kirigami.MenuDialog {
 
         sourceComponent: Kirigami.Dialog {
             id: selectVideoRecordingDialog
-            title: i18n('Video Recording Quality')
+            title: i18n("Video Recording Quality")
             preferredWidth: Kirigami.Units.gridUnit * 16
 
             onClosed: selectVideoRecordingQualityLoader.active = false
@@ -146,11 +146,11 @@ Kirigami.MenuDialog {
 
                 Repeater {
                     model: [
-                        { name: i18n('Very low quality'), value: PlasmaCameraManager.VeryLowQuality },
-                        { name: i18n('Low quality'), value: PlasmaCameraManager.LowQuality },
-                        { name: i18n('Normal quality'), value: PlasmaCameraManager.NormalQuality },
-                        { name: i18n('High quality'), value: PlasmaCameraManager.HighQuality },
-                        { name: i18n('Very high quality'), value: PlasmaCameraManager.VeryHighQuality },
+                        { name: i18n("Very low quality"), value: PlasmaCameraManager.VeryLowQuality },
+                        { name: i18n("Low quality"), value: PlasmaCameraManager.LowQuality },
+                        { name: i18n("Normal quality"), value: PlasmaCameraManager.NormalQuality },
+                        { name: i18n("High quality"), value: PlasmaCameraManager.HighQuality },
+                        { name: i18n("Very high quality"), value: PlasmaCameraManager.VeryHighQuality },
                     ]
 
                     delegate: QQC2.RadioDelegate {
@@ -182,7 +182,7 @@ Kirigami.MenuDialog {
 
         sourceComponent: Kirigami.Dialog {
             id: selectVideoRecordingDialog
-            title: i18n('Video Recording Framerate')
+            title: i18n("Video Recording Framerate")
             preferredWidth: Kirigami.Units.gridUnit * 16
 
             onClosed: videoFpsDialogLoader.active = false
@@ -192,9 +192,9 @@ Kirigami.MenuDialog {
 
                 Repeater {
                     model: [
-                        { name: '24 FPS', value: 24 },
-                        { name: '30 FPS', value: 30 },
-                        { name: '60 FPS', value: 60 },
+                        { name: "24 FPS", value: 24 },
+                        { name: "30 FPS", value: 30 },
+                        { name: "60 FPS", value: 60 },
                     ]
 
                     delegate: QQC2.RadioDelegate {
@@ -226,7 +226,7 @@ Kirigami.MenuDialog {
 
         sourceComponent: Kirigami.Dialog {
             id: videoCodecDialog
-            title: i18n('Video Recording Codec')
+            title: i18n("Video Recording Codec")
             preferredWidth: Kirigami.Units.gridUnit * 16
 
             onClosed: videoFpsDialogLoader.active = false

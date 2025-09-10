@@ -42,7 +42,7 @@ Item {
         QQC2.Label {
             Layout.topMargin: Kirigami.Units.smallSpacing
             Layout.fillWidth: true
-            text: i18n('Exposure Value')
+            text: i18n("Exposure Value")
             horizontalAlignment: Text.AlignHCenter
             font.weight: Font.Bold
             font.pointSize: Kirigami.Theme.smallFont.pointSize

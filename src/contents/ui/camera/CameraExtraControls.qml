@@ -47,7 +47,7 @@ Rectangle {
                 id: audioRecordingButton
                 icon.name: root.audioRecordingEnabled ? 'microphone-sensitivity-high-symbolic' : 'microphone-sensitivity-muted-symbolic'
                 icon.color: 'white'
-                text: root.audioRecordingEnabled ? i18n('Microphone is enabled') : i18n('Microphone is disabled')
+                text: root.audioRecordingEnabled ? i18n("Microphone is enabled") : i18n("Microphone is disabled")
                 display: QQC2.ToolButton.IconOnly
                 visible: root.audioRecordingEnabledShown
                 onClicked: root.audioEnabledChangeRequested(!root.audioRecordingEnabled)
@@ -60,7 +60,7 @@ Rectangle {
                 id: exposureControlsButton
                 icon.name: 'lighttable' // TODO: find better icon
                 icon.color: "white"
-                text: i18n('Exposure')
+                text: i18n("Exposure")
                 display: QQC2.ToolButton.IconOnly
                 visible: root.exposureValueEnabled
                 onClicked: exposureSelectStrip.shown = !exposureSelectStrip.shown
