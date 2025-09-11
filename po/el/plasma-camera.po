@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:44+0000\n"
+"POT-Creation-Date: 2025-09-11 00:44+0000\n"
 "PO-Revision-Date: 2024-09-19 16:47+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -36,6 +36,21 @@ msgstr ""
 #: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
+msgstr ""
+
+#: src/contents/ui/camera/CameraExtraControls.qml:50
+#, kde-format
+msgid "Microphone is enabled"
+msgstr ""
+
+#: src/contents/ui/camera/CameraExtraControls.qml:50
+#, kde-format
+msgid "Microphone is disabled"
+msgstr ""
+
+#: src/contents/ui/camera/CameraExtraControls.qml:63
+#, kde-format
+msgid "Exposure"
 msgstr ""
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
@@ -99,10 +114,20 @@ msgstr "Αποτυχία λήψης φωτογραφίας"
 msgid "Failed to start recording"
 msgstr "Αποτυχία έναρξης εγγραφής"
 
+#: src/contents/ui/camera/ExposureSelectStrip.qml:45
+#, kde-format
+msgid "Exposure Value"
+msgstr ""
+
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
 msgid "Camera not available"
 msgstr "Η κάμερα δεν είναι διαθέσιμη"
+
+#: src/contents/ui/SettingsDialog.qml:16
+#, kde-format
+msgid "Settings"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, fuzzy, kde-format
@@ -110,10 +135,84 @@ msgstr "Η κάμερα δεν είναι διαθέσιμη"
 msgid "Select camera"
 msgstr "Εναλλαγή κάμερας"
 
+#: src/contents/ui/SettingsDialog.qml:33
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording resolution"
+msgstr "Διακοπή εγγραφής βίντεο"
+
+#: src/contents/ui/SettingsDialog.qml:43
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording quality"
+msgstr "Διακοπή εγγραφής βίντεο"
+
+#: src/contents/ui/SettingsDialog.qml:53
+#, kde-format
+msgid "Video recording frame rate"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:63
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording codec"
+msgstr "Διακοπή εγγραφής βίντεο"
+
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "About"
 msgstr "Σχετικά"
+
+#: src/contents/ui/SettingsDialog.qml:92
+#, kde-format
+msgid "Video Recording Resolution"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:102
+#, kde-format
+msgid "Auto"
+msgstr "Αυτόματο"
+
+#: src/contents/ui/SettingsDialog.qml:139
+#, kde-format
+msgid "Video Recording Quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:149
+#, kde-format
+msgid "Very low quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:150
+#, kde-format
+msgid "Low quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:151
+#, kde-format
+msgid "Normal quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:152
+#, kde-format
+msgid "High quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:153
+#, kde-format
+msgid "Very high quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:185
+#, kde-format
+msgid "Video Recording Framerate"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:229
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video Recording Codec"
+msgstr "Διακοπή εγγραφής βίντεο"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, fuzzy, kde-format
@@ -166,9 +265,6 @@ msgstr ""
 
 #~ msgid "White balance"
 #~ msgstr "Ισορροπία λευκού"
-
-#~ msgid "Auto"
-#~ msgstr "Αυτόματο"
 
 #~ msgid "Sunlight"
 #~ msgstr "Ήλιος"

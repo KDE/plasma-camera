@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:44+0000\n"
+"POT-Creation-Date: 2025-09-11 00:44+0000\n"
 "PO-Revision-Date: 2021-01-01 12:02-0800\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -35,6 +35,21 @@ msgstr ""
 #: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
+msgstr ""
+
+#: src/contents/ui/camera/CameraExtraControls.qml:50
+#, kde-format
+msgid "Microphone is enabled"
+msgstr ""
+
+#: src/contents/ui/camera/CameraExtraControls.qml:50
+#, kde-format
+msgid "Microphone is disabled"
+msgstr ""
+
+#: src/contents/ui/camera/CameraExtraControls.qml:63
+#, kde-format
+msgid "Exposure"
 msgstr ""
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
@@ -96,10 +111,20 @@ msgstr "ਫੋਟੋ ਲੈਣ ਲਈ ਅਸਫ਼ਲ ਹੈ"
 msgid "Failed to start recording"
 msgstr "ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਅਸਫ਼ਲ ਹੈ"
 
+#: src/contents/ui/camera/ExposureSelectStrip.qml:45
+#, kde-format
+msgid "Exposure Value"
+msgstr ""
+
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
 msgid "Camera not available"
 msgstr "ਕੈਮਰਾ ਮੌਜੂਦ ਨਹੀਂ ਹੈ"
+
+#: src/contents/ui/SettingsDialog.qml:16
+#, kde-format
+msgid "Settings"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, fuzzy, kde-format
@@ -107,10 +132,84 @@ msgstr "ਕੈਮਰਾ ਮੌਜੂਦ ਨਹੀਂ ਹੈ"
 msgid "Select camera"
 msgstr "ਕੈਮਰਾ ਬਦਲੋ"
 
+#: src/contents/ui/SettingsDialog.qml:33
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording resolution"
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ"
+
+#: src/contents/ui/SettingsDialog.qml:43
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording quality"
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ"
+
+#: src/contents/ui/SettingsDialog.qml:53
+#, kde-format
+msgid "Video recording frame rate"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:63
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording codec"
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ"
+
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "About"
 msgstr "ਇਸ ਬਾਰੇ"
+
+#: src/contents/ui/SettingsDialog.qml:92
+#, kde-format
+msgid "Video Recording Resolution"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:102
+#, kde-format
+msgid "Auto"
+msgstr "ਆਪੇ"
+
+#: src/contents/ui/SettingsDialog.qml:139
+#, kde-format
+msgid "Video Recording Quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:149
+#, kde-format
+msgid "Very low quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:150
+#, kde-format
+msgid "Low quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:151
+#, kde-format
+msgid "Normal quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:152
+#, kde-format
+msgid "High quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:153
+#, kde-format
+msgid "Very high quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:185
+#, kde-format
+msgid "Video Recording Framerate"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:229
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video Recording Codec"
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, fuzzy, kde-format
@@ -163,9 +262,6 @@ msgstr ""
 
 #~ msgid "White balance"
 #~ msgstr "ਚਿੱਟਾ ਸੰਤੁਲਨ"
-
-#~ msgid "Auto"
-#~ msgstr "ਆਪੇ"
 
 #~ msgid "Sunlight"
 #~ msgstr "ਧੁੱਪਦਾਰ"

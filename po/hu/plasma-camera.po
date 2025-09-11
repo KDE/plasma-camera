@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:44+0000\n"
+"POT-Creation-Date: 2025-09-11 00:44+0000\n"
 "PO-Revision-Date: 2024-05-29 09:41+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -37,6 +37,21 @@ msgstr "Fénykép"
 #, kde-format
 msgid "Video"
 msgstr "Videó"
+
+#: src/contents/ui/camera/CameraExtraControls.qml:50
+#, kde-format
+msgid "Microphone is enabled"
+msgstr ""
+
+#: src/contents/ui/camera/CameraExtraControls.qml:50
+#, kde-format
+msgid "Microphone is disabled"
+msgstr ""
+
+#: src/contents/ui/camera/CameraExtraControls.qml:63
+#, kde-format
+msgid "Exposure"
+msgstr ""
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -97,10 +112,20 @@ msgstr "Nem sikerült fényképet készíteni"
 msgid "Failed to start recording"
 msgstr "Nem sikerült elindítani a felvételt"
 
+#: src/contents/ui/camera/ExposureSelectStrip.qml:45
+#, kde-format
+msgid "Exposure Value"
+msgstr ""
+
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
 msgid "Camera not available"
 msgstr "A kamera nem érhető el"
+
+#: src/contents/ui/SettingsDialog.qml:16
+#, kde-format
+msgid "Settings"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, fuzzy, kde-format
@@ -108,10 +133,84 @@ msgstr "A kamera nem érhető el"
 msgid "Select camera"
 msgstr "Kameraváltás"
 
+#: src/contents/ui/SettingsDialog.qml:33
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording resolution"
+msgstr "Videofelvétel leállítása"
+
+#: src/contents/ui/SettingsDialog.qml:43
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording quality"
+msgstr "Videofelvétel leállítása"
+
+#: src/contents/ui/SettingsDialog.qml:53
+#, kde-format
+msgid "Video recording frame rate"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:63
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording codec"
+msgstr "Videofelvétel leállítása"
+
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "About"
 msgstr "Névjegy"
+
+#: src/contents/ui/SettingsDialog.qml:92
+#, kde-format
+msgid "Video Recording Resolution"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:102
+#, kde-format
+msgid "Auto"
+msgstr "Automatikus"
+
+#: src/contents/ui/SettingsDialog.qml:139
+#, kde-format
+msgid "Video Recording Quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:149
+#, kde-format
+msgid "Very low quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:150
+#, kde-format
+msgid "Low quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:151
+#, kde-format
+msgid "Normal quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:152
+#, kde-format
+msgid "High quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:153
+#, kde-format
+msgid "Very high quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:185
+#, kde-format
+msgid "Video Recording Framerate"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:229
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video Recording Codec"
+msgstr "Videofelvétel leállítása"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, fuzzy, kde-format
@@ -164,9 +263,6 @@ msgstr ""
 
 #~ msgid "White balance"
 #~ msgstr "Fehéregyensúly"
-
-#~ msgid "Auto"
-#~ msgstr "Automatikus"
 
 #~ msgid "Sunlight"
 #~ msgstr "Napfény"

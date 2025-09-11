@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-08 00:44+0000\n"
+"POT-Creation-Date: 2025-09-11 00:44+0000\n"
 "PO-Revision-Date: 2024-05-24 19:10+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -36,6 +36,21 @@ msgstr "Photo"
 #, kde-format
 msgid "Video"
 msgstr "Video"
+
+#: src/contents/ui/camera/CameraExtraControls.qml:50
+#, kde-format
+msgid "Microphone is enabled"
+msgstr ""
+
+#: src/contents/ui/camera/CameraExtraControls.qml:50
+#, kde-format
+msgid "Microphone is disabled"
+msgstr ""
+
+#: src/contents/ui/camera/CameraExtraControls.qml:63
+#, kde-format
+msgid "Exposure"
+msgstr ""
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -98,10 +113,20 @@ msgstr "Failed to take a photo"
 msgid "Failed to start recording"
 msgstr "Failed to start recording"
 
+#: src/contents/ui/camera/ExposureSelectStrip.qml:45
+#, kde-format
+msgid "Exposure Value"
+msgstr ""
+
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
 msgid "Camera not available"
 msgstr "Camera not available"
+
+#: src/contents/ui/SettingsDialog.qml:16
+#, kde-format
+msgid "Settings"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, fuzzy, kde-format
@@ -109,10 +134,84 @@ msgstr "Camera not available"
 msgid "Select camera"
 msgstr "Switch Camera"
 
+#: src/contents/ui/SettingsDialog.qml:33
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording resolution"
+msgstr "Stop recording video"
+
+#: src/contents/ui/SettingsDialog.qml:43
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording quality"
+msgstr "Stop recording video"
+
+#: src/contents/ui/SettingsDialog.qml:53
+#, kde-format
+msgid "Video recording frame rate"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:63
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video recording codec"
+msgstr "Stop recording video"
+
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "About"
 msgstr "About"
+
+#: src/contents/ui/SettingsDialog.qml:92
+#, kde-format
+msgid "Video Recording Resolution"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:102
+#, kde-format
+msgid "Auto"
+msgstr "Auto"
+
+#: src/contents/ui/SettingsDialog.qml:139
+#, kde-format
+msgid "Video Recording Quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:149
+#, kde-format
+msgid "Very low quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:150
+#, kde-format
+msgid "Low quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:151
+#, kde-format
+msgid "Normal quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:152
+#, kde-format
+msgid "High quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:153
+#, kde-format
+msgid "Very high quality"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:185
+#, kde-format
+msgid "Video Recording Framerate"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:229
+#, fuzzy, kde-format
+#| msgid "Stop recording video"
+msgid "Video Recording Codec"
+msgstr "Stop recording video"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, fuzzy, kde-format
@@ -165,9 +264,6 @@ msgstr ""
 
 #~ msgid "White balance"
 #~ msgstr "White balance"
-
-#~ msgid "Auto"
-#~ msgstr "Auto"
 
 #~ msgid "Sunlight"
 #~ msgstr "Sunlight"
