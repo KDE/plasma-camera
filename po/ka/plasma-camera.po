@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:44+0000\n"
-"PO-Revision-Date: 2025-07-08 04:18+0200\n"
+"PO-Revision-Date: 2025-09-11 03:46+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.7\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -41,17 +41,17 @@ msgstr "ვიდეო"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "მიკროფონი ჩართულია"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "მიკროფონი გამორთულია"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "ექსპოზიცია"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -117,7 +117,7 @@ msgstr "ჩაწერის დაწყების შეცდომა"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "ექსპოზიციის მნიშვნელობა"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -127,7 +127,7 @@ msgstr "კამერა მიუწვდომელია"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "მორგება"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
@@ -135,27 +135,24 @@ msgid "Select camera"
 msgstr "აირჩიეთ კამერა"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "ვიდეოს ჩაწერის შეჩერება"
+msgstr "ვიდეოს ჩაწერის გაფართოება"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "ვიდეოს ჩაწერის შეჩერება"
+msgstr "ვიდეო ჩაწერის ხარისხი"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "ვიდეოს ჩაწერის კადრების სიხშირე"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "ვიდეოს ჩაწერის შეჩერება"
+msgstr "ვიდეოს ჩაწერის კოდეკი"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -165,7 +162,7 @@ msgstr "შესახებ"
 #: src/contents/ui/SettingsDialog.qml:92
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "ვიდეოს ჩაწერის გაფართოება"
 
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
@@ -175,43 +172,42 @@ msgstr "ავტომატური"
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "ვიდეოს ჩაწერის ხარისხი"
 
 #: src/contents/ui/SettingsDialog.qml:149
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "ძალიან დაბალი ხარისხი"
 
 #: src/contents/ui/SettingsDialog.qml:150
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "დაბალი ხარისხი"
 
 #: src/contents/ui/SettingsDialog.qml:151
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "ნორმალური ხარისხი"
 
 #: src/contents/ui/SettingsDialog.qml:152
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "მაღალი ხარისხი"
 
 #: src/contents/ui/SettingsDialog.qml:153
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "ძალიან მაღალი ხარისხი"
 
 #: src/contents/ui/SettingsDialog.qml:185
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "ვიდეო ჩაწერის კადრების სიხშირე"
 
 #: src/contents/ui/SettingsDialog.qml:229
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "ვიდეოს ჩაწერის შეჩერება"
+msgstr "ვიდეოს ჩაწერის კოდეკი"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, kde-format

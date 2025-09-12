@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2019, 2020, 2023, 2025.
+# SPDX-FileCopyrightText: 2019, 2020, 2023, 2025 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2019, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:44+0000\n"
-"PO-Revision-Date: 2025-07-08 11:39+0200\n"
+"PO-Revision-Date: 2025-09-11 10:23+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 "X-Accelerator-Marker: &\n"
 
 #, kde-format
@@ -44,17 +44,17 @@ msgstr "Vídeo"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "El micròfon està activat"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "El micròfon està desactivat"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Exposició"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -122,7 +122,7 @@ msgstr "No s'ha pogut iniciar la gravació"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "Valor de l'exposició"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -132,35 +132,32 @@ msgstr "Càmera no disponible"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Configuració"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
 msgid "Select camera"
-msgstr "Seleccioneu la càmera"
+msgstr "Trieu la càmera"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "Para la gravació de vídeo"
+msgstr "Resolució de la gravació de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "Para la gravació de vídeo"
+msgstr "Qualitat de la gravació de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "Velocitat dels fotogrames de la gravació de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "Para la gravació de vídeo"
+msgstr "Còdec de la gravació de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -170,58 +167,57 @@ msgstr "Quant a"
 #: src/contents/ui/SettingsDialog.qml:92
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "Resolució de la gravació de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Automàtica"
 
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "Qualitat de la gravació de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:149
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "Qualitat molt baixa"
 
 #: src/contents/ui/SettingsDialog.qml:150
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "Qualitat baixa"
 
 #: src/contents/ui/SettingsDialog.qml:151
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "Qualitat normal"
 
 #: src/contents/ui/SettingsDialog.qml:152
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "Qualitat alta"
 
 #: src/contents/ui/SettingsDialog.qml:153
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "Qualitat molt alta"
 
 #: src/contents/ui/SettingsDialog.qml:185
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "Velocitat dels fotogrames de la gravació de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:229
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "Para la gravació de vídeo"
+msgstr "Còdec de la gravació de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, kde-format
 msgid "Select Camera"
-msgstr "Seleccioneu la càmera"
+msgstr "Trieu la càmera"
 
 #: src/main.cpp:69
 #, kde-format

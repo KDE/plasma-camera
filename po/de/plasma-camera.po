@@ -170,7 +170,8 @@ msgid "Video Recording Resolution"
 msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Auto"
 msgid "Auto"
 msgstr "Automatisch"
 
