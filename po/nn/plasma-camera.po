@@ -171,7 +171,7 @@ msgstr ""
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
