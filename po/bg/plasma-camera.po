@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:44+0000\n"
-"PO-Revision-Date: 2025-07-28 20:32+0200\n"
+"PO-Revision-Date: 2025-09-14 11:09+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -42,17 +42,17 @@ msgstr "Видео"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "Микрофонът е включен"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "Микрофонът е изключен"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Експозиция"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -100,12 +100,12 @@ msgstr "Заснемане на снимка"
 #: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
-msgstr "Спиране на запис на видео"
+msgstr "Спиране на видеозаписа"
 
 #: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
 msgid "Start recording video"
-msgstr "Започване на запис на видео"
+msgstr "Започване на видеозаписа"
 
 #: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
@@ -120,7 +120,7 @@ msgstr "Неуспех при започване на записването"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "Стойност на експозиция"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -130,7 +130,7 @@ msgstr "Не е налична камера"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
@@ -138,27 +138,24 @@ msgid "Select camera"
 msgstr "Избор на камера"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "Спиране на запис на видео"
+msgstr "Резолюция на видеозаписа"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "Спиране на запис на видео"
+msgstr "Качество на видеозаписа"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "Честота на кадрите на видеозаписа"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "Спиране на запис на видео"
+msgstr "Кодек за запис на видео"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -168,7 +165,7 @@ msgstr "Относно"
 #: src/contents/ui/SettingsDialog.qml:92
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "Резолюция на видеозаписа"
 
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
@@ -178,43 +175,42 @@ msgstr "Автоматично"
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "Качество на видеозаписа"
 
 #: src/contents/ui/SettingsDialog.qml:149
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "Много ниско качество"
 
 #: src/contents/ui/SettingsDialog.qml:150
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "Ниско качество"
 
 #: src/contents/ui/SettingsDialog.qml:151
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "Нормално качество"
 
 #: src/contents/ui/SettingsDialog.qml:152
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "Високо качество"
 
 #: src/contents/ui/SettingsDialog.qml:153
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "Много високо качество"
 
 #: src/contents/ui/SettingsDialog.qml:185
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "Честота на кадрите на видеозаписа"
 
 #: src/contents/ui/SettingsDialog.qml:229
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "Спиране на запис на видео"
+msgstr "Кодек за запис на видео"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, kde-format
