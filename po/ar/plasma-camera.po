@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:44+0000\n"
-"PO-Revision-Date: 2025-07-14 18:57+0400\n"
+"PO-Revision-Date: 2025-09-15 13:24+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -41,17 +41,17 @@ msgstr "فيديو"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "الميكروفون ممكّن"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "الميكروفون معطل"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "التّعرض"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -116,7 +116,7 @@ msgstr "فشل في بدء التسجيل"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "قيمة التعرض"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -126,7 +126,7 @@ msgstr "الكاميرا غير متاحة"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "إعدادات"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
@@ -134,27 +134,24 @@ msgid "Select camera"
 msgstr "اختر كاميرا"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "أوقف تسجيل الفيديو"
+msgstr "دقة تسجيل الفيديو"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "أوقف تسجيل الفيديو"
+msgstr "جودة تسجيل الفيديو"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "معدل إطارات تسجيل الفيديو"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "أوقف تسجيل الفيديو"
+msgstr "مرماز تسجيل الفيديو"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -164,7 +161,7 @@ msgstr "عن"
 #: src/contents/ui/SettingsDialog.qml:92
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "دقة تسجيل الفيديو"
 
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
@@ -174,43 +171,42 @@ msgstr "آليّ"
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "جودة تسجيل الفيديو"
 
 #: src/contents/ui/SettingsDialog.qml:149
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "جودة منخفضة للغاية"
 
 #: src/contents/ui/SettingsDialog.qml:150
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "جودة منخفضة"
 
 #: src/contents/ui/SettingsDialog.qml:151
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "جودة عادية"
 
 #: src/contents/ui/SettingsDialog.qml:152
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "جودة عالية"
 
 #: src/contents/ui/SettingsDialog.qml:153
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "جودة عالية جدا"
 
 #: src/contents/ui/SettingsDialog.qml:185
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "معدل إطارات تسجيل الفيديو"
 
 #: src/contents/ui/SettingsDialog.qml:229
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "أوقف تسجيل الفيديو"
+msgstr "مرماز تسجيل الفيديو"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, kde-format
