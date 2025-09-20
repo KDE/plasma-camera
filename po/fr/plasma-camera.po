@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:44+0000\n"
-"PO-Revision-Date: 2025-07-09 12:17+0200\n"
+"PO-Revision-Date: 2025-09-12 14:08+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: \n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 "X-Text-Markup: \n"
 
 #, kde-format
@@ -41,17 +41,17 @@ msgstr "Vidéo"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "Le microphone est activé."
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "Le microphone est désactivé. "
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Exposition"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -119,7 +119,7 @@ msgstr "Impossible de démarrer l'enregistrement"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "Valeur d'exposition"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -129,7 +129,7 @@ msgstr "Caméra indisponible"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Configuration"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
@@ -137,27 +137,24 @@ msgid "Select camera"
 msgstr "Sélectionner un appareil photo"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "Arrêter l'enregistrement de la vidéo"
+msgstr "Résolution de l'enregistrement vidéo"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "Arrêter l'enregistrement de la vidéo"
+msgstr "Qu alité de l'enregistrement vidéo"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "Fréquence d'images de l'enregistrement vidéo"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "Arrêter l'enregistrement de la vidéo"
+msgstr "Codec pour l'enregistrement vidéo"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -167,7 +164,7 @@ msgstr "À propos"
 #: src/contents/ui/SettingsDialog.qml:92
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "Résolution de l'enregistrement vidéo"
 
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
@@ -177,43 +174,42 @@ msgstr "Auto"
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "Qualité de l'enregistrement vidéo"
 
 #: src/contents/ui/SettingsDialog.qml:149
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "Très faible qualité"
 
 #: src/contents/ui/SettingsDialog.qml:150
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "Faible qualité"
 
 #: src/contents/ui/SettingsDialog.qml:151
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "Qualité normale"
 
 #: src/contents/ui/SettingsDialog.qml:152
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "Haute qualité"
 
 #: src/contents/ui/SettingsDialog.qml:153
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "Très haute qualité"
 
 #: src/contents/ui/SettingsDialog.qml:185
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "Fréquence d'enregistrement vidéo"
 
 #: src/contents/ui/SettingsDialog.qml:229
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "Arrêter l'enregistrement de la vidéo"
+msgstr "Codec pour l'enregistrement vidéo"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, kde-format
