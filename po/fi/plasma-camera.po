@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:44+0000\n"
-"PO-Revision-Date: 2025-07-13 17:53+0300\n"
+"PO-Revision-Date: 2025-09-12 16:32+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -40,17 +40,17 @@ msgstr "Video"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "Mikrofoni on käytössä"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "Mikrofoni ei ole käytössä"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Valotus"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -118,7 +118,7 @@ msgstr "Nauhoituksen käynnistäminen epäonnistui"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "Valotusarvo"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -128,7 +128,7 @@ msgstr "Kameraa ei ole käytettävissä"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Asetukset"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
@@ -136,27 +136,24 @@ msgid "Select camera"
 msgstr "Valitse kamera"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "Pysäytä videon nauhoitus"
+msgstr "Videonauhoituksen tarkkuus"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "Pysäytä videon nauhoitus"
+msgstr "Videonauhoituksen laatu"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "Videonauhoituksen kuvanopeus"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "Pysäytä videon nauhoitus"
+msgstr "Videonauhoituksen koodekki"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -166,7 +163,7 @@ msgstr "Tietoa"
 #: src/contents/ui/SettingsDialog.qml:92
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "Videonauhoituksen tarkkuus"
 
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
@@ -176,43 +173,42 @@ msgstr "Automaattinen"
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "Videonauhoituksen laatu"
 
 #: src/contents/ui/SettingsDialog.qml:149
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "Hyvin heikko laatu"
 
 #: src/contents/ui/SettingsDialog.qml:150
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "Heikko laatu"
 
 #: src/contents/ui/SettingsDialog.qml:151
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "Tavallinen laatu"
 
 #: src/contents/ui/SettingsDialog.qml:152
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "Hyvä laatu"
 
 #: src/contents/ui/SettingsDialog.qml:153
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "Erittäin hyvä laatu"
 
 #: src/contents/ui/SettingsDialog.qml:185
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "Videonauhoituksen kuvanopeus"
 
 #: src/contents/ui/SettingsDialog.qml:229
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "Pysäytä videon nauhoitus"
+msgstr "Videonauhoituksen koodekki"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, kde-format

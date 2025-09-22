@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:44+0000\n"
-"PO-Revision-Date: 2025-08-08 02:31+0900\n"
+"PO-Revision-Date: 2025-09-22 04:12+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -21,12 +21,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "pan93412"
+msgstr "pan93412, Kisaragi Hiu"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "pan93412@gmail.com"
+msgstr "pan93412@gmail.com, mail@kisaragi-hiu.com"
 
 #: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
@@ -41,17 +41,17 @@ msgstr "影片"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "麥克風已啟用"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "麥克風已停用"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "曝光"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -115,7 +115,7 @@ msgstr "無法開始錄影"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "曝光值"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -125,7 +125,7 @@ msgstr "相機無法使用"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
@@ -133,27 +133,24 @@ msgid "Select camera"
 msgstr "選取相機"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "停止錄影"
+msgstr "錄影解析度"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "停止錄影"
+msgstr "錄影品質"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "錄影影格率"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "停止錄影"
+msgstr "錄影編碼器"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -163,7 +160,7 @@ msgstr "關於"
 #: src/contents/ui/SettingsDialog.qml:92
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "錄影解析度"
 
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
@@ -173,43 +170,42 @@ msgstr "自動調整"
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "錄影品質"
 
 #: src/contents/ui/SettingsDialog.qml:149
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "非常低品質"
 
 #: src/contents/ui/SettingsDialog.qml:150
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "低品質"
 
 #: src/contents/ui/SettingsDialog.qml:151
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "普通品質"
 
 #: src/contents/ui/SettingsDialog.qml:152
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "高品質"
 
 #: src/contents/ui/SettingsDialog.qml:153
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "非常高品質"
 
 #: src/contents/ui/SettingsDialog.qml:185
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "錄影影格率"
 
 #: src/contents/ui/SettingsDialog.qml:229
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "停止錄影"
+msgstr "錄影編碼器"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, kde-format
@@ -219,7 +215,7 @@ msgstr "選取相機"
 #: src/main.cpp:69
 #, kde-format
 msgid "© Plasma Mobile Developers"
-msgstr "© Plasma Mobile 行動版開發者"
+msgstr "© Plasma 行動開發團隊"
 
 #: src/main.cpp:73
 #, kde-format
