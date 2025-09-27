@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-11 00:44+0000\n"
-"PO-Revision-Date: 2025-08-22 16:00+0300\n"
+"PO-Revision-Date: 2025-09-24 16:22+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -41,22 +41,22 @@ msgstr "Video"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "Mikrofons ir ieslēgts"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "Mikrofons ir izslēgts"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Ekspozīcija"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
 msgid "Camera"
-msgstr "Camera"
+msgstr "Kamera"
 
 #: src/contents/ui/camera/CameraPage.qml:44 src/contents/ui/main.qml:73
 #, kde-format
@@ -117,7 +117,7 @@ msgstr "Neizdevās sākt ierakstīšanu"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "Ekspozīcijas vērtība"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -127,7 +127,7 @@ msgstr "Kamera nav pieejama"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Iestatījumi"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
@@ -135,27 +135,24 @@ msgid "Select camera"
 msgstr "Atlasīt kameru"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "Beigt video ierakstu"
+msgstr "Video ieraksta izšķirtspēja"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "Beigt video ierakstu"
+msgstr "Video ieraksta kvalitāte"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "Video reģistrēšanas kadru ātrums"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "Beigt video ierakstu"
+msgstr "Video ieraksta kodeks"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -165,53 +162,52 @@ msgstr "Par"
 #: src/contents/ui/SettingsDialog.qml:92
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "Video ieraksta izšķirtspēja"
 
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
 msgid "Auto"
-msgstr "Auto"
+msgstr "Automātiski"
 
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "Video ieraksta kvalitāte"
 
 #: src/contents/ui/SettingsDialog.qml:149
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "Ļoti zema kvalitāte"
 
 #: src/contents/ui/SettingsDialog.qml:150
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "Zema kvalitāte"
 
 #: src/contents/ui/SettingsDialog.qml:151
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "Normāla kvalitāte"
 
 #: src/contents/ui/SettingsDialog.qml:152
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "Augsta kvalitāte"
 
 #: src/contents/ui/SettingsDialog.qml:153
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "Ļoti augsta kvalitāte"
 
 #: src/contents/ui/SettingsDialog.qml:185
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "Video ieraksta kadru nomaiņas ātrums"
 
 #: src/contents/ui/SettingsDialog.qml:229
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "Beigt video ierakstu"
+msgstr "Video ieraksta kodeks"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, kde-format
