@@ -40,17 +40,17 @@ msgstr "视频"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "麦克风已启用"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "麦克风已禁用"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "曝光"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -114,7 +114,7 @@ msgstr "无法开始录像"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "曝光补偿值"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "相机不可用"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "设置"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
@@ -132,27 +132,24 @@ msgid "Select camera"
 msgstr "选择相机"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "停止录制视频"
+msgstr "视频录制分辨率"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "停止录制视频"
+msgstr "视频录制画质"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "视频录制帧率"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "停止录制视频"
+msgstr "视频录制编码"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -162,53 +159,52 @@ msgstr "关于"
 #: src/contents/ui/SettingsDialog.qml:92
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "视频录制分辨率"
 
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "自动"
 
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "视频录制画质"
 
 #: src/contents/ui/SettingsDialog.qml:149
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "极低画质"
 
 #: src/contents/ui/SettingsDialog.qml:150
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "低画质"
 
 #: src/contents/ui/SettingsDialog.qml:151
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "一般画质"
 
 #: src/contents/ui/SettingsDialog.qml:152
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "高画质"
 
 #: src/contents/ui/SettingsDialog.qml:153
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "极高画质"
 
 #: src/contents/ui/SettingsDialog.qml:185
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "视频录制帧率"
 
 #: src/contents/ui/SettingsDialog.qml:229
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "停止录制视频"
+msgstr "视频录制编码"
 
 #: src/contents/ui/SettingsDialog.qml:273
 #, kde-format
