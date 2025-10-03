@@ -50,7 +50,7 @@ msgstr ""
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Expozice"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -124,7 +124,7 @@ msgstr ""
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Nastavení"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
@@ -164,7 +164,7 @@ msgstr ""
 #: src/contents/ui/SettingsDialog.qml:102
 #, kde-format
 msgid "Auto"
-msgstr ""
+msgstr "Automaticky"
 
 #: src/contents/ui/SettingsDialog.qml:139
 #, kde-format
