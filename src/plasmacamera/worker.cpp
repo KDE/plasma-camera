@@ -453,10 +453,10 @@ void Worker::configure()
     std::vector<libcamera::PixelFormat> haveFormats = streamConfig.formats().pixelformats();
     for (const libcamera::PixelFormat &format : haveFormats) {
         qDebug() << "Got format: " << format.toString();
-        auto match = std::find_if(haveFormats.begin(), haveFormats.end(), [&](const libcamera::PixelFormat &f) {
+        auto match = std::find_if(wantFormats.begin(), wantFormats.end(), [&](const libcamera::PixelFormat &f) {
             return f == format;
         });
-        if (match != haveFormats.end()) {
+        if (match != wantFormats.end()) {
             streamConfig.pixelFormat = format;
             break;
         }
