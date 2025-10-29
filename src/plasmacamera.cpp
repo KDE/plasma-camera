@@ -596,10 +596,10 @@ bool PlasmaCamera::acquire()
     qInfo() << "Acquired" << infoMap.size() << "controls";
 
     // Print camera properties
-    const libcamera::ControlList &controls = m_camera->properties();
-    qInfo() << "Acquired" << controls.size() << "properties";
-    for (const auto &info : controls) {
-        qInfo() << "\t" << libcamera::controls::controls.at(info.first)->name() << " " << info.second.toString();
+    const libcamera::ControlList &properties = m_camera->properties();
+    qInfo() << "Acquired" << properties.size() << "properties";
+    for (const auto &info : properties) {
+        qInfo() << "\t" << properties.idMap()->at(info.first)->name() << " " << info.second.toString();
     }
 
     // Load camera controls into settings
