@@ -11,6 +11,7 @@
 namespace PlasmaLibcameraUtils {
     QDir defaultDirectory(QStandardPaths::StandardLocation type);
     QString generateFileName(const QString &requestedName,
-                                    QStandardPaths::StandardLocation type,
-                                    const QString &extension);
+                                    const QString &extension,
+                                    int filenamePattern,
+                                    int outputPath);
 };

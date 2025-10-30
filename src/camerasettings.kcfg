@@ -25,5 +25,11 @@
         <entry key="videoCodec" type="int">
             <default>0</default> <!-- PlasmaCameraManager::H264 -->
         </entry>
+        <entry key="filenamePattern" type="int">
+            <default>0</default> <!-- PlasmaCameraManager::FilenameNumericSequential -->
+        </entry>
+        <entry key="outputPath" type="int">
+            <default>0</default> <!-- PlasmaCameraManager::outputPathDefault -->
+        </entry>
     </group>
 </kcfg>

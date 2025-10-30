@@ -7,15 +7,9 @@
 #include <QUrl>
 
 
-// TODO: on the phone this currently save to the Pictures folder but I would prefer to save to DCIM?
-
 QDir PlasmaLibcameraUtils::defaultDirectory(QStandardPaths::StandardLocation type)
 {
     QStringList dirCandidates;
-
-#if QT_CONFIG(mmrenderer)
-    dirCandidates << QLatin1String("shared/camera");
-#endif
 
     dirCandidates << QStandardPaths::writableLocation(type);
     dirCandidates << QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
@@ -53,40 +47,62 @@ QString generateFileName(const QDir &dir, const QString &prefix, const QString &
 }
 
 QString PlasmaLibcameraUtils::generateFileName(const QString &requestedName,
-                        QStandardPaths::StandardLocation type,
-                        const QString &extension)
+                        const QString &extension,
+                        int filenamePattern,
+                        int outputPath)
 {
+    /*
+     * when filenamePattern=0, requestedName is empty and generateFileName(dir,prefix,extension)
+     * is invoked to generate the default output filename like image_0001.jpg
+     * otherwise, requestedName is actual datetime and we add prefix, absoluteFilePath and extension to it
+     */
+    qDebug() << "PlasmaLibcameraUtils::generateFileName" << requestedName << extension << filenamePattern << outputPath;
     using namespace Qt::StringLiterals;
 
-    if (QUrl(requestedName).scheme() == "content"_L1)
-        return requestedName;
-
-    auto prefix = "clip_"_L1;
-    switch (type) {
-    case QStandardPaths::PicturesLocation: prefix = "image_"_L1; break;
-    case QStandardPaths::MoviesLocation: prefix = "video_"_L1; break;
-    case QStandardPaths::MusicLocation: prefix = "record_"_L1; break;
-    default: break;
+    // if needed and not-existing, let's create DCIM folder
+    if ( (outputPath) && (! QDir(QLatin1String("DCIM")).exists() ) ) {
+        QDir().mkdir(QLatin1String("DCIM"));
     }
+    auto prefix = "image_"_L1;
 
-    if (requestedName.isEmpty())
-        return generateFileName(defaultDirectory(type), prefix, extension);
+    if (requestedName.isEmpty()) {
+        if (!outputPath) {
+            return generateFileName(defaultDirectory(QStandardPaths::PicturesLocation), prefix, extension);
+        } else {
+            return generateFileName(QDir(QLatin1String("DCIM")), prefix, extension);
+        }
+    } else {
+        switch (filenamePattern) {
+            case 0:
+            default:
+                qDebug() << "filenamePattern=" << filenamePattern << "but requestedName is not empty\n";
+                break;
+            case 1:
+                prefix = "IMG"_L1;
+                break;
+            case 2:
+                prefix = "IMG_"_L1;
+                break;
+        }
+        QString path = requestedName;
+        path = path.prepend(prefix);
 
-    QString path = requestedName;
+        const QFileInfo fileInfo{ path };
 
-    const QFileInfo fileInfo{ path };
+        if (fileInfo.isRelative() && QUrl(path).isRelative()) {
+            if (!outputPath) {
+                path = defaultDirectory(QStandardPaths::PicturesLocation).absoluteFilePath(path);
+            } else {
+                path = QDir(QLatin1String("DCIM")).absoluteFilePath(path);
+            }
+        }
 
-    if (fileInfo.isRelative() && QUrl(path).isRelative())
-        path = defaultDirectory(type).absoluteFilePath(path);
-
-    if (fileInfo.isDir())
-        return generateFileName(QDir(path), prefix, extension);
-
-    if (fileInfo.suffix().isEmpty() && !extension.isEmpty()) {
-        // File does not have an extension, so add the suggested one
-        if (!path.endsWith(u'.'))
-            path.append(u'.');
-        path.append(extension);
+        if (fileInfo.suffix().isEmpty() && !extension.isEmpty()) {
+            // File does not have an extension, so add the suggested one
+            if (!path.endsWith(u'.'))
+                path.append(u'.');
+            path.append(extension);
+        }
+        return path;
     }
-    return path;
 }

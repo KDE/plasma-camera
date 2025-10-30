@@ -30,6 +30,8 @@ class PlasmaCameraManager : public QObject
 
     Q_PROPERTY(QList<FileFormat> supportedFileFormats READ supportedFileFormats CONSTANT)
     Q_PROPERTY(FileFormat fileFormat READ fileFormat WRITE setFileFormat NOTIFY fileFormatChanged)
+    Q_PROPERTY(FilenamePattern filenamePattern READ filenamePattern WRITE setFilenamePattern NOTIFY filenamePatternChanged)
+    Q_PROPERTY(OutputPath outputPath READ outputPath WRITE setOutputPath NOTIFY outputPathChanged)
     Q_PROPERTY(Quality quality READ quality WRITE setQuality NOTIFY qualityChanged)
 
     // preview and video recording
@@ -96,6 +98,19 @@ public:
     };
     Q_ENUM(VideoCodec)
 
+    enum FilenamePattern {
+        FilenameNumericSequential = 0,
+        FilenameDateShort = 1,
+        FilenameDateUnderscore = 2
+    };
+    Q_ENUM(FilenamePattern)
+
+    enum OutputPath {
+        OutputPathDefault = 0,
+        OutputPathDCIM = 1
+    };
+    Q_ENUM(OutputPath)
+
     Error error() const;
     QString errorString() const;
 
@@ -106,6 +121,8 @@ public:
 
     QList<FileFormat> supportedFileFormats() const;
     FileFormat fileFormat() const;
+    FilenamePattern filenamePattern() const;
+    OutputPath outputPath() const;
     Quality quality() const;
 
     PlasmaCamera *plasmaCamera() const;
@@ -140,6 +157,8 @@ Q_SIGNALS:
     void metaDataChanged();
 
     void fileFormatChanged();
+    void filenamePatternChanged();
+    void outputPathChanged();
     void qualityChanged();
 
     void plasmaCameraChanged();
@@ -171,6 +190,8 @@ public Q_SLOTS:
     void setReadyForCapture(bool ready);
 
     void setFileFormat(FileFormat fileFormat);
+    void setFilenamePattern(FilenamePattern filenamePattern);
+    void setOutputPath(OutputPath outputPath);
     void setQuality(Quality quality);
     void setPlasmaCamera(PlasmaCamera *plasmaCamera);
     void setVideoSink(QVideoSink *videoSink);
@@ -230,6 +251,8 @@ private:
 
     // saving to file
     FileFormat m_fileFormat;
+    FilenamePattern m_filenamePattern;
+    OutputPath m_outputPath;
     Quality m_quality = Quality::NormalQuality;
     QList<FileFormat> m_supportedFileFormats;
 

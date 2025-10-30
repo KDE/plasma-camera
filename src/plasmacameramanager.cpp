@@ -19,6 +19,8 @@ PlasmaCameraManager::PlasmaCameraManager(QObject *parent)
     setQuality(static_cast<Quality>(CameraSettings::self()->videoRecordingQuality()));
     setVideoResolution(static_cast<Resolution>(CameraSettings::self()->videoResolution()));
     setVideoCodec(static_cast<VideoCodec>(CameraSettings::self()->videoCodec()));
+    setFilenamePattern(static_cast<FilenamePattern>(CameraSettings::self()->filenamePattern()));
+    setOutputPath(static_cast<OutputPath>(CameraSettings::self()->outputPath()));
 
     // Set to default audio input
     setAudioRecordingEnabledInternal(true);
@@ -62,6 +64,16 @@ bool PlasmaCameraManager::isReadyForCapture() const
 PlasmaCameraManager::FileFormat PlasmaCameraManager::fileFormat() const
 {
     return m_fileFormat;
+}
+
+PlasmaCameraManager::FilenamePattern PlasmaCameraManager::filenamePattern() const
+{
+    return m_filenamePattern;
+}
+
+PlasmaCameraManager::OutputPath PlasmaCameraManager::outputPath() const
+{
+    return m_outputPath;
 }
 
 QList<PlasmaCameraManager::FileFormat> PlasmaCameraManager::supportedFileFormats() const
@@ -205,6 +217,26 @@ void PlasmaCameraManager::setFileFormat(const FileFormat fileFormat)
     if (m_fileFormat != fileFormat) {
         m_fileFormat = fileFormat;
         Q_EMIT fileFormatChanged();
+    }
+}
+
+void PlasmaCameraManager::setFilenamePattern(const FilenamePattern filenamePattern)
+{
+    qDebug() << "PlasmaCameraManager::setFilenamePattern" << filenamePattern;
+    if (m_filenamePattern != filenamePattern) {
+        m_filenamePattern = filenamePattern;
+        CameraSettings::self()->setFilenamePattern(m_filenamePattern);
+        Q_EMIT filenamePatternChanged();
+    }
+}
+
+void PlasmaCameraManager::setOutputPath(const OutputPath outputPath)
+{
+    qDebug() << "PlasmaCameraManager::setOutputPath" << outputPath;
+    if (m_outputPath != outputPath) {
+        m_outputPath = outputPath;
+        CameraSettings::self()->setOutputPath(m_outputPath);
+        Q_EMIT outputPathChanged();
     }
 }
 
@@ -507,8 +539,12 @@ void PlasmaCameraManager::processViewfinderFrame(const QImage &image)
 
 void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
 {
+    QDateTime now = QDateTime::currentDateTime();
+    if ( (m_filenamePattern==1) || (m_filenamePattern==2) ) {
+        m_imageCaptureFileName = now.toString(QStringLiteral("yyyyMMddHHmmss"));
+    }
     const QString fileName = PlasmaLibcameraUtils::generateFileName(
-        m_imageCaptureFileName, QStandardPaths::PicturesLocation, QLatin1String("jpg"));
+        m_imageCaptureFileName, QLatin1String("jpg"), m_filenamePattern, m_outputPath);
     QFile file(fileName);
 
     QImage image = frames.head();

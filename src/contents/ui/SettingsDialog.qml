@@ -70,6 +70,24 @@ Kirigami.MenuDialog {
         },
 
         Kirigami.Action {
+            text: i18n("Filename pattern")
+            icon.name: "document-save-as-symbolic"
+            onTriggered: {
+                filenamePatternDialogLoader.active = true;
+                filenamePatternDialogLoader.item.open();
+            }
+        },
+
+        Kirigami.Action {
+            text: i18n("Output path")
+            icon.name: "document-open-folder-symbolic"
+            onTriggered: {
+                outputPathDialogLoader.active = true;
+                outputPathDialogLoader.item.open();
+            }
+        },
+
+        Kirigami.Action {
             text: i18n("About")
             icon.name: "help-about"
             onTriggered: {
@@ -303,6 +321,93 @@ Kirigami.MenuDialog {
                             if (checked) {
                                 CameraSettings.cameraDeviceId = value;
                                 checked = Qt.binding(() => (value == CameraSettings.cameraDeviceId));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    property Loader filenamePatternDialogLoader: Loader {
+        id: filenamePatternDialogLoader
+        active: false
+
+        sourceComponent: Kirigami.Dialog {
+            id: filenamePatternDialog
+            title: i18n("Output filename pattern")
+            preferredWidth: Kirigami.Units.gridUnit * 16
+
+            onClosed: filenamePatternDialogLoader.active = false
+
+            ColumnLayout {
+                spacing: 0
+
+                Repeater {
+                    model: [
+                        { name: 'image_0001', value: PlasmaCameraManager.FilenameNumericSequential },
+                        { name: 'IMG(date)', value: PlasmaCameraManager.FilenameDateShort },
+                        { name: 'IMG_(date)', value: PlasmaCameraManager.FilenameDateUnderscore },
+                    ]
+
+                    delegate: QQC2.RadioDelegate {
+                        id: radioDelegate
+                        property string name: modelData.name
+                        property int value: modelData.value
+
+                        Layout.fillWidth: true
+                        topPadding: Kirigami.Units.smallSpacing * 2
+                        bottomPadding: Kirigami.Units.smallSpacing * 2
+
+                        text: name
+                        checked: value == root.cameraManager.filenamePattern
+                        onCheckedChanged: {
+                            if (checked) {
+                                root.cameraManager.filenamePattern = value;
+                                checked = Qt.binding(() => (value == root.cameraManager.filenamePattern));
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    property Loader outputPathDialogLoader: Loader {
+        id: outputPathDialogLoader
+        active: false
+
+        sourceComponent: Kirigami.Dialog {
+            id: outputPathDialog
+            title: i18n("Output path")
+            preferredWidth: Kirigami.Units.gridUnit * 16
+
+            onClosed: outputPathDialogLoader.active = false
+
+            ColumnLayout {
+                spacing: 0
+
+                Repeater {
+                    model: [
+                        { name: 'default', value: PlasmaCameraManager.OutputPathDefault },
+                        { name: 'DCIM', value: PlasmaCameraManager.OutputPathDCIM },
+                    ]
+
+                    delegate: QQC2.RadioDelegate {
+                        id: radioDelegate
+                        property string name: modelData.name
+                        property int value: modelData.value
+
+                        Layout.fillWidth: true
+                        topPadding: Kirigami.Units.smallSpacing * 2
+                        bottomPadding: Kirigami.Units.smallSpacing * 2
+
+                        text: name
+                        checked: value == root.cameraManager.outputPath
+                        onCheckedChanged: {
+                            if (checked) {
+                                root.cameraManager.outputPath = value;
+                                checked = Qt.binding(() => (value == root.cameraManager.outputPath));
                             }
                         }
                     }
