@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:44+0000\n"
+"POT-Creation-Date: 2025-10-31 00:44+0000\n"
 "PO-Revision-Date: 2025-09-11 17:41+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -157,63 +157,78 @@ msgstr "Codec voor video opname"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
+msgid "Filename pattern"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
+#, kde-format
+msgid "Output path"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:91
+#, kde-format
 msgid "About"
 msgstr "Over"
 
-#: src/contents/ui/SettingsDialog.qml:92
+#: src/contents/ui/SettingsDialog.qml:110
 #, kde-format
 msgid "Video Recording Resolution"
 msgstr "Resolutie van video opname"
 
-#: src/contents/ui/SettingsDialog.qml:102
+#: src/contents/ui/SettingsDialog.qml:120
 #, kde-format
 msgid "Auto"
 msgstr "Automatisch"
 
-#: src/contents/ui/SettingsDialog.qml:139
+#: src/contents/ui/SettingsDialog.qml:157
 #, kde-format
 msgid "Video Recording Quality"
 msgstr "Kwaliteit van video opname"
 
-#: src/contents/ui/SettingsDialog.qml:149
+#: src/contents/ui/SettingsDialog.qml:167
 #, kde-format
 msgid "Very low quality"
 msgstr "Erg lage kwaliteit"
 
-#: src/contents/ui/SettingsDialog.qml:150
+#: src/contents/ui/SettingsDialog.qml:168
 #, kde-format
 msgid "Low quality"
 msgstr "Lage kwaliteit"
 
-#: src/contents/ui/SettingsDialog.qml:151
+#: src/contents/ui/SettingsDialog.qml:169
 #, kde-format
 msgid "Normal quality"
 msgstr "Normale kwaliteit"
 
-#: src/contents/ui/SettingsDialog.qml:152
+#: src/contents/ui/SettingsDialog.qml:170
 #, kde-format
 msgid "High quality"
 msgstr "Hoge kwaliteit"
 
-#: src/contents/ui/SettingsDialog.qml:153
+#: src/contents/ui/SettingsDialog.qml:171
 #, kde-format
 msgid "Very high quality"
 msgstr "Erg hoge kwaliteit"
 
-#: src/contents/ui/SettingsDialog.qml:185
+#: src/contents/ui/SettingsDialog.qml:203
 #, kde-format
 msgid "Video Recording Framerate"
 msgstr "Framesnelheid van opnemen van video"
 
-#: src/contents/ui/SettingsDialog.qml:229
+#: src/contents/ui/SettingsDialog.qml:247
 #, kde-format
 msgid "Video Recording Codec"
 msgstr "Codec voor video opname"
 
-#: src/contents/ui/SettingsDialog.qml:273
+#: src/contents/ui/SettingsDialog.qml:291
 #, kde-format
 msgid "Select Camera"
 msgstr "Camera selecteren"
+
+#: src/contents/ui/SettingsDialog.qml:338
+#, kde-format
+msgid "Output filename pattern"
+msgstr ""
 
 #: src/main.cpp:69
 #, kde-format

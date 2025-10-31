@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-11 00:44+0000\n"
+"POT-Creation-Date: 2025-10-31 00:44+0000\n"
 "PO-Revision-Date: 2024-04-23 19:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -153,63 +153,78 @@ msgstr "视频录制编码"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
+msgid "Filename pattern"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
+#, kde-format
+msgid "Output path"
+msgstr ""
+
+#: src/contents/ui/SettingsDialog.qml:91
+#, kde-format
 msgid "About"
 msgstr "关于"
 
-#: src/contents/ui/SettingsDialog.qml:92
+#: src/contents/ui/SettingsDialog.qml:110
 #, kde-format
 msgid "Video Recording Resolution"
 msgstr "视频录制分辨率"
 
-#: src/contents/ui/SettingsDialog.qml:102
+#: src/contents/ui/SettingsDialog.qml:120
 #, kde-format
 msgid "Auto"
 msgstr "自动"
 
-#: src/contents/ui/SettingsDialog.qml:139
+#: src/contents/ui/SettingsDialog.qml:157
 #, kde-format
 msgid "Video Recording Quality"
 msgstr "视频录制画质"
 
-#: src/contents/ui/SettingsDialog.qml:149
+#: src/contents/ui/SettingsDialog.qml:167
 #, kde-format
 msgid "Very low quality"
 msgstr "极低画质"
 
-#: src/contents/ui/SettingsDialog.qml:150
+#: src/contents/ui/SettingsDialog.qml:168
 #, kde-format
 msgid "Low quality"
 msgstr "低画质"
 
-#: src/contents/ui/SettingsDialog.qml:151
+#: src/contents/ui/SettingsDialog.qml:169
 #, kde-format
 msgid "Normal quality"
 msgstr "一般画质"
 
-#: src/contents/ui/SettingsDialog.qml:152
+#: src/contents/ui/SettingsDialog.qml:170
 #, kde-format
 msgid "High quality"
 msgstr "高画质"
 
-#: src/contents/ui/SettingsDialog.qml:153
+#: src/contents/ui/SettingsDialog.qml:171
 #, kde-format
 msgid "Very high quality"
 msgstr "极高画质"
 
-#: src/contents/ui/SettingsDialog.qml:185
+#: src/contents/ui/SettingsDialog.qml:203
 #, kde-format
 msgid "Video Recording Framerate"
 msgstr "视频录制帧率"
 
-#: src/contents/ui/SettingsDialog.qml:229
+#: src/contents/ui/SettingsDialog.qml:247
 #, kde-format
 msgid "Video Recording Codec"
 msgstr "视频录制编码"
 
-#: src/contents/ui/SettingsDialog.qml:273
+#: src/contents/ui/SettingsDialog.qml:291
 #, kde-format
 msgid "Select Camera"
 msgstr "选择相机"
+
+#: src/contents/ui/SettingsDialog.qml:338
+#, kde-format
+msgid "Output filename pattern"
+msgstr ""
 
 #: src/main.cpp:69
 #, kde-format
