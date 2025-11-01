@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-31 00:44+0000\n"
-"PO-Revision-Date: 2025-09-11 08:52+0300\n"
+"PO-Revision-Date: 2025-10-31 13:19+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -161,12 +161,12 @@ msgstr "Кодек запису відео"
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "Filename pattern"
-msgstr ""
+msgstr "Шаблон назви файлів"
 
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "Шлях виведення"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
@@ -231,7 +231,7 @@ msgstr "Вибір камери"
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "Шаблон назви файла виведення"
 
 #: src/main.cpp:69
 #, kde-format
