@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-31 00:44+0000\n"
-"PO-Revision-Date: 2025-10-25 08:44+0200\n"
+"PO-Revision-Date: 2025-11-01 10:10+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -159,12 +159,12 @@ msgstr "Kodek nagrywania"
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "Filename pattern"
-msgstr ""
+msgstr "Wzorzec nazwy pliku"
 
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "Ścieżka wyjściowa"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
@@ -229,7 +229,7 @@ msgstr "Wybierz kamerę"
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "Wzorzec nazwy pliku wynikowego"
 
 #: src/main.cpp:69
 #, kde-format
