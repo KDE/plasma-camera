@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-31 00:44+0000\n"
-"PO-Revision-Date: 2025-09-12 14:08+0200\n"
+"PO-Revision-Date: 2025-11-01 13:17+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: \n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 "X-Text-Markup: \n"
 
 #, kde-format
@@ -159,12 +159,12 @@ msgstr "Codec pour l'enregistrement vidéo"
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "Filename pattern"
-msgstr ""
+msgstr "Motif de nom de fichier"
 
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "Emplacement de sortie"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
@@ -229,7 +229,7 @@ msgstr "Sélectionner un appareil photo"
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "Motif de nom de fichier en sortie :"
 
 #: src/main.cpp:69
 #, kde-format
