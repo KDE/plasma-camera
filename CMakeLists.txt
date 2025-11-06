@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.16)
 set(KF_MIN_VERSION "6.0.0")
 set(QT_MIN_VERSION "6.6.0")
-set(PROJECT_VERSION "2.0.0")
+set(PROJECT_VERSION "2.1.0")
 
 project(plasma-camera VERSION ${PROJECT_VERSION})
 
