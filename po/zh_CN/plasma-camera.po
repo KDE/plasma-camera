@@ -154,12 +154,12 @@ msgstr "视频录制编码"
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "Filename pattern"
-msgstr ""
+msgstr "文件名模式"
 
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "输出路径"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
@@ -224,7 +224,7 @@ msgstr "选择相机"
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "输出文件名模式"
 
 #: src/main.cpp:69
 #, kde-format
