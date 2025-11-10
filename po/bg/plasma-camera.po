@@ -256,36 +256,3 @@ msgstr "Andrew Wang"
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
-
-#~ msgid "Took a photo"
-#~ msgstr "Направи се снимка"
-
-#~ msgid "Stopped recording"
-#~ msgstr "Записването е спряно"
-
-#~ msgid "Started recording"
-#~ msgstr "Записването е започнато"
-
-#~ msgid "Camera is busy. Is another application using it?"
-#~ msgstr "Камерата е заета. Използва ли я друго приложение?"
-
-#~ msgid "Missing camera resource."
-#~ msgstr "Липсващ ресурс на камера."
-
-#~ msgid "Resolution"
-#~ msgstr "Разделителна способност"
-
-#~ msgid "White balance"
-#~ msgstr "Баланс на бялото"
-
-#~ msgid "Sunlight"
-#~ msgstr "Слънчев"
-
-#~ msgid "Cloudy"
-#~ msgstr "Облачно"
-
-#~ msgid "Tungsten"
-#~ msgstr "Волфрамова"
-
-#~ msgid "Fluorescent"
-#~ msgstr "Флуоресцентна"
