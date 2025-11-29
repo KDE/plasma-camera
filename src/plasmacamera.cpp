@@ -154,7 +154,7 @@ QList<QString> PlasmaCamera::cameraDeviceNames() const
     // camera names are more human-readable strings
     QList<QString> devices;
     for (const auto &camera : m_cameraManager->cameras()) {
-        devices.push_back( QString::fromStdString(*camera->properties().get(libcamera::properties::Model)) );
+        devices.push_back(QString::fromStdString(std::string(*camera->properties().get(libcamera::properties::Model))));
     }
 
     return devices;
