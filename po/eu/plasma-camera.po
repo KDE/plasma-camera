@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-09-11 21:46+0200\n"
+"PO-Revision-Date: 2025-12-06 20:54+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -161,12 +161,12 @@ msgstr "Bideoa grabatzeko kodeka"
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "Filename pattern"
-msgstr ""
+msgstr "Fitxategi-izen eredua"
 
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "Irteerako bide-izena"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
@@ -231,7 +231,7 @@ msgstr "Hautatu kamera"
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "Irteerako fitxategi-izen eredua"
 
 #: src/main.cpp:69
 #, kde-format
