@@ -1,61 +1,61 @@
-# Copyright (C) 2025 This file is copyright:
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
-# SPDX-FileCopyrightText: 2019, 2020, 2023, 2025 Tommi Nieminen <translator@legisign.org>
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-11-13 18:11+0200\n"
-"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
-"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
-"Language: fi\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Tommi Nieminen"
+msgstr ""
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "translator@legisign.org"
+msgstr ""
 
 #: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Photo"
-msgstr "Valokuva"
+msgstr ""
 
 #: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
-msgstr "Video"
+msgstr ""
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr "Mikrofoni on käytössä"
+msgstr ""
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr "Mikrofoni ei ole käytössä"
+msgstr ""
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr "Valotus"
+msgstr ""
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
 msgid "Camera"
-msgstr "Kamera"
+msgstr ""
 
 #: src/contents/ui/camera/CameraPage.qml:44 src/contents/ui/main.qml:73
 #, kde-format
@@ -63,8 +63,6 @@ msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr ""
-"Tapahtui virhe: ”%1”. Jos sovellus lakkasi toimimasta, käynnistä se "
-"uudelleen."
 
 #: src/contents/ui/camera/CameraPage.qml:47
 #, kde-format
@@ -72,245 +70,183 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
-"Videokoodain ei tahdo pysyä mukana. Kokeile suorituskyvyn parantamiseksi "
-"nauhoitusasetusten heikentämistä."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
 msgid "Switch mode"
-msgstr "Vaihda tilaa"
+msgstr ""
 
 #: src/contents/ui/camera/CameraPage.qml:98
 #, kde-format
 msgid "Switch Camera"
-msgstr "Vaihda kameraa"
+msgstr ""
 
 #: src/contents/ui/camera/CaptureController.qml:38
 #, kde-format
 msgid "Cancel self-timer"
-msgstr "Peru ajastus"
+msgstr ""
 
 #: src/contents/ui/camera/CaptureController.qml:40
 #, kde-format
 msgid "Capture photo"
-msgstr "Ota kuva"
+msgstr ""
 
 #: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
-msgstr "Pysäytä videon nauhoitus"
+msgstr ""
 
 #: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
 msgid "Start recording video"
-msgstr "Käynnistä videon nauhoitus"
+msgstr ""
 
 #: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
 msgid "Failed to take a photo"
-msgstr "Kuvan ottaminen epäonnistui"
+msgstr ""
 
 #: src/contents/ui/camera/CaptureController.qml:108
 #, kde-format
 msgid "Failed to start recording"
-msgstr "Nauhoituksen käynnistäminen epäonnistui"
+msgstr ""
 
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr "Valotusarvo"
+msgstr ""
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
 msgid "Camera not available"
-msgstr "Kameraa ei ole käytettävissä"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr "Asetukset"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
 msgid "Select camera"
-msgstr "Valitse kamera"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:33
 #, kde-format
 msgid "Video recording resolution"
-msgstr "Videonauhoituksen tarkkuus"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:43
 #, kde-format
 msgid "Video recording quality"
-msgstr "Videonauhoituksen laatu"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr "Videonauhoituksen kuvanopeus"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:63
 #, kde-format
 msgid "Video recording codec"
-msgstr "Videonauhoituksen koodekki"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "Filename pattern"
-msgstr "Tiedostonimikuvio"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr "Tulossijainti"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
 msgid "About"
-msgstr "Tietoa"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:110
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr "Videonauhoituksen tarkkuus"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:120
 #, kde-format
 msgid "Auto"
-msgstr "Automaattinen"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:157
 #, kde-format
 msgid "Video Recording Quality"
-msgstr "Videonauhoituksen laatu"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:167
 #, kde-format
 msgid "Very low quality"
-msgstr "Hyvin heikko laatu"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:168
 #, kde-format
 msgid "Low quality"
-msgstr "Heikko laatu"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:169
 #, kde-format
 msgid "Normal quality"
-msgstr "Tavallinen laatu"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:170
 #, kde-format
 msgid "High quality"
-msgstr "Hyvä laatu"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:171
 #, kde-format
 msgid "Very high quality"
-msgstr "Erittäin hyvä laatu"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:203
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr "Videonauhoituksen kuvanopeus"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:247
 #, kde-format
 msgid "Video Recording Codec"
-msgstr "Videonauhoituksen koodekki"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:291
 #, kde-format
 msgid "Select Camera"
-msgstr "Valitse kamera"
+msgstr ""
 
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr "Tulostiedostonimikuvio"
+msgstr ""
 
 #: src/main.cpp:69
 #, kde-format
 msgid "© Plasma Mobile Developers"
-msgstr "© Plasma Mobile -kehittäjät"
+msgstr ""
 
 #: src/main.cpp:73
 #, kde-format
 msgid "Marco Martin"
-msgstr "Marco Martin"
+msgstr ""
 
 #: src/main.cpp:79
 #, kde-format
 msgid "Jonah Brüchert"
-msgstr "Jonah Brüchert"
+msgstr ""
 
 #: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
-msgstr "Andrew Wang"
+msgstr ""
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr "Devin Lin"
-
-#~ msgid "Took a photo"
-#~ msgstr "Ota kuva"
-
-#~ msgid "Stopped recording"
-#~ msgstr "Nauhoitus keskeytetty"
-
-#~ msgid "Started recording"
-#~ msgstr "Nauhoitus käynnistetty"
-
-#~ msgid "Camera is busy. Is another application using it?"
-#~ msgstr "Kamera on varattu. Käyttääkö toinen sovellus sitä?"
-
-#~ msgid "Missing camera resource."
-#~ msgstr "Kameraresurssi puuttuu."
-
-#~ msgid "Resolution"
-#~ msgstr "Tarkkuus"
-
-#~ msgid "White balance"
-#~ msgstr "Valkotasapaino"
-
-#~ msgid "Sunlight"
-#~ msgstr "Auringonvalo"
-
-#~ msgid "Cloudy"
-#~ msgstr "Pilvinen sää"
-
-#~ msgid "Tungsten"
-#~ msgstr "Volframilamppu"
-
-#~ msgid "Fluorescent"
-#~ msgstr "Loistelamppu"
-
-#~ msgid "Self-timer"
-#~ msgstr "Ajastus"
-
-#~ msgid "Off"
-#~ msgstr "Ei käytössä"
-
-#~ msgid "2 s"
-#~ msgstr "2 s"
-
-#~ msgid "5 s"
-#~ msgstr "5 s"
-
-#~ msgid "10 s"
-#~ msgstr "10 s"
-
-#~ msgid "20 s"
-#~ msgstr "20 s"
-
-#~ msgid "Simple camera application"
-#~ msgstr "Yksinkertainen kamerasovellus"
-
-#~ msgid "License:"
-#~ msgstr "Lisenssi:"
-
-#~ msgid "View source code online"
-#~ msgstr "Tarkastele lähdekoodia verkossa"
+msgstr ""
