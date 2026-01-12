@@ -112,12 +112,12 @@ msgstr "Inicia la gravació de vídeo"
 #: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
 msgid "Failed to take a photo"
-msgstr "No s'ha pogut prendre una foto"
+msgstr "Ha fallat mentre es prenia una foto"
 
 #: src/contents/ui/camera/CaptureController.qml:108
 #, kde-format
 msgid "Failed to start recording"
-msgstr "No s'ha pogut iniciar la gravació"
+msgstr "Ha fallat mentre s'iniciava la gravació"
 
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
