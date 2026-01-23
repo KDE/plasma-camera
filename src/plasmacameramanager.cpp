@@ -406,13 +406,7 @@ void PlasmaCameraManager::setAudioInput(QAudioInput *audioInput)
 bool PlasmaCameraManager::findAndSetDefaultRecordingDevice()
 {
     // Initialize default audio input if we are enabling it
-    QAudioDevice audioDevice;
-
-    for (const QAudioDevice &device : QMediaDevices::audioInputs()) {
-        if (device.isDefault() && device.mode() == QAudioDevice::Input) {
-            audioDevice = device;
-        }
-    }
+    QAudioDevice audioDevice = QMediaDevices::defaultAudioInput();
 
     if (QMediaDevices::audioInputs().isEmpty() || audioDevice.isNull()) {
         qWarning() << "No audio devices found for recording";
