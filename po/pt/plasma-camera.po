@@ -1,52 +1,54 @@
+# SPDX-FileCopyrightText: 2026 César A. P. Cláudio <cesarapclaudio@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2020-01-02 00:06+0000\n"
-"Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
-"Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
+"PO-Revision-Date: 2026-02-04 23:07+0000\n"
+"Last-Translator: César A. P. Cláudio <cesarapclaudio@gmail.com>\n"
+"Language-Team: pt\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-POFile-SpellExtra: Brüchert Jonah\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "José Nuno Pires"
+msgstr "César A. P. Cláudio, José Nuno Pires"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zepires@gmail.com"
+msgstr "cesarapclaudio@gmail.com"
 
 #: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Photo"
-msgstr ""
+msgstr "Fotografia"
 
 #: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "Vídeo"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "O microfone está ativado"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "O microfone está desativado"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Exposição"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -59,8 +61,8 @@ msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr ""
-"Ocorreu um erro: \"%1\". Por favor, pense em reiniciar a aplicação se tiver "
-"parado de funcionar."
+"Ocorreu um erro: \"%1\". Considere reiniciar a aplicação caso esta tenha "
+"deixado de funcionar."
 
 #: src/contents/ui/camera/CameraPage.qml:47
 #, kde-format
@@ -68,6 +70,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
+"O codificador de vídeo está a ter dificuldades em acompanhar. Tente reduzir "
+"as definições de gravação para melhorar o desempenho."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -77,101 +81,97 @@ msgstr "Mudar de modo"
 #: src/contents/ui/camera/CameraPage.qml:98
 #, kde-format
 msgid "Switch Camera"
-msgstr "Mudar de Câmara"
+msgstr "Mudar de câmara"
 
 #: src/contents/ui/camera/CaptureController.qml:38
 #, kde-format
 msgid "Cancel self-timer"
-msgstr "Cancelar o cronómetro"
+msgstr "Cancelar temporizador"
 
 #: src/contents/ui/camera/CaptureController.qml:40
 #, kde-format
 msgid "Capture photo"
-msgstr "Tirar uma fotografia"
+msgstr "Capturar fotografia"
 
 #: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
-msgstr "Parar a gravação do vídeo"
+msgstr "Parar gravação de vídeo"
 
 #: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
 msgid "Start recording video"
-msgstr "Iniciar uma gravação de vídeo"
+msgstr "Iniciar gravação de vídeo"
 
 #: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
 msgid "Failed to take a photo"
-msgstr "Não foi possível tirar uma fotografia"
+msgstr "Falha ao tirar uma fotografia"
 
 #: src/contents/ui/camera/CaptureController.qml:108
 #, kde-format
 msgid "Failed to start recording"
-msgstr "Não foi possível iniciar a gravação"
+msgstr "Falha ao iniciar a gravação"
 
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "Valor de exposição"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
 msgid "Camera not available"
-msgstr "Câmara indisponível"
+msgstr "Câmara não disponível"
 
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Definições"
 
 #: src/contents/ui/SettingsDialog.qml:23
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select camera"
-msgstr "Mudar de Câmara"
+msgstr "Selecionar câmara"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "Parar a gravação do vídeo"
+msgstr "Resolução de gravação de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "Parar a gravação do vídeo"
+msgstr "Qualidade de gravação de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "Taxa de fotogramas da gravação de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "Parar a gravação do vídeo"
+msgstr "Codificador/descodificador da gravação de vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "Filename pattern"
-msgstr ""
+msgstr "Padrão de nome de ficheiro"
 
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "Caminho de saída"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
 msgid "About"
-msgstr "Acerca"
+msgstr "Sobre"
 
 #: src/contents/ui/SettingsDialog.qml:110
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "Resolução da Gravação de Vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:120
 #, kde-format
@@ -181,54 +181,52 @@ msgstr "Auto"
 #: src/contents/ui/SettingsDialog.qml:157
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "Qualidade da Gravação de Vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:167
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "Qualidade muito baixa"
 
 #: src/contents/ui/SettingsDialog.qml:168
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "Qualidade baixa"
 
 #: src/contents/ui/SettingsDialog.qml:169
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "Qualidade normal"
 
 #: src/contents/ui/SettingsDialog.qml:170
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "Alta qualidade"
 
 #: src/contents/ui/SettingsDialog.qml:171
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "Muito alta qualidade"
 
 #: src/contents/ui/SettingsDialog.qml:203
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "Taxa de fotogramas da Gravação de Vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:247
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "Parar a gravação do vídeo"
+msgstr "Codificador/descodificador da Gravação de Vídeo"
 
 #: src/contents/ui/SettingsDialog.qml:291
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select Camera"
-msgstr "Mudar de Câmara"
+msgstr "Selecionar Câmara"
 
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "Padrão de nome de ficheiro de saída"
 
 #: src/main.cpp:69
 #, kde-format
@@ -248,12 +246,12 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "Andrew Wang"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #~ msgid "Took a photo"
 #~ msgstr "Foi tirada uma fotografia"
