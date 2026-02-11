@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
-# SPDX-FileCopyrightText: 2019, 2020, 2023, 2025 Paolo Zamponi <feus73@gmail.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2023, 2025, 2026 Paolo Zamponi <feus73@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-11-09 12:03+0100\n"
+"PO-Revision-Date: 2026-02-07 08:50+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -163,7 +163,7 @@ msgstr "Schema dei nomi dei file"
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "Percorso di uscita"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
@@ -228,7 +228,7 @@ msgstr "Seleziona fotocamera"
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "Schema dei nomi dei file di uscita"
 
 #: src/main.cpp:69
 #, kde-format
