@@ -169,6 +169,7 @@ void PlasmaCameraManager::startRecordingVideo()
     }
 
     m_droppedFrames = false; // reset
+    m_frameRecordingCount = 0; // reset frame count for correct timestamps
 
     // Set the correct rotation metadata prior to recording
     QMediaMetaData metaData;
@@ -396,6 +397,7 @@ void PlasmaCameraManager::updateRecorderSettings()
 void PlasmaCameraManager::setAudioInput(QAudioInput *audioInput)
 {
     if (m_audioInput != audioInput) {
+        delete m_audioInput;
         m_audioInput = audioInput;
         Q_EMIT audioInputChanged();
 
@@ -559,10 +561,7 @@ void PlasmaCameraManager::processCaptureImage(const QQueue<QImage> &frames)
     qDebug() << "saving image to " << fileName;
     const bool res = image.save(&file, "JPEG", 50);
     if (!res) {
-        setError(
-            0,
-            ResourceError,
-            QString::fromStdString("Could not save to file: %1").arg(fileName));
+        setError(0, ResourceError, QStringLiteral("Could not save to file: %1").arg(fileName));
     }
 
     // Write EXIF data

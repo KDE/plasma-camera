@@ -230,6 +230,9 @@ void Worker::processRequestData()
     }
 
     if (!request->buffers().count(m_stream)) {
+        // Return request to the free queue for new requests
+        const QMutexLocker lock(&m_freeMutex);
+        m_freeQueue.enqueue(request);
         return;
     }
 
@@ -239,7 +242,8 @@ void Worker::processRequestData()
     // Load frame into m_image
     size_t size = buffer->metadata().planes()[0].bytesused;
     if (getNativeFormats().contains(m_format)) {
-        m_image = QImage(image->data(0).data(), m_size.width(), m_size.height(), static_cast<qsizetype>(size) / m_size.height(), NATIVE_FORMATS[m_format]);
+        m_image =
+            QImage(image->data(0).data(), m_size.width(), m_size.height(), static_cast<qsizetype>(size) / m_size.height(), NATIVE_FORMATS[m_format]).copy();
     } else {
         m_converter.convert(image, size, &m_image);
     }
@@ -488,10 +492,8 @@ void Worker::configure()
 
     m_stream = m_config->at(0).stream();
 
-    ret = setFormat(QSize(static_cast<int>(streamConfig.size.width), static_cast<int>(streamConfig.size.height)),
-                    streamConfig.pixelFormat,
-                    streamConfig.colorSpace.value_or(libcamera::ColorSpace::Sycc),
-                    streamConfig.stride);
+    ret =
+        setFormat(QSize(static_cast<int>(streamConfig.size.width), static_cast<int>(streamConfig.size.height)), streamConfig.pixelFormat, streamConfig.stride);
     if (ret < 0) {
         setError(ret);
         return;
@@ -510,11 +512,7 @@ const QList<libcamera::PixelFormat>& Worker::getNativeFormats()
     return formats;
 }
 
-int Worker::setFormat(
-    const QSize& size,
-    const libcamera::PixelFormat& format,
-    const libcamera::ColorSpace& colorSpace,
-    const unsigned int stride)
+int Worker::setFormat(const QSize &size, const libcamera::PixelFormat &format, const unsigned int stride)
 {
     m_image = QImage();
     if (!getNativeFormats().contains(format)) {

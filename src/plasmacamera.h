@@ -156,8 +156,8 @@ public:
     int wbTemp() const;
 
     // Contrast and saturation
-    int contrast() const;
-    int saturation() const;
+    float contrast() const;
+    float saturation() const;
 
     // Camera settings
     Settings settings() const;
@@ -213,8 +213,8 @@ public Q_SLOTS:
     void resetAwb();
 
     // Contrast and saturation
-    void setContrast(int contrast);
-    void setSaturation(int saturation);
+    void setContrast(float contrast);
+    void setSaturation(float saturation);
     void resetContrast();
     void resetSaturation();
 
@@ -276,7 +276,7 @@ private:
     float m_fps = 30.0f;
 
     // The amount of degrees to rotate captured input by.
-    int m_softwareRotationDegrees = 0.0f;
+    int m_softwareRotationDegrees = 0;
 
     // Whether the camera output should be mirrored
     bool m_mirrorOutput = false;

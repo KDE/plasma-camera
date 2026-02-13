@@ -243,7 +243,7 @@ private:
     float outputOrientationDegrees() const;
 
     // error handling
-    Error m_error;
+    Error m_error = NoError;
     QString m_errorString;
 
     // preforming an image capture

@@ -217,12 +217,12 @@ int PlasmaCamera::wbTemp() const
     return m_settings.getWbTemp();
 }
 
-int PlasmaCamera::contrast() const
+float PlasmaCamera::contrast() const
 {
     return m_settings.getContrast();
 }
 
-int PlasmaCamera::saturation() const
+float PlasmaCamera::saturation() const
 {
     return m_settings.getSaturation();
 }
@@ -282,7 +282,7 @@ void PlasmaCamera::setActive(const bool active)
             return;
         }
 
-        stopCamera();
+        stopCameraInternal();
     }
 
     // If the state change request m_active cannot be handled right now,
@@ -329,7 +329,7 @@ void PlasmaCamera::setCameraFormat(const QCameraFormat &cameraFormat)
 
 void PlasmaCamera::setAfWindow(const QSize &afWindow)
 {
-    if (m_settings.canSetAeEnable() && m_settings.trySetAfWindow(afWindow)) {
+    if (m_settings.canSetAfWindow() && m_settings.trySetAfWindow(afWindow)) {
         Q_EMIT settingsChanged(m_settings);
     }
 }
@@ -393,7 +393,7 @@ void PlasmaCamera::resetAwb()
     Q_EMIT settingsChanged(m_settings);
 }
 
-void PlasmaCamera::setContrast(const int contrast)
+void PlasmaCamera::setContrast(const float contrast)
 {
     if (m_settings.canSetContrast() && m_settings.trySetContrast(contrast)) {
         Q_EMIT settingsChanged(m_settings);
@@ -406,7 +406,7 @@ void PlasmaCamera::resetContrast()
     Q_EMIT settingsChanged(m_settings);
 }
 
-void PlasmaCamera::setSaturation(const int saturation)
+void PlasmaCamera::setSaturation(const float saturation)
 {
     if (m_settings.canSetSaturation() && m_settings.trySetSaturation(saturation)) {
         Q_EMIT settingsChanged(m_settings);
