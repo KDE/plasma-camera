@@ -492,8 +492,10 @@ void Worker::configure()
 
     m_stream = m_config->at(0).stream();
 
-    ret =
-        setFormat(QSize(static_cast<int>(streamConfig.size.width), static_cast<int>(streamConfig.size.height)), streamConfig.pixelFormat, streamConfig.stride);
+    ret = setFormat(QSize(static_cast<int>(streamConfig.size.width), static_cast<int>(streamConfig.size.height)),
+                    streamConfig.pixelFormat,
+                    streamConfig.colorSpace.value_or(libcamera::ColorSpace::Sycc),
+                    streamConfig.stride);
     if (ret < 0) {
         setError(ret);
         return;
@@ -512,11 +514,11 @@ const QList<libcamera::PixelFormat>& Worker::getNativeFormats()
     return formats;
 }
 
-int Worker::setFormat(const QSize &size, const libcamera::PixelFormat &format, const unsigned int stride)
+int Worker::setFormat(const QSize &size, const libcamera::PixelFormat &format, const libcamera::ColorSpace &colorSpace, const unsigned int stride)
 {
     m_image = QImage();
     if (!getNativeFormats().contains(format)) {
-        if (const int ret = m_converter.configure(format, size, stride); ret < 0) {
+        if (const int ret = m_converter.configure(format, size, stride, colorSpace); ret < 0) {
             return ret;
         }
 

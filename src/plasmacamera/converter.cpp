@@ -27,156 +27,162 @@
 #define CLIP(x)			CLAMP(x,0,255)
 #endif
 
-
-int Converter::configure(const libcamera::PixelFormat &format,
-						 const QSize &size, unsigned int stride)
+int Converter::configure(const libcamera::PixelFormat &format, const QSize &size, unsigned int stride, const libcamera::ColorSpace &colorSpace)
 {
-	switch (format) {
-		case libcamera::formats::NV12:
-			formatFamily_ = YUVSemiPlanar;
-			horzSubSample_ = 2;
-			vertSubSample_ = 2;
-			nvSwap_ = false;
-			break;
-		case libcamera::formats::NV21:
-			formatFamily_ = YUVSemiPlanar;
-			horzSubSample_ = 2;
-			vertSubSample_ = 2;
-			nvSwap_ = true;
-			break;
-		case libcamera::formats::NV16:
-			formatFamily_ = YUVSemiPlanar;
-			horzSubSample_ = 2;
-			vertSubSample_ = 1;
-			nvSwap_ = false;
-			break;
-		case libcamera::formats::NV61:
-			formatFamily_ = YUVSemiPlanar;
-			horzSubSample_ = 2;
-			vertSubSample_ = 1;
-			nvSwap_ = true;
-			break;
-		case libcamera::formats::NV24:
-			formatFamily_ = YUVSemiPlanar;
-			horzSubSample_ = 1;
-			vertSubSample_ = 1;
-			nvSwap_ = false;
-			break;
-		case libcamera::formats::NV42:
-			formatFamily_ = YUVSemiPlanar;
-			horzSubSample_ = 1;
-			vertSubSample_ = 1;
-			nvSwap_ = true;
-			break;
+    /* Select YCbCr encoding based on the color space */
+    if (colorSpace.ycbcrEncoding == libcamera::ColorSpace::YcbcrEncoding::Rec709)
+        ycbcrEncoding_ = EncodingBT709;
+    else if (colorSpace.ycbcrEncoding == libcamera::ColorSpace::YcbcrEncoding::Rec2020)
+        ycbcrEncoding_ = EncodingBT2020;
+    else
+        ycbcrEncoding_ = EncodingBT601;
 
-		case libcamera::formats::R8:
-			formatFamily_ = RGB;
-			r_pos_ = 0;
-			g_pos_ = 0;
-			b_pos_ = 0;
-			bpp_ = 1;
-			break;
-		case libcamera::formats::RGB888:
-			formatFamily_ = RGB;
-			r_pos_ = 2;
-			g_pos_ = 1;
-			b_pos_ = 0;
-			bpp_ = 3;
-			break;
-		case libcamera::formats::BGR888:
-			formatFamily_ = RGB;
-			r_pos_ = 0;
-			g_pos_ = 1;
-			b_pos_ = 2;
-			bpp_ = 3;
-			break;
-		case libcamera::formats::ARGB8888:
-		case libcamera::formats::XRGB8888:
-			formatFamily_ = RGB;
-			r_pos_ = 2;
-			g_pos_ = 1;
-			b_pos_ = 0;
-			bpp_ = 4;
-			break;
-		case libcamera::formats::RGBA8888:
-		case libcamera::formats::RGBX8888:
-			formatFamily_ = RGB;
-			r_pos_ = 3;
-			g_pos_ = 2;
-			b_pos_ = 1;
-			bpp_ = 4;
-			break;
-		case libcamera::formats::ABGR8888:
-		case libcamera::formats::XBGR8888:
-			formatFamily_ = RGB;
-			r_pos_ = 0;
-			g_pos_ = 1;
-			b_pos_ = 2;
-			bpp_ = 4;
-			break;
-		case libcamera::formats::BGRA8888:
-		case libcamera::formats::BGRX8888:
-			formatFamily_ = RGB;
-			r_pos_ = 1;
-			g_pos_ = 2;
-			b_pos_ = 3;
-			bpp_ = 4;
-			break;
+    switch (format) {
+    case libcamera::formats::NV12:
+        formatFamily_ = YUVSemiPlanar;
+        horzSubSample_ = 2;
+        vertSubSample_ = 2;
+        nvSwap_ = false;
+        break;
+    case libcamera::formats::NV21:
+        formatFamily_ = YUVSemiPlanar;
+        horzSubSample_ = 2;
+        vertSubSample_ = 2;
+        nvSwap_ = true;
+        break;
+    case libcamera::formats::NV16:
+        formatFamily_ = YUVSemiPlanar;
+        horzSubSample_ = 2;
+        vertSubSample_ = 1;
+        nvSwap_ = false;
+        break;
+    case libcamera::formats::NV61:
+        formatFamily_ = YUVSemiPlanar;
+        horzSubSample_ = 2;
+        vertSubSample_ = 1;
+        nvSwap_ = true;
+        break;
+    case libcamera::formats::NV24:
+        formatFamily_ = YUVSemiPlanar;
+        horzSubSample_ = 1;
+        vertSubSample_ = 1;
+        nvSwap_ = false;
+        break;
+    case libcamera::formats::NV42:
+        formatFamily_ = YUVSemiPlanar;
+        horzSubSample_ = 1;
+        vertSubSample_ = 1;
+        nvSwap_ = true;
+        break;
 
-		case libcamera::formats::VYUY:
-			formatFamily_ = YUVPacked;
-			y_pos_ = 1;
-			cb_pos_ = 2;
-			break;
-		case libcamera::formats::YVYU:
-			formatFamily_ = YUVPacked;
-			y_pos_ = 0;
-			cb_pos_ = 3;
-			break;
-		case libcamera::formats::UYVY:
-			formatFamily_ = YUVPacked;
-			y_pos_ = 1;
-			cb_pos_ = 0;
-			break;
-		case libcamera::formats::YUYV:
-			formatFamily_ = YUVPacked;
-			y_pos_ = 0;
-			cb_pos_ = 1;
-			break;
+    case libcamera::formats::R8:
+        formatFamily_ = RGB;
+        r_pos_ = 0;
+        g_pos_ = 0;
+        b_pos_ = 0;
+        bpp_ = 1;
+        break;
+    case libcamera::formats::RGB888:
+        formatFamily_ = RGB;
+        r_pos_ = 2;
+        g_pos_ = 1;
+        b_pos_ = 0;
+        bpp_ = 3;
+        break;
+    case libcamera::formats::BGR888:
+        formatFamily_ = RGB;
+        r_pos_ = 0;
+        g_pos_ = 1;
+        b_pos_ = 2;
+        bpp_ = 3;
+        break;
+    case libcamera::formats::ARGB8888:
+    case libcamera::formats::XRGB8888:
+        formatFamily_ = RGB;
+        r_pos_ = 2;
+        g_pos_ = 1;
+        b_pos_ = 0;
+        bpp_ = 4;
+        break;
+    case libcamera::formats::RGBA8888:
+    case libcamera::formats::RGBX8888:
+        formatFamily_ = RGB;
+        r_pos_ = 3;
+        g_pos_ = 2;
+        b_pos_ = 1;
+        bpp_ = 4;
+        break;
+    case libcamera::formats::ABGR8888:
+    case libcamera::formats::XBGR8888:
+        formatFamily_ = RGB;
+        r_pos_ = 0;
+        g_pos_ = 1;
+        b_pos_ = 2;
+        bpp_ = 4;
+        break;
+    case libcamera::formats::BGRA8888:
+    case libcamera::formats::BGRX8888:
+        formatFamily_ = RGB;
+        r_pos_ = 1;
+        g_pos_ = 2;
+        b_pos_ = 3;
+        bpp_ = 4;
+        break;
 
-		case libcamera::formats::YUV420:
-			formatFamily_ = YUVPlanar;
-			horzSubSample_ = 2;
-			vertSubSample_ = 2;
-			nvSwap_ = false;
-			break;
-		case libcamera::formats::YVU420:
-			formatFamily_ = YUVPlanar;
-			horzSubSample_ = 2;
-			vertSubSample_ = 2;
-			nvSwap_ = true;
-			break;
-		case libcamera::formats::YUV422:
-			formatFamily_ = YUVPlanar;
-			horzSubSample_ = 2;
-			vertSubSample_ = 1;
-			nvSwap_ = false;
-			break;
+    case libcamera::formats::VYUY:
+        formatFamily_ = YUVPacked;
+        y_pos_ = 1;
+        cb_pos_ = 2;
+        break;
+    case libcamera::formats::YVYU:
+        formatFamily_ = YUVPacked;
+        y_pos_ = 0;
+        cb_pos_ = 3;
+        break;
+    case libcamera::formats::UYVY:
+        formatFamily_ = YUVPacked;
+        y_pos_ = 1;
+        cb_pos_ = 0;
+        break;
+    case libcamera::formats::YUYV:
+        formatFamily_ = YUVPacked;
+        y_pos_ = 0;
+        cb_pos_ = 1;
+        break;
 
-		case libcamera::formats::MJPEG:
-			formatFamily_ = MJPEG;
-			break;
+    case libcamera::formats::YUV420:
+        formatFamily_ = YUVPlanar;
+        horzSubSample_ = 2;
+        vertSubSample_ = 2;
+        nvSwap_ = false;
+        break;
+    case libcamera::formats::YVU420:
+        formatFamily_ = YUVPlanar;
+        horzSubSample_ = 2;
+        vertSubSample_ = 2;
+        nvSwap_ = true;
+        break;
+    case libcamera::formats::YUV422:
+        formatFamily_ = YUVPlanar;
+        horzSubSample_ = 2;
+        vertSubSample_ = 1;
+        nvSwap_ = false;
+        break;
 
-		default:
-			return -EINVAL;
-	};
+    case libcamera::formats::MJPEG:
+        formatFamily_ = MJPEG;
+        break;
 
-	format_ = format;
-	width_ = size.width();
-	height_ = size.height();
-	stride_ = stride;
+    default:
+        return -EINVAL;
+    };
 
-	return 0;
+    format_ = format;
+    width_ = size.width();
+    height_ = size.height();
+    stride_ = stride;
+
+    return 0;
 }
 
 void Converter::convert(const Image *src, size_t size, QImage *dst)
@@ -200,15 +206,32 @@ void Converter::convert(const Image *src, size_t size, QImage *dst)
 	};
 }
 
-static void yuv_to_rgb(const int y, const int u, const int v,
-					   int *r, int *g, int *b)
+void Converter::yuv_to_rgb(const int y, const int u, const int v, int *r, int *g, int *b) const
 {
 	const int c = y - 16;
 	const int d = u - 128;
 	const int e = v - 128;
-	*r = CLIP(( 298 * c           + 409 * e + 128) >> RGBSHIFT);
-	*g = CLIP(( 298 * c - 100 * d - 208 * e + 128) >> RGBSHIFT);
-	*b = CLIP(( 298 * c + 516 * d           + 128) >> RGBSHIFT);
+
+    switch (ycbcrEncoding_) {
+    case EncodingBT709:
+        /* ITU-R BT.709 coefficients */
+        *r = CLIP((298 * c + 459 * e + 128) >> RGBSHIFT);
+        *g = CLIP((298 * c - 55 * d - 136 * e + 128) >> RGBSHIFT);
+        *b = CLIP((298 * c + 541 * d + 128) >> RGBSHIFT);
+        break;
+    case EncodingBT2020:
+        /* ITU-R BT.2020 coefficients */
+        *r = CLIP((298 * c + 430 * e + 128) >> RGBSHIFT);
+        *g = CLIP((298 * c - 48 * d - 167 * e + 128) >> RGBSHIFT);
+        *b = CLIP((298 * c + 548 * d + 128) >> RGBSHIFT);
+        break;
+    default:
+        /* ITU-R BT.601 coefficients (default) */
+        *r = CLIP((298 * c + 409 * e + 128) >> RGBSHIFT);
+        *g = CLIP((298 * c - 100 * d - 208 * e + 128) >> RGBSHIFT);
+        *b = CLIP((298 * c + 516 * d + 128) >> RGBSHIFT);
+        break;
+    }
 }
 
 void Converter::convertRGB(const Image *srcImage, unsigned char *dst) const

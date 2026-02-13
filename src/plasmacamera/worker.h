@@ -107,7 +107,7 @@ private:
     void configure();
 
     static const QList<libcamera::PixelFormat> &getNativeFormats();
-    int setFormat(const QSize &size, const libcamera::PixelFormat &format, unsigned int stride);
+    int setFormat(const QSize &size, const libcamera::PixelFormat &format, const libcamera::ColorSpace &colorSpace, unsigned int stride);
 
     /*
      * How to get frames from libcamera

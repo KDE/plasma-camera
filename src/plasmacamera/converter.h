@@ -8,6 +8,7 @@
 #pragma once
 
 #include <QSize>
+#include <libcamera/color_space.h>
 #include <libcamera/pixel_format.h>
 
 class Image;
@@ -17,10 +18,7 @@ class QImage;
 class Converter
 {
 public:
-    int configure(
-        const libcamera::PixelFormat &format,
-        const QSize &size,
-        unsigned int stride);
+    int configure(const libcamera::PixelFormat &format, const QSize &size, unsigned int stride, const libcamera::ColorSpace &colorSpace);
 
     void convert(const Image *src, size_t size, QImage *dst);
 
@@ -33,6 +31,14 @@ private:
         YUVSemiPlanar,
     };
 
+    enum YcbcrEncoding {
+        EncodingBT601,
+        EncodingBT709,
+        EncodingBT2020,
+    };
+
+    void yuv_to_rgb(int y, int u, int v, int *r, int *g, int *b) const;
+
     void convertRGB(const Image *src, unsigned char *dst) const;
     void convertYUVPacked(const Image *src, unsigned char *dst) const;
     void convertYUVPlanar(const Image *src, unsigned char *dst) const;
@@ -44,6 +50,7 @@ private:
     unsigned int stride_;
 
     FormatFamily formatFamily_;
+    YcbcrEncoding ycbcrEncoding_ = EncodingBT601;
 
     /* NV parameters */
     unsigned int horzSubSample_;
