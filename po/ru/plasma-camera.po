@@ -1,14 +1,14 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
 #
-# SPDX-FileCopyrightText: 2019, 2020, 2024, 2025 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2024, 2025, 2026 Alexander Yavorsky <kekcuha@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-07-04 18:08+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-02-15 19:32+0200\n"
+"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -41,17 +41,17 @@ msgstr "Видео"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "Микрофон включён"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "Микрофон отключён"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Выдержка"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -71,6 +71,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
+"Видеокодек не успевает обрабатывать данные. Для повышения производительности "
+"попробуйте снизить настройки записи."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -115,7 +117,7 @@ msgstr "Не удалось начать запись"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "Экспозиция"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -125,7 +127,7 @@ msgstr "Камера недоступна"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Параметры"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
@@ -133,37 +135,34 @@ msgid "Select camera"
 msgstr "Выбрать камеру"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "Остановить запись видео"
+msgstr "Разрешение записи видео"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "Остановить запись видео"
+msgstr "Качество видеозаписи"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "Частота кадров видеозаписи"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "Остановить запись видео"
+msgstr "Кодек видеозаписи"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "Filename pattern"
-msgstr ""
+msgstr "Шаблон имени файла"
 
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "Путь вывода"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
@@ -173,7 +172,7 @@ msgstr "О программе"
 #: src/contents/ui/SettingsDialog.qml:110
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "Разрешение записи видео"
 
 #: src/contents/ui/SettingsDialog.qml:120
 #, kde-format
@@ -183,54 +182,52 @@ msgstr "Автоматически"
 #: src/contents/ui/SettingsDialog.qml:157
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "Качество записи видео"
 
 #: src/contents/ui/SettingsDialog.qml:167
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "Очень низкое качество"
 
 #: src/contents/ui/SettingsDialog.qml:168
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "Низкое качество"
 
 #: src/contents/ui/SettingsDialog.qml:169
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "Обычное качество"
 
 #: src/contents/ui/SettingsDialog.qml:170
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "Высокое качество"
 
 #: src/contents/ui/SettingsDialog.qml:171
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "Самое высокое качество"
 
 #: src/contents/ui/SettingsDialog.qml:203
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "Частота кадров видеозаписи"
 
 #: src/contents/ui/SettingsDialog.qml:247
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "Остановить запись видео"
+msgstr "Кодек видеозаписи"
 
 #: src/contents/ui/SettingsDialog.qml:291
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select Camera"
-msgstr "Переключить камеру"
+msgstr "Выбрать камеру"
 
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "Шаблон имени файла вывода"
 
 #: src/main.cpp:69
 #, kde-format
@@ -255,7 +252,7 @@ msgstr "Andrew Wang"
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #~ msgid "Took a photo"
 #~ msgstr "Фотография сделана"
