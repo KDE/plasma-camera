@@ -4,9 +4,13 @@
 cmake_minimum_required(VERSION 3.16)
 set(KF_MIN_VERSION "6.0.0")
 set(QT_MIN_VERSION "6.6.0")
-set(PROJECT_VERSION "2.1.1")
 
-project(plasma-camera VERSION ${PROJECT_VERSION})
+# KDE Application Version, managed by release script
+set (RELEASE_SERVICE_VERSION_MAJOR "25")
+set (RELEASE_SERVICE_VERSION_MINOR "03")
+set (RELEASE_SERVICE_VERSION_MICRO "70")
+set (RELEASE_SERVICE_VERSION "${RELEASE_SERVICE_VERSION_MAJOR}.${RELEASE_SERVICE_VERSION_MINOR}.${RELEASE_SERVICE_VERSION_MICRO}")
+project(plasma-camera VERSION ${RELEASE_SERVICE_VERSION})
 
 include(FeatureSummary)
 
@@ -25,7 +29,7 @@ include(KDEGitCommitHooks)
 include(KDECompilerSettings NO_POLICY_SCOPE)
 include(KDEClangFormat)
 
-ecm_setup_version(${PROJECT_VERSION}
+ecm_setup_version(${RELEASE_SERVICE_VERSION}
     VARIABLE_PREFIX PLASMACAMERA
     VERSION_HEADER ${CMAKE_CURRENT_BINARY_DIR}/version.h
 )
