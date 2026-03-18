@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-03-02 08:41+0100\n"
+"PO-Revision-Date: 2026-03-16 15:43+0100\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -15,17 +15,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Vít Pelčák"
+msgstr "Vít Pelčák,Libor Filípek"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "vit@pelcak.org"
+msgstr "vit@pelcak.org,libor.filipek@gmail.com"
 
 #: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
@@ -40,12 +40,12 @@ msgstr "Video"
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "Mikrofon je zapnutý"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "Mikrofon je vypnutý"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
@@ -63,6 +63,7 @@ msgid ""
 "An error occurred: \"%1\". Please consider restarting the application if it "
 "stopped working."
 msgstr ""
+"Došlo k chybě: \"%1\". Zvažte restartování aplikace, pokud přestala fungovat."
 
 #: src/contents/ui/camera/CameraPage.qml:47
 #, kde-format
@@ -70,6 +71,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
+"Video enkodér má potíže udržet tempo. Zkuste snížit nastavení nahrávání, "
+"abyste zlepšili výkon."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -79,27 +82,27 @@ msgstr "Přepnout režim"
 #: src/contents/ui/camera/CameraPage.qml:98
 #, kde-format
 msgid "Switch Camera"
-msgstr ""
+msgstr "Přepnout fotoaparát"
 
 #: src/contents/ui/camera/CaptureController.qml:38
 #, kde-format
 msgid "Cancel self-timer"
-msgstr ""
+msgstr "Zrušit samospoušť"
 
 #: src/contents/ui/camera/CaptureController.qml:40
 #, kde-format
 msgid "Capture photo"
-msgstr ""
+msgstr "Pořídit fotografii"
 
 #: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
-msgstr ""
+msgstr "Zastavit nahrávání videa"
 
 #: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
 msgid "Start recording video"
-msgstr ""
+msgstr "Spustit nahrávání videa"
 
 #: src/contents/ui/camera/CaptureController.qml:95
 #, kde-format
@@ -114,12 +117,12 @@ msgstr "Chyba při spuštění záznamu"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "Hodnota expozice"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
 msgid "Camera not available"
-msgstr ""
+msgstr "Fotoaparát není k dispozici"
 
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
@@ -129,27 +132,27 @@ msgstr "Nastavení"
 #: src/contents/ui/SettingsDialog.qml:23
 #, kde-format
 msgid "Select camera"
-msgstr ""
+msgstr "Vybrat fotoaparát"
 
 #: src/contents/ui/SettingsDialog.qml:33
 #, kde-format
 msgid "Video recording resolution"
-msgstr ""
+msgstr "Rozlišení nahrávání videa"
 
 #: src/contents/ui/SettingsDialog.qml:43
 #, kde-format
 msgid "Video recording quality"
-msgstr ""
+msgstr "Kvalita nahrávání videa"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "Snímková frekvence nahrávání videa"
 
 #: src/contents/ui/SettingsDialog.qml:63
 #, kde-format
 msgid "Video recording codec"
-msgstr ""
+msgstr "Kodek pro nahrávání videa"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -159,7 +162,7 @@ msgstr "Vzor pro výběr souborů"
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "Výstupní umístění"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
@@ -169,7 +172,7 @@ msgstr "O aplikaci"
 #: src/contents/ui/SettingsDialog.qml:110
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "Rozlišení nahrávání videa"
 
 #: src/contents/ui/SettingsDialog.qml:120
 #, kde-format
@@ -184,7 +187,7 @@ msgstr "Kvalita nahrávání videa"
 #: src/contents/ui/SettingsDialog.qml:167
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "Velmi nízká kvalita"
 
 #: src/contents/ui/SettingsDialog.qml:168
 #, kde-format
@@ -209,12 +212,12 @@ msgstr "Velmi vysoká kvalita"
 #: src/contents/ui/SettingsDialog.qml:203
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "Snímková frekvence nahrávání videa"
 
 #: src/contents/ui/SettingsDialog.qml:247
 #, kde-format
 msgid "Video Recording Codec"
-msgstr ""
+msgstr "Kodek pro nahrávání videa"
 
 #: src/contents/ui/SettingsDialog.qml:291
 #, kde-format
@@ -224,7 +227,7 @@ msgstr "Vyberte fotoaparát"
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "Šablona názvu výstupního souboru"
 
 #: src/main.cpp:69
 #, kde-format
