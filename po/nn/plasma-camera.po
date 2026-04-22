@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-04-18 16:27+0200\n"
+"PO-Revision-Date: 2026-04-21 18:46+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -73,6 +73,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
+"Videokodaren slit med å halda følgje. Prøv å setja ned opptaks­innstillingane "
+"for betre yting."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -117,7 +119,7 @@ msgstr "Klarte ikkje starta opptak"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "Eksponeringsverdi"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -135,27 +137,24 @@ msgid "Select camera"
 msgstr "Vel kamera"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "Stopp opptak"
+msgstr "Oppløysing på videoopptak"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "Stopp opptak"
+msgstr "Kvalitet på videoopptak"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "Bilete/s for videoopptak"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "Stopp opptak"
+msgstr "Kodek for videoopptak"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
@@ -175,7 +174,7 @@ msgstr "Om"
 #: src/contents/ui/SettingsDialog.qml:110
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "Oppløysing på videoopptak"
 
 #: src/contents/ui/SettingsDialog.qml:120
 #, kde-format
@@ -185,54 +184,52 @@ msgstr "Auto"
 #: src/contents/ui/SettingsDialog.qml:157
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "Kvalitet på videoopptak"
 
 #: src/contents/ui/SettingsDialog.qml:167
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "Veldig låg kvalitet"
 
 #: src/contents/ui/SettingsDialog.qml:168
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "Låg kvalitet"
 
 #: src/contents/ui/SettingsDialog.qml:169
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "Vanleg kvalitet"
 
 #: src/contents/ui/SettingsDialog.qml:170
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "Høg kvalitet"
 
 #: src/contents/ui/SettingsDialog.qml:171
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "Svært høg kvalitet"
 
 #: src/contents/ui/SettingsDialog.qml:203
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "Bilete/s for videoopptak"
 
 #: src/contents/ui/SettingsDialog.qml:247
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "Stopp opptak"
+msgstr "Kodek for videoopptak"
 
 #: src/contents/ui/SettingsDialog.qml:291
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select Camera"
-msgstr "Byt kamera"
+msgstr "Vel kamera"
 
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "Filnamnmønster"
 
 #: src/main.cpp:69
 #, kde-format
