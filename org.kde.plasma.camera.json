@@ -35,6 +35,18 @@
     "modules": [
         "flatpak/python3-modules.json",
         {
+            "name": "libyuv",
+            "buildsystem": "cmake",
+            "builddir": true,
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://chromium.googlesource.com/libyuv/libyuv",
+                    "branch": "main"
+                }
+            ]
+        },
+        {
             "name": "libcamera",
             "config-opts": [ "-Dtest=false" ],
             "buildsystem": "meson",
