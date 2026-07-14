@@ -38,7 +38,7 @@
             "name": "libcamera",
             "config-opts": [ "-Dtest=false" ],
             "buildsystem": "meson",
-            "sources": [ { "type": "git", "url": "https://git.libcamera.org/libcamera/libcamera.git", "branch": "master" } ]
+            "sources": [ { "type": "git", "url": "https://gitlab.freedesktop.org/camera/libcamera.git", "branch": "master" } ]
         },
         {
             "name": "inih",
