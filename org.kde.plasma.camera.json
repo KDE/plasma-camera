@@ -45,7 +45,7 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": "https://git.libcamera.org/libcamera/libcamera.git",
+                    "url": "https://gitlab.freedesktop.org/camera/libcamera.git",
                     "branch": "master"
                 }
             ]
