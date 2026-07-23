@@ -64,3 +64,5 @@ endif()
 
 target_include_directories(plasma-camera PRIVATE ${CMAKE_BINARY_DIR})
 install(TARGETS plasma-camera ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+
+install(FILES camerasettings.kcfg DESTINATION ${KDE_INSTALL_KCFGDIR} RENAME plasma-camera.kcfg)
