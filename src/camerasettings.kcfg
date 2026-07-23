@@ -9,26 +9,26 @@
                           http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
     <kcfgfile name="plasmacamerarc" />
     <group name="General">
-        <entry key="resolution" type="size"></entry> <!-- Unused -->
-        <entry key="cameraDeviceId" type="string"></entry>
-        <entry key="cameraPosition" type="int"></entry> <!-- Unused -->
-        <entry key="whiteBalanceMode" type="int"></entry> <!-- Unused -->
-        <entry key="videoRecordingFps" type="int">
+        <entry key="resolution" type="Size"></entry> <!-- Unused -->
+        <entry key="cameraDeviceId" type="String"></entry>
+        <entry key="cameraPosition" type="Int"></entry> <!-- Unused -->
+        <entry key="whiteBalanceMode" type="Int"></entry> <!-- Unused -->
+        <entry key="videoRecordingFps" type="Int">
             <default>24</default>
         </entry>
-        <entry key="videoRecordingQuality" type="int">
+        <entry key="videoRecordingQuality" type="Int">
             <default>2</default> <!-- PlasmaCameraManager::NormalQuality -->
         </entry>
-        <entry key="videoResolution" type="int">
+        <entry key="videoResolution" type="Int">
             <default>0</default> <!-- PlasmaCameraManager::ResolutionAuto -->
         </entry>
-        <entry key="videoCodec" type="int">
+        <entry key="videoCodec" type="Int">
             <default>0</default> <!-- PlasmaCameraManager::H264 -->
         </entry>
-        <entry key="filenamePattern" type="int">
+        <entry key="filenamePattern" type="Int">
             <default>0</default> <!-- PlasmaCameraManager::FilenameNumericSequential -->
         </entry>
-        <entry key="outputPath" type="int">
+        <entry key="outputPath" type="Int">
             <default>0</default> <!-- PlasmaCameraManager::outputPathDefault -->
         </entry>
     </group>
