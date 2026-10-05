@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-02-15 19:32+0200\n"
+"PO-Revision-Date: 2026-10-04 09:08+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -71,8 +71,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
-"Видеокодек не успевает обрабатывать данные. Для повышения производительности "
-"попробуйте снизить настройки записи."
+"Видеокодек не успевает обрабатывать данные. Попробуйте уменьшить разрешение, "
+"качество или частоту кадров записи."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -182,7 +182,7 @@ msgstr "Автоматически"
 #: src/contents/ui/SettingsDialog.qml:157
 #, kde-format
 msgid "Video Recording Quality"
-msgstr "Качество записи видео"
+msgstr "Качество видеозаписи"
 
 #: src/contents/ui/SettingsDialog.qml:167
 #, kde-format
