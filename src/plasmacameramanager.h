@@ -11,6 +11,7 @@
 
 #include <libcamera/libcamera.h>
 #include <libcamera/camera_manager.h>
+#include <libcamera/version.h>
 
 #include "plasmacamera.h"
 

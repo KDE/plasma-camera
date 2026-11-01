@@ -627,7 +627,11 @@ bool PlasmaCamera::acquire()
 
     // Find whether the camera output needs to be mirrored (ex. selife cam)
     std::optional<int> location = m_camera->properties().get(libcamera::properties::Location);
+#if LIBCAMERA_VERSION_MAJOR > 0 || (LIBCAMERA_VERSION_MAJOR == 0 && LIBCAMERA_VERSION_MINOR >= 8)
+    m_mirrorOutput = location.value_or(libcamera::properties::LocationExternal) == libcamera::properties::LocationFront;
+#else
     m_mirrorOutput = location.value_or(libcamera::properties::CameraLocationExternal) == libcamera::properties::CameraLocationFront;
+#endif
 
     return true;
 }
