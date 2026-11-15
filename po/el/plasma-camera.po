@@ -3,20 +3,21 @@
 #
 # Stelios <sstavra@gmail.com>, 2019, 2020.
 # SPDX-FileCopyrightText: 2024 Antonis Geralis <capoiosct@gmail.com>
+# SPDX-FileCopyrightText: 2026 Petros Vidalis <pvidalis@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2024-09-19 16:47+0300\n"
-"Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
+"PO-Revision-Date: 2026-11-14 14:38+0200\n"
+"Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,27 +32,27 @@ msgstr "sstavra@gmail.com"
 #: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Photo"
-msgstr ""
+msgstr "Φωτογραφία"
 
 #: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "Βίντεο"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "Το μικρόφωνο είναι ενεργό"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "Το μικρόφωνο είναι ανενεργό"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "Έκθεση"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -73,6 +74,8 @@ msgid ""
 "The video encoder is struggling to keep up. Try lowering your recording "
 "settings to improve performance."
 msgstr ""
+"Ο κωδικοποιητής βίντεο δυσκολεύεται να συμβαδίσει με την εγγραφή. Δοκιμάστε "
+"χαμηλότερες ρυθμίσεις εγγραφής για καλύτερη απόδοση."
 
 #: src/contents/ui/camera/CameraPage.qml:65
 #, kde-format
@@ -117,7 +120,7 @@ msgstr "Αποτυχία έναρξης εγγραφής"
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "Τιμή έκθεσης"
 
 #: src/contents/ui/camera/Viewfinder.qml:28
 #, kde-format
@@ -127,7 +130,7 @@ msgstr "Η κάμερα δεν είναι διαθέσιμη"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Ρυθμίσεις"
 
 #: src/contents/ui/SettingsDialog.qml:23
 #, fuzzy, kde-format
@@ -150,7 +153,7 @@ msgstr "Διακοπή εγγραφής βίντεο"
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "Ρυθμός καρέ εγγραφής βίντεο"
 
 #: src/contents/ui/SettingsDialog.qml:63
 #, fuzzy, kde-format
@@ -161,12 +164,12 @@ msgstr "Διακοπή εγγραφής βίντεο"
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "Filename pattern"
-msgstr ""
+msgstr "Μοτίβο ονόματος αρχείου"
 
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "Διαδρομή αποθήκευσης"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
@@ -176,7 +179,7 @@ msgstr "Σχετικά"
 #: src/contents/ui/SettingsDialog.qml:110
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "Ανάλυση εγγραφής βίντεο"
 
 #: src/contents/ui/SettingsDialog.qml:120
 #, kde-format
@@ -186,37 +189,37 @@ msgstr "Αυτόματο"
 #: src/contents/ui/SettingsDialog.qml:157
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "Ποιότητα εγγραφής βίντεο"
 
 #: src/contents/ui/SettingsDialog.qml:167
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "Πολύ χαμηλή ποιότητα"
 
 #: src/contents/ui/SettingsDialog.qml:168
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "Χαμηλή ποιότητα"
 
 #: src/contents/ui/SettingsDialog.qml:169
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "Κανονική ποιότητα"
 
 #: src/contents/ui/SettingsDialog.qml:170
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "Υψηλή ποιότητα"
 
 #: src/contents/ui/SettingsDialog.qml:171
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "Πολύ υψηλή ποιότητα"
 
 #: src/contents/ui/SettingsDialog.qml:203
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "Ρυθμός καρέ εγγραφής βίντεο"
 
 #: src/contents/ui/SettingsDialog.qml:247
 #, fuzzy, kde-format
@@ -233,7 +236,7 @@ msgstr "Εναλλαγή κάμερας"
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "Μοτίβο ονόματος αρχείου εξόδου"
 
 #: src/main.cpp:69
 #, kde-format
@@ -253,12 +256,12 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:85
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "Andrew Wang"
 
 #: src/main.cpp:90
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "Devin Lin"
 
 #~ msgid "Took a photo"
 #~ msgstr "Ελήφθη φωτογραφία"
