@@ -16,6 +16,7 @@ Rectangle {
     id: root
 
     required property PlasmaCamera camera
+    required property PlasmaCameraManager captureSession
     property real bottomMargin: 0
 
     property alias videoSink: viewfinder.videoSink
@@ -31,8 +32,22 @@ Rectangle {
     VideoOutput {
         id: viewfinder
 
-        visible: root.camera.available
+        visible: root.camera.available && GraphicsInfo.api !== GraphicsInfo.Software
         width: parent.width
         height: parent.height
+    }
+
+    Loader {
+        anchors.fill: parent
+
+        active: root.camera.available && GraphicsInfo.api === GraphicsInfo.Software
+
+        sourceComponent: Component {
+            SoftwareViewfinder {
+                image: root.captureSession.currentFrame
+                imageRotation: root.captureSession.currentFrameRotation
+                imageMirrored: root.captureSession.currentFrameMirrored
+            }
+        }
     }
 }

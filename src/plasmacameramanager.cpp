@@ -106,6 +106,21 @@ QAudioInput *PlasmaCameraManager::audioInput() const
     return m_audioInput;
 }
 
+QImage PlasmaCameraManager::currentFrame() const
+{
+    return m_currentFrame;
+}
+
+int PlasmaCameraManager::currentFrameRotation() const
+{
+    return m_plasmaCamera ? m_plasmaCamera->softwareRotationDegrees() : 0;
+}
+
+bool PlasmaCameraManager::currentFrameMirrored() const
+{
+    return m_plasmaCamera && m_plasmaCamera->mirrorOutput();
+}
+
 float PlasmaCameraManager::videoRecordingFps() const
 {
     return m_videoRecordingFps;
@@ -503,6 +518,8 @@ void PlasmaCameraManager::processViewfinderFrame(const QImage &image)
     }
 
     m_currentFrame = image;
+    Q_EMIT viewfinderFrameChanged();
+
     QVideoFrame frame = QVideoFrame(image);
 
     // Do software rotation

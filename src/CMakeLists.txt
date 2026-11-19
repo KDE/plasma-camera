@@ -8,6 +8,7 @@ set(plasma-camera_SRCS
     main.cpp
     plasmacamera.cpp
     plasmacameramanager.cpp
+    softwareviewfinder.cpp
     plasmacamera/converter.cpp
     plasmacamera/image.cpp
     plasmacamera/path.cpp
