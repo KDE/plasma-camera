@@ -45,6 +45,10 @@
   <name xml:lang="sa">प्लाज्मा कैमरा</name>
   <name xml:lang="sk">Plasma Camera</name>
   <name xml:lang="sl">Plasma Camera</name>
+  <name xml:lang="sr">Плазма фотоапарат</name>
+  <name xml:lang="sr-Latn">Plasma fotoaparat</name>
+  <name xml:lang="sr-ijekavian">Плазма фотоапарат</name>
+  <name xml:lang="sr-ijekavianlatin">Plasma fotoaparat</name>
   <name xml:lang="sv">Plasma kamera</name>
   <name xml:lang="tg">Камераи Плазма</name>
   <name xml:lang="tr">Plasma Kamera</name>
@@ -92,6 +96,10 @@
   <summary xml:lang="sa">फोटो, विडियो च गृह्यताम्</summary>
   <summary xml:lang="sk">Tvorba fotiek a videa</summary>
   <summary xml:lang="sl">Zajem fotografij in videov</summary>
+  <summary xml:lang="sr">Снимајте фотографије и видео записе</summary>
+  <summary xml:lang="sr-Latn">Snimajte fotografije i video zapise</summary>
+  <summary xml:lang="sr-ijekavian">Снимајте фотографије и видео записе</summary>
+  <summary xml:lang="sr-ijekavianlatin">Snimajte fotografije i video zapise</summary>
   <summary xml:lang="sv">Ta foton och spela in videor</summary>
   <summary xml:lang="tg">Суратҳо ва видеоҳоро ба навор гиред</summary>
   <summary xml:lang="tr">Fotoğraflar ve videolar çekin</summary>
@@ -148,6 +156,10 @@
     <p xml:lang="sa">प्लाज्मा मोबाईलस्य कृते कैमरा अनुप्रयोगः।</p>
     <p xml:lang="sk">Aplikácia Camera pre Plasma Mobile</p>
     <p xml:lang="sl">Progam za kamero za Plasma Mobile.</p>
+    <p xml:lang="sr">Програм фотоапарата за мобилну Плазму.</p>
+    <p xml:lang="sr-Latn">Program fotoaparata za mobilnu Plasmu.</p>
+    <p xml:lang="sr-ijekavian">Програм фотоапарата за мобилну Плазму.</p>
+    <p xml:lang="sr-ijekavianlatin">Program fotoaparata za mobilnu Plasmu.</p>
     <p xml:lang="sv">Kameraprogram för Plasma Mobil</p>
     <p xml:lang="tg">Барномаи камера барои Плазмаи мобилӣ.</p>
     <p xml:lang="tr">Plasma Cep için Kamera Uygulaması.</p>
@@ -195,6 +207,10 @@
     <p xml:lang="sa">एतत् भिन्न-भिन्न-संकल्पं, भिन्न-भिन्न-श्वेत-तुल्य-विधानं, भिन्न-भिन्न-कॅमेरा-यन्त्राणां मध्ये स्विचिंग्-करणं च समर्थयति ।</p>
     <p xml:lang="sk">Podporuje rôzne rozlíšenia, vyváženie bielej a prepínanie medzi rôznymi zariadeniami fotoaparátu.</p>
     <p xml:lang="sl">Podpira različne ločljivosti, različne načine uravnoteževanje beline in preklapljanje med različnimi foto napravami.</p>
+    <p xml:lang="sr">Подржава различите резолуције, различите режиме баланса белог и пребацивање између различитих фотоапарата.</p>
+    <p xml:lang="sr-Latn">Podržava različite rezolucije, različite režime balansa belog i prebacivanje između različitih fotoaparata.</p>
+    <p xml:lang="sr-ijekavian">Подржава различите резолуције, различите режиме баланса бијелог и пребацивање између различитих фотоапарата.</p>
+    <p xml:lang="sr-ijekavianlatin">Podržava različite rezolucije, različite režime balansa bijelog i prebacivanje između različitih fotoaparata.</p>
     <p xml:lang="sv">Det stöder olika upplösningar, olika vitbalanslägen och byte mellan olika kameraenheter.</p>
     <p xml:lang="tg">Барномаи ҷорӣ возеҳии экрани гуногун, реҷаҳои тавозуни сафеди гуногун ва мубодилаи камераҳоро байни дастгоҳҳои камераи гуногун дастгирӣ менамояд.</p>
     <p xml:lang="tr">Farklı çözünürlükleri, beyaz dengesi kiplerini ve kamera aygıtları arasında geçiş yapmayı destekler.</p>
