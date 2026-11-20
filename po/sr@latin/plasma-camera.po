@@ -1,0 +1,256 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-camera\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"PO-Revision-Date: 2026-11-19 09:26+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr@latin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Nemanja Hiršl"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "nemhirsl@gmail.com"
+
+#: src/contents/ui/camera/CameraControls.qml:170
+#, kde-format
+msgid "Photo"
+msgstr "Fotografija"
+
+#: src/contents/ui/camera/CameraControls.qml:175
+#, kde-format
+msgid "Video"
+msgstr "Video"
+
+#: src/contents/ui/camera/CameraExtraControls.qml:50
+#, kde-format
+msgid "Microphone is enabled"
+msgstr "Mikrofon je uključen"
+
+#: src/contents/ui/camera/CameraExtraControls.qml:50
+#, kde-format
+msgid "Microphone is disabled"
+msgstr "Mikrofon je isključen"
+
+#: src/contents/ui/camera/CameraExtraControls.qml:63
+#, kde-format
+msgid "Exposure"
+msgstr "Ekspozicija"
+
+#: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
+#, kde-format
+msgid "Camera"
+msgstr "Fotoaparat"
+
+#: src/contents/ui/camera/CameraPage.qml:44 src/contents/ui/main.qml:73
+#, kde-format
+msgid ""
+"An error occurred: \"%1\". Please consider restarting the application if it "
+"stopped working."
+msgstr ""
+"Došlo je do greške: „%1“. Ako je program prestao da radi, razmislite o "
+"njegovom ponovnom pokretanju."
+
+#: src/contents/ui/camera/CameraPage.qml:47
+#, kde-format
+msgid ""
+"The video encoder is struggling to keep up. Try lowering your recording "
+"settings to improve performance."
+msgstr ""
+"Video koder ne stiže da prati. Pokušajte da smanjite postavke snimanja da "
+"biste poboljšali performanse."
+
+#: src/contents/ui/camera/CameraPage.qml:65
+#, kde-format
+msgid "Switch mode"
+msgstr "Promeni režim"
+
+#: src/contents/ui/camera/CameraPage.qml:98
+#, kde-format
+msgid "Switch Camera"
+msgstr "Promeni fotoaparat"
+
+#: src/contents/ui/camera/CaptureController.qml:38
+#, kde-format
+msgid "Cancel self-timer"
+msgstr "Otkaži samookidač"
+
+#: src/contents/ui/camera/CaptureController.qml:40
+#, kde-format
+msgid "Capture photo"
+msgstr "Snimi fotografiju"
+
+#: src/contents/ui/camera/CaptureController.qml:42
+#, kde-format
+msgid "Stop recording video"
+msgstr "Zaustavi snimanje videa"
+
+#: src/contents/ui/camera/CaptureController.qml:44
+#, kde-format
+msgid "Start recording video"
+msgstr "Počni snimanje videa"
+
+#: src/contents/ui/camera/CaptureController.qml:95
+#, kde-format
+msgid "Failed to take a photo"
+msgstr "Ne mogu da snimim fotografiju"
+
+#: src/contents/ui/camera/CaptureController.qml:108
+#, kde-format
+msgid "Failed to start recording"
+msgstr "Ne mogu da počnem snimanje"
+
+#: src/contents/ui/camera/ExposureSelectStrip.qml:45
+#, kde-format
+msgid "Exposure Value"
+msgstr "Vrednost ekspozicije"
+
+#: src/contents/ui/camera/Viewfinder.qml:28
+#, kde-format
+msgid "Camera not available"
+msgstr "Fotoaparat nije dostupan"
+
+#: src/contents/ui/SettingsDialog.qml:16
+#, kde-format
+msgid "Settings"
+msgstr "Postavke"
+
+#: src/contents/ui/SettingsDialog.qml:23
+#, kde-format
+msgid "Select camera"
+msgstr "Izaberi fotoaparat"
+
+#: src/contents/ui/SettingsDialog.qml:33
+#, kde-format
+msgid "Video recording resolution"
+msgstr "Rezolucija snimanja videa"
+
+#: src/contents/ui/SettingsDialog.qml:43
+#, kde-format
+msgid "Video recording quality"
+msgstr "Kvalitet snimanja videa"
+
+#: src/contents/ui/SettingsDialog.qml:53
+#, kde-format
+msgid "Video recording frame rate"
+msgstr "Brzina kadrova snimanja videa"
+
+#: src/contents/ui/SettingsDialog.qml:63
+#, kde-format
+msgid "Video recording codec"
+msgstr "Kodek snimanja videa"
+
+#: src/contents/ui/SettingsDialog.qml:73
+#, kde-format
+msgid "Filename pattern"
+msgstr "Obrazac imena fajla"
+
+#: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
+#, kde-format
+msgid "Output path"
+msgstr "Izlazna putanja"
+
+#: src/contents/ui/SettingsDialog.qml:91
+#, kde-format
+msgid "About"
+msgstr "O programu"
+
+#: src/contents/ui/SettingsDialog.qml:110
+#, kde-format
+msgid "Video Recording Resolution"
+msgstr "Rezolucija snimanja videa"
+
+#: src/contents/ui/SettingsDialog.qml:120
+#, kde-format
+msgid "Auto"
+msgstr "Automatski"
+
+#: src/contents/ui/SettingsDialog.qml:157
+#, kde-format
+msgid "Video Recording Quality"
+msgstr "Kvalitet snimanja videa"
+
+#: src/contents/ui/SettingsDialog.qml:167
+#, kde-format
+msgid "Very low quality"
+msgstr "Veoma nizak kvalitet"
+
+#: src/contents/ui/SettingsDialog.qml:168
+#, kde-format
+msgid "Low quality"
+msgstr "Nizak kvalitet"
+
+#: src/contents/ui/SettingsDialog.qml:169
+#, kde-format
+msgid "Normal quality"
+msgstr "Normalan kvalitet"
+
+#: src/contents/ui/SettingsDialog.qml:170
+#, kde-format
+msgid "High quality"
+msgstr "Visok kvalitet"
+
+#: src/contents/ui/SettingsDialog.qml:171
+#, kde-format
+msgid "Very high quality"
+msgstr "Veoma visok kvalitet"
+
+#: src/contents/ui/SettingsDialog.qml:203
+#, kde-format
+msgid "Video Recording Framerate"
+msgstr "Brzina kadrova snimanja videa"
+
+#: src/contents/ui/SettingsDialog.qml:247
+#, kde-format
+msgid "Video Recording Codec"
+msgstr "Kodek snimanja videa"
+
+#: src/contents/ui/SettingsDialog.qml:291
+#, kde-format
+msgid "Select Camera"
+msgstr "Izbor fotoaparata"
+
+#: src/contents/ui/SettingsDialog.qml:338
+#, kde-format
+msgid "Output filename pattern"
+msgstr "Obrazac imena izlaznog fajla"
+
+#: src/main.cpp:69
+#, kde-format
+msgid "© Plasma Mobile Developers"
+msgstr "© Programeri mobilne Plasme"
+
+#: src/main.cpp:73
+#, kde-format
+msgid "Marco Martin"
+msgstr "Marko Martin"
+
+#: src/main.cpp:79
+#, kde-format
+msgid "Jonah Brüchert"
+msgstr "Jonah Brüchert"
+
+#: src/main.cpp:85
+#, kde-format
+msgid "Andrew Wang"
+msgstr "Andrew Wang"
+
+#: src/main.cpp:90
+#, kde-format
+msgid "Devin Lin"
+msgstr "Devin Lin"
