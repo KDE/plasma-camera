@@ -5,6 +5,7 @@
 #pragma once
 
 #include <KAboutData>
+#include <QImage>
 #include <QOrientationSensor>
 #include <QQmlEngine>
 #include <QtMultimedia>
@@ -41,6 +42,9 @@ class PlasmaCameraManager : public QObject
     Q_PROPERTY(QMediaRecorder *recorder READ recorder WRITE setRecorder NOTIFY recorderChanged)
     Q_PROPERTY(bool audioRecordingEnabled READ audioRecordingEnabled WRITE setAudioRecordingEnabled NOTIFY audioRecordingEnabledChanged)
     Q_PROPERTY(QAudioInput *audioInput READ audioInput WRITE setAudioInput NOTIFY audioInputChanged)
+    Q_PROPERTY(QImage currentFrame READ currentFrame NOTIFY viewfinderFrameChanged)
+    Q_PROPERTY(int currentFrameRotation READ currentFrameRotation NOTIFY viewfinderFrameChanged)
+    Q_PROPERTY(bool currentFrameMirrored READ currentFrameMirrored NOTIFY viewfinderFrameChanged)
     Q_PROPERTY(float videoRecordingFps READ videoRecordingFps WRITE setVideoRecordingFps NOTIFY videoRecordingFpsChanged)
     Q_PROPERTY(Resolution videoResolution READ videoResolution WRITE setVideoResolution NOTIFY videoResolutionChanged)
     Q_PROPERTY(VideoCodec videoCodec READ videoCodec WRITE setVideoCodec NOTIFY videoCodecChanged)
@@ -130,6 +134,9 @@ public:
     QVideoSink *videoSink() const;
     QMediaRecorder *recorder() const;
     QAudioInput *audioInput() const;
+    QImage currentFrame() const;
+    int currentFrameRotation() const;
+    bool currentFrameMirrored() const;
     float videoRecordingFps() const;
     Resolution videoResolution() const;
     VideoCodec videoCodec() const;
@@ -172,6 +179,7 @@ Q_SIGNALS:
     void imageSaved(int id, const QString &fileName);
 
     void audioRecordingEnabledChanged();
+    void viewfinderFrameChanged();
     void isRecordingVideoChanged();
     void isSavingVideoChanged();
 

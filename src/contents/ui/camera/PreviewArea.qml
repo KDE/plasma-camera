@@ -81,7 +81,7 @@ Rectangle {
         source: preview.imageUrl
         visible: status == Image.Ready
 
-        layer.enabled: true
+        layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
         layer.effect: MultiEffect {
             maskEnabled: true
             maskSource: mask
@@ -146,7 +146,7 @@ Rectangle {
         anchors.fill: parent
         color: "grey"
 
-        layer.enabled: true
+        layer.enabled: GraphicsInfo.api !== GraphicsInfo.Software
         layer.effect: MultiEffect {
             maskEnabled: true
             maskSource: mask

@@ -109,6 +109,7 @@ Kirigami.Page {
         anchors.fill: parent
 
         camera: root.camera
+        captureSession: root.captureSession
         bottomMargin: controlContainer.height
 
         // Header controls

@@ -13,6 +13,7 @@
 
 #include "plasmacamera.h"
 #include "plasmacameramanager.h"
+#include "softwareviewfinder.h"
 #include "camerasettings.h"
 
 
@@ -115,6 +116,8 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
         "PlasmaCamera");
     qmlRegisterType<PlasmaCameraManager>(URI, 1, 0,
         "PlasmaCameraManager");
+    qmlRegisterType<SoftwareViewfinder>(URI, 1, 0,
+        "SoftwareViewfinder");
 
     // load the application from a qml file
     QQmlApplicationEngine engine;
