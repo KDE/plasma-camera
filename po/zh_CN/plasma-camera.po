@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-11-25 03:28+0000\n"
 "PO-Revision-Date: 2024-04-23 19:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -116,7 +116,7 @@ msgstr "无法开始录像"
 msgid "Exposure Value"
 msgstr "曝光补偿值"
 
-#: src/contents/ui/camera/Viewfinder.qml:28
+#: src/contents/ui/camera/Viewfinder.qml:29
 #, kde-format
 msgid "Camera not available"
 msgstr "相机不可用"
@@ -226,27 +226,27 @@ msgstr "选择相机"
 msgid "Output filename pattern"
 msgstr "输出文件名模式"
 
-#: src/main.cpp:69
+#: src/main.cpp:70
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Plasma Mobile Developers"
 
-#: src/main.cpp:73
+#: src/main.cpp:74
 #, kde-format
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: src/main.cpp:79
+#: src/main.cpp:80
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
 
-#: src/main.cpp:85
+#: src/main.cpp:86
 #, kde-format
 msgid "Andrew Wang"
 msgstr "Andrew Wang"
 
-#: src/main.cpp:90
+#: src/main.cpp:91
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"

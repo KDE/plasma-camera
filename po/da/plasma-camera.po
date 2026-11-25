@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-11-25 03:28+0000\n"
 "PO-Revision-Date: 2025-11-05 16:18+0100\n"
 "Last-Translator: Rasmus Rosendahl-Kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -119,7 +119,7 @@ msgstr "Kunne ikke starte optagelse"
 msgid "Exposure Value"
 msgstr ""
 
-#: src/contents/ui/camera/Viewfinder.qml:28
+#: src/contents/ui/camera/Viewfinder.qml:29
 #, kde-format
 msgid "Camera not available"
 msgstr "Kamera ikke tilgængeligt"
@@ -235,27 +235,27 @@ msgstr "Skift kamera"
 msgid "Output filename pattern"
 msgstr ""
 
-#: src/main.cpp:69
+#: src/main.cpp:70
 #, kde-format
 msgid "© Plasma Mobile Developers"
 msgstr "© Plasma Mobile's udviklere"
 
-#: src/main.cpp:73
+#: src/main.cpp:74
 #, kde-format
 msgid "Marco Martin"
 msgstr "Marco Martin"
 
-#: src/main.cpp:79
+#: src/main.cpp:80
 #, kde-format
 msgid "Jonah Brüchert"
 msgstr "Jonah Brüchert"
 
-#: src/main.cpp:85
+#: src/main.cpp:86
 #, kde-format
 msgid "Andrew Wang"
 msgstr "Andrew Wang"
 
-#: src/main.cpp:90
+#: src/main.cpp:91
 #, kde-format
 msgid "Devin Lin"
 msgstr "Devin Lin"
