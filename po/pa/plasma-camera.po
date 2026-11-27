@@ -1,21 +1,21 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-camera package.
 #
-# A S Alam <aalam.yellow@gmail.com>, 2021.
+# SPDX-FileCopyrightText: 2021, 2026 A S Alam <aalam.yellow@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-camera\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-25 03:28+0000\n"
-"PO-Revision-Date: 2021-01-01 12:02-0800\n"
-"Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
-"Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
+"PO-Revision-Date: 2026-11-26 12:47-0500\n"
+"Last-Translator: A S Alam <aman@punlinux.org>\n"
+"Language-Team: pa\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -25,32 +25,32 @@ msgstr "ਅ.ਸ.ਆਲਮ. ੨੦੦੯-੨੦੨੧"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "alam.yellow@gmail.com"
+msgstr "aalam@punlinux.org"
 
 #: src/contents/ui/camera/CameraControls.qml:170
 #, kde-format
 msgid "Photo"
-msgstr ""
+msgstr "ਫੋਟੋ"
 
 #: src/contents/ui/camera/CameraControls.qml:175
 #, kde-format
 msgid "Video"
-msgstr ""
+msgstr "ਵੀਡੀਓ"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is enabled"
-msgstr ""
+msgstr "ਮਾਈਕਰੋਫੋਨ ਸਮਰੱਥ ਹੈ"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:50
 #, kde-format
 msgid "Microphone is disabled"
-msgstr ""
+msgstr "ਮਾਈਕਰੋਫੋਨ ਅਸਮਰੱਥ ਹੈ"
 
 #: src/contents/ui/camera/CameraExtraControls.qml:63
 #, kde-format
 msgid "Exposure"
-msgstr ""
+msgstr "ਐਕਸਪੋਜ਼ਰ"
 
 #: src/contents/ui/camera/CameraPage.qml:19 src/contents/ui/main.qml:20
 #, kde-format
@@ -94,7 +94,7 @@ msgstr "ਫ਼ੋਟੋ ਲਵੋ"
 #: src/contents/ui/camera/CaptureController.qml:42
 #, kde-format
 msgid "Stop recording video"
-msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ"
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਨੂੰ ਰੋਕੋ"
 
 #: src/contents/ui/camera/CaptureController.qml:44
 #, kde-format
@@ -114,7 +114,7 @@ msgstr "ਰਿਕਾਰਡਿੰਗ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਅਸਫ�
 #: src/contents/ui/camera/ExposureSelectStrip.qml:45
 #, kde-format
 msgid "Exposure Value"
-msgstr ""
+msgstr "ਐਕਸਪੋਜ਼ਰ ਮੁੱਲ"
 
 #: src/contents/ui/camera/Viewfinder.qml:29
 #, kde-format
@@ -124,46 +124,42 @@ msgstr "ਕੈਮਰਾ ਮੌਜੂਦ ਨਹੀਂ ਹੈ"
 #: src/contents/ui/SettingsDialog.qml:16
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "ਸੈਟਿੰਗਾਂ"
 
 #: src/contents/ui/SettingsDialog.qml:23
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select camera"
-msgstr "ਕੈਮਰਾ ਬਦਲੋ"
+msgstr "ਕੈਮਰੇ ਨੂੰ ਚੁਣੋ"
 
 #: src/contents/ui/SettingsDialog.qml:33
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording resolution"
-msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ"
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੈਜ਼ੋਲੇਸ਼ਨ"
 
 #: src/contents/ui/SettingsDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording quality"
-msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ"
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਕੁਆਲਟੀ"
 
 #: src/contents/ui/SettingsDialog.qml:53
 #, kde-format
 msgid "Video recording frame rate"
-msgstr ""
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਫਰੇਮ ਰੇਟ"
 
 #: src/contents/ui/SettingsDialog.qml:63
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video recording codec"
-msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ"
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ Codec"
 
 #: src/contents/ui/SettingsDialog.qml:73
 #, kde-format
 msgid "Filename pattern"
-msgstr ""
+msgstr "ਫ਼ਾਇਲ-ਨਾਂ ਤਰਤੀਬ"
 
 #: src/contents/ui/SettingsDialog.qml:82 src/contents/ui/SettingsDialog.qml:382
 #, kde-format
 msgid "Output path"
-msgstr ""
+msgstr "ਆਉਟਪੁੱਟ ਮਾਰਗ"
 
 #: src/contents/ui/SettingsDialog.qml:91
 #, kde-format
@@ -173,64 +169,62 @@ msgstr "ਇਸ ਬਾਰੇ"
 #: src/contents/ui/SettingsDialog.qml:110
 #, kde-format
 msgid "Video Recording Resolution"
-msgstr ""
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੈਜ਼ੋਲੇਸ਼ਨ"
 
 #: src/contents/ui/SettingsDialog.qml:120
 #, kde-format
 msgid "Auto"
-msgstr "ਆਪੇ"
+msgstr "ਆਟੋ"
 
 #: src/contents/ui/SettingsDialog.qml:157
 #, kde-format
 msgid "Video Recording Quality"
-msgstr ""
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਕੁਆਲਟੀ"
 
 #: src/contents/ui/SettingsDialog.qml:167
 #, kde-format
 msgid "Very low quality"
-msgstr ""
+msgstr "ਬਹੁਤ ਘੱਟ ਕੁਆਲਟੀ"
 
 #: src/contents/ui/SettingsDialog.qml:168
 #, kde-format
 msgid "Low quality"
-msgstr ""
+msgstr "ਘੱਟ ਕੁਆਲਟੀ"
 
 #: src/contents/ui/SettingsDialog.qml:169
 #, kde-format
 msgid "Normal quality"
-msgstr ""
+msgstr "ਆਮ ਕੁਆਲਟੀ"
 
 #: src/contents/ui/SettingsDialog.qml:170
 #, kde-format
 msgid "High quality"
-msgstr ""
+msgstr "ਵੱਧ ਕੁਆਲਟੀ"
 
 #: src/contents/ui/SettingsDialog.qml:171
 #, kde-format
 msgid "Very high quality"
-msgstr ""
+msgstr "ਬਹੁਤ ਵੱਧ ਕੁਆਲਟੀ"
 
 #: src/contents/ui/SettingsDialog.qml:203
 #, kde-format
 msgid "Video Recording Framerate"
-msgstr ""
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਫਰੇਮ-ਰੇਟ"
 
 #: src/contents/ui/SettingsDialog.qml:247
-#, fuzzy, kde-format
-#| msgid "Stop recording video"
+#, kde-format
 msgid "Video Recording Codec"
-msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ ਰੋਕੋ"
+msgstr "ਵੀਡੀਓ ਰਿਕਾਰਡਿੰਗ Codec"
 
 #: src/contents/ui/SettingsDialog.qml:291
-#, fuzzy, kde-format
-#| msgid "Switch Camera"
+#, kde-format
 msgid "Select Camera"
-msgstr "ਕੈਮਰਾ ਬਦਲੋ"
+msgstr "ਕੈਮਰੇ ਨੂੰ ਚੁਣੋ"
 
 #: src/contents/ui/SettingsDialog.qml:338
 #, kde-format
 msgid "Output filename pattern"
-msgstr ""
+msgstr "ਆਉਟਪੁੱਟ ਫ਼ਾਇਲ-ਨਾਂ ਤਰਤੀਬ"
 
 #: src/main.cpp:70
 #, kde-format
@@ -250,12 +244,12 @@ msgstr "Jonah Brüchert"
 #: src/main.cpp:86
 #, kde-format
 msgid "Andrew Wang"
-msgstr ""
+msgstr "ਐਡਰਿਓ ਵੌਂਗ"
 
 #: src/main.cpp:91
 #, kde-format
 msgid "Devin Lin"
-msgstr ""
+msgstr "ਡੇਵਿਨ ਲਿਨ"
 
 #~ msgid "Took a photo"
 #~ msgstr "ਫੋਟੋ ਲਵੋ"
